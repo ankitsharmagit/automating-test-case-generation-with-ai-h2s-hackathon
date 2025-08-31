@@ -1,7 +1,7 @@
 # Automating Test Case Generation with AI
 
 An AI-powered system that automatically converts healthcare software requirements into compliant, traceable test cases integrated with enterprise toolchains.
-
+![image.png](attachment:3e932246-5aac-425b-83e0-682ed11b757a.png)
 ---
 
 ## Problem Statement
@@ -61,7 +61,7 @@ flowchart TD
 - Store in BigQuery.
 
 ### Layer 3 – Metadata Enrichment
-- Detect and auto-tag regulations (HIPAA, GDPR, ISO, FDA).
+- Detect and auto-tag regulations (HIPAA, GDPR, ISO, FDA) and more in regulations.yaml
 - Extract verbs (actions) relevant for testing (e.g., encrypt, audit).
 - Normalize actors and data types.
 - Store enriched metadata for transparency.

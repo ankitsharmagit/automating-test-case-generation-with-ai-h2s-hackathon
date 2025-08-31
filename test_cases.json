@@ -2,344 +2,6 @@
   {
     "test_id": "TC_NHIS_DOC_001",
     "requirement_id": "REQ-004",
-    "title": "Positive: Verify successful search and retrieval of the current NHIS requirements guide",
-    "description": "This test case verifies that a user with the correct permissions can successfully search for the 'A Guide to Common Requirements for National Health Insurance Information Systems' document, open it, and view its associated metadata, such as its relation to the 2012 document.",
-    "preconditions": [
-      "User is authenticated and logged into the Health Insurance Information System.",
-      "User role has permissions to view requirement documents.",
-      "The document 'A Guide to Common Requirements for National Health Insurance Information Systems' is uploaded and indexed in the system.",
-      "The document's metadata correctly links it as an update to the '2012 document'."
-    ],
-    "steps": [
-      "Navigate to the document repository or search page.",
-      "Enter the full document title into the search field.",
-      "Execute the search.",
-      "From the search results, click on the document link.",
-      "Verify the document content is displayed.",
-      "Inspect the document's properties or metadata section."
-    ],
-    "test_data": {
-      "search_query": "A Guide to Common Requirements for National Health Insurance Information Systems"
-    },
-    "expected_result": [
-      "The search returns the correct document as the top result.",
-      "The document opens without errors.",
-      "The document title is displayed correctly on the view page.",
-      "The metadata section indicates that this document updates the '2012 document'.",
-      "The metadata lists the source as 'Determining workshop'."
-    ],
-    "postconditions": [
-      "User session remains active.",
-      "No data is altered in the system."
-    ],
-    "priority": "P1",
-    "severity": "Major",
-    "type": "Functional",
-    "execution_status": "Not Executed",
-    "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850316"
-  },
-  {
-    "test_id": "TC_NHIS_DOC_002",
-    "requirement_id": "REQ-004",
-    "title": "Negative: Verify system behavior when searching for a non-existent document",
-    "description": "This test case ensures that the system provides a clear and user-friendly message when a user searches for a document that does not exist in the repository, preventing user confusion.",
-    "preconditions": [
-      "User is authenticated and logged into the Health Insurance Information System.",
-      "User is on the document repository or search page."
-    ],
-    "steps": [
-      "Enter a random or nonsensical string into the search field.",
-      "Execute the search.",
-      "Observe the results area on the page."
-    ],
-    "test_data": {
-      "search_query": "Non-Existent Document XYZ123"
-    },
-    "expected_result": [
-      "The system displays a 'No results found' or 'Your search did not match any documents' message.",
-      "The system does not crash or return a server error.",
-      "The user is presented with an option to perform a new search."
-    ],
-    "postconditions": [
-      "User session remains active.",
-      "The search log may record the failed search attempt."
-    ],
-    "priority": "P2",
-    "severity": "Minor",
-    "type": "Functional",
-    "execution_status": "Not Executed",
-    "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850336"
-  },
-  {
-    "test_id": "TC_NHIS_DOC_003",
-    "requirement_id": "REQ-004",
-    "title": "Edge: Verify retrieval of the outdated 2012 document displays a notification for the new version",
-    "description": "This edge case tests the system's version control handling. When a user accesses the outdated 2012 document, the system should retrieve it but also prominently display a notification that a newer version is available, linking to the current guide.",
-    "preconditions": [
-      "User is authenticated and logged into the Health Insurance Information System.",
-      "User role has permissions to view requirement documents.",
-      "Both the new guide and the old '2012 document' exist in the system.",
-      "A relationship ('is updated by') is defined in the system between the 2012 document and the new guide."
-    ],
-    "steps": [
-      "Navigate to the document repository or search page.",
-      "Enter a search query for the '2012 document'.",
-      "Execute the search.",
-      "From the search results, click on the link for the '2012 document'.",
-      "Inspect the document view page for any notifications or banners."
-    ],
-    "test_data": {
-      "search_query": "2012 National Health Insurance Information Systems document"
-    },
-    "expected_result": [
-      "The 2012 document is successfully displayed.",
-      "A clear and visible notification/banner is present on the page.",
-      "The notification text states that the document is outdated and a newer version exists.",
-      "The notification contains a clickable link that navigates the user to the new 'A Guide to Common Requirements...' document."
-    ],
-    "postconditions": [
-      "User is made aware of the most current documentation, preventing use of outdated information."
-    ],
-    "priority": "P2",
-    "severity": "Major",
-    "type": "Functional",
-    "execution_status": "Not Executed",
-    "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850346"
-  },
-  {
-    "test_id": "TC_DOC_UPDATE_001",
-    "requirement_id": "REQ-004",
-    "title": "Positive: Verify successful update of an existing document with a new version",
-    "description": "This test case verifies that a user with appropriate permissions can successfully upload a new, valid document to replace an older version (e.g., the '2012 document') as described in the requirement.",
-    "preconditions": [
-      "User is logged into the National Health Insurance Information System.",
-      "User has 'Document Manager' or equivalent permissions.",
-      "The '2012 document' exists in the system's document repository."
-    ],
-    "steps": [
-      "Navigate to the Document Repository section.",
-      "Search for and locate the '2012 document'.",
-      "Select the 'Update Version' option for the document.",
-      "In the file upload dialog, select a valid PDF document.",
-      "Add a version note: 'Updated content from Determining workshop'.",
-      "Click the 'Submit' button to upload the new version."
-    ],
-    "test_data": {
-      "user_role": "Document Manager",
-      "document_to_update": "ID_DOC_2012",
-      "file_to_upload": "Guide_to_Common_Requirements_NHIIS.pdf",
-      "file_type": "application/pdf",
-      "file_size": "5MB"
-    },
-    "expected_result": [
-      "A success message 'Document updated successfully' is displayed.",
-      "The document's main entry now points to the 'Guide_to_Common_Requirements_NHIIS.pdf'.",
-      "The version history for the document shows the new version and the previous '2012 document' as archived."
-    ],
-    "postconditions": [
-      "The new document is the active version.",
-      "An audit log is created for the update action."
-    ],
-    "priority": "P1",
-    "severity": "Critical",
-    "type": "Functional",
-    "execution_status": "Not Executed",
-    "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850406"
-  },
-  {
-    "test_id": "TC_DOC_UPDATE_002",
-    "requirement_id": "REQ-004",
-    "title": "Negative: Verify system rejects document update with an unsupported file type",
-    "description": "This test case ensures the system prevents a user from updating a document with an invalid or unsupported file type (e.g., an executable file), thereby maintaining system integrity.",
-    "preconditions": [
-      "User is logged into the National Health Insurance Information System.",
-      "User has 'Document Manager' or equivalent permissions.",
-      "The '2012 document' exists in the system's document repository."
-    ],
-    "steps": [
-      "Navigate to the Document Repository section.",
-      "Search for and locate the '2012 document'.",
-      "Select the 'Update Version' option for the document.",
-      "In the file upload dialog, attempt to select an executable file (.exe).",
-      "Click the 'Submit' button."
-    ],
-    "test_data": {
-      "user_role": "Document Manager",
-      "document_to_update": "ID_DOC_2012",
-      "file_to_upload": "update.exe",
-      "file_type": "application/x-msdownload",
-      "file_size": "1.2MB"
-    },
-    "expected_result": [
-      "An error message is displayed, such as 'Invalid file type. Please upload a supported document format.'",
-      "The file upload is rejected.",
-      "The '2012 document' remains the current, active version."
-    ],
-    "postconditions": [
-      "No changes are made to the document or its version history.",
-      "The system remains in a stable state."
-    ],
-    "priority": "P1",
-    "severity": "Major",
-    "type": "Security",
-    "execution_status": "Not Executed",
-    "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850415"
-  },
-  {
-    "test_id": "TC_DOC_UPDATE_003",
-    "requirement_id": "REQ-004",
-    "title": "Edge: Verify document update with a file at the maximum allowed size limit",
-    "description": "This test case checks the system's boundary condition by attempting to update a document with a new file that is exactly the maximum allowed size (e.g., 50 MB).",
-    "preconditions": [
-      "User is logged into the National Health Insurance Information System.",
-      "User has 'Document Manager' or equivalent permissions.",
-      "The '2012 document' exists in the system's document repository.",
-      "The maximum file upload size is configured to 50 MB."
-    ],
-    "steps": [
-      "Navigate to the Document Repository section.",
-      "Search for and locate the '2012 document'.",
-      "Select the 'Update Version' option for the document.",
-      "In the file upload dialog, select a valid PDF document that is exactly 50 MB in size.",
-      "Click the 'Submit' button."
-    ],
-    "test_data": {
-      "user_role": "Document Manager",
-      "document_to_update": "ID_DOC_2012",
-      "file_to_upload": "large_guide_max_size.pdf",
-      "file_type": "application/pdf",
-      "file_size": "50MB"
-    },
-    "expected_result": [
-      "The file upload completes successfully without timing out.",
-      "A success message 'Document updated successfully' is displayed.",
-      "The new 50 MB document is now the active version."
-    ],
-    "postconditions": [
-      "The new, large document is accessible and downloadable.",
-      "The old document is correctly archived in the version history."
-    ],
-    "priority": "P2",
-    "severity": "Major",
-    "type": "Functional",
-    "execution_status": "Not Executed",
-    "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850424"
-  },
-  {
-    "test_id": "TC-POS-001",
-    "requirement_id": "REQ-004",
-    "title": "Verify successful access to the updated 'Guide to Common Requirements' document",
-    "description": "This test case ensures that a user with the correct permissions can successfully search for, find, and view the latest version of the 'A Guide to Common Requirements for National Health Insurance Information Systems' document, which supersedes the 2012 version.",
-    "preconditions": [
-      "User is authenticated and logged into the Health Information System portal.",
-      "User role has permissions to access compliance and guidance documents.",
-      "The latest version of the 'Guide to Common Requirements' document is uploaded and published in the document repository."
-    ],
-    "steps": [
-      "Navigate to the 'Document Repository' or 'Search' section of the portal.",
-      "Enter the full title of the document into the search field.",
-      "Initiate the search.",
-      "From the search results, click on the link for the specified document.",
-      "Verify the document's title and metadata."
-    ],
-    "test_data": {
-      "search_query": "A Guide to Common Requirements for National Health Insurance Information Systems"
-    },
-    "expected_result": [
-      "The search returns a single, accurate result for the document.",
-      "The document opens without errors in the viewer.",
-      "The document's content is readable.",
-      "The document's metadata confirms it is the post-2012 updated version."
-    ],
-    "postconditions": [
-      "The user's session remains active.",
-      "An audit trail is created for the document access event."
-    ],
-    "priority": "P1",
-    "severity": "Critical",
-    "type": "Functional",
-    "execution_status": "Not Executed",
-    "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850470"
-  },
-  {
-    "test_id": "TC-NEG-001",
-    "requirement_id": "REQ-004",
-    "title": "Verify system behavior when attempting to access the outdated 2012 document",
-    "description": "This test case ensures that the system prevents users from accessing the outdated 2012 version of the 'Guide to Common Requirements' document, either by showing no result or by redirecting to the current version.",
-    "preconditions": [
-      "User is authenticated and logged into the Health Information System portal.",
-      "The 2012 version of the document is marked as 'archived' or 'superseded' in the system.",
-      "The new, updated document is available in the system."
-    ],
-    "steps": [
-      "Navigate to the 'Document Repository' or 'Search' section of the portal.",
-      "Enter the title of the old document, including the year, into the search field.",
-      "Initiate the search.",
-      "Analyze the search results."
-    ],
-    "test_data": {
-      "search_query": "A Guide to Common Requirements for National Health Insurance Information Systems 2012"
-    },
-    "expected_result": [
-      "The system does not return a direct link to the 2012 document.",
-      "Ideally, the search result displays a message like 'This document has been superseded. Please see the latest version.' and provides a link to the new document.",
-      "Alternatively, the search returns 'No results found' for the specific 2012 version."
-    ],
-    "postconditions": [
-      "The user is not able to view or download the outdated 2012 document.",
-      "The user's session remains active."
-    ],
-    "priority": "P2",
-    "severity": "Major",
-    "type": "Functional",
-    "execution_status": "Not Executed",
-    "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850478"
-  },
-  {
-    "test_id": "TC-EDG-001",
-    "requirement_id": "REQ-004",
-    "title": "Verify document search using a partial title string",
-    "description": "This test case validates the search functionality's robustness by using a partial but unique keyword string from the document's title. This simulates a user who does not remember the full document title.",
-    "preconditions": [
-      "User is authenticated and logged into the Health Information System portal.",
-      "The search index for the document repository is up-to-date.",
-      "The target document is published and available."
-    ],
-    "steps": [
-      "Navigate to the 'Document Repository' or 'Search' section of the portal.",
-      "Enter a partial but distinct phrase from the document title into the search field.",
-      "Initiate the search.",
-      "Review the top search results."
-    ],
-    "test_data": {
-      "search_query": "National Health Insurance Information"
-    },
-    "expected_result": [
-      "The system does not error or crash.",
-      "The search results are returned successfully.",
-      "The correct, updated 'Guide to Common Requirements for National Health Insurance Information Systems' document appears within the top 5 search results."
-    ],
-    "postconditions": [
-      "The user's session remains active."
-    ],
-    "priority": "P3",
-    "severity": "Minor",
-    "type": "Functional",
-    "execution_status": "Not Executed",
-    "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850485"
-  },
-  {
-    "test_id": "TC_NHIS_DOC_001",
-    "requirement_id": "REQ-004",
     "title": "Positive: Verify successful search and access of the updated NHIIS requirements guide",
     "description": "This test case verifies that a user with the correct permissions can successfully search for the 'A Guide to Common Requirements for National Health Insurance Information Systems' document by its full title, open it, and confirm it is the updated version.",
     "preconditions": [
@@ -371,7 +33,7 @@
     "type": "Functional",
     "execution_status": "Not Executed",
     "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850528"
+    "created_at": "2025-08-31T18:48:37.448730"
   },
   {
     "test_id": "TC_NHIS_DOC_002",
@@ -403,7 +65,7 @@
     "type": "Functional",
     "execution_status": "Not Executed",
     "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850536"
+    "created_at": "2025-08-31T18:48:37.448749"
   },
   {
     "test_id": "TC_NHIS_DOC_003",
@@ -437,735 +99,1074 @@
     "type": "Functional",
     "execution_status": "Not Executed",
     "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850543"
+    "created_at": "2025-08-31T18:48:37.448760"
+  },
+  {
+    "test_id": "TC_NHIIS_DOC_001",
+    "requirement_id": "REQ-004",
+    "title": "[Positive] Verify successful search and display of the NHIIS requirements guide document",
+    "description": "This test case verifies that a user can successfully search for the 'A Guide to Common Requirements for National Health Insurance Information Systems' document using its full title and view its correct details.",
+    "preconditions": [
+      "User is logged into the National Health Insurance Information System.",
+      "User has the necessary permissions to access the document library/repository.",
+      "The document 'A Guide to Common Requirements for National Health Insurance Information Systems' exists in the system database."
+    ],
+    "steps": [
+      "Navigate to the document search page.",
+      "Enter the full title of the document into the search bar.",
+      "Execute the search.",
+      "Click on the document title from the search results.",
+      "Verify the document's content/metadata."
+    ],
+    "test_data": {
+      "searchTerm": "A Guide to Common Requirements for National Health Insurance Information Systems"
+    },
+    "expected_result": [
+      "The document is found and listed in the search results.",
+      "The document details page is displayed upon clicking.",
+      "The description on the details page contains the text 'result of that Determining workshop' and 'updating the content of the 2012 document'."
+    ],
+    "postconditions": [
+      "User session remains active.",
+      "System state is unchanged."
+    ],
+    "priority": "P1",
+    "severity": "Critical",
+    "type": "Functional",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T18:48:37.448819"
+  },
+  {
+    "test_id": "TC_NHIIS_DOC_002",
+    "requirement_id": "REQ-004",
+    "title": "[Negative] Verify system handles search for a non-existent document",
+    "description": "This test case verifies that the system provides a user-friendly message and does not crash or show an unhandled error when a user searches for a document that does not exist.",
+    "preconditions": [
+      "User is logged into the National Health Insurance Information System.",
+      "User has the necessary permissions to access the document library/repository."
+    ],
+    "steps": [
+      "Navigate to the document search page.",
+      "Enter a random, non-existent document title into the search bar.",
+      "Execute the search.",
+      "Observe the system's response."
+    ],
+    "test_data": {
+      "searchTerm": "Invalid Document Alpha-Beta-Gamma 999"
+    },
+    "expected_result": [
+      "The system displays a clear message indicating that no results were found (e.g., 'No documents match your search criteria.').",
+      "The system does not display a technical error code or stack trace.",
+      "The search page remains functional for subsequent searches."
+    ],
+    "postconditions": [
+      "User session remains active.",
+      "System state is unchanged."
+    ],
+    "priority": "P2",
+    "severity": "Major",
+    "type": "Functional",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T18:48:37.448844"
+  },
+  {
+    "test_id": "TC_NHIIS_DOC_003",
+    "requirement_id": "REQ-004",
+    "title": "[Edge] Verify search functionality using a partial, common term from the document title",
+    "description": "This test case tests the boundary condition of the search functionality by using a single, common year ('2012') mentioned in the document's description to ensure the target document is returned in a list of potentially many results.",
+    "preconditions": [
+      "User is logged into the National Health Insurance Information System.",
+      "User has the necessary permissions to access the document library/repository.",
+      "The document 'A Guide to Common Requirements for National Health Insurance Information Systems' exists in the system database."
+    ],
+    "steps": [
+      "Navigate to the document search page.",
+      "Enter a short, common term from the document's description into the search bar.",
+      "Execute the search.",
+      "Review the list of search results."
+    ],
+    "test_data": {
+      "searchTerm": "2012"
+    },
+    "expected_result": [
+      "The system returns a list of search results without timing out or erroring.",
+      "The document 'A Guide to Common Requirements for National Health Insurance Information Systems' is included in the search results list.",
+      "The search results page is rendered correctly and is navigable."
+    ],
+    "postconditions": [
+      "User session remains active.",
+      "System state is unchanged."
+    ],
+    "priority": "P2",
+    "severity": "Major",
+    "type": "Functional",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T18:48:37.448856"
+  },
+  {
+    "test_id": "TC_NHIS_UPDATE_001_POS",
+    "requirement_id": "REQ-004",
+    "title": "Positive - Verify Successful Update of the 2012 Document",
+    "description": "This test case verifies that an authorized user can successfully find the 2012 document, replace its content with the new 'Guide' content, and save the changes. The system should reflect the update immediately.",
+    "preconditions": [
+      "User is logged into the National Health Insurance Information System.",
+      "User has 'Editor' or 'Administrator' permissions for document management.",
+      "The '2012 document' exists in the system with its original content.",
+      "The new content from the 'Guide to Common Requirements' is available."
+    ],
+    "steps": [
+      "Navigate to the Document Repository.",
+      "Search for and select the '2012 document'.",
+      "Initiate the 'Update Content' or 'Edit' action.",
+      "Replace the existing document body with the new content.",
+      "Click the 'Save Changes' button.",
+      "Re-open the '2012 document' to confirm the changes."
+    ],
+    "test_data": {
+      "document_id": "doc_2012",
+      "user_role": "Editor",
+      "new_content": "This is the updated content from the 'A Guide to Common Requirements for National Health Insurance Information Systems' workshop."
+    },
+    "expected_result": [
+      "A success message 'Document updated successfully' is displayed.",
+      "The '2012 document' content is replaced with the new content.",
+      "The document's 'Last Modified Date' is updated to the current date/time.",
+      "A new entry is created in the document's version history."
+    ],
+    "postconditions": [
+      "The '2012 document' is saved in its new, updated state."
+    ],
+    "priority": "P1",
+    "severity": "Critical",
+    "type": "Functional",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T18:48:37.448912"
+  },
+  {
+    "test_id": "TC_NHIS_UPDATE_002_NEG",
+    "requirement_id": "REQ-004",
+    "title": "Negative - Verify Unauthorized User Cannot Update Document",
+    "description": "This test case ensures that a user without the proper permissions (e.g., 'Read-Only') cannot update the '2012 document'. The system should prevent the action, either by disabling the edit controls or by showing an error on save attempt.",
+    "preconditions": [
+      "User is logged into the National Health Insurance Information System.",
+      "User has 'Read-Only' permissions for document management.",
+      "The '2012 document' exists in the system."
+    ],
+    "steps": [
+      "Navigate to the Document Repository.",
+      "Search for and select the '2012 document'.",
+      "Verify that the 'Update Content' or 'Edit' button is not visible or is disabled.",
+      "If controls are accessible, attempt to modify the content and save."
+    ],
+    "test_data": {
+      "document_id": "doc_2012",
+      "user_role": "Read-Only"
+    },
+    "expected_result": [
+      "The 'Update Content' or 'Edit' controls are not available to the user.",
+      "If an update is attempted via other means (e.g., direct API call), the system returns a '403 Forbidden' or 'Access Denied' error.",
+      "The content of the '2012 document' remains unchanged."
+    ],
+    "postconditions": [
+      "The '2012 document' remains in its original state.",
+      "No changes are logged in the document's version history."
+    ],
+    "priority": "P1",
+    "severity": "Critical",
+    "type": "Security",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T18:48:37.448921"
+  },
+  {
+    "test_id": "TC_NHIS_UPDATE_003_EDGE",
+    "requirement_id": "REQ-004",
+    "title": "Edge - Verify System Rejects an Update with Empty Content",
+    "description": "This test case checks the system's boundary condition handling by attempting to update the '2012 document' with empty content. The system should prevent this data loss with a validation error.",
+    "preconditions": [
+      "User is logged into the National Health Insurance Information System.",
+      "User has 'Editor' or 'Administrator' permissions.",
+      "The '2012 document' exists in the system with its original content."
+    ],
+    "steps": [
+      "Navigate to the Document Repository.",
+      "Search for and select the '2012 document'.",
+      "Initiate the 'Update Content' or 'Edit' action.",
+      "Delete all text from the document body, leaving it empty.",
+      "Click the 'Save Changes' button."
+    ],
+    "test_data": {
+      "document_id": "doc_2012",
+      "user_role": "Editor",
+      "new_content": ""
+    },
+    "expected_result": [
+      "The save operation is blocked.",
+      "A validation error message is displayed, such as 'Document content cannot be empty.'",
+      "The '2012 document' content remains unchanged."
+    ],
+    "postconditions": [
+      "The '2012 document' remains in its original state."
+    ],
+    "priority": "P2",
+    "severity": "Major",
+    "type": "Functional",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T18:48:37.448928"
+  },
+  {
+    "test_id": "TC_NHIS_UPDATE_001_POS",
+    "requirement_id": "REQ-004",
+    "title": "Positive - Verify Successful Update of the 2012 Document",
+    "description": "This test case verifies that an authorized user can successfully find the 2012 document, replace its content with the new 'Guide' content, and save the changes. The system should reflect the update immediately.",
+    "preconditions": [
+      "User is logged into the National Health Insurance Information System.",
+      "User has 'Editor' or 'Administrator' permissions for document management.",
+      "The '2012 document' exists in the system with its original content.",
+      "The new content from the 'Guide to Common Requirements' is available."
+    ],
+    "steps": [
+      "Navigate to the Document Repository.",
+      "Search for and select the '2012 document'.",
+      "Initiate the 'Update Content' or 'Edit' action.",
+      "Replace the existing document body with the new content.",
+      "Click the 'Save Changes' button.",
+      "Re-open the '2012 document' to confirm the changes."
+    ],
+    "test_data": {
+      "document_id": "doc_2012",
+      "user_role": "Editor",
+      "new_content": "This is the updated content from the 'A Guide to Common Requirements for National Health Insurance Information Systems' workshop."
+    },
+    "expected_result": [
+      "A success message 'Document updated successfully' is displayed.",
+      "The '2012 document' content is replaced with the new content.",
+      "The document's 'Last Modified Date' is updated to the current date/time.",
+      "A new entry is created in the document's version history."
+    ],
+    "postconditions": [
+      "The '2012 document' is saved in its new, updated state."
+    ],
+    "priority": "P1",
+    "severity": "Critical",
+    "type": "Functional",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T18:48:37.448970"
+  },
+  {
+    "test_id": "TC_NHIS_UPDATE_002_NEG",
+    "requirement_id": "REQ-004",
+    "title": "Negative - Verify Unauthorized User Cannot Update Document",
+    "description": "This test case ensures that a user without the proper permissions (e.g., 'Read-Only') cannot update the '2012 document'. The system should prevent the action, either by disabling the edit controls or by showing an error on save attempt.",
+    "preconditions": [
+      "User is logged into the National Health Insurance Information System.",
+      "User has 'Read-Only' permissions for document management.",
+      "The '2012 document' exists in the system."
+    ],
+    "steps": [
+      "Navigate to the Document Repository.",
+      "Search for and select the '2012 document'.",
+      "Verify that the 'Update Content' or 'Edit' button is not visible or is disabled.",
+      "If controls are accessible, attempt to modify the content and save."
+    ],
+    "test_data": {
+      "document_id": "doc_2012",
+      "user_role": "Read-Only"
+    },
+    "expected_result": [
+      "The 'Update Content' or 'Edit' controls are not available to the user.",
+      "If an update is attempted via other means (e.g., direct API call), the system returns a '403 Forbidden' or 'Access Denied' error.",
+      "The content of the '2012 document' remains unchanged."
+    ],
+    "postconditions": [
+      "The '2012 document' remains in its original state.",
+      "No changes are logged in the document's version history."
+    ],
+    "priority": "P1",
+    "severity": "Critical",
+    "type": "Security",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T18:48:37.448978"
+  },
+  {
+    "test_id": "TC_NHIS_UPDATE_003_EDGE",
+    "requirement_id": "REQ-004",
+    "title": "Edge - Verify System Rejects an Update with Empty Content",
+    "description": "This test case checks the system's boundary condition handling by attempting to update the '2012 document' with empty content. The system should prevent this data loss with a validation error.",
+    "preconditions": [
+      "User is logged into the National Health Insurance Information System.",
+      "User has 'Editor' or 'Administrator' permissions.",
+      "The '2012 document' exists in the system with its original content."
+    ],
+    "steps": [
+      "Navigate to the Document Repository.",
+      "Search for and select the '2012 document'.",
+      "Initiate the 'Update Content' or 'Edit' action.",
+      "Delete all text from the document body, leaving it empty.",
+      "Click the 'Save Changes' button."
+    ],
+    "test_data": {
+      "document_id": "doc_2012",
+      "user_role": "Editor",
+      "new_content": ""
+    },
+    "expected_result": [
+      "The save operation is blocked.",
+      "A validation error message is displayed, such as 'Document content cannot be empty.'",
+      "The '2012 document' content remains unchanged."
+    ],
+    "postconditions": [
+      "The '2012 document' remains in its original state."
+    ],
+    "priority": "P2",
+    "severity": "Major",
+    "type": "Functional",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T18:48:37.448985"
   },
   {
     "test_id": "TC_REQ_DOC_001",
     "requirement_id": "REQ-067",
-    "title": "Positive - Verify successful customization of the common requirements document for a specific country",
-    "description": "This test case verifies that a user with appropriate permissions can create a country-specific version of the common requirements document by adding a new requirement, without altering the core requirements or the base document.",
+    "title": "Positive: Create and customize a country-specific configuration from the common template",
+    "description": "This test verifies that a user with appropriate permissions can successfully load the common requirements document, add a valid country-specific customization, and save it as a new, distinct configuration without altering the original template.",
     "preconditions": [
-      "A 'Common Requirements Document v1.0' exists and is marked as the 'base' or 'core' template.",
-      "The user 'product_manager_de' has permissions to create and edit customized versions of documents.",
-      "The system for managing requirements is online and accessible."
+      "User is logged into the system with 'Configuration Admin' role.",
+      "A master 'Common Requirements Document' template exists and is in an 'Active' state.",
+      "The master template contains requirements marked as 'adaptable'."
     ],
     "steps": [
-      "Log in to the requirements management system as 'product_manager_de'.",
-      "Navigate to the 'Common Requirements Document v1.0'.",
-      "Select the option to 'Create Customized Version'.",
-      "Name the new version 'Germany Requirements v1.0'.",
-      "In the new version, add a new requirement under the 'Data Privacy' section.",
-      "Save the 'Germany Requirements v1.0' document.",
-      "Verify that the new requirement is present in 'Germany Requirements v1.0'.",
-      "Navigate back to the base 'Common Requirements Document v1.0' and verify it has not been changed."
+      "Navigate to the 'Configuration Management' module.",
+      "Select the option to 'Create New Configuration from Template'.",
+      "Choose the master 'Common Requirements Document' from the list of available templates.",
+      "In the new configuration editor, add a new requirement: 'Patient data must be stored in-country (local data residency)'.",
+      "Modify an existing adaptable requirement, such as changing the default language from 'en-US' to 'en-GB'.",
+      "Save the new configuration with the name 'UK-Specific Configuration'."
     ],
     "test_data": {
-      "username": "product_manager_de",
-      "base_document": "Common Requirements Document v1.0",
-      "custom_document_name": "Germany Requirements v1.0",
-      "new_requirement_text": "REQ-DE-01: All patient data processing must be compliant with GDPR Article 9."
+      "template_name": "Common Requirements Document",
+      "new_configuration_name": "UK-Specific Configuration",
+      "customization": {
+        "new_requirement": "Patient data must be stored in-country (local data residency).",
+        "modified_requirement": {
+          "id": "CORE-LANG-01",
+          "value": "en-GB"
+        }
+      }
     },
     "expected_result": [
-      "The system successfully saves the 'Germany Requirements v1.0' document.",
-      "The new requirement 'REQ-DE-01' is visible and saved within the 'Germany Requirements v1.0' document.",
-      "All original core requirements are still present in the 'Germany Requirements v1.0' document.",
-      "The base 'Common Requirements Document v1.0' remains unchanged."
+      "The system successfully saves the 'UK-Specific Configuration'.",
+      "The new configuration contains all core requirements plus the new UK-specific requirement.",
+      "The original 'Common Requirements Document' template remains unchanged.",
+      "A success message 'Configuration UK-Specific Configuration created successfully' is displayed."
     ],
     "postconditions": [
-      "A new customized document 'Germany Requirements v1.0' exists in the system.",
-      "The base document 'Common Requirements Document v1.0' is unchanged."
+      "A new configuration named 'UK-Specific Configuration' exists in the system.",
+      "The master 'Common Requirements Document' is not modified."
     ],
     "priority": "P1",
     "severity": "Critical",
     "type": "Functional",
     "execution_status": "Not Executed",
     "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850591"
+    "created_at": "2025-08-31T18:48:37.449034"
   },
   {
     "test_id": "TC_REQ_DOC_002",
     "requirement_id": "REQ-067",
-    "title": "Negative - Verify system prevents deletion of a core requirement from a customized document",
-    "description": "This test case ensures that the integrity of the core product is maintained by preventing a user from deleting a non-negotiable 'core' requirement from a customized version of the document.",
+    "title": "Negative: Prevent modification of non-adaptable core requirements",
+    "description": "This test ensures that the system protects product integrity by preventing a user from editing or deleting a core, non-adaptable requirement when creating a specific configuration from the template.",
     "preconditions": [
-      "A 'Common Requirements Document v1.0' exists with requirements marked as 'core'.",
-      "A core requirement 'CORE-REQ-005: Patient record must have a unique system-wide identifier' is present.",
-      "The user 'product_manager_fr' has permissions to customize documents but is restricted from altering 'core' requirements."
+      "User is logged into the system with 'Configuration Admin' role.",
+      "A master 'Common Requirements Document' template exists.",
+      "The template contains at least one core requirement marked as 'non-adaptable' or 'locked' (e.g., 'System must be HIPAA compliant')."
     ],
     "steps": [
-      "Log in to the requirements management system as 'product_manager_fr'.",
-      "Create a customized version of the document named 'France Requirements v1.0'.",
-      "In the 'France Requirements v1.0' document, locate the core requirement 'CORE-REQ-005'.",
-      "Attempt to delete the 'CORE-REQ-005' requirement.",
-      "Attempt to save the document."
+      "Navigate to the 'Configuration Management' module.",
+      "Create a new configuration from the master 'Common Requirements Document' template.",
+      "Locate the 'non-adaptable' core requirement for HIPAA compliance.",
+      "Attempt to edit the text of this requirement.",
+      "Attempt to delete this requirement from the configuration.",
+      "Attempt to save the configuration."
     ],
     "test_data": {
-      "username": "product_manager_fr",
-      "base_document": "Common Requirements Document v1.0",
-      "core_requirement_to_delete": "CORE-REQ-005: Patient record must have a unique system-wide identifier."
+      "template_name": "Common Requirements Document",
+      "action_to_attempt": "edit/delete",
+      "target_requirement_id": "CORE-HIPAA-01",
+      "new_text_for_edit": "HIPAA compliance is optional."
     },
     "expected_result": [
-      "The system prevents the deletion of the core requirement.",
-      "An error message is displayed, such as 'Core requirements cannot be deleted or modified.'",
-      "The save operation fails, or the document is saved without the attempted deletion.",
-      "The 'CORE-REQ-005' requirement remains in the 'France Requirements v1.0' document."
+      "The UI field for the non-adaptable requirement is disabled or read-only.",
+      "The delete button/option for the non-adaptable requirement is disabled or absent.",
+      "If an edit/delete is attempted via other means, an error message is displayed, such as 'Core requirements cannot be modified or deleted'.",
+      "The system prevents saving the configuration if a core requirement has been invalidly altered."
     ],
     "postconditions": [
-      "The 'France Requirements v1.0' document, if created, still contains all original core requirements.",
-      "No core requirements have been altered in any document."
+      "No new configuration is created.",
+      "The integrity of the core requirements is maintained."
     ],
     "priority": "P1",
-    "severity": "Major",
+    "severity": "Critical",
     "type": "Functional",
     "execution_status": "Not Executed",
     "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850598"
+    "created_at": "2025-08-31T18:48:37.449041"
   },
   {
     "test_id": "TC_REQ_DOC_003",
     "requirement_id": "REQ-067",
-    "title": "Edge - Verify system behavior when a customization conflicts with a core requirement",
-    "description": "This test case checks the system's boundary conditions by attempting to add a country-specific requirement that directly contradicts a mandatory core requirement, ensuring the system flags the conflict.",
+    "title": "Edge: Verify handling of existing configurations when the base template is updated",
+    "description": "This test checks the boundary condition of versioning. When the master 'Common Requirements Document' is updated, the system must correctly notify owners of existing configurations and provide a clear path to merge the updates.",
     "preconditions": [
-      "A 'Common Requirements Document v1.0' exists.",
-      "A core requirement 'CORE-REQ-078: Audit logs must be retained for a minimum of 7 years' is present and locked.",
-      "The user 'product_manager_ca' has permissions to create and edit customized versions of documents."
+      "A 'Common Requirements Document' v1.0 exists and is active.",
+      "At least one customized configuration (e.g., 'DE-Specific Configuration') based on v1.0 exists.",
+      "User is logged in with 'System Admin' rights to update master templates."
     ],
     "steps": [
-      "Log in to the requirements management system as 'product_manager_ca'.",
-      "Create a customized version of the document named 'Canada Requirements v1.0'.",
-      "In the 'Canada Requirements v1.0' document, add a new requirement.",
-      "Attempt to save the document or submit it for approval."
+      "As System Admin, navigate to Template Management.",
+      "Select 'Common Requirements Document' v1.0 and create a new version, v1.1.",
+      "In v1.1, add a new mandatory core requirement: 'System must comply with GDPR'.",
+      "Publish the new v1.1 template as the active master.",
+      "Log out and log back in as the owner of the 'DE-Specific Configuration'.",
+      "Navigate to the 'DE-Specific Configuration' details page."
     ],
     "test_data": {
-      "username": "product_manager_ca",
-      "conflicting_requirement_text": "REQ-CA-04: To comply with provincial privacy statute XYZ, all audit logs must be purged after 5 years."
+      "base_template_name": "Common Requirements Document",
+      "initial_version": "v1.0",
+      "new_version": "v1.1",
+      "update_details": {
+        "new_core_requirement": "System must comply with GDPR"
+      },
+      "existing_custom_config": "DE-Specific Configuration"
     },
     "expected_result": [
-      "The system does not allow the change to be saved without intervention.",
-      "A warning or error message is displayed, indicating a conflict with 'CORE-REQ-078'.",
-      "The system may flag the conflicting requirement for mandatory review by a system administrator or governance board.",
-      "The customized document is placed in a 'Draft' or 'Conflict Detected' state and is not considered active."
+      "The 'DE-Specific Configuration' page displays a prominent notification, such as 'The base template has been updated. Review required.'",
+      "The configuration status is marked as 'Outdated' or 'Update Pending'.",
+      "The system provides an option to view a comparison (diff) between the current configuration and the new v1.1 template.",
+      "The existing 'DE-Specific Configuration' continues to function based on v1.0 until explicitly updated by its owner."
     ],
     "postconditions": [
-      "The 'Canada Requirements v1.0' document exists but is in a non-approved state.",
-      "The core requirement 'CORE-REQ-078' remains unchanged and enforced."
+      "'Common Requirements Document' v1.1 is the new active master template.",
+      "The 'DE-Specific Configuration' is flagged as requiring an update.",
+      "Notifications are logged for the owners of all dependent configurations."
     ],
     "priority": "P2",
     "severity": "Major",
     "type": "Functional",
     "execution_status": "Not Executed",
     "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850606"
+    "created_at": "2025-08-31T18:48:37.449049"
   },
   {
-    "test_id": "TC_DLC_001_POS",
+    "test_id": "TC-DL-001",
     "requirement_id": "REQ-074",
-    "title": "Positive: Verify Complete Data Lifecycle Documentation for a Core Business Process",
-    "description": "This test case verifies that for a standard, well-defined business process (e.g., Patient Admission), the data lifecycle documentation is comprehensive, accurate, and complete, covering all specified points of entry, processing, and sharing.",
+    "title": "Positive: Verify Complete Data Lifecycle Documentation for Patient Intake Process",
+    "description": "This test case verifies that for a standard, core business process like patient intake, a complete and accurate data lifecycle map has been analyzed and documented, covering all required aspects from entry to sharing.",
     "preconditions": [
-      "The business process analysis for 'Patient Admission' is officially completed.",
-      "The data lifecycle documentation for 'Patient Admission' is available for review in the central repository.",
-      "Access to the production system (read-only) and relevant Subject Matter Experts (SMEs) is granted."
+      "User has read-access to the organization's data governance and process documentation repository.",
+      "The 'Patient Intake' process has been identified and is considered stable.",
+      "A document purporting to map the 'Patient Intake' data lifecycle exists."
     ],
     "steps": [
-      "Obtain the approved data lifecycle documentation for the 'Patient Admission' process.",
-      "Verify that the documentation identifies all data entry points, including the patient registration form and insurance information API.",
-      "Confirm that all data processing steps, such as patient ID creation and insurance eligibility checks, are documented.",
-      "Validate that all data sharing channels are mapped, including data sent to the Electronic Medical Record (EMR), billing department, and pharmacy systems.",
-      "Interview a business analyst or process owner to confirm the documented flow matches the actual operational process."
+      "Navigate to the data governance documentation repository.",
+      "Locate and open the document for the 'Patient Intake' business process.",
+      "Verify the document explicitly identifies all data entry points (e.g., patient registration form, EHR data entry by staff).",
+      "Confirm the document details all data processing steps (e.g., data validation, patient record creation, insurance verification).",
+      "Check that the document maps all internal and external data sharing channels (e.g., data shared with billing department, pharmacy system, primary care physician).",
+      "Cross-reference the documented process with the actual workflow to ensure accuracy."
     ],
     "test_data": {
-      "document_name": "Data Lifecycle Map - Patient Admission Process v1.0",
-      "process_scope": "Patient Admission",
-      "expected_elements": [
-        "Data Entry: Patient Demographics Form",
-        "Data Entry: Third-Party Insurance Eligibility API",
-        "Processing: Patient Record Creation",
-        "Processing: Assignment of Medical Record Number (MRN)",
-        "Sharing: Internal EMR System",
-        "Sharing: Internal Billing Department System"
+      "process_name": "Patient Intake",
+      "document_location": "/documentation/data_lifecycle/patient_intake.pdf",
+      "expected_sections": [
+        "Data Entry Points",
+        "Data Processing and Transformation",
+        "Data Storage and Retention",
+        "Internal Data Sharing",
+        "External Data Sharing"
       ]
     },
     "expected_result": [
-      "The documentation is comprehensive and accurately reflects the complete data lifecycle for the 'Patient Admission' process.",
-      "All identified data entry, processing, and sharing points are correctly documented and mapped.",
-      "The SME confirms the accuracy of the documented process flow."
+      "The data lifecycle document for the 'Patient Intake' process is successfully located.",
+      "The document is comprehensive, containing detailed sections for data entry, processing, and sharing.",
+      "The documented lifecycle map accurately reflects the real-world business process."
     ],
     "postconditions": [
-      "The 'Patient Admission' data lifecycle documentation is marked as 'Verified' in the system.",
-      "An audit trail of the verification is created."
+      "The 'Patient Intake' data lifecycle documentation is marked as 'Verified' in the tracking system."
     ],
     "priority": "P1",
     "severity": "Critical",
     "type": "Functional",
     "execution_status": "Not Executed",
     "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850655"
+    "created_at": "2025-08-31T18:48:37.449097"
   },
   {
-    "test_id": "TC_DLC_002_NEG",
+    "test_id": "TC-DL-002",
     "requirement_id": "REQ-074",
-    "title": "Negative: Verify Review Process Identifies Incomplete Data Lifecycle Documentation",
-    "description": "This test case ensures that the review and approval process for data lifecycle documentation correctly identifies and flags critical omissions. A draft document with a known missing data sharing channel is used to test the robustness of the review process.",
+    "title": "Negative: Verify Incomplete Documentation for a Process is Flagged",
+    "description": "This test case verifies that the governance process correctly identifies and flags a business process where the data lifecycle documentation is incomplete (e.g., a data sharing channel is missing).",
     "preconditions": [
-      "A draft version of the data lifecycle documentation for the 'Lab Results Reporting' process is submitted for review.",
-      "It is known that this process is required by regulation to share specific results with a state health agency, but this channel is intentionally omitted from the draft document."
+      "User has read-access to the organization's data governance documentation repository.",
+      "A test document for the 'Lab Results Integration' process has been created, intentionally omitting the external sharing channel with a public health agency."
     ],
     "steps": [
-      "Obtain the draft data lifecycle documentation for the 'Lab Results Reporting' process.",
-      "Review the documented data sharing channels section.",
-      "Compare the documented channels against the known system behavior and regulatory requirements.",
-      "Verify that the review process (manual or automated) flags the missing data sharing channel to the state health agency.",
-      "Check if the document status is set to 'Rejected' or 'Requires Revision'."
+      "Locate and open the documentation for the 'Lab Results Integration' process.",
+      "Review the 'Data Sharing' section of the document.",
+      "Note that the data sharing channel to the 'State Public Health Agency' is missing from the documentation.",
+      "Trigger or review the output of the automated documentation validation tool or manual audit process.",
+      "Verify that the audit report or compliance dashboard flags the 'Lab Results Integration' document as incomplete or non-compliant."
     ],
     "test_data": {
-      "document_name": "DRAFT - Data Lifecycle Map - Lab Results Reporting v0.1",
-      "documented_sharing_channels": [
-        "Internal EMR",
-        "Attending Physician Portal"
-      ],
-      "known_missing_channel": "State Health Agency Reporting System"
+      "process_name": "Lab Results Integration",
+      "document_location": "/documentation/data_lifecycle/lab_results_integration_incomplete.pdf",
+      "missing_information": "Data sharing channel to 'State Public Health Agency'"
     },
     "expected_result": [
-      "The review process successfully identifies that the documentation is incomplete.",
-      "A defect or finding is formally raised, detailing the omission of the mandatory data sharing channel.",
-      "The documentation is rejected and sent back to the author for correction."
+      "The audit process identifies that the documentation is missing a known, critical data sharing channel.",
+      "A non-compliance issue is logged in the governance system, specifically citing the missing information.",
+      "An alert or notification is sent to the process owner."
     ],
     "postconditions": [
-      "The incomplete documentation is formally marked as 'Rejected' in the system.",
-      "A defect is logged in the tracking system to ensure the omission is corrected."
+      "The identified documentation gap is logged as a defect for remediation."
     ],
-    "priority": "P1",
-    "severity": "Critical",
+    "priority": "P2",
+    "severity": "Major",
     "type": "Functional",
     "execution_status": "Not Executed",
     "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850663"
+    "created_at": "2025-08-31T18:48:37.449105"
   },
   {
-    "test_id": "TC_DLC_003_EDGE",
+    "test_id": "TC-DL-003",
     "requirement_id": "REQ-074",
-    "title": "Edge: Verify Data Lifecycle Documentation for a Complex, Multi-System Integration Process",
-    "description": "This test case validates the data lifecycle documentation for a complex boundary condition: a new Telehealth process involving multiple third-party systems, real-time data exchange, and data consolidation from disparate sources.",
+    "title": "Edge: Verify Documentation for De-Identified Data Shared with an External Research Partner",
+    "description": "This test case focuses on a boundary condition involving sensitive data. It verifies that the process of de-identifying patient data and sharing it with an external research partner is meticulously documented, including the specific de-identification methods and security protocols.",
     "preconditions": [
-      "The 'Telehealth Consultation with Remote Specialist' process has been implemented.",
-      "The data lifecycle documentation for this new, complex process is available for review."
+      "User has read-access to the organization's data governance documentation repository.",
+      "A process exists for sharing de-identified data with an external 'University Research Partner'.",
+      "A data sharing agreement with the partner is in place."
     ],
     "steps": [
-      "Obtain the data lifecycle documentation for the 'Telehealth Consultation' process.",
-      "Trace the data flow from the initial data entry point (patient-entered symptoms in a web portal).",
-      "Verify the documentation of data exchange with the third-party video conferencing platform (e.g., consultation metadata).",
-      "Confirm the mapping of data retrieved from the remote specialist's EMR via an API.",
-      "Trace the documented processing steps where data from all sources is consolidated into the patient's primary record.",
-      "Verify the documentation of data being shared back to the patient portal (e.g., consultation summary)."
+      "Locate and open the documentation for the 'External Research Data Sharing' process.",
+      "Verify the document specifies the exact data fields to be extracted for the study.",
+      "Confirm the document provides a detailed description of the de-identification process, including the specific methods used (e.g., HIPAA Safe Harbor method, expert determination).",
+      "Verify the document specifies the secure transfer protocol (e.g., SFTP) and encryption standards for sharing the data externally.",
+      "Ensure the document references the official Data Sharing Agreement ID."
     ],
     "test_data": {
-      "document_name": "Data Lifecycle Map - Telehealth Consultation v1.0",
-      "process_scope": "Telehealth Consultation with Remote Specialist",
-      "systems_involved": [
-        "Patient Web Portal",
-        "Third-Party Video Platform API",
-        "Remote Specialist EMR (API)",
-        "Local EMR",
+      "process_name": "External Research Data Sharing",
+      "partner_name": "University Research Partner",
+      "key_verification_points": {
+        "de_identification_method": "HIPAA Safe Harbor",
+        "transfer_protocol": "SFTP with AES-256 encryption",
+        "agreement_reference": "DSA-UNIV-2023-01"
+      }
+    },
+    "expected_result": [
+      "The documentation for the research data sharing process is located and is comprehensive.",
+      "The de-identification methodology is clearly and unambiguously defined.",
+      "All security measures for data transfer and references to legal agreements are present and accurate."
+    ],
+    "postconditions": [
+      "The complex data sharing process documentation is marked as 'Verified' in the tracking system."
+    ],
+    "priority": "P2",
+    "severity": "Critical",
+    "type": "Security",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T18:48:37.449112"
+  },
+  {
+    "test_id": "TC_DLC_001",
+    "requirement_id": "REQ-074",
+    "title": "Positive - Verify Complete Data Lifecycle Mapping for a Standard Business Process",
+    "description": "This test case verifies that a standard, well-defined healthcare business process (Patient Registration and Vitals Collection) is fully and accurately documented from end-to-end, covering all data entry, processing, and sharing points as per the requirement.",
+    "preconditions": [
+      "The analysis team has access to the standard operating procedure (SOP) for 'Patient Registration and Vitals Collection'.",
+      "A documentation template for data lifecycle mapping is available and approved for use."
+    ],
+    "steps": [
+      "Provide the analysis team with the 'Patient Registration and Vitals Collection' SOP.",
+      "Instruct the team to conduct the analysis and produce the data lifecycle documentation.",
+      "Review the submitted documentation.",
+      "Verify that the data entry points (e.g., registration desk kiosk for demographics, nurse's tablet for vitals) are correctly identified.",
+      "Verify that data processing steps (e.g., saving data to the EMR patient record, flagging abnormal vitals) are mapped.",
+      "Verify that data sharing channels (e.g., data is visible to the attending physician on their dashboard, demographic data is shared with the billing system) are documented."
+    ],
+    "test_data": {
+      "process_name": "Patient Registration and Vitals Collection",
+      "process_document_id": "SOP-ADM-001",
+      "key_actors": [
+        "Registration Clerk",
+        "Triage Nurse",
+        "Attending Physician",
         "Billing System"
       ]
     },
     "expected_result": [
-      "The documentation accurately and completely maps the complex data flow across all integrated internal and external systems.",
-      "All data transformations and points of data consolidation are clearly documented.",
-      "The data lifecycle is traceable end-to-end without any gaps, despite the process complexity."
+      "The final documentation accurately and completely maps the data lifecycle for the specified process.",
+      "All identified data entry, processing, and sharing points are included and described.",
+      "The documentation is marked as 'Complete' and is ready for approval."
     ],
     "postconditions": [
-      "The data lifecycle documentation for the complex Telehealth process is marked as 'Verified'.",
-      "The test results are added to the compliance audit evidence."
+      "The approved data lifecycle map for 'Patient Registration and Vitals Collection' is stored in the central knowledge repository.",
+      "The documentation is baselined for future audits and system changes."
     ],
-    "priority": "P2",
+    "priority": "P1",
     "severity": "Major",
     "type": "Functional",
     "execution_status": "Not Executed",
     "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850671"
+    "created_at": "2025-08-31T18:48:37.449174"
   },
   {
-    "test_id": "DLC-POS-001",
+    "test_id": "TC_DLC_002",
     "requirement_id": "REQ-074",
-    "title": "Verify Data Lifecycle Documentation for Standard Patient Registration",
-    "description": "Ensures the data lifecycle documentation accurately and completely maps the standard business process for new patient registration, from data entry to final storage and initial use.",
+    "title": "Negative - Verify Handling of a Business Process with an Undefined External System",
+    "description": "This test case verifies that the analysis process correctly identifies and flags gaps when provided with a business process that has an undefined or ambiguous external system integration, ensuring incomplete maps are not approved.",
     "preconditions": [
-      "The Data Lifecycle Analysis document is finalized and available for review.",
-      "Access to the EHR and patient registration system specifications is granted."
+      "A business process description with a known ambiguity is prepared.",
+      "A defined procedure exists for flagging and escalating documentation gaps or issues."
     ],
     "steps": [
-      "Locate the 'New Patient Registration' section in the Data Lifecycle Analysis document.",
-      "Verify the documentation includes all data entry points (e.g., online patient portal, front-desk kiosk, paper forms).",
-      "Confirm the documentation maps the data processing steps (e.g., data validation, patient ID creation, EHR record creation).",
-      "Check for documented data sharing channels (e.g., data sent to the billing system, notification to the assigned primary care physician)."
+      "Provide the analysis team with the 'External Lab Results Integration' process description, where the source lab system is marked as 'TBD'.",
+      "Instruct the team to conduct the analysis and produce the data lifecycle documentation.",
+      "Review the submitted documentation and any associated issue logs.",
+      "Verify that the document is not marked as 'Complete'.",
+      "Confirm that a gap, issue, or explicit note has been logged, clearly stating that the third-party data source is undefined and requires clarification."
     ],
     "test_data": {
-      "business_process": "New Patient Registration"
+      "process_name": "External Lab Results Integration",
+      "integration_details": {
+        "source_system": "TBD",
+        "data_format": "HL7 v2",
+        "target_system": "Primary EMR"
+      }
     },
     "expected_result": [
-      "The documentation provides a complete and accurate map of the data lifecycle for the 'New Patient Registration' process.",
-      "All identified entry, processing, and sharing points are documented.",
-      "The documented flow matches the actual business process and system specifications."
+      "The resulting documentation is marked as 'Incomplete' or 'Requires Clarification'.",
+      "A formal issue or gap is logged in the project's tracking system and assigned for resolution.",
+      "The documentation explicitly states that the data entry point (source system) could not be fully mapped due to missing information."
     ],
     "postconditions": [
-      "No changes to the system or documentation."
+      "The identified gap is entered into the project's risk/issue log.",
+      "The incomplete documentation is saved as a draft pending resolution of the identified gap."
     ],
-    "priority": "P1",
-    "severity": "Critical",
+    "priority": "P2",
+    "severity": "Major",
     "type": "Functional",
     "execution_status": "Not Executed",
     "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850720"
+    "created_at": "2025-08-31T18:48:37.449183"
   },
   {
-    "test_id": "DLC-NEG-001",
+    "test_id": "TC_DLC_003",
     "requirement_id": "REQ-074",
-    "title": "Verify Documentation of Data Lifecycle for a Third-Party Integration Failure",
-    "description": "Verifies that the data lifecycle documentation accounts for failure scenarios, specifically when data synchronization from a third-party system (e.g., a lab) fails. This tests the comprehensiveness of the analysis for non-happy paths.",
+    "title": "Edge - Verify Data Lifecycle Mapping for a Complex, Multi-System Workflow",
+    "description": "This test case verifies that the analysis process can handle a complex, boundary-condition workflow involving multiple internal and external systems, such as a complete telehealth-to-billing cycle, ensuring no data handoffs are missed.",
     "preconditions": [
-      "The Data Lifecycle Analysis document is finalized and available for review.",
-      "The process for integrating with third-party lab systems is defined."
+      "A detailed process flow for a complex workflow ('Telehealth Consultation with e-Prescribing and Billing') is available.",
+      "Subject matter experts for each involved system (Telehealth, EMR, e-Prescribing, Billing) are available for consultation."
     ],
     "steps": [
-      "Locate the 'Third-Party Lab Results Integration' section in the Data Lifecycle Analysis document.",
-      "Search for the subsection or flow diagram detailing error handling or synchronization failures.",
-      "Verify the documentation specifies the process for handling the failed data (e.g., quarantine, retry logic, manual intervention queue).",
-      "Confirm that notification channels for the failure (e.g., alerts to IT support, notifications to a data steward) are documented."
+      "Provide the analysis team with the detailed 'Telehealth Consultation with e-Prescribing and Billing' workflow.",
+      "Review the resulting data lifecycle documentation.",
+      "Verify the mapping of initial data entry from the patient portal (e.g., symptoms).",
+      "Verify the mapping of data sharing to the core EMR system (e.g., consultation notes).",
+      "Verify the mapping of the data sharing channel to the external e-Prescribing gateway (e.g., Surescripts).",
+      "Verify the mapping of the data sharing channel to the external insurance clearinghouse system.",
+      "Confirm that all intermediate data processing and transformations (e.g., generating a billing code from a diagnosis) are documented."
     ],
     "test_data": {
-      "business_process": "Third-Party Lab Results Integration",
-      "scenario": "Data Synchronization Failure"
-    },
-    "expected_result": [
-      "The documentation explicitly describes the data lifecycle for a failed synchronization event.",
-      "The process for data quarantine, retry, and/or manual intervention is clearly mapped.",
-      "All notification procedures and responsible parties are identified."
-    ],
-    "postconditions": [
-      "No changes to the system or documentation."
-    ],
-    "priority": "P2",
-    "severity": "Major",
-    "type": "Functional",
-    "execution_status": "Not Executed",
-    "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850728"
-  },
-  {
-    "test_id": "DLC-EDG-001",
-    "requirement_id": "REQ-074",
-    "title": "Verify Documentation of Data Lifecycle for End-of-Life Data Archival and De-identification",
-    "description": "Tests the boundary condition of the data lifecycle by verifying the documentation for the data archival and de-identification process. This ensures the 'complete' lifecycle, including data transformation and final disposition, is mapped.",
-    "preconditions": [
-      "The Data Lifecycle Analysis document is finalized and available for review.",
-      "The organization's data retention and de-identification policies are defined and available."
-    ],
-    "steps": [
-      "Locate the 'Data Archival and De-identification for Research' section in the Data Lifecycle Analysis document.",
-      "Verify the trigger conditions for archival are documented (e.g., patient record inactive for 7 years).",
-      "Confirm the de-identification process is mapped, specifying which PHI fields are removed, masked, or transformed.",
-      "Check that the data flow to the external research database is documented.",
-      "Verify the final status of the original data in the production system (e.g., flagged as 'archived', purged) is documented."
-    ],
-    "test_data": {
-      "business_process": "Patient Data Archival and De-identification for Research"
-    },
-    "expected_result": [
-      "The documentation clearly maps the entire end-of-life process for patient data.",
-      "The rules for triggering archival are present and match the corporate policy.",
-      "The de-identification mapping is detailed and accurate.",
-      "The final disposition of the data in all relevant systems is documented."
-    ],
-    "postconditions": [
-      "No changes to the system or documentation."
-    ],
-    "priority": "P2",
-    "severity": "Major",
-    "type": "Functional",
-    "execution_status": "Not Executed",
-    "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850736"
-  },
-  {
-    "test_id": "TC_REQ_CONFIG_001_POS",
-    "requirement_id": "REQ-020",
-    "title": "Positive - Create a Country-Specific Requirement Set Using a Global Template",
-    "description": "Verify that a user can successfully leverage a globally defined set of common requirements as a starting point to create a new, country-specific requirement profile, thereby saving time and resources.",
-    "preconditions": [
-      "User is logged into the system with 'Administrator' or 'Compliance Manager' privileges.",
-      "A set of 'Globally Defined Common Requirements' (e.g., 'WHO Best Practices') exists in the system's template library.",
-      "The user has permissions to create and manage requirement profiles."
-    ],
-    "steps": [
-      "Navigate to the 'Requirement Configuration' or 'Compliance Profiles' section.",
-      "Click on 'Create New Profile'.",
-      "Select the option to 'Import from Global Template'.",
-      "Choose the 'WHO Best Practices' template from the list.",
-      "In the profile details, enter a name for the new profile, e.g., 'Country X Requirements - 2024'.",
-      "Review the imported requirements.",
-      "Click 'Save' or 'Create Profile'."
-    ],
-    "test_data": {
-      "user_role": "Compliance Manager",
-      "global_template_to_import": "WHO Best Practices",
-      "new_profile_name": "Country X Requirements - 2024"
-    },
-    "expected_result": [
-      "The system successfully creates a new requirement profile named 'Country X Requirements - 2024'.",
-      "The new profile is populated with all the requirements from the 'WHO Best Practices' template.",
-      "A success confirmation message is displayed to the user.",
-      "The user is redirected to the newly created profile's detail page or the main profile list."
-    ],
-    "postconditions": [
-      "A new requirement profile 'Country X Requirements - 2024' exists in the database.",
-      "The system audit log records the creation of the new profile by the user."
-    ],
-    "priority": "P1",
-    "severity": "Critical",
-    "type": "Functional",
-    "execution_status": "Not Executed",
-    "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850783"
-  },
-  {
-    "test_id": "TC_REQ_CONFIG_002_NEG",
-    "requirement_id": "REQ-020",
-    "title": "Negative - Attempt to Create a Specific Requirement Set with Invalid Data",
-    "description": "Verify that the system prevents the creation of a new requirement profile when mandatory information is missing, ensuring data integrity and providing clear error feedback.",
-    "preconditions": [
-      "User is logged into the system with 'Administrator' or 'Compliance Manager' privileges.",
-      "The user has permissions to create and manage requirement profiles."
-    ],
-    "steps": [
-      "Navigate to the 'Requirement Configuration' or 'Compliance Profiles' section.",
-      "Click on 'Create New Profile'.",
-      "Select the option to 'Create from Scratch' (not using a template).",
-      "Leave the mandatory 'Profile Name' field blank.",
-      "Attempt to add a requirement item without a description.",
-      "Click 'Save' or 'Create Profile'."
-    ],
-    "test_data": {
-      "user_role": "Compliance Manager",
-      "new_profile_name": "",
-      "requirement_item": {
-        "id": "R-001",
-        "description": ""
-      }
-    },
-    "expected_result": [
-      "The system should not create the new profile.",
-      "An inline validation error message, such as 'Profile Name is required', should be displayed next to the corresponding field.",
-      "An error message for the incomplete requirement item should be displayed.",
-      "The user remains on the creation page with the invalid data they entered still visible."
-    ],
-    "postconditions": [
-      "No new requirement profile is created in the database.",
-      "The system remains stable and does not crash."
-    ],
-    "priority": "P2",
-    "severity": "Major",
-    "type": "Functional",
-    "execution_status": "Not Executed",
-    "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850791"
-  },
-  {
-    "test_id": "TC_REQ_CONFIG_003_EDGE",
-    "requirement_id": "REQ-020",
-    "title": "Edge - Create a Specific Requirement Set When No Global Templates Exist",
-    "description": "Verify that the system functions correctly and allows a user to define specific requirements from scratch when the 'advanced starting point' (global templates) is not available.",
-    "preconditions": [
-      "User is logged into the system with 'Administrator' or 'Compliance Manager' privileges.",
-      "The system's library of 'Globally Defined Common Requirements' is empty or the user has no permissions to view them.",
-      "The user has permissions to create and manage requirement profiles."
-    ],
-    "steps": [
-      "Navigate to the 'Requirement Configuration' or 'Compliance Profiles' section.",
-      "Click on 'Create New Profile'.",
-      "Verify that the option to 'Import from Global Template' is either disabled, hidden, or shows an empty list with an informative message.",
-      "Select the option to 'Create from Scratch'.",
-      "Enter a valid name for the new profile, e.g., 'Organization Y Custom Rules'.",
-      "Manually add at least one complete and valid requirement item.",
-      "Click 'Save' or 'Create Profile'."
-    ],
-    "test_data": {
-      "user_role": "Compliance Manager",
-      "new_profile_name": "Organization Y Custom Rules",
-      "manual_requirement": {
-        "id": "OY-RULE-01",
-        "description": "All patient data must be encrypted with AES-256."
-      }
-    },
-    "expected_result": [
-      "The system gracefully handles the absence of global templates without errors.",
-      "The user is able to successfully create a new, custom requirement profile from a blank state.",
-      "A success confirmation message is displayed.",
-      "The new profile 'Organization Y Custom Rules' is created and contains the manually added requirement."
-    ],
-    "postconditions": [
-      "A new requirement profile 'Organization Y Custom Rules' exists in the database.",
-      "The system remains in a stable state."
-    ],
-    "priority": "P2",
-    "severity": "Major",
-    "type": "Functional",
-    "execution_status": "Not Executed",
-    "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850798"
-  },
-  {
-    "test_id": "TC_REQ_CONFIG_001_POS",
-    "requirement_id": "REQ-020",
-    "title": "Positive - Create a Country-Specific Requirement Set Using a Global Template",
-    "description": "Verify that a user can successfully leverage a globally defined set of common requirements as a starting point to create a new, country-specific requirement profile, thereby saving time and resources.",
-    "preconditions": [
-      "User is logged into the system with 'Administrator' or 'Compliance Manager' privileges.",
-      "A set of 'Globally Defined Common Requirements' (e.g., 'WHO Best Practices') exists in the system's template library.",
-      "The user has permissions to create and manage requirement profiles."
-    ],
-    "steps": [
-      "Navigate to the 'Requirement Configuration' or 'Compliance Profiles' section.",
-      "Click on 'Create New Profile'.",
-      "Select the option to 'Import from Global Template'.",
-      "Choose the 'WHO Best Practices' template from the list.",
-      "In the profile details, enter a name for the new profile, e.g., 'Country X Requirements - 2024'.",
-      "Review the imported requirements.",
-      "Click 'Save' or 'Create Profile'."
-    ],
-    "test_data": {
-      "user_role": "Compliance Manager",
-      "global_template_to_import": "WHO Best Practices",
-      "new_profile_name": "Country X Requirements - 2024"
-    },
-    "expected_result": [
-      "The system successfully creates a new requirement profile named 'Country X Requirements - 2024'.",
-      "The new profile is populated with all the requirements from the 'WHO Best Practices' template.",
-      "A success confirmation message is displayed to the user.",
-      "The user is redirected to the newly created profile's detail page or the main profile list."
-    ],
-    "postconditions": [
-      "A new requirement profile 'Country X Requirements - 2024' exists in the database.",
-      "The system audit log records the creation of the new profile by the user."
-    ],
-    "priority": "P1",
-    "severity": "Critical",
-    "type": "Functional",
-    "execution_status": "Not Executed",
-    "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850845"
-  },
-  {
-    "test_id": "TC_REQ_CONFIG_002_NEG",
-    "requirement_id": "REQ-020",
-    "title": "Negative - Attempt to Create a Specific Requirement Set with Invalid Data",
-    "description": "Verify that the system prevents the creation of a new requirement profile when mandatory information is missing, ensuring data integrity and providing clear error feedback.",
-    "preconditions": [
-      "User is logged into the system with 'Administrator' or 'Compliance Manager' privileges.",
-      "The user has permissions to create and manage requirement profiles."
-    ],
-    "steps": [
-      "Navigate to the 'Requirement Configuration' or 'Compliance Profiles' section.",
-      "Click on 'Create New Profile'.",
-      "Select the option to 'Create from Scratch' (not using a template).",
-      "Leave the mandatory 'Profile Name' field blank.",
-      "Attempt to add a requirement item without a description.",
-      "Click 'Save' or 'Create Profile'."
-    ],
-    "test_data": {
-      "user_role": "Compliance Manager",
-      "new_profile_name": "",
-      "requirement_item": {
-        "id": "R-001",
-        "description": ""
-      }
-    },
-    "expected_result": [
-      "The system should not create the new profile.",
-      "An inline validation error message, such as 'Profile Name is required', should be displayed next to the corresponding field.",
-      "An error message for the incomplete requirement item should be displayed.",
-      "The user remains on the creation page with the invalid data they entered still visible."
-    ],
-    "postconditions": [
-      "No new requirement profile is created in the database.",
-      "The system remains stable and does not crash."
-    ],
-    "priority": "P2",
-    "severity": "Major",
-    "type": "Functional",
-    "execution_status": "Not Executed",
-    "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850854"
-  },
-  {
-    "test_id": "TC_REQ_CONFIG_003_EDGE",
-    "requirement_id": "REQ-020",
-    "title": "Edge - Create a Specific Requirement Set When No Global Templates Exist",
-    "description": "Verify that the system functions correctly and allows a user to define specific requirements from scratch when the 'advanced starting point' (global templates) is not available.",
-    "preconditions": [
-      "User is logged into the system with 'Administrator' or 'Compliance Manager' privileges.",
-      "The system's library of 'Globally Defined Common Requirements' is empty or the user has no permissions to view them.",
-      "The user has permissions to create and manage requirement profiles."
-    ],
-    "steps": [
-      "Navigate to the 'Requirement Configuration' or 'Compliance Profiles' section.",
-      "Click on 'Create New Profile'.",
-      "Verify that the option to 'Import from Global Template' is either disabled, hidden, or shows an empty list with an informative message.",
-      "Select the option to 'Create from Scratch'.",
-      "Enter a valid name for the new profile, e.g., 'Organization Y Custom Rules'.",
-      "Manually add at least one complete and valid requirement item.",
-      "Click 'Save' or 'Create Profile'."
-    ],
-    "test_data": {
-      "user_role": "Compliance Manager",
-      "new_profile_name": "Organization Y Custom Rules",
-      "manual_requirement": {
-        "id": "OY-RULE-01",
-        "description": "All patient data must be encrypted with AES-256."
-      }
-    },
-    "expected_result": [
-      "The system gracefully handles the absence of global templates without errors.",
-      "The user is able to successfully create a new, custom requirement profile from a blank state.",
-      "A success confirmation message is displayed.",
-      "The new profile 'Organization Y Custom Rules' is created and contains the manually added requirement."
-    ],
-    "postconditions": [
-      "A new requirement profile 'Organization Y Custom Rules' exists in the database.",
-      "The system remains in a stable state."
-    ],
-    "priority": "P2",
-    "severity": "Major",
-    "type": "Functional",
-    "execution_status": "Not Executed",
-    "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850861"
-  },
-  {
-    "test_id": "TC-HP-001",
-    "requirement_id": "REQ-020",
-    "title": "Positive: Verify successful creation of a country-specific specification using the global requirements template",
-    "description": "This test ensures that a user representing a country or organization can successfully import the global set of requirements as a starting point and then add their own specific requirements to it, saving time and resources.",
-    "preconditions": [
-      "User is logged into the system with 'Specification Creator' permissions.",
-      "A 'Global Common Requirements' template exists and is populated with a set of best-practice requirements."
-    ],
-    "steps": [
-      "Navigate to the 'Create New Specification' section.",
-      "Select the option to 'Start from Global Requirements Template'.",
-      "Enter a name for the new specification in the designated field.",
-      "Confirm the creation of the new specification.",
-      "Verify that the new specification is populated with all requirements from the global template.",
-      "Add a new, country-specific requirement to the newly created specification.",
-      "Save the modified specification."
-    ],
-    "test_data": {
-      "user_role": "Specification Creator",
-      "template_to_use": "Global Common Requirements",
-      "new_spec_name": "German Medical Device Specification",
-      "added_requirement": {
-        "id": "DE-001",
-        "text": "All user interface text must be compliant with German data privacy laws (DSGVO)."
-      }
-    },
-    "expected_result": [
-      "The new specification 'German Medical Device Specification' is created successfully.",
-      "The new specification contains an exact copy of all requirements from the 'Global Common Requirements' template.",
-      "The new requirement 'DE-001' is successfully added to the specification.",
-      "The system saves the complete specification without errors."
-    ],
-    "postconditions": [
-      "A new, country-specific specification exists in the system, containing both global and local requirements."
-    ],
-    "priority": "P1",
-    "severity": "Critical",
-    "type": "Functional",
-    "execution_status": "Not Executed",
-    "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850909"
-  },
-  {
-    "test_id": "TC-NG-001",
-    "requirement_id": "REQ-020",
-    "title": "Negative: Verify a user cannot directly modify the master 'Global Common Requirements' template",
-    "description": "This test ensures that the global template is a read-only resource for standard users, preventing unauthorized modifications. This protects the integrity of the 'best practices' starting point for all organizations.",
-    "preconditions": [
-      "User is logged into the system with 'Specification Creator' permissions (non-administrator).",
-      "The 'Global Common Requirements' template exists in the system."
-    ],
-    "steps": [
-      "Navigate directly to the 'Global Common Requirements' template library.",
-      "Attempt to edit an existing requirement within the master template.",
-      "Attempt to add a new requirement directly to the master template.",
-      "Attempt to delete a requirement from the master template."
-    ],
-    "test_data": {
-      "user_role": "Specification Creator",
-      "target_template": "Global Common Requirements",
-      "action_to_attempt": [
-        "EDIT",
-        "ADD",
-        "DELETE"
+      "process_name": "Telehealth Consultation with e-Prescribing and Billing",
+      "involved_systems": [
+        "Patient Portal",
+        "Telehealth Video Platform",
+        "EMR",
+        "e-Prescribing Gateway",
+        "Billing Clearinghouse"
       ]
     },
     "expected_result": [
-      "The system prevents the user from saving any changes to the master template.",
-      "UI controls for editing, adding, or deleting requirements are disabled or absent.",
-      "An appropriate error message or notification is displayed, such as 'You do not have permission to modify global templates.'",
+      "The documentation provides a complete, end-to-end map of the data lifecycle across all specified internal and external systems.",
+      "All points of data entry, internal processing, internal sharing, and external sharing are accurately documented.",
+      "No data handoffs or integration points are missed in the final documentation."
+    ],
+    "postconditions": [
+      "The comprehensive data lifecycle map for the complex workflow is approved and stored in the central repository.",
+      "The map is used as a primary reference artifact for security, privacy, and integration testing efforts."
+    ],
+    "priority": "P1",
+    "severity": "Critical",
+    "type": "Functional",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T18:48:37.449191"
+  },
+  {
+    "test_id": "TC_REQ_CONFIG_001_POS",
+    "requirement_id": "REQ-020",
+    "title": "Positive - Create a Country-Specific Requirement Set Using a Global Template",
+    "description": "Verify that a user can successfully leverage a globally defined set of common requirements as a starting point to create a new, country-specific requirement profile, thereby saving time and resources.",
+    "preconditions": [
+      "User is logged into the system with 'Administrator' or 'Compliance Manager' privileges.",
+      "A set of 'Globally Defined Common Requirements' (e.g., 'WHO Best Practices') exists in the system's template library.",
+      "The user has permissions to create and manage requirement profiles."
+    ],
+    "steps": [
+      "Navigate to the 'Requirement Configuration' or 'Compliance Profiles' section.",
+      "Click on 'Create New Profile'.",
+      "Select the option to 'Import from Global Template'.",
+      "Choose the 'WHO Best Practices' template from the list.",
+      "In the profile details, enter a name for the new profile, e.g., 'Country X Requirements - 2024'.",
+      "Review the imported requirements.",
+      "Click 'Save' or 'Create Profile'."
+    ],
+    "test_data": {
+      "user_role": "Compliance Manager",
+      "global_template_to_import": "WHO Best Practices",
+      "new_profile_name": "Country X Requirements - 2024"
+    },
+    "expected_result": [
+      "The system successfully creates a new requirement profile named 'Country X Requirements - 2024'.",
+      "The new profile is populated with all the requirements from the 'WHO Best Practices' template.",
+      "A success confirmation message is displayed to the user.",
+      "The user is redirected to the newly created profile's detail page or the main profile list."
+    ],
+    "postconditions": [
+      "A new requirement profile 'Country X Requirements - 2024' exists in the database.",
+      "The system audit log records the creation of the new profile by the user."
+    ],
+    "priority": "P1",
+    "severity": "Critical",
+    "type": "Functional",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T18:48:37.449236"
+  },
+  {
+    "test_id": "TC_REQ_CONFIG_002_NEG",
+    "requirement_id": "REQ-020",
+    "title": "Negative - Attempt to Create a Specific Requirement Set with Invalid Data",
+    "description": "Verify that the system prevents the creation of a new requirement profile when mandatory information is missing, ensuring data integrity and providing clear error feedback.",
+    "preconditions": [
+      "User is logged into the system with 'Administrator' or 'Compliance Manager' privileges.",
+      "The user has permissions to create and manage requirement profiles."
+    ],
+    "steps": [
+      "Navigate to the 'Requirement Configuration' or 'Compliance Profiles' section.",
+      "Click on 'Create New Profile'.",
+      "Select the option to 'Create from Scratch' (not using a template).",
+      "Leave the mandatory 'Profile Name' field blank.",
+      "Attempt to add a requirement item without a description.",
+      "Click 'Save' or 'Create Profile'."
+    ],
+    "test_data": {
+      "user_role": "Compliance Manager",
+      "new_profile_name": "",
+      "requirement_item": {
+        "id": "R-001",
+        "description": ""
+      }
+    },
+    "expected_result": [
+      "The system should not create the new profile.",
+      "An inline validation error message, such as 'Profile Name is required', should be displayed next to the corresponding field.",
+      "An error message for the incomplete requirement item should be displayed.",
+      "The user remains on the creation page with the invalid data they entered still visible."
+    ],
+    "postconditions": [
+      "No new requirement profile is created in the database.",
+      "The system remains stable and does not crash."
+    ],
+    "priority": "P2",
+    "severity": "Major",
+    "type": "Functional",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T18:48:37.449244"
+  },
+  {
+    "test_id": "TC_REQ_CONFIG_003_EDGE",
+    "requirement_id": "REQ-020",
+    "title": "Edge - Create a Specific Requirement Set When No Global Templates Exist",
+    "description": "Verify that the system functions correctly and allows a user to define specific requirements from scratch when the 'advanced starting point' (global templates) is not available.",
+    "preconditions": [
+      "User is logged into the system with 'Administrator' or 'Compliance Manager' privileges.",
+      "The system's library of 'Globally Defined Common Requirements' is empty or the user has no permissions to view them.",
+      "The user has permissions to create and manage requirement profiles."
+    ],
+    "steps": [
+      "Navigate to the 'Requirement Configuration' or 'Compliance Profiles' section.",
+      "Click on 'Create New Profile'.",
+      "Verify that the option to 'Import from Global Template' is either disabled, hidden, or shows an empty list with an informative message.",
+      "Select the option to 'Create from Scratch'.",
+      "Enter a valid name for the new profile, e.g., 'Organization Y Custom Rules'.",
+      "Manually add at least one complete and valid requirement item.",
+      "Click 'Save' or 'Create Profile'."
+    ],
+    "test_data": {
+      "user_role": "Compliance Manager",
+      "new_profile_name": "Organization Y Custom Rules",
+      "manual_requirement": {
+        "id": "OY-RULE-01",
+        "description": "All patient data must be encrypted with AES-256."
+      }
+    },
+    "expected_result": [
+      "The system gracefully handles the absence of global templates without errors.",
+      "The user is able to successfully create a new, custom requirement profile from a blank state.",
+      "A success confirmation message is displayed.",
+      "The new profile 'Organization Y Custom Rules' is created and contains the manually added requirement."
+    ],
+    "postconditions": [
+      "A new requirement profile 'Organization Y Custom Rules' exists in the database.",
+      "The system remains in a stable state."
+    ],
+    "priority": "P2",
+    "severity": "Major",
+    "type": "Functional",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T18:48:37.449251"
+  },
+  {
+    "test_id": "TC_POS_001",
+    "requirement_id": "REQ-020",
+    "title": "Verify successful creation of a country-specific requirement set using the global template",
+    "description": "This test ensures a user can select the globally defined common requirements as a starting point and successfully add a new, country-specific requirement to create a tailored set for their needs, demonstrating time and resource savings.",
+    "preconditions": [
+      "User is logged into the Healthcare Requirements Management System.",
+      "User has permissions to create and modify requirement sets for a specific country.",
+      "A 'Global Common Requirements' template exists and is accessible."
+    ],
+    "steps": [
+      "Navigate to the 'Create New Requirement Set' page.",
+      "Select the 'Global Common Requirements' template as the base.",
+      "Provide a name for the new set, e.g., 'Canada-Specific Requirements'.",
+      "Once the set is loaded, click the 'Add New Requirement' button.",
+      "Enter the details for a new requirement specific to the country's regulations.",
+      "Save the new requirement.",
+      "Save the entire 'Canada-Specific Requirements' set."
+    ],
+    "test_data": {
+      "new_requirement": {
+        "id": "PHIPA-001",
+        "title": "Patient Data Residency",
+        "description": "All personal health information (PHI) for residents must be stored within Canadian data centers."
+      }
+    },
+    "expected_result": [
+      "The system successfully creates the 'Canada-Specific Requirements' set.",
+      "The new set contains all requirements from the 'Global Common Requirements' template.",
+      "The new set also contains the newly added 'PHIPA-001' requirement.",
+      "A confirmation message 'Requirement set created successfully' is displayed."
+    ],
+    "postconditions": [
+      "A new requirement set for 'Canada' exists in the system.",
+      "The original 'Global Common Requirements' template remains unchanged."
+    ],
+    "priority": "P1",
+    "severity": "Major",
+    "type": "Functional",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T18:48:37.449293"
+  },
+  {
+    "test_id": "TC_NEG_002",
+    "requirement_id": "REQ-020",
+    "title": "Verify that a user cannot modify the core global requirements template directly",
+    "description": "This test ensures the integrity of the 'Global Common Requirements' template by preventing a user with standard permissions from directly editing or deleting a requirement within it. The template should be a read-only starting point.",
+    "preconditions": [
+      "User is logged into the Healthcare Requirements Management System with standard, non-administrator permissions.",
+      "A 'Global Common Requirements' template exists and is visible to the user."
+    ],
+    "steps": [
+      "Navigate to the 'Templates' or 'Global Requirements' section.",
+      "Select and open the 'Global Common Requirements' template.",
+      "Attempt to select a requirement within the template.",
+      "Attempt to click an 'Edit' or 'Delete' button for that requirement."
+    ],
+    "test_data": {
+      "user_role": "Standard User",
+      "template_to_modify": "Global Common Requirements"
+    },
+    "expected_result": [
+      "The 'Edit' and 'Delete' controls for requirements within the global template are disabled or not visible.",
+      "If the user attempts to bypass the UI to send a modification request, the system rejects it with an 'Access Denied' or 'Permission Error' message.",
       "The 'Global Common Requirements' template remains unchanged."
     ],
     "postconditions": [
-      "The integrity of the master 'Global Common Requirements' template is preserved."
+      "No changes are made to the 'Global Common Requirements' template.",
+      "An audit log may be generated for the failed modification attempt."
     ],
     "priority": "P2",
     "severity": "Major",
     "type": "Security",
     "execution_status": "Not Executed",
     "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850917"
+    "created_at": "2025-08-31T18:48:37.449301"
   },
   {
-    "test_id": "TC-ED-001",
+    "test_id": "TC_EDG_003",
     "requirement_id": "REQ-020",
-    "title": "Edge: Verify system behavior when creating a specification from an empty 'Global Common Requirements' template",
-    "description": "This test checks the boundary condition where the global template, intended as an 'advanced starting point', is empty. The system should handle this gracefully without errors, creating an empty but usable specification.",
+    "title": "Verify creation of a requirement set using only the global template with no modifications",
+    "description": "This edge case test ensures that an organization with no needs beyond the global standard can create a valid requirement set for itself by simply adopting the global template as-is, without adding, editing, or removing any items.",
     "preconditions": [
-      "User is logged into the system with 'Specification Creator' permissions.",
-      "The 'Global Common Requirements' template exists but contains zero requirements."
+      "User is logged into the Healthcare Requirements Management System.",
+      "User has permissions to create requirement sets for their organization.",
+      "A 'Global Common Requirements' template exists and is accessible."
     ],
     "steps": [
-      "Navigate to the 'Create New Specification' section.",
-      "Select the option to 'Start from Global Requirements Template'.",
-      "Enter a name for the new specification.",
-      "Confirm the creation.",
-      "Verify that the new specification has been created and is empty.",
-      "Add a new requirement to the empty specification.",
-      "Save the specification."
+      "Navigate to the 'Create New Requirement Set' page.",
+      "Select the 'Global Common Requirements' template as the base.",
+      "Provide a name for the new set, e.g., 'Org-ABC-Standard-Requirements'.",
+      "Do not add, edit, or delete any requirements.",
+      "Immediately click 'Save' to create the set."
     ],
     "test_data": {
-      "user_role": "Specification Creator",
-      "template_to_use": "Global Common Requirements",
-      "new_spec_name": "Empty Template Test Spec",
-      "added_requirement": {
-        "id": "ORG-001",
-        "text": "This is the first requirement for this new specification."
-      }
+      "base_template": "Global Common Requirements",
+      "modifications": "None"
     },
     "expected_result": [
-      "The system successfully creates a new, empty specification named 'Empty Template Test Spec'.",
-      "No application errors are generated during the creation process from the empty template.",
-      "The user is able to successfully add and save new requirements to the specification."
+      "The system successfully creates the 'Org-ABC-Standard-Requirements' set.",
+      "The new set is an exact copy of the 'Global Common Requirements' template at the time of creation.",
+      "A confirmation message 'Requirement set created successfully' is displayed."
     ],
     "postconditions": [
-      "A new specification, created from an empty template, exists in the system with one newly added requirement."
+      "A new requirement set for 'Org-ABC' exists in the system.",
+      "The new set contains a number of requirements equal to the number in the global template."
     ],
     "priority": "P3",
     "severity": "Minor",
     "type": "Functional",
     "execution_status": "Not Executed",
     "owner": "QA Team",
-    "created_at": "2025-08-31T17:44:17.850924"
+    "created_at": "2025-08-31T18:48:37.449308"
+  },
+  {
+    "test_id": "TC_POS_001",
+    "requirement_id": "REQ-020",
+    "title": "Verify successful creation of a country-specific requirement set using the global template",
+    "description": "This test ensures a user can select the globally defined common requirements as a starting point and successfully add a new, country-specific requirement to create a tailored set for their needs, demonstrating time and resource savings.",
+    "preconditions": [
+      "User is logged into the Healthcare Requirements Management System.",
+      "User has permissions to create and modify requirement sets for a specific country.",
+      "A 'Global Common Requirements' template exists and is accessible."
+    ],
+    "steps": [
+      "Navigate to the 'Create New Requirement Set' page.",
+      "Select the 'Global Common Requirements' template as the base.",
+      "Provide a name for the new set, e.g., 'Canada-Specific Requirements'.",
+      "Once the set is loaded, click the 'Add New Requirement' button.",
+      "Enter the details for a new requirement specific to the country's regulations.",
+      "Save the new requirement.",
+      "Save the entire 'Canada-Specific Requirements' set."
+    ],
+    "test_data": {
+      "new_requirement": {
+        "id": "PHIPA-001",
+        "title": "Patient Data Residency",
+        "description": "All personal health information (PHI) for residents must be stored within Canadian data centers."
+      }
+    },
+    "expected_result": [
+      "The system successfully creates the 'Canada-Specific Requirements' set.",
+      "The new set contains all requirements from the 'Global Common Requirements' template.",
+      "The new set also contains the newly added 'PHIPA-001' requirement.",
+      "A confirmation message 'Requirement set created successfully' is displayed."
+    ],
+    "postconditions": [
+      "A new requirement set for 'Canada' exists in the system.",
+      "The original 'Global Common Requirements' template remains unchanged."
+    ],
+    "priority": "P1",
+    "severity": "Major",
+    "type": "Functional",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T18:48:37.449348"
+  },
+  {
+    "test_id": "TC_NEG_002",
+    "requirement_id": "REQ-020",
+    "title": "Verify that a user cannot modify the core global requirements template directly",
+    "description": "This test ensures the integrity of the 'Global Common Requirements' template by preventing a user with standard permissions from directly editing or deleting a requirement within it. The template should be a read-only starting point.",
+    "preconditions": [
+      "User is logged into the Healthcare Requirements Management System with standard, non-administrator permissions.",
+      "A 'Global Common Requirements' template exists and is visible to the user."
+    ],
+    "steps": [
+      "Navigate to the 'Templates' or 'Global Requirements' section.",
+      "Select and open the 'Global Common Requirements' template.",
+      "Attempt to select a requirement within the template.",
+      "Attempt to click an 'Edit' or 'Delete' button for that requirement."
+    ],
+    "test_data": {
+      "user_role": "Standard User",
+      "template_to_modify": "Global Common Requirements"
+    },
+    "expected_result": [
+      "The 'Edit' and 'Delete' controls for requirements within the global template are disabled or not visible.",
+      "If the user attempts to bypass the UI to send a modification request, the system rejects it with an 'Access Denied' or 'Permission Error' message.",
+      "The 'Global Common Requirements' template remains unchanged."
+    ],
+    "postconditions": [
+      "No changes are made to the 'Global Common Requirements' template.",
+      "An audit log may be generated for the failed modification attempt."
+    ],
+    "priority": "P2",
+    "severity": "Major",
+    "type": "Security",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T18:48:37.449355"
+  },
+  {
+    "test_id": "TC_EDG_003",
+    "requirement_id": "REQ-020",
+    "title": "Verify creation of a requirement set using only the global template with no modifications",
+    "description": "This edge case test ensures that an organization with no needs beyond the global standard can create a valid requirement set for itself by simply adopting the global template as-is, without adding, editing, or removing any items.",
+    "preconditions": [
+      "User is logged into the Healthcare Requirements Management System.",
+      "User has permissions to create requirement sets for their organization.",
+      "A 'Global Common Requirements' template exists and is accessible."
+    ],
+    "steps": [
+      "Navigate to the 'Create New Requirement Set' page.",
+      "Select the 'Global Common Requirements' template as the base.",
+      "Provide a name for the new set, e.g., 'Org-ABC-Standard-Requirements'.",
+      "Do not add, edit, or delete any requirements.",
+      "Immediately click 'Save' to create the set."
+    ],
+    "test_data": {
+      "base_template": "Global Common Requirements",
+      "modifications": "None"
+    },
+    "expected_result": [
+      "The system successfully creates the 'Org-ABC-Standard-Requirements' set.",
+      "The new set is an exact copy of the 'Global Common Requirements' template at the time of creation.",
+      "A confirmation message 'Requirement set created successfully' is displayed."
+    ],
+    "postconditions": [
+      "A new requirement set for 'Org-ABC' exists in the system.",
+      "The new set contains a number of requirements equal to the number in the global template."
+    ],
+    "priority": "P3",
+    "severity": "Minor",
+    "type": "Functional",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T18:48:37.449362"
   }
 ]
