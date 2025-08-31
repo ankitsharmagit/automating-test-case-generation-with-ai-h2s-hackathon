@@ -1,11 +1,14 @@
 import streamlit as st
 
-st.set_page_config(page_title="Sample Streamlit App", page_icon="🌐", layout="centered")
+st.set_page_config(page_title="Hello Streamlit", page_icon="👋", layout="centered")
 
-st.title("🌐 My Sample Streamlit App")
-st.subheader("Deployed on Google Cloud Run")
+st.title("👋 Hello from Streamlit on Cloud Shell")
+st.write("If you can see this, the Web Preview works ✅")
 
-name = st.text_input("Enter your name:")
+number = st.slider("Pick a number", 0, 100, 25)
+st.write(f"You picked: {number}")
 
-if st.button("Submit"):
-    st.success(f"Hello, {name}! 🎉 Welcome to GCP Streamlit Deployment.")
+if st.button("Say Hello"):
+    st.success("Hello there! 🎉")
+
+
