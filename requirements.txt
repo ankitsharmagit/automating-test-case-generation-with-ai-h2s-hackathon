@@ -1,1 +1,13 @@
 streamlit==1.37.0
+json5
+google-cloud-aiplatform
+langchain_google_vertexai
+langchain
+pymupdf
+pdfplumber
+python-docx
+xmltodict
+lxml
+beautifulsoup4
+nltk
+pandas

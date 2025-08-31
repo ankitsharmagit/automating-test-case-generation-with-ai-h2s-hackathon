@@ -1,10 +1,10 @@
-# 🚀 Deploying and Updating Streamlit App on Google Cloud Run
+# Deploying and Updating Streamlit App on Google Cloud Run
 
 This guide explains how to **deploy, update, and optionally automate deployments** of your Streamlit app using Google Cloud Run.
 
 ---
 
-## 📌 Updating Your App (Manual Workflow)
+## Updating Your App (Manual Workflow)
 
 ### 1. Update dependencies
 ```bash

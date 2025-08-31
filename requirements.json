@@ -1,590 +1,590 @@
 [
   {
-    "id": "4130928a-495e-40f0-8d28-9111814d7b9a",
+    "id": "68ca9322-cbe4-47b8-b1f0-768c4fddca6a",
     "requirement_id": "REQ-001",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "These requirements have since been used by a variety of stakeholders, including the Open Health Information Exchange (OpenHIE), the open source Health Insurance Management Information System (openIMIS), and several country governments, including that of Bangladesh.",
-    "created_at": "2025-08-31T03:28:17.853840"
+    "created_at": "2025-08-31T11:42:12.659808"
   },
   {
-    "id": "44e11b30-df46-4234-b200-ed8c90779d23",
+    "id": "e10c0271-7028-4780-9905-0b347b00fafd",
     "requirement_id": "REQ-002",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "These requirements have since been used by a variety of stakeholders, including the Open Health Information Exchange (OpenHIE), the open source Health Insurance Management Information System (openIMIS), and several country governments, including that of Bangladesh.",
-    "created_at": "2025-08-31T03:28:17.853863"
+    "created_at": "2025-08-31T11:42:12.659844"
   },
   {
-    "id": "836f05ee-4490-428d-8de1-edeee8e35561",
+    "id": "49c44c70-7c59-4ac9-8bf1-583a606ceaa3",
     "requirement_id": "REQ-003",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "A Guide to Common Requirements for National Health Insurance Information Systems This document, , is the result of that Determining workshop and the next step toward updating the content of the 2012 document.",
-    "created_at": "2025-08-31T03:28:17.853872"
+    "created_at": "2025-08-31T11:42:12.659859"
   },
   {
-    "id": "5595a8db-2f8a-4810-b6f3-19a8ef96a3ea",
+    "id": "ee5473ac-432b-4c88-90db-ca68cc32b5e5",
     "requirement_id": "REQ-004",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "A Guide to Common Requirements for National Health Insurance Information Systems This document, , is the result of that Determining workshop and the next step toward updating the content of the 2012 document.",
-    "created_at": "2025-08-31T03:28:17.853879"
+    "created_at": "2025-08-31T11:42:12.659871"
   },
   {
-    "id": "16a009fb-b302-4446-8f4b-ad856d0086fb",
+    "id": "bda544e3-122d-488b-bbff-d94af5d41f1d",
     "requirement_id": "REQ-005",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "In addition, this document suggests a way forward for the insurance technology community to contribute to ongoing updates to ensure these requirements continue to have value as a living resource.",
-    "created_at": "2025-08-31T03:28:17.853887"
+    "created_at": "2025-08-31T11:42:12.659882"
   },
   {
-    "id": "4165f460-ac6a-4890-a048-b47d6dc554b6",
+    "id": "f2ac2691-baa6-4c51-8426-956f8ea9d93e",
     "requirement_id": "REQ-006",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "A guide to common requirements for nAtionAl heAlth insurAnce informAtion systems PAge 5 Introduction National health insurance systems are becoming more common as countries move to operationalize health financing transactions of paying for and delivering health services as part of their progress toward Universal Health Coverage for their citizens.",
-    "created_at": "2025-08-31T03:28:17.853894"
+    "created_at": "2025-08-31T11:42:12.659895"
   },
   {
-    "id": "4df5941b-2f81-4975-ac42-7c506630d655",
+    "id": "4193e4d0-fcb6-481e-8797-b95caceaabd9",
     "requirement_id": "REQ-007",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "In addition, this document suggests a way forward for the insurance technology community to contribute to ongoing updates to ensure these requirements continue to have value as a living resource. A guide to common requirements for nAtionAl heAlth insurAnce informAtion systems PAge 5 Introduction National health insurance systems are becoming more common as countries move to operationalize health financing transactions of paying for and delivering health services as part of their progress toward Universal Health Coverage for their citizens.",
-    "created_at": "2025-08-31T03:28:17.853901"
+    "created_at": "2025-08-31T11:42:12.659912"
   },
   {
-    "id": "79b4d7dc-06c6-4e5e-aeeb-5c24c3612e0a",
+    "id": "c805b42e-865a-4e9b-8530-011641d66ed6",
     "requirement_id": "REQ-008",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "As a result, health insurance or health purchaser1 information systems are becoming more important as schemes are implemented at national scale.",
-    "created_at": "2025-08-31T03:28:17.853909"
+    "created_at": "2025-08-31T11:42:12.659923"
   },
   {
-    "id": "6c972316-71d4-4f8d-b99c-9051aabd2aea",
+    "id": "6206dc96-91e4-47e3-92e2-288eaadd4b22",
     "requirement_id": "REQ-009",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Strong health insurance information systems can ensure timely reimbursements, decrease transaction costs, find system efficiencies, prevent fraud, and ensure equitable coverage and treatment.",
-    "created_at": "2025-08-31T03:28:17.853916"
+    "created_at": "2025-08-31T11:42:12.659935"
   },
   {
-    "id": "98080891-0a5f-4034-b9d6-d416facee41a",
+    "id": "70c3f4c9-9366-4bfb-9d2f-7ea6536fad53",
     "requirement_id": "REQ-010",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "As a result, health insurance or health purchaser1 information systems are becoming more important as schemes are implemented at national scale. Strong health insurance information systems can ensure timely reimbursements, decrease transaction costs, find system efficiencies, prevent fraud, and ensure equitable coverage and treatment.",
-    "created_at": "2025-08-31T03:28:17.853923"
+    "created_at": "2025-08-31T11:42:12.659946"
   },
   {
-    "id": "328ac821-f385-491e-9893-b42e71e1df30",
+    "id": "f07207cf-d07d-44d8-a22e-66ffd31ddb8f",
     "requirement_id": "REQ-011",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Many countries are also finding value in health insurance data to complement other types of health system data.",
-    "created_at": "2025-08-31T03:28:17.853930"
+    "created_at": "2025-08-31T11:42:12.659956"
   },
   {
-    "id": "4cc3ec36-2675-4318-bd2a-5ed29e786c77",
+    "id": "6adc90a5-5c00-4bbd-9859-be8774ffcd78",
     "requirement_id": "REQ-012",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Many countries are also finding value in health insurance data to complement other types of health system data.",
-    "created_at": "2025-08-31T03:28:17.853942"
+    "created_at": "2025-08-31T11:42:12.659967"
   },
   {
-    "id": "0b4f508e-1575-44db-a413-fc5b0b54665d",
+    "id": "2525c539-0cda-4216-b8f8-1f5fa2ff46ff",
     "requirement_id": "REQ-013",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Functional requirements are an invaluable tool for policymakers and systems engineering, and technical experts alike.",
-    "created_at": "2025-08-31T03:28:17.853950"
+    "created_at": "2025-08-31T11:42:12.659978"
   },
   {
-    "id": "98f7fd4d-987a-4b65-b49f-cea216854701",
+    "id": "9f0502e9-4e13-4609-b0eb-572d705f32c8",
     "requirement_id": "REQ-014",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Functional requirements are an invaluable tool for policymakers and systems engineering, and technical experts alike.",
-    "created_at": "2025-08-31T03:28:17.853957"
+    "created_at": "2025-08-31T11:42:12.659988"
   },
   {
-    "id": "c1958fc3-cbd7-4efc-a5b1-2263c96a9c32",
+    "id": "606cb895-c492-43cc-92cc-4f30dfea19c3",
     "requirement_id": "REQ-015",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Technical defines a function of a system experts gain clarity on the national priorities in a format that is transferable to software or its component, where a design and implementation.",
-    "created_at": "2025-08-31T03:28:17.853964"
+    "created_at": "2025-08-31T11:42:12.659998"
   },
   {
-    "id": "732173fe-8c9a-47b0-a017-829cc2a48b24",
+    "id": "80787902-4774-4bb5-bdad-b94fbe18005d",
     "requirement_id": "REQ-016",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "These requirements provide a format that is understandable function is described as a to both health insurance experts and software engineers, providing a platform for specification of behavior prioritization, compromise, and system design.",
-    "created_at": "2025-08-31T03:28:17.853970"
+    "created_at": "2025-08-31T11:42:12.660009"
   },
   {
-    "id": "5456a87a-af92-431c-a29b-e483d78acfbf",
+    "id": "b3fb4576-c005-40b3-b6e7-6164642f774e",
     "requirement_id": "REQ-017",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Technical defines a function of a system experts gain clarity on the national priorities in a format that is transferable to software or its component, where a design and implementation. These requirements provide a format that is understandable function is described as a to both health insurance experts and software engineers, providing a platform for specification of behavior prioritization, compromise, and system design.",
-    "created_at": "2025-08-31T03:28:17.853978"
+    "created_at": "2025-08-31T11:42:12.660020"
   },
   {
-    "id": "11291954-099b-45d3-a26d-7f7705b95d81",
+    "id": "cc322867-60d5-4464-b3bb-9c2034c79e24",
     "requirement_id": "REQ-018",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "A country or organization will define specific requirements for its specific needs.",
-    "created_at": "2025-08-31T03:28:17.853985"
+    "created_at": "2025-08-31T11:42:12.660085"
   },
   {
-    "id": "3ae98086-3e15-404d-b5e3-5824f07e4c7a",
+    "id": "87edc245-9271-43fa-88db-d6e5dd1a1da3",
     "requirement_id": "REQ-019",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "The benefit of a set of globally defined common requirements is to provide an advanced starting point to review best practices and save time and resources in the development process.",
-    "created_at": "2025-08-31T03:28:17.853991"
+    "created_at": "2025-08-31T11:42:12.660096"
   },
   {
-    "id": "92224efa-6c19-4045-a0d8-cb15c54a71c6",
+    "id": "bea6c825-7127-409a-9e4d-2ba1efd0ad34",
     "requirement_id": "REQ-020",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "A country or organization will define specific requirements for its specific needs. The benefit of a set of globally defined common requirements is to provide an advanced starting point to review best practices and save time and resources in the development process.",
-    "created_at": "2025-08-31T03:28:17.853998"
+    "created_at": "2025-08-31T11:42:12.660107"
   },
   {
-    "id": "acb5f58a-797f-4e0f-a8af-9cccd9688850",
+    "id": "9920605c-b539-474a-89c7-750506192c69",
     "requirement_id": "REQ-021",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "CreAting common requirements While common requirements are a useful building block, creating them can be a challenge.",
-    "created_at": "2025-08-31T03:28:17.854005"
+    "created_at": "2025-08-31T11:42:12.660117"
   },
   {
-    "id": "3dec656a-b29e-49cb-aee6-5bc1224e0da8",
+    "id": "55bcae66-6271-4793-8671-d0321705fafd",
     "requirement_id": "REQ-022",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Country health coverage schemes range in design, coverage, and maturity\u2014all of which require different types of requirements to function appropriately.",
-    "created_at": "2025-08-31T03:28:17.854012"
+    "created_at": "2025-08-31T11:42:12.660128"
   },
   {
-    "id": "461c03c4-b2c5-49f6-a2ae-1757425f1e72",
+    "id": "43fa53a0-1120-4b12-81e8-4a68491b5b9e",
     "requirement_id": "REQ-023",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "CreAting common requirements While common requirements are a useful building block, creating them can be a challenge. Country health coverage schemes range in design, coverage, and maturity\u2014all of which require different types of requirements to function appropriately.",
-    "created_at": "2025-08-31T03:28:17.854019"
+    "created_at": "2025-08-31T11:42:12.660139"
   },
   {
-    "id": "d60e4778-4ff1-4018-a45f-c1a571c503fe",
+    "id": "390c4ec4-b171-4956-9654-aea4e2fab9f4",
     "requirement_id": "REQ-024",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Since its development, CRDM has been used not only in the health insurance space but also to develop requirements for logistics management information systems, maternal health information systems, and more.",
-    "created_at": "2025-08-31T03:28:17.854026"
+    "created_at": "2025-08-31T11:42:12.660149"
   },
   {
-    "id": "774cd265-302a-426a-a597-8a7b2f10d8b5",
+    "id": "88522e56-e38e-402a-b6c1-09a34c97d277",
     "requirement_id": "REQ-025",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "A key aspect of the effectiveness of CRDM is the use of nontechnical language that is familiar to users and subject matter experts.",
-    "created_at": "2025-08-31T03:28:17.854033"
+    "created_at": "2025-08-31T11:42:12.660160"
   },
   {
-    "id": "66af9c84-76f8-4c5d-9c96-9f8df629dab2",
+    "id": "f164d52c-b17d-451b-9a3b-5081a5b157c7",
     "requirement_id": "REQ-026",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Since its development, CRDM has been used not only in the health insurance space but also to develop requirements for logistics management information systems, maternal health information systems, and more. A key aspect of the effectiveness of CRDM is the use of nontechnical language that is familiar to users and subject matter experts.",
-    "created_at": "2025-08-31T03:28:17.854040"
+    "created_at": "2025-08-31T11:42:12.660170"
   },
   {
-    "id": "e2f299b3-62fd-4701-b26d-187b1ad7e28d",
+    "id": "161d8bda-c8c3-4ed6-b472-c5dd690a59bf",
     "requirement_id": "REQ-027",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "While some schemes may not require beneficiary enrollment and another may require it, both systems will require some level of beneficiary management.",
-    "created_at": "2025-08-31T03:28:17.854047"
+    "created_at": "2025-08-31T11:42:12.660181"
   },
   {
-    "id": "e3d0374f-fd58-4949-83fc-35defa01600c",
+    "id": "f3642f15-9e4a-45b3-b895-348e13048cc1",
     "requirement_id": "REQ-028",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "While some schemes may not require beneficiary enrollment and another may require it, both systems will require some level of beneficiary management.",
-    "created_at": "2025-08-31T03:28:17.854053"
+    "created_at": "2025-08-31T11:42:12.660191"
   },
   {
-    "id": "bdf54b1a-db62-4819-8b69-93ca6bfed0ca",
+    "id": "3035086b-420f-4fa1-beb5-4cc049967d51",
     "requirement_id": "REQ-029",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "HL7 FHIR HL7 FHIR, and other global standards for data exchange, are helpful frameworks for aligning business processes across digital health systems.",
-    "created_at": "2025-08-31T03:28:17.854063"
+    "created_at": "2025-08-31T11:42:12.660201"
   },
   {
-    "id": "5e7a37e1-e335-41b9-863f-bae09c046b83",
+    "id": "dfcd243c-b4e8-4c19-a1df-2de5aa772da1",
     "requirement_id": "REQ-030",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "HL7 FHIR HL7 FHIR, and other global standards for data exchange, are helpful frameworks for aligning business processes across digital health systems.",
-    "created_at": "2025-08-31T03:28:17.854070"
+    "created_at": "2025-08-31T11:42:12.660212"
   },
   {
-    "id": "d0e4e0d6-ed32-48e5-8f08-4f8557819d6e",
+    "id": "9978ac99-bb45-4228-a7c8-05924ea22d17",
     "requirement_id": "REQ-031",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "\u2022 Task set(s): The set of required activities or steps that are carried out in a business process.",
-    "created_at": "2025-08-31T03:28:17.854076"
+    "created_at": "2025-08-31T11:42:12.660222"
   },
   {
-    "id": "8801f3b3-9cee-45f9-a3b0-b983794e29f7",
+    "id": "22c63967-7285-41ec-a9c8-d90d85cea6e9",
     "requirement_id": "REQ-032",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "\u2022 Task set(s): The set of required activities or steps that are carried out in a business process.",
-    "created_at": "2025-08-31T03:28:17.854083"
+    "created_at": "2025-08-31T11:42:12.660237"
   },
   {
-    "id": "258f8f93-fbf9-42a6-b0cf-60064df6a5e6",
+    "id": "ed32b276-46f3-401c-8a18-04e8d5063fac",
     "requirement_id": "REQ-033",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "By outlining these differences, countries will understand the breadth of options available and choose those processes that are most relevant to their scheme.",
-    "created_at": "2025-08-31T03:28:17.854090"
+    "created_at": "2025-08-31T11:42:12.660247"
   },
   {
-    "id": "403051fe-1fd6-4ddb-820f-07a8a1849b44",
+    "id": "bc2c3a6d-a8dd-4654-a2f3-b2bb9a79433c",
     "requirement_id": "REQ-034",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "By outlining these differences, countries will understand the breadth of options available and choose those processes that are most relevant to their scheme.",
-    "created_at": "2025-08-31T03:28:17.854100"
+    "created_at": "2025-08-31T11:42:12.660258"
   },
   {
-    "id": "5a7ab827-a628-47dd-91e0-5716980a5e4d",
+    "id": "21f18b90-40a5-42bd-b6a6-a8a05b40c97c",
     "requirement_id": "REQ-035",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "A graphical representation of a business process helps tell a story of who participates in a process, what types of information are exchanged between the participants, and how the work is accomplished.",
-    "created_at": "2025-08-31T03:28:17.854107"
+    "created_at": "2025-08-31T11:42:12.660268"
   },
   {
-    "id": "fb833264-8f52-4a75-a692-cf7a0e61ef20",
+    "id": "61fbe867-e1d9-4695-b389-0d7e92f7b8f1",
     "requirement_id": "REQ-036",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "A graphical representation of a business process helps tell a story of who participates in a process, what types of information are exchanged between the participants, and how the work is accomplished.",
-    "created_at": "2025-08-31T03:28:17.854114"
+    "created_at": "2025-08-31T11:42:12.660285"
   },
   {
-    "id": "832e9e72-4f17-4976-91ba-32d33db6031d",
+    "id": "9530c7f0-b992-4cf0-b52d-c73757836684",
     "requirement_id": "REQ-037",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Present identification process and/or process will end with beneficiary to ensure it is information as required by the Beneficiary presents proof of accurate insurer identification 5.",
-    "created_at": "2025-08-31T03:28:17.854121"
+    "created_at": "2025-08-31T11:42:12.660296"
   },
   {
-    "id": "1d5cab4f-1e59-471f-8c29-36f1939026d5",
+    "id": "96b1bf08-475e-41d6-9f85-89c3c1e38422",
     "requirement_id": "REQ-038",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Present identification process and/or process will end with beneficiary to ensure it is information as required by the Beneficiary presents proof of accurate insurer identification 5.",
-    "created_at": "2025-08-31T03:28:17.854128"
+    "created_at": "2025-08-31T11:42:12.660306"
   },
   {
-    "id": "f16e3db7-0648-4e2d-a117-b7a0de18e6fc",
+    "id": "2b6ea0fa-3671-4344-9982-9f946670a49b",
     "requirement_id": "REQ-039",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "beneficiary credentials Insurer reviews identification information (i.e., name, address, Insurer reviews the captured In the even that there are several and other appropriate qualifying biometrics\u2026) data to ensure that all of the benefits plans for which the documents for validity appropriate fields are complete beneficiary qualifies, then the 6.",
-    "created_at": "2025-08-31T03:28:17.854135"
+    "created_at": "2025-08-31T11:42:12.660317"
   },
   {
-    "id": "1ec54fe4-1fee-42e2-967e-57071c92fa88",
+    "id": "0e6c50e8-f3e1-4b9e-9c5c-81d556a0b7d1",
     "requirement_id": "REQ-040",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "beneficiary credentials Insurer reviews identification information (i.e., name, address, Insurer reviews the captured In the even that there are several and other appropriate qualifying biometrics\u2026) data to ensure that all of the benefits plans for which the documents for validity appropriate fields are complete beneficiary qualifies, then the 6.",
-    "created_at": "2025-08-31T03:28:17.854141"
+    "created_at": "2025-08-31T11:42:12.660327"
   },
   {
-    "id": "7e08fb6c-5574-41ee-9528-671061344f5a",
+    "id": "7cca273d-75c0-4af7-b427-9032966e35fd",
     "requirement_id": "REQ-041",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "statements usually begin with \u201cThe system must .",
-    "created_at": "2025-08-31T03:28:17.854148"
+    "created_at": "2025-08-31T11:42:12.660338"
   },
   {
-    "id": "0d079f73-1e44-4c69-be99-e1eeb5d6778c",
+    "id": "6e58b186-27a9-4a6b-9295-7a12d818589b",
     "requirement_id": "REQ-042",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": ".\u201dor \u201cThe system shall \u201d and describe what must be accomplished without specific reference to technology.",
-    "created_at": "2025-08-31T03:28:17.854155"
+    "created_at": "2025-08-31T11:42:12.660348"
   },
   {
-    "id": "d95b7839-40ba-4eba-8ec2-070150886ddc",
+    "id": "6946c558-632a-4e30-92b5-fb041f12ede4",
     "requirement_id": "REQ-043",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "statements usually begin with \u201cThe system must . .\u201dor \u201cThe system shall \u201d and describe what must be accomplished without specific reference to technology.",
-    "created_at": "2025-08-31T03:28:17.854162"
+    "created_at": "2025-08-31T11:42:12.660359"
   },
   {
-    "id": "f144d5dd-ffd8-434a-9a63-85c859dc911f",
+    "id": "7809384b-721d-4374-b93c-e80ee078132e",
     "requirement_id": "REQ-044",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Figure 7 Common system requirements example Requirement Req # Process Activity (the system must or should .",
-    "created_at": "2025-08-31T03:28:17.854171"
+    "created_at": "2025-08-31T11:42:12.660369"
   },
   {
-    "id": "fa35f56e-edcf-480a-a513-128c9f1e9c6b",
+    "id": "da70a847-9458-46d8-a344-17705347e000",
     "requirement_id": "REQ-045",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Figure 7 Common system requirements example Requirement Req # Process Activity (the system must or should .",
-    "created_at": "2025-08-31T03:28:17.854178"
+    "created_at": "2025-08-31T11:42:12.660379"
   },
   {
-    "id": "74b020b2-f1b5-4743-b4ad-1924e9b76441",
+    "id": "a3bbffd1-14c3-4022-8ba6-3ce9f0a60190",
     "requirement_id": "REQ-046",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "In turn, country-specific requirements are used to update and expand the global set of requirements.",
-    "created_at": "2025-08-31T03:28:17.854185"
+    "created_at": "2025-08-31T11:42:12.660406"
   },
   {
-    "id": "23026caf-5609-4b4c-ab79-72b254efe9e2",
+    "id": "fef5f04c-72e0-44cb-b06b-a47619b91b95",
     "requirement_id": "REQ-047",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "In turn, country-specific requirements are used to update and expand the global set of requirements.",
-    "created_at": "2025-08-31T03:28:17.854191"
+    "created_at": "2025-08-31T11:42:12.660427"
   },
   {
-    "id": "807e5d54-1702-491b-8f85-b4327190de06",
+    "id": "dd2983a0-c31e-4a70-a91e-3be34b6a1450",
     "requirement_id": "REQ-048",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "A review of common requirements can help address the question of what requirements are relevant for the context, given national policies and scheme design.",
-    "created_at": "2025-08-31T03:28:17.854198"
+    "created_at": "2025-08-31T11:42:12.660449"
   },
   {
-    "id": "f4daa670-9752-4eef-9f10-fe61929ef4d9",
+    "id": "9a57f6cb-fec5-4b9f-b7fb-86780dcf3237",
     "requirement_id": "REQ-049",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "A review of common requirements can help address the question of what requirements are relevant for the context, given national policies and scheme design.",
-    "created_at": "2025-08-31T03:28:17.854205"
+    "created_at": "2025-08-31T11:42:12.660472"
   },
   {
-    "id": "9003829f-8388-4d82-bb83-e612ef1e170a",
+    "id": "950fbd7e-3a51-40b3-ac55-b3300d912c1a",
     "requirement_id": "REQ-050",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "First, it will allow the team to define what they want to do (i.e., the functional scope).",
-    "created_at": "2025-08-31T03:28:17.854211"
+    "created_at": "2025-08-31T11:42:12.660507"
   },
   {
-    "id": "fcacde57-ce27-42dc-a4f4-c45ec14eed5f",
+    "id": "672c3ff9-1322-42da-a5a5-f9d38dbbabac",
     "requirement_id": "REQ-051",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "It will also allow the team to ask essential questions.",
-    "created_at": "2025-08-31T03:28:17.854218"
+    "created_at": "2025-08-31T11:42:12.660530"
   },
   {
-    "id": "167e65e8-5fb3-4fdf-85ce-2d7b82b6a3af",
+    "id": "f035932b-e70d-4bb5-b788-735b49bf6e90",
     "requirement_id": "REQ-052",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "First, it will allow the team to define what they want to do (i.e., the functional scope). It will also allow the team to ask essential questions.",
-    "created_at": "2025-08-31T03:28:17.854225"
+    "created_at": "2025-08-31T11:42:12.660559"
   },
   {
-    "id": "4ac00afa-bb05-4f1b-abb4-878f767f459d",
+    "id": "f980670d-149b-4c2f-aad4-768c28bc9e91",
     "requirement_id": "REQ-053",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "For example: \u2022 What are the requirements that will be relevant for our country context given our national and scheme rules?",
-    "created_at": "2025-08-31T03:28:17.854234"
+    "created_at": "2025-08-31T11:42:12.660678"
   },
   {
-    "id": "f43d65bb-a2f7-4895-9eeb-df13fac84f47",
+    "id": "40d5ede3-b71f-4235-be84-6b748fe0c71a",
     "requirement_id": "REQ-054",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "\u2022 What requirements must be developed on the provider and payer sides?",
-    "created_at": "2025-08-31T03:28:17.854243"
+    "created_at": "2025-08-31T11:42:12.660702"
   },
   {
-    "id": "1bc4153a-6b1c-43cd-acfb-b7701f0e0e47",
+    "id": "0f0ccf3e-43e6-4889-80af-22993a2724a0",
     "requirement_id": "REQ-055",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "For example: \u2022 What are the requirements that will be relevant for our country context given our national and scheme rules? \u2022 What requirements must be developed on the provider and payer sides?",
-    "created_at": "2025-08-31T03:28:17.854250"
+    "created_at": "2025-08-31T11:42:12.660725"
   },
   {
-    "id": "ff5410d3-70bc-44fb-90bf-5d8b2da19138",
+    "id": "9249aa89-e304-421c-9ac5-5e5188c2a20e",
     "requirement_id": "REQ-056",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "\u2022 Will the solution integrate with existing hospital information systems, or will it need to have interface design built into it?",
-    "created_at": "2025-08-31T03:28:17.854257"
+    "created_at": "2025-08-31T11:42:12.660772"
   },
   {
-    "id": "d09cc2b8-72b3-462c-bc9a-1bd7035f1600",
+    "id": "643dadd2-a713-483a-bbfe-c98cbcc25421",
     "requirement_id": "REQ-057",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "\u2022 Are there any requirements that are essential to address while others would be nice to have but not essential?",
-    "created_at": "2025-08-31T03:28:17.854264"
+    "created_at": "2025-08-31T11:42:12.660795"
   },
   {
-    "id": "cf8e6482-19d2-49a6-8e46-8f4195f9372b",
+    "id": "487ace73-ca32-46ca-9c93-a6bd9899810a",
     "requirement_id": "REQ-058",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "\u2022 Will the solution integrate with existing hospital information systems, or will it need to have interface design built into it? \u2022 Are there any requirements that are essential to address while others would be nice to have but not essential?",
-    "created_at": "2025-08-31T03:28:17.854270"
+    "created_at": "2025-08-31T11:42:12.660816"
   },
   {
-    "id": "8e16e2ad-f608-4969-b48c-e7273f87d309",
+    "id": "bcb25dd0-b58f-44a1-a50f-d7c1043b1277",
     "requirement_id": "REQ-059",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "EvAluAte solutions Sometimes managers will be in a position where they have multiple solution alternatives and need to choose a system that best matches the complex and diverse organizational needs.",
-    "created_at": "2025-08-31T03:28:17.854277"
+    "created_at": "2025-08-31T11:42:12.660828"
   },
   {
-    "id": "71152486-fbb3-4b49-8f94-77137ccb363e",
+    "id": "cdf78efc-b620-4e64-ac33-ae9df410dd3e",
     "requirement_id": "REQ-060",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "EvAluAte solutions Sometimes managers will be in a position where they have multiple solution alternatives and need to choose a system that best matches the complex and diverse organizational needs.",
-    "created_at": "2025-08-31T03:28:17.854284"
+    "created_at": "2025-08-31T11:42:12.660850"
   },
   {
-    "id": "77e0da10-698d-4b6d-aba4-20a76b08a38d",
+    "id": "0d5dd0b8-3e4a-4241-9318-76956e67ba01",
     "requirement_id": "REQ-061",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Not every software package will be equally strong across all requirements.",
-    "created_at": "2025-08-31T03:28:17.854290"
+    "created_at": "2025-08-31T11:42:12.660916"
   },
   {
-    "id": "c0cb36a4-2974-4bc9-83d8-56921e752c94",
+    "id": "382de7c7-c73e-4e2b-b1f5-a40f39e3e8de",
     "requirement_id": "REQ-062",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Not every software package will be equally strong across all requirements.",
-    "created_at": "2025-08-31T03:28:17.854297"
+    "created_at": "2025-08-31T11:42:12.660936"
   },
   {
-    "id": "a4ee6c63-7b8d-492f-846d-7edbdaba0352",
+    "id": "8430cb28-4af0-43cd-bc14-c0fc3c39347f",
     "requirement_id": "REQ-063",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Guide softwAre Software developers are able to define the functionality of a software using the detailed business develoPment processes and requirements.",
-    "created_at": "2025-08-31T03:28:17.854304"
+    "created_at": "2025-08-31T11:42:12.660956"
   },
   {
-    "id": "1f965546-a4ed-49a9-822f-01f01aee1b2c",
+    "id": "bdcb93b0-cd94-45d2-86a5-3c53961a812f",
     "requirement_id": "REQ-064",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Because requirements do not specifically address how a process should be carried out, software developers are able to apply different software solutions to ensure the inputs, outputs, and outcomes match the intended objectives and goals.",
-    "created_at": "2025-08-31T03:28:17.854310"
+    "created_at": "2025-08-31T11:42:12.660981"
   },
   {
-    "id": "ca4ce8b8-1edc-4f58-9207-c35f38ee384d",
+    "id": "aae1dc09-3e5e-4c2d-9a1d-f0036c4f0fcb",
     "requirement_id": "REQ-065",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Guide softwAre Software developers are able to define the functionality of a software using the detailed business develoPment processes and requirements. Because requirements do not specifically address how a process should be carried out, software developers are able to apply different software solutions to ensure the inputs, outputs, and outcomes match the intended objectives and goals.",
-    "created_at": "2025-08-31T03:28:17.854320"
+    "created_at": "2025-08-31T11:42:12.661001"
   },
   {
-    "id": "6e2ae276-d1b8-43a6-8394-199f92cc337e",
+    "id": "9da2bb67-ea67-48ca-a694-9ef04c5efda7",
     "requirement_id": "REQ-066",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "While software may have to be further customized to meet the specific needs of a country or system, a common requirements document provides a starting point for software design and can help software developers create a product that fulfills needs across scheme designs and structures.",
-    "created_at": "2025-08-31T03:28:17.854327"
+    "created_at": "2025-08-31T11:42:12.661022"
   },
   {
-    "id": "f82702f6-05da-458d-b322-ba60f060f504",
+    "id": "8d5e7f50-7021-4e70-8884-58f7f7e84d17",
     "requirement_id": "REQ-067",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "While software may have to be further customized to meet the specific needs of a country or system, a common requirements document provides a starting point for software design and can help software developers create a product that fulfills needs across scheme designs and structures.",
-    "created_at": "2025-08-31T03:28:17.854334"
+    "created_at": "2025-08-31T11:42:12.661050"
   },
   {
-    "id": "61a22f13-e67b-4271-a8f5-b53cdf53562a",
+    "id": "8b8dfd28-edfe-474a-8137-a870d127a947",
     "requirement_id": "REQ-068",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Use DescriPtion Use the CRDM Process to CRDM is a generic process and can be used to identify, discuss, reach agreement on, and develoP Project-sPecific document any business process and its related requirements systematically.",
-    "created_at": "2025-08-31T03:28:17.854340"
+    "created_at": "2025-08-31T11:42:12.661077"
   },
   {
-    "id": "58d405c7-336a-4ac8-84c7-1d6bc85c10af",
+    "id": "ff61c17f-763a-423a-9ba6-61feab9c8a74",
     "requirement_id": "REQ-069",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Some key processes requirements and requirements were already mapped in this document in a way that should be as generic as possible; but even then, value may be found in the analysis and consensus-building aspect of the exercise itself at a country or project level.",
-    "created_at": "2025-08-31T03:28:17.854347"
+    "created_at": "2025-08-31T11:42:12.661100"
   },
   {
-    "id": "8a697d2e-6beb-4e9a-ad3d-32fe9869d152",
+    "id": "ef8c045f-aff4-428e-bc50-a277a5788fcf",
     "requirement_id": "REQ-070",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Use DescriPtion Use the CRDM Process to CRDM is a generic process and can be used to identify, discuss, reach agreement on, and develoP Project-sPecific document any business process and its related requirements systematically. Some key processes requirements and requirements were already mapped in this document in a way that should be as generic as possible; but even then, value may be found in the analysis and consensus-building aspect of the exercise itself at a country or project level.",
-    "created_at": "2025-08-31T03:28:17.854354"
+    "created_at": "2025-08-31T11:42:12.661120"
   },
   {
-    "id": "44df14b2-1981-43b8-8c64-fe422e05d493",
+    "id": "9f1fa58f-19ca-4f6a-b3d7-738ed49d8932",
     "requirement_id": "REQ-071",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Materials can be cross-checked against requirements to ensure they align with one another and that all processes are covered by both.",
-    "created_at": "2025-08-31T03:28:17.854360"
+    "created_at": "2025-08-31T11:42:12.661140"
   },
   {
-    "id": "d48498c3-1312-45f1-b108-5aceeecc56d3",
+    "id": "2934ed3b-9a99-47f3-a34e-5c5e2988fe1e",
     "requirement_id": "REQ-072",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Materials can be cross-checked against requirements to ensure they align with one another and that all processes are covered by both.",
-    "created_at": "2025-08-31T03:28:17.854396"
+    "created_at": "2025-08-31T11:42:12.661160"
   },
   {
-    "id": "84d8c69c-32dd-4494-b2ee-5397046e3780",
+    "id": "fd0fa889-64ab-4a23-b7b0-73f01e1ac3c9",
     "requirement_id": "REQ-073",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "ImProve dAtA quAlity Issues with data quality are common.",
-    "created_at": "2025-08-31T03:28:17.854413"
+    "created_at": "2025-08-31T11:42:12.661191"
   },
   {
-    "id": "c22571a9-10d2-4796-aa14-fa486709b7ce",
+    "id": "1d95c811-12c3-4453-9c38-b9d0b1c244fc",
     "requirement_id": "REQ-074",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "An analysis of business processes can help determine where data are entering the system (either directly collected or coming from another system), how data are processed and analyzed, and how data are shared with users and other systems.",
-    "created_at": "2025-08-31T03:28:17.854423"
+    "created_at": "2025-08-31T11:42:12.661242"
   },
   {
-    "id": "09200199-b076-4da8-928b-9b4748c8635b",
+    "id": "12abc285-3324-4a2c-8adc-3500800a14fa",
     "requirement_id": "REQ-075",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "ImProve dAtA quAlity Issues with data quality are common. An analysis of business processes can help determine where data are entering the system (either directly collected or coming from another system), how data are processed and analyzed, and how data are shared with users and other systems.",
-    "created_at": "2025-08-31T03:28:17.854430"
+    "created_at": "2025-08-31T11:42:12.661270"
   },
   {
-    "id": "05f65f28-30b2-4f44-b70f-99b6561e0f57",
+    "id": "c1d6f4c9-9fee-4f7c-8493-eadd077eae8c",
     "requirement_id": "REQ-076",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Stakeholders are better able to address these specific issues and address data needs of each business process.",
-    "created_at": "2025-08-31T03:28:17.854443"
+    "created_at": "2025-08-31T11:42:12.661304"
   },
   {
-    "id": "12fea6b0-cf08-4ece-b619-0af49a589858",
+    "id": "6d37e2af-8fb4-4733-9da2-b49a8d6c9c96",
     "requirement_id": "REQ-077",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Stakeholders are better able to address these specific issues and address data needs of each business process.",
-    "created_at": "2025-08-31T03:28:17.854450"
+    "created_at": "2025-08-31T11:42:12.661330"
   },
   {
-    "id": "e6edde5e-61c3-42db-9c9e-c191596e562b",
+    "id": "7d2bd608-52bc-40d1-82f0-358839e27c9e",
     "requirement_id": "REQ-078",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "The resource should be sustainably maintained, and all documentation/resources must be easily usable (e.g., downloadable, referenceable, and adaptable).",
-    "created_at": "2025-08-31T03:28:17.854458"
+    "created_at": "2025-08-31T11:42:12.661355"
   },
   {
-    "id": "3342a83e-edaa-40f5-ab43-9771c5a89135",
+    "id": "f0acf7f3-57c3-4271-9fe1-83406488f34f",
     "requirement_id": "REQ-079",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "The resource should be sustainably maintained, and all documentation/resources must be easily usable (e.g., downloadable, referenceable, and adaptable).",
-    "created_at": "2025-08-31T03:28:17.854465"
+    "created_at": "2025-08-31T11:42:12.661379"
   },
   {
-    "id": "7d120132-0e41-4f0f-ab68-7b68cc06d5fe",
+    "id": "c7d4a971-5882-4181-a947-7daef9fddbc0",
     "requirement_id": "REQ-080",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Conclusion Globally, countries are expanding access to health services to more of their citizens through the development of national health insurance schemes; the success of these efforts is highly dependent upon effective and scalable information systems.",
-    "created_at": "2025-08-31T03:28:17.854472"
+    "created_at": "2025-08-31T11:42:12.661411"
   },
   {
-    "id": "524f794b-f5e0-48f8-96ec-8d6aa0660aae",
+    "id": "f0f7d466-8741-4442-b7db-93f5686f9411",
     "requirement_id": "REQ-081",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "At the outset, experts questioned if common functional requirements were possible since to date there has been little reuse of national health insurance systems from country to country.",
-    "created_at": "2025-08-31T03:28:17.854478"
+    "created_at": "2025-08-31T11:42:12.661434"
   },
   {
-    "id": "e35c9404-c8e5-4a8b-b41d-0f12c47222b0",
+    "id": "ec6e9958-c1c6-46ad-840d-fb04d3fe5dba",
     "requirement_id": "REQ-082",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Conclusion Globally, countries are expanding access to health services to more of their citizens through the development of national health insurance schemes; the success of these efforts is highly dependent upon effective and scalable information systems. At the outset, experts questioned if common functional requirements were possible since to date there has been little reuse of national health insurance systems from country to country.",
-    "created_at": "2025-08-31T03:28:17.854485"
+    "created_at": "2025-08-31T11:42:12.661455"
   },
   {
-    "id": "2809d7da-b74c-4ea6-84ec-69e00c9d5296",
+    "id": "68caf504-d15c-4789-b876-38764d8049e4",
     "requirement_id": "REQ-083",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Through the application of the CRDM, it is clear that countries do share many of the same functional requirements.",
-    "created_at": "2025-08-31T03:28:17.854492"
+    "created_at": "2025-08-31T11:42:12.661497"
   },
   {
-    "id": "9cb97967-cd66-4e42-9b1e-b96450d7663e",
+    "id": "0ea81f33-f396-42fb-820a-9a51839c6403",
     "requirement_id": "REQ-084",
     "filename": "Common_InsuranceReqs_FINAL.pdf",
     "statement": "Through the application of the CRDM, it is clear that countries do share many of the same functional requirements.",
-    "created_at": "2025-08-31T03:28:17.854498"
+    "created_at": "2025-08-31T11:42:12.661581"
   }
 ]
