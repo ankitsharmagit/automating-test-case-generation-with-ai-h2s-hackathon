@@ -234,7 +234,7 @@ if __name__ == "__main__":
 
     if testing:
         top_limit = 10    # only take 10 requirements/testcases
-        batch_size = 10   # smaller batches to avoid quota issues
+        batch_size = 30   # smaller batches to avoid quota issues
 
     # ---------------- Run Pipeline ----------------
     # parse_and_export_requirements()
