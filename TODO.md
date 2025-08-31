@@ -1,120 +1,108 @@
-# 📝 To-Do List for PoC → Production
+# Automating Test Case Generation with AI
+
+An AI-powered system that automatically converts healthcare software requirements into compliant, traceable test cases integrated with enterprise toolchains.
 
 ---
 
-## Phase 1 – PoC (2–3 Weeks)
+## Problem Statement
 
-**Goal:** Get a working pipeline (upload doc → AI → test cases → CSV/Excel).
+Healthcare software development is constrained by:
 
-### Environment Setup
-- [ ] Create a **Google Cloud Project**.
-- [ ] Enable **Vertex AI, Cloud Storage, Cloud Run**.
-- [ ] Install SDKs: `google-cloud-aiplatform`, `gradio`, `pandas`.
+- Complex regulatory requirements (FDA, IEC 62304, ISO 13485, ISO 27001, GDPR, HIPAA).
+- Requirements stored in heterogeneous formats (PDF, Word, XML, HTML, JSON).
+- Manual test case creation that is time-consuming and error-prone.
+- Maintaining compliance traceability across enterprise toolchains.
 
-### Document Parsing Layer
-- [ ] Build parsers:
-  - PDF → `PyMuPDF` / `pdfplumber`.
-  - Word → `python-docx`.
-  - XML → `xmltodict` / `lxml`.
-  - Markup (HTML/JSON-LD) → `BeautifulSoup`.
-- [ ] Normalize parsed text into **requirement chunks**.
-
-### AI Test Case Generation
-- [ ] Use **Gemini via Vertex AI**.
-- [ ] Prompt format:You are a healthcare QA expert.
-Convert the following requirement into test cases with:
-ID, Title, Preconditions, Steps, Expected Result, Compliance Tag.
-
-
-
-- [ ] Parse AI output into **pandas DataFrame**.
-- [ ] Add CSV/Excel export.
-
-### Compliance (Lightweight for PoC)
-- [ ] Create a **small mapping dictionary** (e.g., `"encryption" → IEC 62304`, `"audit log" → ISO 13485`).
-- [ ] Add compliance tags to generated test cases.
-
-### UI – MVP Demo
-- [ ] Use **Gradio** for a quick interface:
-- Upload file → See test cases → Download CSV.
-- [ ] Local test: `demo.launch()`.
-
-### Deployment Options
-- **Option 1: Hugging Face Spaces** → easiest for demo (free tier).
-- **Option 2: Google Cloud Run (scalable, secure)**:
-- [ ] Containerize with **Docker**.
-- [ ] Deploy Gradio/FastAPI app on **Cloud Run**.
-- [ ] Configure **HTTPS endpoint with IAM** for controlled access.
-
-✅ **Deliverable:** Upload healthcare requirement doc → AI-generated test cases (CSV/Excel) with compliance tags → deployed demo.
+This results in slow product cycles, high QA costs, and compliance risks.
 
 ---
 
-## Phase 2 – Compliance & Traceability (3–6 Months)
+## Objective
 
-**Goal:** Build audit-ready features.
+To build an AI-powered system that:
 
-### Compliance Mapping Expansion
-- [ ] Collect **FDA, IEC 62304, ISO 13485, ISO 27001** clauses.
-- [ ] Extend AI prompts to link requirements → standards.
-
-### Traceability Matrix
-- [ ] Store requirements ↔ test cases ↔ compliance rules in **BigQuery**.
-- [ ] Generate **traceability reports** (Excel/PDF).
-
-### Audit Logging
-- [ ] Log AI outputs (input requirement, generated case, timestamp, user).
-- [ ] Provide **exportable logs** for audits.
-
-✅ **Deliverable:** AI outputs with full compliance + traceability matrix.
+- Ingests and normalizes requirements from multiple formats.
+- Generates complete and traceable test cases automatically.
+- Ensures compliance and audit readiness.
+- Integrates with enterprise ALM toolchains such as Jira, Polarion, and Azure DevOps.
+- Reduces manual QA effort while ensuring scalability and compliance.
 
 ---
 
-## Phase 3 – Toolchain Integration (6–12 Months)
+## Architecture Overview
 
-**Goal:** Connect with enterprise tools (Jira, Polarion, Azure DevOps).
+```mermaid
+flowchart TD
+    A[Layer 1: Requirement Ingestion & Normalization] --> B[Layer 2: Requirement Registry]
+    B --> C[Layer 3: Metadata Enrichment]
+    C --> D[Layer 4: Categorization & Retrieval]
+    D --> E[Layer 5: Test Case Generation]
+    E --> F[Layer 6: Coverage Validation]
+    F --> G[Layer 6.5: Semantic Validation]
+    G --> H[BigQuery and Enterprise Toolchains]
+```
 
-### Jira Integration
-- [ ] Use **Jira REST API** to push test cases.
-- [ ] Sync updates back from Jira.
+## Pipeline Details
 
-### Polarion Integration
-- [ ] Use **Polarion WebServices API**.
+### Layer 1 – Requirement Ingestion & Normalization
+- Parse multi-format documents (PDF, Word, XML, HTML, JSON).
+- Remove noise (headers, footers, boilerplate).
+- Segment text into atomic, testable sentences.
+- Identify requirement candidates using domain heuristics.
+- Deduplicate and normalize.
+- Assign metadata (UUID, source file, timestamp).
+- Export to BigQuery and JSON.
 
-### Azure DevOps Integration
-- [ ] Use **ADO Test Plans API**.
+### Layer 2 – Requirement Registry
+- Convert text into structured JSON with LLMs.
+- Fields include category, title, severity, regulation, actors, data types, and acceptance criteria.
+- Deduplicate and validate structured data.
+- Preserve traceability metadata.
+- Store in BigQuery.
 
-✅ **Deliverable:** Auto-sync AI test cases with enterprise ALM tools.
+### Layer 3 – Metadata Enrichment
+- Detect and auto-tag regulations (HIPAA, GDPR, ISO, FDA).
+- Extract verbs (actions) relevant for testing (e.g., encrypt, audit).
+- Normalize actors and data types.
+- Store enriched metadata for transparency.
+
+### Layer 4 – Categorization & Retrieval
+- Generate embeddings using Vertex AI.
+- Categorize requirements into Functional, Security, Performance, Usability, Compliance, and Reliability.
+- Store structured data with embeddings in BigQuery.
+- Enable hybrid SQL and semantic search.
+
+### Layer 5 – Test Case Generation
+- Generate Positive, Negative, and Edge test cases per requirement.
+- Normalize schema for test cases.
+- Export to BigQuery (`test_cases` table).
+
+### Layer 6 – Coverage Validation
+- Ensure every requirement maps to at least one Positive, Negative, or Edge test case.
+- Generate requirement-to-test case traceability matrix.
+- Enforce schema and ID format rules.
+- Store in BigQuery (`traceability_matrix`).
+
+### Layer 6.5 – Semantic Validation
+- Validate semantic alignment between requirements and test cases using LLMs.
+- Return structured JSON verdict (match, confidence, reason).
+- Store results in BigQuery (`semantic_validation`).
 
 ---
 
-## Phase 4 – Scale & GDPR Compliance (12+ Months)
-
-**Goal:** Enterprise readiness.
-
-### GDPR Compliance
-- [ ] Add **PHI/PII anonymization pipeline**.
-- [ ] Encrypt data at rest (**Cloud KMS**).
-
-### Scalability
-- [ ] Deploy full stack on **Google Cloud Run + GKE (Kubernetes)**.
-- [ ] Add **role-based access** with Firebase Auth.
-
-### Continuous Improvement
-- [ ] Fine-tune **Gemini** with healthcare corpora.
-- [ ] Add **multi-language support** (for EU).
-- [ ] Build **analytics dashboard** (time saved, compliance coverage).
-
-✅ **Deliverable:** Enterprise-grade, secure, GDPR-compliant SaaS.
+## Technology Stack
+- **AI/ML**: Google Gemini, Vertex AI (LLMs, embeddings, prompt engineering)
+- **Data**: BigQuery (analytics and storage)
+- **NLP**: spaCy (verb/action extraction, entity normalization)
+- **Backend**: Python (FastAPI, asyncio for parallel LLM calls)
+- **Integration**: APIs for Jira, Polarion, Azure DevOps
+- **Visualization**: Streamlit, Pandas, Matplotlib
 
 ---
 
-## ⚡ Key Decision for PoC Deployment
-
-- **Hugging Face Spaces** → fastest to show stakeholders.
-- **Google Cloud Run** → scalable, secure, enterprise-grade from day 1.
-
-👉 For your evaluation, I’d suggest:
-- Build with **Gradio** (fast UI).
-- Deploy first on **Hugging Face** for demo.
-- Mirror same app on **Google Cloud Run** for security & scalability.
+## Benefits
+- Reduction of manual QA effort by more than 70%.
+- Full compliance with healthcare regulations and standards.
+- Requirement-to-test traceability for audits.
+- Semantic validation ensures test cases match requirement intent.
+- Integration with enterprise toolchains to support real-world workflows.
