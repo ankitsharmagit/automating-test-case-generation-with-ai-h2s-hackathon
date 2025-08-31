@@ -1,0 +1,260 @@
+[
+  {
+    "requirement_id": "REQ-001",
+    "category": "Compliance",
+    "title": "Stakeholder and Standards Alignment",
+    "statement": "The system must align with requirements used by key stakeholders, including the Open Health Information Exchange (OpenHIE), the open source Health Insurance Management Information System (openIMIS), and relevant country governments (e.g., Bangladesh), to ensure interoperability and adoption.",
+    "priority": "P1",
+    "severity": "Major",
+    "regulation": [
+      "OpenHIE",
+      "openIMIS"
+    ],
+    "actors": [
+      "System Architect",
+      "Compliance Officer",
+      "Project Manager"
+    ],
+    "data_type": [
+      "Health Information Exchange Data",
+      "Health Insurance Data"
+    ],
+    "action": [
+      "Integrate",
+      "Align"
+    ],
+    "acceptance_criteria": [
+      "System design documentation demonstrates mapping and traceability to OpenHIE specifications.",
+      "System design documentation demonstrates mapping and traceability to openIMIS specifications, where applicable.",
+      "Evidence is provided showing that the system's requirements are in alignment with the digital health strategy of specified country government stakeholders."
+    ],
+    "dependencies": [],
+    "traceability": [],
+    "metadata": {
+      "source_file": "Common_InsuranceReqs_FINAL.pdf",
+      "llm_model": "gemini-2.5-pro",
+      "validated": true,
+      "raw_input": "These requirements have since been used by a variety of stakeholders, including the Open Health Information Exchange (OpenHIE), the open source Health Insurance Management Information System (openIMIS), and several country governments, including that of Bangladesh.",
+      "enrichment": {
+        "domain": "healthcare",
+        "regulation_sections": [],
+        "actors": [],
+        "action": [
+          "ensure",
+          "align",
+          "include",
+          "use"
+        ],
+        "data_type": []
+      }
+    },
+    "created_at": "2025-08-31T03:52:08.779427"
+  },
+  {
+    "requirement_id": "REQ-002",
+    "category": "Compliance",
+    "title": "Stakeholder Adoption and Interoperability",
+    "statement": "The system must be designed to be interoperable with and adoptable by key health information ecosystem stakeholders, including standards bodies like the Open Health Information Exchange (OpenHIE), related open source systems like openIMIS, and government health systems, such as that of Bangladesh.",
+    "priority": "P1",
+    "severity": "Major",
+    "regulation": [
+      "OpenHIE - Architecture & Standards",
+      "openIMIS - Data Model & APIs"
+    ],
+    "actors": [
+      "System Architect",
+      "System Integrator",
+      "Government Health Authority"
+    ],
+    "data_type": [
+      "PHI",
+      "Patient Demographics",
+      "Insurance Claims",
+      "Health System Registry Data"
+    ],
+    "action": [
+      "exchange",
+      "integrate",
+      "comply"
+    ],
+    "acceptance_criteria": [
+      "The system's data exchange protocols are successfully tested against an OpenHIE reference implementation.",
+      "A data mapping document is created and verified for compatibility with the openIMIS data schema.",
+      "A compliance review demonstrates alignment with the architectural principles of a target government's health information strategy (e.g., Bangladesh)."
+    ],
+    "dependencies": [],
+    "traceability": [],
+    "metadata": {
+      "source_file": "Common_InsuranceReqs_FINAL.pdf",
+      "llm_model": "gemini-2.5-pro",
+      "validated": true,
+      "raw_input": "These requirements have since been used by a variety of stakeholders, including the Open Health Information Exchange (OpenHIE), the open source Health Insurance Management Information System (openIMIS), and several country governments, including that of Bangladesh.",
+      "enrichment": {
+        "domain": "healthcare",
+        "regulation_sections": [],
+        "actors": [],
+        "action": [
+          "design",
+          "include",
+          "relate"
+        ],
+        "data_type": []
+      }
+    },
+    "created_at": "2025-08-31T03:52:08.779490"
+  },
+  {
+    "requirement_id": "REQ-003",
+    "category": "Compliance",
+    "title": "Adherence to National Health Insurance Systems Guide",
+    "statement": "The system must be designed, developed, and operated in accordance with the principles and requirements outlined in 'A Guide to Common Requirements for National Health Insurance Information Systems', which serves as an update to the 2012 version.",
+    "priority": "P1",
+    "severity": "Critical",
+    "regulation": [
+      "National Health Insurance Information Systems Guide (2012, updated)"
+    ],
+    "actors": [
+      "admin",
+      "auditor",
+      "biller",
+      "clinician",
+      "patient"
+    ],
+    "data_type": [
+      "PHI",
+      "claims",
+      "enrollment data",
+      "billing information"
+    ],
+    "action": [
+      "access",
+      "store",
+      "process",
+      "transmit",
+      "audit"
+    ],
+    "acceptance_criteria": [
+      "A compliance matrix is created and maintained, mapping system features to specific requirements within the 'A Guide to Common Requirements for National Health Insurance Information Systems'.",
+      "All system design documents explicitly reference the relevant sections of the guide.",
+      "Periodic compliance audits confirm that system operations and configurations align with the stipulations of the guide."
+    ],
+    "dependencies": [],
+    "traceability": [],
+    "metadata": {
+      "source_file": "Common_InsuranceReqs_FINAL.pdf",
+      "llm_model": "gemini-2.5-pro",
+      "validated": true,
+      "raw_input": "A Guide to Common Requirements for National Health Insurance Information Systems This document, , is the result of that Determining workshop and the next step toward updating the content of the 2012 document.",
+      "enrichment": {
+        "domain": "healthcare",
+        "regulation_sections": [],
+        "actors": [],
+        "action": [
+          "outline",
+          "serve",
+          "develop",
+          "operate",
+          "design"
+        ],
+        "data_type": []
+      }
+    },
+    "created_at": "2025-08-31T03:52:39.846943"
+  },
+  {
+    "requirement_id": "REQ-004",
+    "category": "Compliance",
+    "title": "Update National Health Insurance Information Systems Guide",
+    "statement": "A Guide to Common Requirements for National Health Insurance Information Systems This document, , is the result of that Determining workshop and the next step toward updating the content of the 2012 document.",
+    "priority": "P1",
+    "severity": "Major",
+    "regulation": [
+      "HIPAA"
+    ],
+    "actors": [
+      "admin",
+      "compliance officer"
+    ],
+    "data_type": [
+      "PHI"
+    ],
+    "action": [],
+    "acceptance_criteria": [
+      "A new version of the 'Guide to Common Requirements for National Health Insurance Information Systems' is created and published.",
+      "The new guide incorporates the results of the 'Determining workshop'.",
+      "The new guide serves as an official update to the 2012 version of the document."
+    ],
+    "dependencies": [],
+    "traceability": [],
+    "metadata": {
+      "source_file": "Common_InsuranceReqs_FINAL.pdf",
+      "llm_model": "gemini-2.5-pro",
+      "validated": true,
+      "raw_input": "A Guide to Common Requirements for National Health Insurance Information Systems This document, , is the result of that Determining workshop and the next step toward updating the content of the 2012 document.",
+      "enrichment": {
+        "domain": "healthcare",
+        "regulation_sections": [],
+        "actors": [],
+        "action": [
+          "determine",
+          "update"
+        ],
+        "data_type": []
+      }
+    },
+    "created_at": "2025-08-31T03:52:39.847007"
+  },
+  {
+    "requirement_id": "REQ-005",
+    "category": "Compliance",
+    "title": "Process for Ongoing Requirement Updates",
+    "statement": "In addition, this document suggests a way forward for the insurance technology community to contribute to ongoing updates to ensure these requirements continue to have value as a living resource.",
+    "priority": "P2",
+    "severity": "Major",
+    "regulation": [
+      "HIPAA",
+      "ISO 9001"
+    ],
+    "actors": [
+      "Compliance Officer",
+      "Product Manager",
+      "System Architect",
+      "Insurance Technology Community"
+    ],
+    "data_type": "Requirements Documentation",
+    "action": [
+      "review",
+      "update",
+      "maintain"
+    ],
+    "acceptance_criteria": [
+      "A formal process for submitting, reviewing, and incorporating community feedback on requirements is documented.",
+      "A designated owner or committee responsible for managing the 'living document' process is established.",
+      "A regular review cycle for the requirements document is defined (e.g., annually).",
+      "A communication channel for community contributions is created and made accessible."
+    ],
+    "dependencies": [],
+    "traceability": [],
+    "metadata": {
+      "source_file": "Common_InsuranceReqs_FINAL.pdf",
+      "llm_model": "gemini-2.5-pro",
+      "validated": true,
+      "raw_input": "In addition, this document suggests a way forward for the insurance technology community to contribute to ongoing updates to ensure these requirements continue to have value as a living resource.",
+      "enrichment": {
+        "domain": "healthcare",
+        "regulation_sections": [],
+        "actors": [],
+        "action": [
+          "ensure",
+          "have",
+          "contribute",
+          "live",
+          "suggest",
+          "continue"
+        ],
+        "data_type": []
+      }
+    },
+    "created_at": "2025-08-31T03:52:54.120711"
+  }
+]

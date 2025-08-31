@@ -1,0 +1,156 @@
+[
+  {
+    "test_id": "TC_INTEROP_001",
+    "requirement_id": "REQ-001",
+    "title": "[Positive] Verify successful data exchange using a standard OpenHIE profile",
+    "description": "This test case verifies that the system can successfully generate and transmit a patient registration message that conforms to the OpenHIE specification, and that a mock receiving system correctly interprets it.",
+    "preconditions": [
+      "The system's interoperability module is running.",
+      "A mock OpenHIE-compliant endpoint is configured and available to receive data.",
+      "Test patient 'John Doe' does not exist in the system or the mock endpoint."
+    ],
+    "steps": [
+      "1. Initiate a 'Create Patient' action within the system with valid patient demographic data.",
+      "2. Trigger the data exchange process to send the new patient record to the configured OpenHIE endpoint.",
+      "3. Monitor the system's outgoing logs for a success confirmation.",
+      "4. Query the mock OpenHIE endpoint to confirm the receipt and correct structure of the patient data."
+    ],
+    "test_data": {
+      "patient_details": {
+        "resourceType": "Patient",
+        "identifier": [
+          {
+            "system": "urn:ietf:rfc:3986",
+            "value": "urn:uuid:a1b2c3d4-e5f6-7890-1234-567890abcdef"
+          }
+        ],
+        "active": true,
+        "name": [
+          {
+            "use": "official",
+            "family": "Doe",
+            "given": [
+              "John"
+            ]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1985-02-20"
+      }
+    },
+    "expected_result": [
+      "The system returns a success message for the patient creation.",
+      "The system logs a successful transmission (e.g., HTTP 200 OK or 201 Created) to the OpenHIE endpoint.",
+      "The mock OpenHIE endpoint confirms receipt of a valid FHIR Patient resource matching the test data."
+    ],
+    "postconditions": [
+      "The test patient 'John Doe' is removed from the system.",
+      "The logs on the mock OpenHIE endpoint are cleared."
+    ],
+    "priority": "P1",
+    "severity": "Critical",
+    "type": "Interoperability",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T06:16:57.213768"
+  },
+  {
+    "test_id": "TC_INTEROP_002",
+    "requirement_id": "REQ-001",
+    "title": "[Negative] Verify system rejection of a non-compliant message from openIMIS",
+    "description": "This test case ensures that the system correctly rejects an incoming message from a mock openIMIS system that is malformed or missing a mandatory field, and logs an appropriate error.",
+    "preconditions": [
+      "The system's interoperability module is running and configured to listen for incoming data from openIMIS.",
+      "A mock openIMIS client is available to send messages to the system."
+    ],
+    "steps": [
+      "1. Use the mock openIMIS client to send a patient registration message to the system's endpoint.",
+      "2. Ensure the message is intentionally malformed by omitting the mandatory 'family' name field.",
+      "3. Check the response code returned to the mock client.",
+      "4. Inspect the system's error logs for a detailed failure reason.",
+      "5. Verify that no new patient record was created in the system."
+    ],
+    "test_data": {
+      "malformed_patient_message": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "use": "official",
+            "given": [
+              "Jane"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1990-05-15"
+      }
+    },
+    "expected_result": [
+      "The system returns an HTTP 400 Bad Request error to the mock client.",
+      "The system logs a validation error specifying that the 'family' name field is missing or invalid.",
+      "A search for the patient 'Jane' in the system yields no results."
+    ],
+    "postconditions": [
+      "Ensure no partial patient data was saved in the database."
+    ],
+    "priority": "P1",
+    "severity": "Critical",
+    "type": "Interoperability",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T06:16:57.213792"
+  },
+  {
+    "test_id": "TC_INTEROP_003",
+    "requirement_id": "REQ-001",
+    "title": "[Edge] Verify handling of a message with a country-specific extension (Bangladesh)",
+    "description": "This test case verifies the system's ability to correctly process a standard message that includes an optional, country-specific extension, such as a Bangladesh National ID (NID).",
+    "preconditions": [
+      "The system's interoperability module is running.",
+      "A mock endpoint is configured and available to receive data.",
+      "The system's data model has a field (or extension support) for a national ID."
+    ],
+    "steps": [
+      "1. Initiate a 'Create Patient' action with valid data, including a Bangladesh NID in the designated extension field.",
+      "2. Trigger the data exchange process to send the new patient record to the mock endpoint.",
+      "3. Verify that the system successfully processes and stores the patient, including the NID.",
+      "4. Query the mock endpoint to confirm it received the patient data with the NID extension intact."
+    ],
+    "test_data": {
+      "patient_with_extension": {
+        "resourceType": "Patient",
+        "extension": [
+          {
+            "url": "http://gov.bd/fhir/StructureDefinition/bd-nid",
+            "valueString": "19921234567890123"
+          }
+        ],
+        "name": [
+          {
+            "family": "Hasan",
+            "given": [
+              "Fatima"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1992-11-10"
+      }
+    },
+    "expected_result": [
+      "The system successfully creates the patient 'Fatima Hasan'.",
+      "The patient's record in the system database correctly stores the Bangladesh NID '19921234567890123'.",
+      "The mock endpoint receives a valid FHIR resource containing both the core patient data and the NID extension."
+    ],
+    "postconditions": [
+      "The test patient 'Fatima Hasan' is removed from the system.",
+      "The logs on the mock endpoint are cleared."
+    ],
+    "priority": "P2",
+    "severity": "Major",
+    "type": "Interoperability",
+    "execution_status": "Not Executed",
+    "owner": "QA Team",
+    "created_at": "2025-08-31T06:16:57.213804"
+  }
+]

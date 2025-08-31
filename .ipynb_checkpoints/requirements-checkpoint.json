@@ -1,0 +1,583 @@
+[
+  {
+    "id": "7eb49bda-02c9-4c59-a222-8cf0c1ee6330",
+    "requirement_id": "REQ-001",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "......................................................................................................................6 CreAting common requirements ...................................................................................7 Using the Collaborative Requirements Development Methodology ......................7 Organizing the work. .....................................................................................................7 HeAlth system domAin ................................................................................................7 HeAlth insurAnce Process frAmeworks .......................................................................9 Common business processes for health insurance ..................................................11 Business Process cAtAlog ..........................................................................................11 Activity or tAsk flow diAgrAms ................................................................................",
+    "created_at": "2025-08-31T03:06:21.925415"
+  },
+  {
+    "id": "d2ab8c04-fa85-46ef-88da-f3aa926244f8",
+    "requirement_id": "REQ-002",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "15 Common information system requirements for health insurance ........................16 APPlying requirements At A Pr ActicAl level .........................................................",
+    "created_at": "2025-08-31T03:06:21.925445"
+  },
+  {
+    "id": "23abc653-7054-4fc0-a829-20d2b66f840a",
+    "requirement_id": "REQ-003",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "21 A guide to common requirements for nAtionAl heAlth insurAnce informAtion systems PAge 3 Acknowledgments ExPert contributors Rudy Kurniawan, Deputy Director of Surendra Tiwari, General Manager Harsh Vardhan Atal, HISP India Data, Ministry of Health, Indonesia of Operations, NHA, India Amir Bedin, Head of IT, Strategic Seungyoung Lee, Deputy Manager, John Waiganio, Assistant ICT Manager, Purchasing Agency, Malaysia IT Department, HIRA International NHIF Kenya Krishan Bhardwaj, Digital Health Group, Republic of Korea Priyanka Yadav, Digital Health Architect, Access Health Initiative, India Laxman Manandhar, Technical Lead, Specialist, ACCESS Health Possible Health, Nepal International, India Didik Budijanto, Director for Center for Data and Information, Ministry of Modupe Ogundimu, General Manager, Health, Indonesia National Health Insurance Scheme, FAcilitAtion teAm Nigeria; JLN Steering Group Convener Som Chandra, National Social Caren Althauser, Consultant, Protection Council, Cambodia Luis Orrego, Coordinator of the Digital Health Insurance Intelligence Sub-Division, Peru Seung Yeon Cho, Deputy Director, Saurav Bhattarai, Deputy Chief HIRA International Group, Republic Sugma Purbowo, General Secretary, Technical Advisor, Support to the Health of Korea IAFP, Indonesia Sector Programme, GIZ Nirmal Dhakal, Technical Advisory, Purushottam Sapkota, Technical Samantha Diamond, Associate Director, Health Information Systems, GIZ Advisor, Health Information Systems, Global Health Financing, Clinton Health Ashish Raj Joshi, IT Officer, Health GIZ Access Initiative Insurance Board, Nepal Manu Shukla, General Manager of Celia Lang, Senior Program Assistant, Kalu Singh Karki, IT Officer, Health IT Systems, National Health Authority, PATH India Insurance Board, Nepal Margaret Lamiell, JLN Country Chiwan Kim, Manager, Department Tong Sovann, Payment Certification Support, Management Sciences for of International Relations and Agency, Cambodia Health Cooperation, NHIS, Republic of Korea Soung Sovathana, Payment Certification Anna Shaw, Senior Communications Yongbeom Kim, Assistant Manager, Agency, Cambodia Associate, PATH NHI ICT Department, NHIS, Yogita Thakral, Project Coordinator/ Sujan Thanjavuru, Head of Strategy and Republic of Korea Researcher, HISP India Transformation, Life Sciences Practice, Ika Kurniasih, Head of Section, Suresh Singh Tinkari, IT Consultant, Wipro Limited Ministry of Health, Indonesia Health Insurance Board, Nepal Uwe Wahser, GIZ/openIMIS Initiative OrgAnizAtionAl suPPort This knowledge product benefited from the collaboration and support of several unique partnerships.",
+    "created_at": "2025-08-31T03:06:21.925458"
+  },
+  {
+    "id": "f71041de-e7c9-42cb-86f7-2192e17af32a",
+    "requirement_id": "REQ-004",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Wipro Limited, a leading global information technology, consulting, and business process services company, and the Clinton Health Access Initiative each provided facilitators with deep technical expertise.",
+    "created_at": "2025-08-31T03:06:21.925470"
+  },
+  {
+    "id": "37001357-c241-41da-9523-778924d3462a",
+    "requirement_id": "REQ-005",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Preface The Information Technology (IT) Initiative of the Joint Learning Network for Universal Health Coverage (JLN) published a Determining guide for the development and use of common requirements for health insurance information systems in 2012 titled Common Requirements for National Health Insurance Information Systems . This resourcewas developed to provide a set of practical, common tools and resources for country decision-makers and other health insurance stakeholders as they developed national-level health insurance information system plans.",
+    "created_at": "2025-08-31T03:06:21.925481"
+  },
+  {
+    "id": "bbba93a6-cbea-4c5f-b3d7-494e36befa53",
+    "requirement_id": "REQ-006",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "The 2012 document outlined a set of insurance process modules, diagrams, and requirements produced through a collaborative process with JLN country participants and health insurance experts. Specifically, requirements were created for enrollment, eligibility, preauthorization, claims management, payment collection, and provider payment.",
+    "created_at": "2025-08-31T03:06:21.925492"
+  },
+  {
+    "id": "d9130925-816e-40b9-a0e4-158f1df80565",
+    "requirement_id": "REQ-007",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "These requirements have since been used by a variety of stakeholders, including the Open Health Information Exchange (OpenHIE), the open source Health Insurance Management Information System (openIMIS), and several country governments, including that of Bangladesh. Recognizing the advances in health insurance technologies, growing interest in the data created through health financing information systems, and country prioritization through the JLN, the IT Initiative hosted a Learning Exchange to revisit the Determining Common topic of health insurance information systems and to expand and update the contents from the original Requirements guide.",
+    "created_at": "2025-08-31T03:06:21.925503"
+  },
+  {
+    "id": "3ab70553-243e-46dc-9733-70bef18ca821",
+    "requirement_id": "REQ-008",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "The Learning Exchange, hosted in Nepal in June 2019, brought together experts from nine countries and several nongovernmental organizations to review, share, and explore the possibilities for expanding the existing common requirements for health insurance information systems. A Guide to Common Requirements for National Health Insurance Information Systems This document, , is the result of that Determining workshop and the next step toward updating the content of the 2012 document.",
+    "created_at": "2025-08-31T03:06:21.925512"
+  },
+  {
+    "id": "f71a6459-a73b-4cae-81d2-c0a97f26f310",
+    "requirement_id": "REQ-009",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Much of this document builds from Common Requirements and seeks to provide guidance on why system requirements are important, the methodology for documenting work process flows and determining system requirements, and how stakeholders may utilize common requirements as a building block to accelerate development and/or implementation of health insurance technologies. In addition, this document suggests a way forward for the insurance technology community to contribute to ongoing updates to ensure these requirements continue to have value as a living resource.",
+    "created_at": "2025-08-31T03:06:21.925520"
+  },
+  {
+    "id": "72611160-da40-4ab2-90b3-3f24bbfa4607",
+    "requirement_id": "REQ-010",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "A guide to common requirements for nAtionAl heAlth insurAnce informAtion systems PAge 5 Introduction National health insurance systems are becoming more common as countries move to operationalize health financing transactions of paying for and delivering health services as part of their progress toward Universal Health Coverage for their citizens. Each country has a unique approach to its health coverage schemes, but a common need across all systems is the ability to support basic insurance processes such as enrolling members, contracting with providers, and paying claims as well as the ability to capture, track, and analyze data within the system.",
+    "created_at": "2025-08-31T03:06:21.925528"
+  },
+  {
+    "id": "3a294e7f-dfed-47fb-bd1c-c36c1d98ead6",
+    "requirement_id": "REQ-011",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "As a result, health insurance or health purchaser1 information systems are becoming more important as schemes are implemented at national scale. Strong health insurance information systems can ensure timely reimbursements, decrease transaction costs, find system efficiencies, prevent fraud, and ensure equitable coverage and treatment.",
+    "created_at": "2025-08-31T03:06:21.925535"
+  },
+  {
+    "id": "d7973072-4042-49f6-84f5-3397947c94b9",
+    "requirement_id": "REQ-012",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Many countries are also finding value in health insurance data to complement other types of health system data. The intent of a common requirements framework for health insurance is to be a logical starting point for supporting the development and implementation of health insurance \u201cIn software engineering information systems.",
+    "created_at": "2025-08-31T03:06:21.925542"
+  },
+  {
+    "id": "d6c05bc4-9d6b-49ca-8351-49dc743a3e1d",
+    "requirement_id": "REQ-013",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Functional requirements are an invaluable tool for policymakers and systems engineering, and technical experts alike. Policymakers can use them to ensure the information system a functional requirement supports national health insurance priorities and the chosen scheme design.",
+    "created_at": "2025-08-31T03:06:21.925549"
+  },
+  {
+    "id": "4e9c3375-6a64-4506-a699-01397fec6fd4",
+    "requirement_id": "REQ-014",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Technical defines a function of a system experts gain clarity on the national priorities in a format that is transferable to software or its component, where a design and implementation. These requirements provide a format that is understandable function is described as a to both health insurance experts and software engineers, providing a platform for specification of behavior prioritization, compromise, and system design.",
+    "created_at": "2025-08-31T03:06:21.925556"
+  },
+  {
+    "id": "4a9070f9-ccef-4aa1-90b1-36f6467013e8",
+    "requirement_id": "REQ-015",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "between outputs and inputs.2\u201d A functional requirement describes in nontechnical terms how an information system should support the business processes and activities and is useful to ensure understanding between users and developers. A country or organization will define specific requirements for its specific needs.",
+    "created_at": "2025-08-31T03:06:21.925563"
+  },
+  {
+    "id": "7a4605a4-3a10-485f-b14e-c4fe6c5dd271",
+    "requirement_id": "REQ-016",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "The benefit of a set of globally defined common requirements is to provide an advanced starting point to review best practices and save time and resources in the development process. This document serves as a guide to the common requirements developed for health insurance systems, explaining the methodology of their creation and some thoughts on how countries and other stakeholders can utilize them.",
+    "created_at": "2025-08-31T03:06:21.925570"
+  },
+  {
+    "id": "c2137bd1-8696-41b7-a0fc-785cf3888c32",
+    "requirement_id": "REQ-017",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Finally, the document explores how the health insurance community can continue to advance and refine these requirements over time in order to make them a living resource that does not suffer from outdatedness.",
+    "created_at": "2025-08-31T03:06:21.925576"
+  },
+  {
+    "id": "13a9a359-3fd8-41c9-bd9b-9d958a7fa668",
+    "requirement_id": "REQ-018",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "CreAting common requirements While common requirements are a useful building block, creating them can be a challenge. Country health coverage schemes range in design, coverage, and maturity\u2014all of which require different types of requirements to function appropriately.",
+    "created_at": "2025-08-31T03:06:21.925583"
+  },
+  {
+    "id": "d4299d6c-6116-4972-ab92-9074d81a589b",
+    "requirement_id": "REQ-019",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "By sharing and comparing requirements across countries, we are creating, cataloging, and making available the global common, reusable requirements for health insurance systems that can be used as building blocks and a starting point for countries and developers to reduce the cost and time of creating their own information systems and solutions. Between 2010 and 2012, the JLN IT Initiative undertook an extensive effort to document a series of common insurance processes and the associated requirements related to health insurance systems.",
+    "created_at": "2025-08-31T03:06:21.925590"
+  },
+  {
+    "id": "0e9ca42c-944d-4baf-85ea-b28f57765086",
+    "requirement_id": "REQ-020",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "This process utilized a methodology known as the Collaborative Requirements Development Methodology (CRDM). In 2019, the IT Initiative revisited the requirements developed using the same methodology, beginning the process of how to update and expand this resource.",
+    "created_at": "2025-08-31T03:06:21.925598"
+  },
+  {
+    "id": "a9a3a57a-0828-4a5b-a73b-dc03920f7590",
+    "requirement_id": "REQ-021",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "This methodology was designed to support the creation of sustainable, scalable, and affordable national health information systems across health domains. The basis of this methodology is to document specific functions that an information system must perform based on the needs of the health system process it is supporting.",
+    "created_at": "2025-08-31T03:06:21.925605"
+  },
+  {
+    "id": "1d7f70de-4d0c-453a-a2ed-8c84e0e4e558",
+    "requirement_id": "REQ-022",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Since its development, CRDM has been used not only in the health insurance space but also to develop requirements for logistics management information systems, maternal health information systems, and more. A key aspect of the effectiveness of CRDM is the use of nontechnical language that is familiar to users and subject matter experts.",
+    "created_at": "2025-08-31T03:06:21.925611"
+  },
+  {
+    "id": "bf22cb19-9419-4617-8ed8-903d339f52d6",
+    "requirement_id": "REQ-023",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "This enables greater clarity and accuracy when communicating the needs of users of information systems to software and system engineers as well as vendors of health insurance applications. Organizing the work To organize the health insurance-related business processes and requirements, we found it helpful to define the scope and boundaries for health insurance processes and to show how they fit into the larger health system.",
+    "created_at": "2025-08-31T03:06:21.925618"
+  },
+  {
+    "id": "0984d722-cafb-4fca-92d2-c220c8a8f817",
+    "requirement_id": "REQ-024",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "The heAlth system domAin A domain refers to a set of functions and processes that define a specific area or sector, in this case the scope of the entire health system. Determining Common Requirements In 2012, presented a domain reference model that outlined ten functional health domains, including community services, facility services, laboratory services, human resources, supply chain, finance and insurance, management and planning, environmental services, knowledge and information, and infrastructure management.3 In 2018, the World Health Organization (WHO) published the Classification of Digital Health Interventions4 to categorize different ways digital and mobile technologies support health system needs.",
+    "created_at": "2025-08-31T03:06:21.925625"
+  },
+  {
+    "id": "bb799a1c-92d7-47b8-aa51-ca99810a89a0",
+    "requirement_id": "REQ-025",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "The WHO classification scheme provides a useful domain view of the overall health system. When considering the development of common insurance requirements, the WHO Classification provides a recognized domain-level view and shared language that can unite this effort with efforts of others working in digital health.",
+    "created_at": "2025-08-31T03:06:21.925632"
+  },
+  {
+    "id": "a9134495-7c48-4512-b0de-65bec4822dcd",
+    "requirement_id": "REQ-026",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "3 See Determining Common Requirements for National Health Insurance Information Systems, Table 1 on page v of the Preface at http://www.joint- learningnetwork.org/resources/determining-common-requirements-for-national-health-insurance-informat 4 Available at: https://www.who.int/reproductivehealth/publications/mhealth/classification-digital-health-interventions/en/ A guide to common requirements for nAtionAl heAlth insurAnce informAtion systems PAge 7 As the health insurance community continues to refine the common requirements, these can be used to inform and expand future versions of the Classification to more completely capture the processes involved in insurance systems.",
+    "created_at": "2025-08-31T03:06:21.925638"
+  },
+  {
+    "id": "7057940d-4ffe-478e-9e4e-4778537c208e",
+    "requirement_id": "REQ-027",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "This framework shows the relationships between scheme policy, the functions of the health insurer, and data analysis used to assess and inform health insurance programs and scheme policy. Figure 2 Functional view of a national health insurance framework Scheme Policy National policy regarding target population set by country \u00bb Benefit package \u00bb Formulary Data provides \u00bb Provider rates policy \u00bb Eligibility requirements guidance \u00bb Provider policy setting AnAlyzing \u00bb Premium setting PerformAnce \u00bb Care management \u00bb Utilization management Rules \u00bb Provider quality management FiduciAry fund mAnAgement FundAmentAl system \u201cfActory\u201d \u00bb Actuarial management \u00bb Medical loss \u00bb Beneficiary management \u00bb Audit/fraud Data & \u00bb Provider management feedback \u00bb Premium collection Change management \u00bb Claims management \u00bb Accounting A guide to common requirements for nAtionAl heAlth insurAnce informAtion systems PAge 9 The JLN IT Initiative also drafted a structured framework for organizing the business processes to show the major process groups, or functional areas, and the related business processes.",
+    "created_at": "2025-08-31T03:06:21.925670"
+  },
+  {
+    "id": "1ab938f5-af49-4876-88e6-3d73779d324c",
+    "requirement_id": "REQ-028",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "While some schemes may not require beneficiary enrollment and another may require it, both systems will require some level of beneficiary management.",
+    "created_at": "2025-08-31T03:06:21.925678"
+  },
+  {
+    "id": "4edf98be-8183-4ff0-b705-7bc2af25bd96",
+    "requirement_id": "REQ-029",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Provider Financial/ Audit Beneficiary Provider Premium Claims Care Utilization Medical Quality Audit and Mgmt Mgmt Mgmt Mgmt Accounting Mgmt Mgmt Mgmt Mgmt Loss Fraud Empanel/ Manage Provider Manage Enroll Payment Utilization Actuarial Identify re-empanel Premium Claims costs of quality medical beneficiary to manage- manage- fraudulent health collection processing catastrophic manage- loss ratio or insured providers ment ment cases provider cases ment (MLR) Assign Identify Pharmacy insured Premium Claims Manage Provider Accounts chronic benefits Provider to PCP or collection status fraudulent agreement receivable disease manage- rate primary scheduling inquiry cases mgmt cases ment (PBM) care unit Enroll into Establish Eligibility Claims chronic provider Cost Accounts Set inquiry by dispute and disease payment sharing payable premium provider appeals mgmt rates programs Monitor Reserve Eligibility Claims chronic fund inquiry by adjustment disease manage- insured and voids manage- ment ment cases Pre- authori- zation Both frameworks may be useful for different purposes or different stakeholders. Common business processes for health insurance Since the requirements define how an information system should support the work activities of the health insurance organization, it is important to first understand how that work is getting done.",
+    "created_at": "2025-08-31T03:06:21.925685"
+  },
+  {
+    "id": "3ad16053-770f-4887-8c27-acc22dc093f5",
+    "requirement_id": "REQ-030",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "The common business processes for health insurance are documented both in narrative form in a business process catalog and in graphic form using task flow diagrams. HL7 FHIR HL7 FHIR, and other global standards for data exchange, are helpful frameworks for aligning business processes across digital health systems.",
+    "created_at": "2025-08-31T03:06:21.925691"
+  },
+  {
+    "id": "268fa3f6-fb81-4ef9-82b4-bcc520139d36",
+    "requirement_id": "REQ-031",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "The processes outlined by FHIR provide additional technical guidance to software developers that help standardize the format and usability of data between systems. Because many health-related software use FHIR as a standard, aligning the development of common requirements to this structure make the process of interoperability and data exchange easier.",
+    "created_at": "2025-08-31T03:06:21.925698"
+  },
+  {
+    "id": "124a0601-1255-4024-892f-489f9caf234e",
+    "requirement_id": "REQ-032",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "It provides a common language that can be used to help shape insurance management software, as well as software used in many other parts of the health care system.",
+    "created_at": "2025-08-31T03:06:21.925705"
+  },
+  {
+    "id": "861519ac-8825-4d78-aa9d-cf5966d7b6b8",
+    "requirement_id": "REQ-033",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "The JLN IT Initiative from 2012 documented the list of business processes in a business process matrix, which was a table format containing information about each process. As the detailed information captured about each business process continues to expand, it is recommended at this point to reformat the business process matrix table to a business process catalog, supporting a dynamic page view of information about each process that can be expanded without the constraint of table-size columns.",
+    "created_at": "2025-08-31T03:06:21.925712"
+  },
+  {
+    "id": "ee1aeeea-5efb-4f3c-bad8-4fd39c3c0dd2",
+    "requirement_id": "REQ-034",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "The following information may be captured in the business process catalog: \u2022 Process number: A reference number for the business process.",
+    "created_at": "2025-08-31T03:06:21.925719"
+  },
+  {
+    "id": "9ef1363e-060f-4693-bf6a-8e631c6e862d",
+    "requirement_id": "REQ-035",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "A guide to common requirements for nAtionAl heAlth insurAnce informAtion systems PAge 11 \u2022 Goal: The major goal in terms of benefits to population health that is supported by the business process.",
+    "created_at": "2025-08-31T03:06:21.925726"
+  },
+  {
+    "id": "220e0c96-d247-402a-9e28-41df6925c5bb",
+    "requirement_id": "REQ-036",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "\u2022 Task set(s): The set of required activities or steps that are carried out in a business process. \u2022 Inputs: Information received by the business process from sources outside of the process.",
+    "created_at": "2025-08-31T03:06:21.925733"
+  },
+  {
+    "id": "e4fb7201-338f-432b-8bc0-b01e8988d4f6",
+    "requirement_id": "REQ-037",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "\u2022 Outputs: Information transferred out of a business process.",
+    "created_at": "2025-08-31T03:06:21.925740"
+  },
+  {
+    "id": "115655c8-746d-4c7b-b834-7d8787acfd42",
+    "requirement_id": "REQ-038",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "By outlining these differences, countries will understand the breadth of options available and choose those processes that are most relevant to their scheme.",
+    "created_at": "2025-08-31T03:06:21.925746"
+  },
+  {
+    "id": "62d0cd87-b6e9-447e-83c3-894e4e3c0afb",
+    "requirement_id": "REQ-039",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "As the business process matrix is built out over time, additional fields that could be captured for a business process include specific systems for inputs and outputs and any standard electronic transaction formats that support that process.",
+    "created_at": "2025-08-31T03:06:21.925753"
+  },
+  {
+    "id": "e2108979-1d4d-4410-8897-3056d6f4dc14",
+    "requirement_id": "REQ-040",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Figure 4 Current business process matrix example Process Process ref # grouP nAme objective inPuts outPuts outcomes 2.1 Beneficiary Enroll Verify identity Demographics Time-based Eligibility is management beneficiary and eligibility in a eligibility determined as Financial timely manner of determination approved or information persons seeking rejected Beneficiary access to benefits Geographic identifier Approved person plan services information receives proof of Benefits plan Qualifying criteria coverage (e.g., number (see qualifying identification conditions) Benefits class card) Proof of identity Benefits plan Assign benefits (e.g., national detail class identification Proof of coverage Benefits plan card, personal identification Feed into data Accurate list of number, biometric repository beneficiaries information, photos) Medical history Current medical condition A guide to common requirements for nAtionAl heAlth insurAnce informAtion systems PAge 13 Figure 5 Sample business process catalog example Process #: 2.1 Process GrouP: Beneficiary management Process NAme: Enroll beneficiary Revision DAte: June 2019 Scheme ChArActeristic: Enrollment-based schemes GoAl: Objective: Verify identity and eligibility in a timely manner of persons seeking access to benefit plan services Outcomes: Eligibility is determined as approved or rejected. Approved person receives proof of coverage (e.g., identification card) Business Rules: Triggers: TAsk Set(s): InPuts: Demographics Financial information Geographic information Qualifying criteria (see qualifying conditions) Proof of identity (e.g., national identification card, personal identification number, biometric information, photos) Medical history Current medical condition InPut Source Systems: OutPuts: Time-based eligibility determination Beneficiary identifier Benefits plan number Benefits class Benefits plan detail Proof of coverage Feed into data repository OutPut Systems: Link to TAsk Flow DiAgrAm: SuPPorted by electronic trAnsAction formAts: Notes: Activity or tAsk flow diAgrAms An activity or task flow diagram is a visual representation of a business process, outlining tasks and decision points within a logical workflow.",
+    "created_at": "2025-08-31T03:06:21.925760"
+  },
+  {
+    "id": "6ae0e36a-bdb0-419b-9da3-ac313c893126",
+    "requirement_id": "REQ-041",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "A graphical representation of a business process helps tell a story of who participates in a process, what types of information are exchanged between the participants, and how the work is accomplished.",
+    "created_at": "2025-08-31T03:06:21.925766"
+  },
+  {
+    "id": "723a6b59-cba3-49b4-b3d2-b38fbbbe1d15",
+    "requirement_id": "REQ-042",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Capture Validate Personal benefit Validate personal personal identifiable plan to Identification identifi- identifi- identifi- information benefi- cation valid?",
+    "created_at": "2025-08-31T03:06:21.925774"
+  },
+  {
+    "id": "b561902f-c14a-401b-b27f-6036aada86b8",
+    "requirement_id": "REQ-043",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "ciary mation mation creden- tials A guide to common requirements for nAtionAl heAlth insurAnce informAtion systems PAge 15 evitArrAn / sliAted ytivitcA Yes No No A 1.",
+    "created_at": "2025-08-31T03:06:21.925780"
+  },
+  {
+    "id": "4b4f0f13-29d6-4fc7-b506-b5f811c228af",
+    "requirement_id": "REQ-044",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Update personal Beneficiary arrives at designated qualifying documents are not identifiable information identifiable information insurance enrollment location valid then the beneficiary may be Insurer reviews captured Beneficiary provides updated or referred to an alternate offline personal identifiable information additional personal identifiable 2. Present identification process and/or process will end with beneficiary to ensure it is information as required by the Beneficiary presents proof of accurate insurer identification 5.",
+    "created_at": "2025-08-31T03:06:21.925787"
+  },
+  {
+    "id": "76c856df-3d45-4b7d-a90c-acd83c7f855d",
+    "requirement_id": "REQ-045",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Provide personal identifiable information 8. Validate identification Beneficiary provides appropriate information complete?",
+    "created_at": "2025-08-31T03:06:21.925794"
+  },
+  {
+    "id": "7a89c551-f653-4e30-81ef-84afeee9a234",
+    "requirement_id": "REQ-046",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "beneficiary credentials Insurer reviews identification information (i.e., name, address, Insurer reviews the captured In the even that there are several and other appropriate qualifying biometrics\u2026) data to ensure that all of the benefits plans for which the documents for validity appropriate fields are complete beneficiary qualifies, then the 6. identifiable information insurer selects a benefits plan to assign to the beneficiary If the identification and/or other Insurer captures personal qualifying documents are valid identifiable information TPA \u2013 Third Party Administrator then the process continues.",
+    "created_at": "2025-08-31T03:06:21.925800"
+  },
+  {
+    "id": "8f519f96-1d57-4e70-bcce-6d104680f152",
+    "requirement_id": "REQ-047",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Common information system requirements for health insurance A requirement is a statement that describes what an information system must do to support a task, activity, or decision. statements usually begin with \u201cThe system must .",
+    "created_at": "2025-08-31T03:06:21.925807"
+  },
+  {
+    "id": "c87f1a0f-89fa-4dc7-aa0c-5a6956118de3",
+    "requirement_id": "REQ-048",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": ".\u201dor \u201cThe system shall \u201d and describe what must be accomplished without specific reference to technology. Requirements describe the needed functionality of an information system; provide a description of what the information system needs to capture, perform, and display; and answer the question \u201cHow would you see information systems supporting task/activity X?\u201d what how These statements describe needs to happen, not it needs to happen.",
+    "created_at": "2025-08-31T03:06:21.925814"
+  },
+  {
+    "id": "e60b3370-3969-46cc-8b03-7e563a18eda1",
+    "requirement_id": "REQ-049",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "The national health insurance requirements catalog is a listing of system requirements organized by functional area and business process. Figure 7 Common system requirements example Requirement Req # Process Activity (the system must or should .",
+    "created_at": "2025-08-31T03:06:21.925821"
+  },
+  {
+    "id": "649e53bb-f47d-40bf-8ff4-725563a6832c",
+    "requirement_id": "REQ-050",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": ".) Comments 1 Enrollment Validate Allow insurer to input national identification identification number 2 Enrollment Validate Allow insurer to check for valid identification identification number 3 Enrollment Validate Insurer to clearly notice error message identification if identification number does not match national/state database or list 4 Enrollment Validate Allow insurer to search and verify if enrollee is identification already enrolled in a current benefits plan 5 Enrollment Capture personal Allow insurer to search database by Prevention of duplicate information name, identification number, etc., to see if records beneficiary has existing enrollment record 6 Enrollment Capture personal Allow insurer to capture biometric data information APPlying requirements At A Pr ActicAl level The common set of business processes and requirements is a resource designed to be both a road map and a tool. It serves as a road map for helping countries move toward the vision of an effective national health insurance information system.",
+    "created_at": "2025-08-31T03:06:21.925827"
+  },
+  {
+    "id": "9ce4a46f-b29d-4e0a-80bc-a50d1bc0f580",
+    "requirement_id": "REQ-051",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "At the same time, the requirements can be used as a tool for structuring specific implementation projects, informing vendor requests for proposals, and self-assessing existing insurance capabilities. Global common requirements serve as a building block resource to inform and shorten the timeline and effort to developing country-specific requirements.",
+    "created_at": "2025-08-31T03:06:21.925834"
+  },
+  {
+    "id": "f7e5a59f-2b13-4a48-b02e-8bf1cf9792d3",
+    "requirement_id": "REQ-052",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Countries can adapt the processes and requirements to address their specific situation and conditions. They can modify the business process sections by adding specific or unique requirements and deleting business processes not applicable to their scheme design.",
+    "created_at": "2025-08-31T03:06:21.925841"
+  },
+  {
+    "id": "0d8f4049-bc5a-4255-991b-ff28aea93bb7",
+    "requirement_id": "REQ-053",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "In turn, country-specific requirements are used to update and expand the global set of requirements. Figure 8 Common requirements and country-specific requirements Global requirements provide a starting point to develop country specific requirements GlobAl common insurAnce requirements NAtionAl or scheme sPecific requirements Country specific requirements build and inform the collection of global common requirements A guide to common requirements for nAtionAl heAlth insurAnce informAtion systems PAge 17 The following are some examples of where the application of the requirements can add value to countries, donors, nongovernmental organizations, technical agencies, and software developers.",
+    "created_at": "2025-08-31T03:06:21.925848"
+  },
+  {
+    "id": "6d707ad0-4844-4a3b-b3cf-513fcb41a725",
+    "requirement_id": "REQ-054",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Use DescriPtion Inform the design of A Common requirements provide a framework for ministries or project teams beginning the process nAtionAl system of designing or implementing a national health insurance information system. These requirements can be used to understand the scope that the system will need to support for the desired scheme characteristics.",
+    "created_at": "2025-08-31T03:06:21.925855"
+  },
+  {
+    "id": "1b6d8e8d-ee87-4fa6-bcd3-f7366febcee3",
+    "requirement_id": "REQ-055",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "A review of common requirements can help address the question of what requirements are relevant for the context, given national policies and scheme design. Conduct A lAndscAPe National governments, nongovernmental organizations, technical agencies, and donors can AnAlysis use these requirements to conduct analysis of currently available health insurance software solutions (including commercial, publicly funded, and open source); the requirements will provide an objective comparison to help with mapping of system capabilities and the completeness of solutions evaluated.",
+    "created_at": "2025-08-31T03:06:21.925862"
+  },
+  {
+    "id": "24833ed3-92d2-48b4-8f77-2b1d3bcf1e86",
+    "requirement_id": "REQ-056",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "PrePAre A request for For project teams that have identified the need to implement an information system to support ProPosAl national health insurance, the common requirements can provide both a framework that will allow the proper scoping of the project and a checklist that can be used when drafting terms of reference or a request for proposal. First, it will allow the team to define what they want to do (i.e., the functional scope).",
+    "created_at": "2025-08-31T03:06:21.925868"
+  },
+  {
+    "id": "eead4f38-f3db-40b9-a524-462055d6549f",
+    "requirement_id": "REQ-057",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "It will also allow the team to ask essential questions. For example: \u2022 What are the requirements that will be relevant for our country context given our national and scheme rules?",
+    "created_at": "2025-08-31T03:06:21.925875"
+  },
+  {
+    "id": "272a14e7-04bb-4a3d-b81a-9f03fbf58679",
+    "requirement_id": "REQ-058",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "\u2022 What requirements must be developed on the provider and payer sides? \u2022 Will the solution integrate with existing hospital information systems, or will it need to have interface design built into it?",
+    "created_at": "2025-08-31T03:06:21.925882"
+  },
+  {
+    "id": "c38df7ab-d38d-4897-923c-16c48e89433e",
+    "requirement_id": "REQ-059",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "\u2022 Are there any requirements that are essential to address while others would be nice to have but not essential? The list of requirements provides a good head start in this prioritization process.",
+    "created_at": "2025-08-31T03:06:21.925889"
+  },
+  {
+    "id": "e9575c56-06d0-4c78-bad6-df4b5f697403",
+    "requirement_id": "REQ-060",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "EvAluAte solutions Sometimes managers will be in a position where they have multiple solution alternatives and need to choose a system that best matches the complex and diverse organizational needs.",
+    "created_at": "2025-08-31T03:06:21.925896"
+  },
+  {
+    "id": "dd7ff492-cb72-4a17-90ca-54ec9729062a",
+    "requirement_id": "REQ-061",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Not every software package will be equally strong across all requirements. The list of requirements may in this case be used to score different systems against a list of weighted and prioritized requirements based on country or team preferences, making the discussion more transparent and structured.",
+    "created_at": "2025-08-31T03:06:21.925902"
+  },
+  {
+    "id": "295f751f-2987-4875-9040-2a5d80b07a05",
+    "requirement_id": "REQ-062",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "The requirements can help answer how closely a software solution fulfills the desired requirements. Guide softwAre Software developers are able to define the functionality of a software using the detailed business develoPment processes and requirements.",
+    "created_at": "2025-08-31T03:06:21.925909"
+  },
+  {
+    "id": "cca692bb-3d37-4a73-a59c-b9ecf89400ce",
+    "requirement_id": "REQ-063",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Because requirements do not specifically address how a process should be carried out, software developers are able to apply different software solutions to ensure the inputs, outputs, and outcomes match the intended objectives and goals. While software may have to be further customized to meet the specific needs of a country or system, a common requirements document provides a starting point for software design and can help software developers create a product that fulfills needs across scheme designs and structures.",
+    "created_at": "2025-08-31T03:06:21.925916"
+  },
+  {
+    "id": "666fa6db-f511-40e4-b898-40583843f313",
+    "requirement_id": "REQ-064",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Common requirements provide: \u2022 A common language for objects and processes in the domain that can be understood by technical and nontechnical stakeholders.",
+    "created_at": "2025-08-31T03:06:21.925922"
+  },
+  {
+    "id": "096cf847-dd73-4d41-8dea-c7b9310403ba",
+    "requirement_id": "REQ-065",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "\u2022 A starting point for certification that software meets its intended requirements. Define globAl common By defining common health insurance business processes, and in particular the inputs and outputs formAts for heAlth of a given process, common requirements can define the specific data needs for a process.",
+    "created_at": "2025-08-31T03:06:21.925929"
+  },
+  {
+    "id": "d41b30eb-304f-4a92-ad1b-be827222cc50",
+    "requirement_id": "REQ-066",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "This insurAnce trAnsActions, information can be used by individuals working within other information technology projects enAbling interoPerAbility (electronic medical records, service registries, payment mechanisms) in order to ensure that between heAlth systems the data produced by those systems match the needs of the insurance system and that the data coming out of an insurance system are usable by other health information systems. Common requirements can also inform and be informed by transaction standards (e.g., HL7 FHIR) to encourage software and systems to utilize these standards.",
+    "created_at": "2025-08-31T03:06:21.925936"
+  },
+  {
+    "id": "5630de2e-8a40-4689-b51c-ee89e0f617d4",
+    "requirement_id": "REQ-067",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Use DescriPtion Use the CRDM Process to CRDM is a generic process and can be used to identify, discuss, reach agreement on, and develoP Project-sPecific document any business process and its related requirements systematically. Some key processes requirements and requirements were already mapped in this document in a way that should be as generic as possible; but even then, value may be found in the analysis and consensus-building aspect of the exercise itself at a country or project level.",
+    "created_at": "2025-08-31T03:06:21.925943"
+  },
+  {
+    "id": "0b173920-6531-459f-8adc-cc99220bda43",
+    "requirement_id": "REQ-068",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Furthermore, not all requirements may be equally important or even relevant in every context, so at a minimum, national or local users of this methodology should validate the content of processes and requirements in a specific context. DeveloP oPerAtionAl And Documented business processes and system requirements can help shape the content of trAining mAteriAls operational and training materials by providing a detailed understanding of each step of a business process and how business processes relate to one another.",
+    "created_at": "2025-08-31T03:06:21.925950"
+  },
+  {
+    "id": "71ba4ce0-81ad-4c62-88fa-cecff9402991",
+    "requirement_id": "REQ-069",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Materials can be cross-checked against requirements to ensure they align with one another and that all processes are covered by both. SuPPort business Process When reviewing and redesigning the business processes within a system, the global common set of redesign efforts business processes and requirements can provide examples and guidance on best practices.",
+    "created_at": "2025-08-31T03:06:21.925957"
+  },
+  {
+    "id": "782128aa-98a3-4f39-ad41-b35ba1e97719",
+    "requirement_id": "REQ-070",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "ImProve dAtA quAlity Issues with data quality are common. An analysis of business processes can help determine where data are entering the system (either directly collected or coming from another system), how data are processed and analyzed, and how data are shared with users and other systems.",
+    "created_at": "2025-08-31T03:06:21.925963"
+  },
+  {
+    "id": "8d28bc7f-5167-4e1a-ad7f-e37e6d4ae7c6",
+    "requirement_id": "REQ-071",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "By understanding the flow of data through the system, stakeholders can identify potential areas of data degradation or misalignment. Stakeholders are better able to address these specific issues and address data needs of each business process.",
+    "created_at": "2025-08-31T03:06:21.925970"
+  },
+  {
+    "id": "0e4426cd-62ae-4b55-a255-745b92fe8252",
+    "requirement_id": "REQ-072",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "From the viewpoint of various stakeholders, the following examples are uses for the common requirements: Figure 9 Stakeholder view of using common requirements HeAlth HeAlth PolicymAker system mAnAgers cAre workers DeveloPers \u00bb Inform the design of a \u00bb Support business \u00bb Improve data \u00bb Respond to a request national system process redesign efforts quality for proposal \u00bb Conduct a landscape \u00bb Develop operational \u00bb Guide software analysis and training materials development \u00bb Prepare a request for \u00bb Use the CRDM process \u00bb Define global common proposal to develop project formats for health \u00bb Evaluate solutions specific requirements insurance transactions, \u00bb Improve Data Quality \u00bb Improve data quality enabling interoperability between health systems \u00bb Prepare a request for \u00bb Develop training proposal materials \u00bb Evaluate solutions A guide to common requirements for nAtionAl heAlth insurAnce informAtion systems PAge 19 RecommendAtions for next stePs The following recommendations were made by members of the health insurance technology community at the Nepal Learning Exchange workshop: 1. Move existing PDF versions of insurance business processes and requirements developed by the JLN to an online, downloadable format so they can be continually updated and anyone wishing to use them can download and adapt them to their context-specific requirements.",
+    "created_at": "2025-08-31T03:06:21.925977"
+  },
+  {
+    "id": "0d34a1e1-4da0-4cb5-900a-328bbc3cef46",
+    "requirement_id": "REQ-073",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Add versioning to the health insurance business process matrix/catalog (at the process and requirement level) so that business processes and requirements can be added and updated over time. Add more context on the linkage between scheme design and which business processes and requirements support which kinds of scheme design.",
+    "created_at": "2025-08-31T03:06:21.925984"
+  },
+  {
+    "id": "77fc5f35-fa1d-46c4-a394-841f27c4bd6f",
+    "requirement_id": "REQ-074",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Each process and requirement can be tagged with scheme characteristics to show which types of schemes that process supports.",
+    "created_at": "2025-08-31T03:06:21.925990"
+  },
+  {
+    "id": "a279ff2e-bf64-49d3-a8d3-b3b9a9a005b9",
+    "requirement_id": "REQ-075",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "The business processes and requirements can be tagged to the scheme use cases they support.",
+    "created_at": "2025-08-31T03:06:21.925997"
+  },
+  {
+    "id": "9872eceb-da76-4754-9c32-960afd62812c",
+    "requirement_id": "REQ-076",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Determining Common Requirements 4. Update the document to be a guidebook with updated information on why and how to use the business processes and requirements.",
+    "created_at": "2025-08-31T03:06:21.926007"
+  },
+  {
+    "id": "73182e95-62fb-49e0-89d9-9fd926c81acf",
+    "requirement_id": "REQ-077",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "The resource should be sustainably maintained, and all documentation/resources must be easily usable (e.g., downloadable, referenceable, and adaptable).",
+    "created_at": "2025-08-31T03:06:21.926014"
+  },
+  {
+    "id": "4397aa8a-9ea7-4541-9130-d2b4d5560994",
+    "requirement_id": "REQ-078",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "Support a defined engagement or learning collaborative for country participants to update and build out the insurance processes and requirements based on the recommendations from the Learning Exchange workshop. Support exploration and learning opportunities around additional information technology for health insurance\u2013related topics of interest expressed by this community, which include: \u00bb Build out new and updated insurance-related business processes, workflow diagrams, and system requirements.",
+    "created_at": "2025-08-31T03:06:21.926022"
+  },
+  {
+    "id": "bac1a9bc-7aba-4dcf-b845-d33a6ff4648f",
+    "requirement_id": "REQ-079",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "\u00bb Share countries\u2019 experiences, best practices, and tools for how to build a claims data model.",
+    "created_at": "2025-08-31T03:06:21.926029"
+  },
+  {
+    "id": "ba121eec-102a-4b10-96b6-8b66cfc23271",
+    "requirement_id": "REQ-080",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "\u00bb Develop standards for integrating health insurance claims systems with electronic health record (EHR) systems. Conclusion Globally, countries are expanding access to health services to more of their citizens through the development of national health insurance schemes; the success of these efforts is highly dependent upon effective and scalable information systems.",
+    "created_at": "2025-08-31T03:06:21.926036"
+  },
+  {
+    "id": "34cdf0e5-230a-4c4e-8800-3bf0afc41168",
+    "requirement_id": "REQ-081",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "At the outset, experts questioned if common functional requirements were possible since to date there has been little reuse of national health insurance systems from country to country. Through the application of the CRDM, it is clear that countries do share many of the same functional requirements.",
+    "created_at": "2025-08-31T03:06:21.926043"
+  },
+  {
+    "id": "fac79289-989d-4e8f-9888-93ce7514f652",
+    "requirement_id": "REQ-082",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "If developed collaboratively, with countries guiding the process and documented properly, requirements can be shared among countries to expedite the development of individual national health insurance information systems. Requirements can also be shared with developers creating global software solutions and standards to meet the needs of insurance providers.",
+    "created_at": "2025-08-31T03:06:21.926051"
+  },
+  {
+    "id": "800970eb-97fb-4aec-8b18-ed890a8463f0",
+    "requirement_id": "REQ-083",
+    "filename": "Common_InsuranceReqs_FINAL.pdf",
+    "statement": "A guide to common requirements for nAtionAl heAlth insurAnce informAtion systems PAge 21 A guide to common requirements for nAtionAl heAlth insurAnce informAtion systems PAge 23",
+    "created_at": "2025-08-31T03:06:21.926057"
+  }
+]

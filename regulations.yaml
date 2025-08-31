@@ -1,0 +1,28 @@
+regulations:
+  - HIPAA
+  - HIPAA §164.502
+  - GDPR
+  - GDPR Article 25
+  - FDA 21 CFR Part 11
+  - FDA 21 CFR Part 820
+  - ISO 9001
+  - ISO 13485
+  - ISO 27001
+  - ISO 27017
+  - ISO 27018
+  - IEC 62304
+  - ISO 14971
+  - HL7
+  - FHIR
+  - DICOM
+  - LOINC
+  - SNOMED CT
+  - OpenHIE
+  - openIMIS
+  - MDR (EU 2017/745)
+  - IVDR (EU 2017/746)
+  - CMS Interoperability Rules
+  - HITECH Act
+  - India DISHA Bill
+  - Singapore PDPA
+  - Australia My Health Records Act
