@@ -106,3 +106,5 @@ flowchart TD
 - Requirement-to-test traceability for audits.
 - Semantic validation ensures test cases match requirement intent.
 - Integration with enterprise toolchains to support real-world workflows.
+
+“Our system doesn’t replace auditors. It accelerates them: it automatically builds a compliance traceability matrix, flags likely gaps using both rules + AI reasoning, and provides confidence scores so compliance officers can focus where risk is highest.”

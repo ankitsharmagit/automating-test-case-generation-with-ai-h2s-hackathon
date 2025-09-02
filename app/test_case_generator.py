@@ -3,22 +3,46 @@ import datetime
 import uuid
 import json
 import re
+import logging
 from tqdm import tqdm
 from google.cloud import bigquery
 from langchain_google_vertexai import VertexAI
+from app.llm_utils import safe_llm_batch_async
+from faker import Faker
+import random
+from app.utils import get_logger
+
+logger = get_logger("TestCaseGenerator", log_file="logs/test_case_generator.log")
 
 
-async def safe_llm_batch_async(llm, prompts, timeout=90):
-    """Run multiple LLM calls concurrently with timeout handling."""
-    tasks = [llm.ainvoke(prompt) for prompt in prompts]
-    try:
-        return await asyncio.wait_for(
-            asyncio.gather(*tasks, return_exceptions=True),
-            timeout=timeout
-        )
-    except asyncio.TimeoutError:
-        print("Timeout reached, skipping this batch.")
-        return ["[]" for _ in prompts]
+fake = Faker()
+
+
+def generate_synthetic_healthcare_data():
+    """Generate GDPR-compliant synthetic healthcare test data."""
+    data = {
+        "patient_id": f"PID-{fake.random_int(1000, 9999)}",
+        "name": fake.name(),
+        "dob": fake.date_of_birth(minimum_age=1, maximum_age=90).isoformat(),
+        "gender": random.choice(["Male", "Female", "Other"]),
+        "phone": fake.phone_number(),
+        "address": fake.address().replace("\n", ", "),
+        "mrn": f"MRN-{fake.random_int(100000, 999999)}",  # Medical Record Number
+        "insurance_id": f"INS-{fake.random_int(10000, 99999)}",
+        "lab_results": {
+            "hemoglobin": round(random.uniform(11, 16), 1),
+            "cholesterol": round(random.uniform(150, 250), 1),
+            "glucose": round(random.uniform(70, 140), 1)
+        },
+        "prescription": random.choice([
+            "Atorvastatin 10mg OD",
+            "Metformin 500mg BD",
+            "Amoxicillin 500mg TID",
+            "Lisinopril 10mg OD"
+        ])
+    }
+    logger.debug(f"Generated synthetic test data: {data}")
+    return data
 
 
 class TestCaseGenerator:
@@ -31,6 +55,7 @@ class TestCaseGenerator:
             project=project_id,
             location=location
         )
+        logger.info(f"Initialized TestCaseGenerator with project={project_id}, location={location}")
 
     def _make_prompt(self, requirement):
         return f"""
@@ -67,18 +92,22 @@ class TestCaseGenerator:
         if match:
             try:
                 return json.loads(match.group(0))
-            except Exception:
+            except Exception as e:
+                logger.warning(f"Failed to parse JSON: {e}")
                 return []
+        logger.warning("No valid JSON found in LLM response")
         return []
 
     async def batch_generate_async(self, requirements, batch_size=5):
         """Generate test cases asynchronously in batches of requirements."""
         all_cases = []
         prompts = [self._make_prompt(req) for req in requirements]
+        logger.info(f"Starting test case generation for {len(prompts)} requirements (batch_size={batch_size})")
 
         for i in tqdm(range(0, len(prompts), batch_size), desc="Generating Test Cases"):
             batch_prompts = prompts[i:i+batch_size]
             batch_reqs = requirements[i:i+batch_size]
+            logger.info(f"Processing batch {i//batch_size + 1} with {len(batch_prompts)} requirements")
 
             responses = await safe_llm_batch_async(self.llm, batch_prompts)
 
@@ -86,15 +115,19 @@ class TestCaseGenerator:
                 raw_text = str(resp) if isinstance(resp, str) else getattr(resp, "content", str(resp))
                 cases = self._extract_json(raw_text)
 
+                if not cases:
+                    logger.warning(f"No cases generated for requirement {req['requirement_id']}")
+
                 for case in cases:
-                    all_cases.append({
+                    enriched_test_data = case.get("test_data") if case.get("test_data") else generate_synthetic_healthcare_data()
+                    test_case = {
                         "test_id": case.get("test_id", f"TC-{uuid.uuid4()}"),
                         "requirement_id": req["requirement_id"],
                         "title": case.get("title", "Untitled Test Case"),
                         "description": case.get("description", ""),
                         "preconditions": case.get("preconditions", []),
                         "steps": case.get("steps", []),
-                        "test_data": case.get("test_data", {}),
+                        "test_data": enriched_test_data,
                         "expected_result": case.get("expected_result", []),
                         "postconditions": case.get("postconditions", []),
                         "priority": case.get("priority", req.get("priority", "P3")),
@@ -103,14 +136,17 @@ class TestCaseGenerator:
                         "execution_status": "Not Executed",
                         "owner": "QA Team",
                         "created_at": datetime.datetime.utcnow().isoformat()
-                    })
+                    }
+                    logger.debug(f"Generated test case: {test_case['test_id']} for requirement {req['requirement_id']}")
+                    all_cases.append(test_case)
 
+        logger.info(f"Generated total {len(all_cases)} test cases")
         return all_cases
 
     def export_to_bq(self, test_cases, dataset_id="requirements_dataset", table_id="test_cases", batch_size=100):
         """Export test cases into BigQuery in safe batches."""
         if not test_cases:
-            print("No test cases to export")
+            logger.warning("No test cases to export")
             return
 
         client = bigquery.Client(project=self.project_id)
@@ -137,12 +173,12 @@ class TestCaseGenerator:
         # Ensure table exists
         try:
             client.get_table(table_ref)
-            print(f"Table {table_ref} exists.")
+            logger.info(f"Table {table_ref} exists.")
         except Exception:
-            print(f"Table {table_ref} not found. Creating...")
+            logger.info(f"Table {table_ref} not found. Creating...")
             table = bigquery.Table(table_ref, schema=schema)
             client.create_table(table)
-            print(f"Created table {table_ref}")
+            logger.info(f"Created table {table_ref}")
 
         # Prepare rows
         all_rows = []
@@ -158,9 +194,9 @@ class TestCaseGenerator:
             batch = all_rows[i:i+batch_size]
             errors = client.insert_rows_json(table_ref, batch)
             if errors:
-                print(f"Errors inserting batch {i//batch_size + 1}: {errors}")
+                logger.error(f"Errors inserting batch {i//batch_size + 1}: {errors}")
             else:
                 total_inserted += len(batch)
-                print(f"Inserted batch {i//batch_size + 1} ({len(batch)} rows).")
+                logger.info(f"Inserted batch {i//batch_size + 1} ({len(batch)} rows).")
 
-        print(f"Finished inserting {total_inserted} test cases into {table_ref}")
+        logger.info(f"Finished inserting {total_inserted} test cases into {table_ref}")

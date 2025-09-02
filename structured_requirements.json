@@ -2,22 +2,32 @@
   {
     "requirement_id": "REQ-001",
     "category": "Compliance",
-    "title": "Stakeholder Adoption of Requirements",
+    "title": "Stakeholder Adoption and Interoperability",
     "statement": "These requirements have since been used by a variety of stakeholders, including the Open Health Information Exchange (OpenHIE), the open source Health Insurance Management Information System (openIMIS), and several country governments, including that of Bangladesh.",
-    "priority": "P3",
-    "severity": "Minor",
-    "regulation": [],
-    "actors": [
-      "Open Health Information Exchange (OpenHIE)",
-      "openIMIS",
-      "Country Governments"
+    "priority": "P1",
+    "severity": "Major",
+    "regulation": [
+      "OpenHIE",
+      "openIMIS"
     ],
-    "data_type": [],
-    "action": [],
+    "actors": [
+      "System Integrator",
+      "Policy Maker",
+      "Government Body"
+    ],
+    "data_type": [
+      "PHI",
+      "Health Insurance Claims",
+      "Patient Demographics"
+    ],
+    "action": [
+      "Comply",
+      "Interoperate"
+    ],
     "acceptance_criteria": [
-      "Evidence of use or adoption by OpenHIE is documented.",
-      "Evidence of use or adoption by openIMIS is documented.",
-      "Evidence of use or adoption by the government of Bangladesh is documented."
+      "The system's architecture and data exchange protocols must be compliant with OpenHIE standards.",
+      "The system must demonstrate interoperability with openIMIS or systems based on its framework.",
+      "Evidence of alignment with the digital health requirements of specified country governments (e.g., Bangladesh) must be provided."
     ],
     "dependencies": [],
     "traceability": [],
@@ -27,73 +37,35 @@
       "validated": true,
       "raw_input": "These requirements have since been used by a variety of stakeholders, including the Open Health Information Exchange (OpenHIE), the open source Health Insurance Management Information System (openIMIS), and several country governments, including that of Bangladesh."
     },
-    "created_at": "2025-08-31T19:05:19.340708"
+    "created_at": "2025-09-02T05:19:48.697595"
   },
   {
     "requirement_id": "REQ-003",
     "category": "Compliance",
-    "title": "Update to National Health Insurance Information Systems Guide",
-    "statement": "The information system must be updated to align with the content and requirements specified in the new 'Guide to Common Requirements for National Health Insurance Information Systems', which supersedes the 2012 version.",
-    "priority": "P1",
-    "severity": "Critical",
-    "regulation": [
-      "National Health Insurance Information Systems Guide (Updated)",
-      "HIPAA"
-    ],
-    "actors": [
-      "admin",
-      "compliance_officer"
-    ],
-    "data_type": [
-      "PHI",
-      "Insurance Claims",
-      "Patient Demographics"
-    ],
-    "action": [
-      "modify",
-      "access",
-      "audit"
-    ],
-    "acceptance_criteria": [
-      "A gap analysis is performed comparing the current system against the new guide.",
-      "All system functionalities, policies, and procedures are reviewed and updated to meet the requirements of the new guide.",
-      "A compliance audit successfully validates that the system adheres to all applicable requirements from the updated guide.",
-      "Documentation is updated to reflect compliance with the new guide."
-    ],
-    "dependencies": [],
-    "traceability": [],
-    "metadata": {
-      "source_file": "Common_InsuranceReqs_FINAL.pdf",
-      "llm_model": "gemini-2.5-pro",
-      "validated": true,
-      "raw_input": "A Guide to Common Requirements for National Health Insurance Information Systems This document, , is the result of that Determining workshop and the next step toward updating the content of the 2012 document."
-    },
-    "created_at": "2025-08-31T19:05:19.340842"
-  },
-  {
-    "requirement_id": "REQ-004",
-    "category": "Compliance",
     "title": "Update National Health Insurance System Requirements Guide",
-    "statement": "A Guide to Common Requirements for National Health Insurance Information Systems This document, , is the result of that Determining workshop and the next step toward updating the content of the 2012 document.",
+    "statement": "A 'Guide to Common Requirements for National Health Insurance Information Systems' must be updated, based on the results of the Determining workshop, to supersede the 2012 version of the document.",
     "priority": "P1",
     "severity": "Major",
     "regulation": [
       "HIPAA"
     ],
     "actors": [
-      "Admin",
-      "Compliance Officer"
+      "Compliance Officer",
+      "Business Analyst",
+      "Project Manager"
     ],
     "data_type": [
-      "PHI"
+      "PHI",
+      "Insurance Claims Data"
     ],
     "action": [
-      "modify"
+      "modify",
+      "create"
     ],
     "acceptance_criteria": [
-      "The content of the 2012 guide document is reviewed against the findings from the 'Determining workshop'.",
-      "A new, updated version of the 'Guide to Common Requirements for National Health Insurance Information Systems' is drafted and approved.",
-      "The final, approved guide is published and distributed to relevant teams."
+      "A new version of the 'Guide to Common Requirements for National Health Insurance Information Systems' is published.",
+      "The new guide incorporates all relevant outputs from the 'Determining workshop'.",
+      "The new guide is formally approved and designated as the replacement for the 2012 document."
     ],
     "dependencies": [],
     "traceability": [],
@@ -103,7 +75,41 @@
       "validated": true,
       "raw_input": "A Guide to Common Requirements for National Health Insurance Information Systems This document, , is the result of that Determining workshop and the next step toward updating the content of the 2012 document."
     },
-    "created_at": "2025-08-31T19:05:19.340886"
+    "created_at": "2025-09-02T05:19:48.697956"
+  },
+  {
+    "requirement_id": "REQ-004",
+    "category": "Compliance",
+    "title": "Update National Health Insurance Information Systems Guide",
+    "statement": "The 'Guide to Common Requirements for National Health Insurance Information Systems' must be updated to incorporate the results of the 'Determining workshop', serving as the official replacement for the 2012 version of the document.",
+    "priority": "P1",
+    "severity": "Major",
+    "regulation": [],
+    "actors": [
+      "Compliance Officer",
+      "System Architect",
+      "Project Manager"
+    ],
+    "data_type": [
+      "Requirements Documentation"
+    ],
+    "action": [
+      "modify"
+    ],
+    "acceptance_criteria": [
+      "A new version of the 'Guide to Common Requirements for National Health Insurance Information Systems' is drafted and approved.",
+      "The new guide explicitly incorporates the findings and decisions from the 'Determining workshop'.",
+      "The updated document is officially published and communicated as the replacement for the 2012 version."
+    ],
+    "dependencies": [],
+    "traceability": [],
+    "metadata": {
+      "source_file": "Common_InsuranceReqs_FINAL.pdf",
+      "llm_model": "gemini-2.5-pro",
+      "validated": true,
+      "raw_input": "A Guide to Common Requirements for National Health Insurance Information Systems This document, , is the result of that Determining workshop and the next step toward updating the content of the 2012 document."
+    },
+    "created_at": "2025-09-02T05:19:48.698029"
   },
   {
     "requirement_id": "REQ-005",
@@ -140,30 +146,31 @@
       "validated": true,
       "raw_input": "In addition, this document suggests a way forward for the insurance technology community to contribute to ongoing updates to ensure these requirements continue to have value as a living resource."
     },
-    "created_at": "2025-08-31T19:05:19.340927"
+    "created_at": "2025-09-02T05:19:48.698095"
   },
   {
     "requirement_id": "REQ-006",
     "category": "Compliance",
-    "title": "National Health Insurance Systems Introduction",
-    "statement": "National health insurance systems are becoming more common as countries move to operationalize health financing transactions of paying for and delivering health services as part of their progress toward Universal Health Coverage for their citizens.",
+    "title": "National Health Insurance System Context",
+    "statement": "The system must be designed in the context of a national health insurance system, which operationalizes health financing transactions for paying for and delivering health services as part of a country's progress toward Universal Health Coverage for its citizens.",
     "priority": "P3",
     "severity": "Minor",
     "regulation": [],
     "actors": [
       "Patient",
       "Payer",
-      "Provider",
+      "Health Authority",
       "Admin"
     ],
     "data_type": [
       "PHI",
       "Financial Data",
-      "Claims Data"
+      "Insurance Information"
     ],
     "action": [],
     "acceptance_criteria": [
-      "This is an introductory, non-functional statement providing context for subsequent requirements. It has no measurable acceptance criteria."
+      "The system's purpose and design documentation must align with the principles of supporting a national health insurance framework.",
+      "Stakeholder documentation confirms the system's role in contributing to Universal Health Coverage goals."
     ],
     "dependencies": [],
     "traceability": [],
@@ -173,33 +180,37 @@
       "validated": true,
       "raw_input": "A guide to common requirements for nAtionAl heAlth insurAnce informAtion systems PAge 5 Introduction National health insurance systems are becoming more common as countries move to operationalize health financing transactions of paying for and delivering health services as part of their progress toward Universal Health Coverage for their citizens."
     },
-    "created_at": "2025-08-31T19:05:19.340967"
+    "created_at": "2025-09-02T05:19:48.698161"
   },
   {
     "requirement_id": "REQ-007",
     "category": "Compliance",
     "title": "Process for Ongoing Requirement Updates",
-    "statement": "A process shall be established for the insurance technology community to contribute to ongoing updates to ensure the requirements document remains a valuable and living resource.",
-    "priority": "P1",
+    "statement": "A process must be established for the insurance technology community to contribute to ongoing updates, ensuring the requirements document remains a valuable and current 'living resource' to support national health insurance systems and Universal Health Coverage goals.",
+    "priority": "P2",
     "severity": "Major",
-    "regulation": [],
+    "regulation": [
+      "ISO 9001"
+    ],
     "actors": [
-      "Insurance Technology Community",
+      "Compliance Officer",
       "System Administrator",
-      "Governance Board"
+      "Insurance Technology Community"
     ],
     "data_type": [
-      "Requirements Documentation"
+      "Compliance Documentation",
+      "System Requirements"
     ],
     "action": [
-      "contribute",
-      "update",
-      "review"
+      "review",
+      "modify",
+      "propose"
     ],
     "acceptance_criteria": [
-      "A documented process for submitting, reviewing, and incorporating updates from the community is established and accessible.",
-      "A designated platform or channel for community contributions is implemented and operational.",
-      "The requirements document includes a version history that reflects periodic updates and contributions."
+      "A formal process for submitting, reviewing, and incorporating updates to the requirements is documented and approved.",
+      "A designated group or role is assigned responsibility for managing the update process.",
+      "A communication channel is established for the insurance technology community to provide contributions and feedback.",
+      "The requirements document is scheduled for periodic review (e.g., annually) to ensure its continued value."
     ],
     "dependencies": [],
     "traceability": [],
@@ -209,13 +220,13 @@
       "validated": true,
       "raw_input": "In addition, this document suggests a way forward for the insurance technology community to contribute to ongoing updates to ensure these requirements continue to have value as a living resource. A guide to common requirements for nAtionAl heAlth insurAnce informAtion systems PAge 5 Introduction National health insurance systems are becoming more common as countries move to operationalize health financing transactions of paying for and delivering health services as part of their progress toward Universal Health Coverage for their citizens."
     },
-    "created_at": "2025-08-31T19:05:19.341012"
+    "created_at": "2025-09-02T05:19:48.698230"
   },
   {
     "requirement_id": "REQ-008",
     "category": "Compliance",
-    "title": "National Scale System Importance",
-    "statement": "As a result, health insurance or health purchaser1 information systems are becoming more important as schemes are implemented at national scale.",
+    "title": "Support for National Scale Health Schemes",
+    "statement": "Health insurance or health purchaser information systems must be designed and implemented to support schemes at a national scale, ensuring performance, reliability, and compliance.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
@@ -223,19 +234,29 @@
       "GDPR"
     ],
     "actors": [
-      "System Architect",
-      "Payer/Purchaser Admin"
+      "Admin",
+      "Health Purchaser",
+      "Insurance Provider",
+      "Patient",
+      "Clinician"
     ],
     "data_type": [
       "PHI",
-      "Insurance/Claims Data",
-      "Member Eligibility"
+      "Insurance Information",
+      "Claims Data",
+      "Patient Demographics"
     ],
-    "action": [],
+    "action": [
+      "access",
+      "process",
+      "store",
+      "transmit",
+      "encrypt"
+    ],
     "acceptance_criteria": [
-      "The system architecture must be designed and verified to support a nationwide user base and data volume.",
-      "The system must demonstrate compliance with all relevant national-level health data regulations.",
-      "System capabilities must be mapped and validated against the functional requirements of the specified national health schemes."
+      "The system must demonstrate performance and scalability to support a user base and data volume consistent with a national-scale implementation.",
+      "The system architecture must be proven to be reliable, with a defined uptime SLA (e.g., 99.9%) under projected load.",
+      "The system must pass a compliance audit against all applicable national-level regulations for health information."
     ],
     "dependencies": [],
     "traceability": [],
@@ -245,45 +266,45 @@
       "validated": true,
       "raw_input": "As a result, health insurance or health purchaser1 information systems are becoming more important as schemes are implemented at national scale."
     },
-    "created_at": "2025-08-31T19:05:19.341066"
+    "created_at": "2025-09-02T05:19:48.698302"
   },
   {
     "requirement_id": "REQ-009",
     "category": "Functional",
-    "title": "Insurance Information System Effectiveness and Integrity",
-    "statement": "The health insurance information system must be designed to ensure timely reimbursements, decrease transaction costs, find system efficiencies, prevent fraud, and ensure equitable coverage and treatment.",
+    "title": "Health Insurance Information System Efficacy",
+    "statement": "Strong health insurance information systems can ensure timely reimbursements, decrease transaction costs, find system efficiencies, prevent fraud, and ensure equitable coverage and treatment.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "HIPAA Security Rule (45 CFR \u00a7 164.308 - Administrative Safeguards)",
-      "HIPAA Privacy Rule (45 CFR Part 160 and Subparts A and E of Part 164)"
+      "HIPAA - Security Rule - 45 CFR Part 164 Subpart C",
+      "ISO 27001 - Information Security Management"
     ],
     "actors": [
       "Admin",
-      "Claims Processor",
-      "Auditor",
-      "Clinician",
-      "Patient"
+      "Insurance Adjudicator",
+      "Provider Admin",
+      "Compliance Officer"
     ],
     "data_type": [
       "PHI",
       "Insurance Claims",
-      "Patient Demographics",
-      "Billing Information"
+      "Billing Information",
+      "Policy Information"
     ],
     "action": [
       "access",
       "process",
       "analyze",
       "audit",
+      "report",
       "encrypt"
     ],
     "acceptance_criteria": [
-      "Reimbursement processing time from claim submission to payment must be within the contractually defined Service Level Agreement (SLA), e.g., 30 days.",
-      "The system must provide analytics to track and report on transaction costs, demonstrating a measurable decrease over a 6-month baseline.",
-      "The system must include a fraud detection module that automatically flags suspicious claims based on predefined rules and machine learning models with a minimum 95% accuracy on test data.",
-      "All coverage and treatment decisions made or assisted by the system must be fully auditable to demonstrate non-discriminatory and equitable application of benefits.",
-      "The system must generate reports identifying operational inefficiencies, such as common reasons for claim denials or processing bottlenecks."
+      "The system must process 95% of standard electronic claims for reimbursement within 14 business days.",
+      "The system must demonstrate a 10% reduction in cost-per-claim-processed compared to the previous system within the first year of operation.",
+      "The system must include reporting dashboards that identify bottlenecks in the claims processing workflow, such as average time spent in each status.",
+      "The system must automatically flag claims that match predefined fraud-detection rules with a 98% accuracy rate on a test dataset.",
+      "The system must be able to generate audit reports to verify that claims are adjudicated based on policy rules without statistical bias related to patient demographics."
     ],
     "dependencies": [],
     "traceability": [],
@@ -293,53 +314,51 @@
       "validated": true,
       "raw_input": "Strong health insurance information systems can ensure timely reimbursements, decrease transaction costs, find system efficiencies, prevent fraud, and ensure equitable coverage and treatment."
     },
-    "created_at": "2025-08-31T19:05:19.341123"
+    "created_at": "2025-09-02T05:19:48.698373"
   },
   {
     "requirement_id": "REQ-010",
-    "category": [
-      "Functional",
-      "Performance",
-      "Security",
-      "Compliance"
-    ],
+    "category": "Functional",
     "title": "Health Insurance Information System Core Capabilities",
-    "statement": "The health insurance information system must be designed to support national-scale schemes by enabling timely reimbursements, decreasing transaction costs, identifying system efficiencies, preventing fraud, and ensuring equitable coverage and treatment.",
+    "statement": "The health insurance information system must support national-scale schemes by providing functionalities to ensure timely reimbursements, decrease transaction costs, identify system efficiencies, prevent fraud, and ensure equitable coverage and treatment for all members.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "HIPAA (Security Rule, Privacy Rule)",
-      "ISO 27001",
-      "GDPR"
+      "HIPAA - Security Rule - 45 CFR Part 160 and Subparts A and C of Part 164",
+      "HIPAA - Privacy Rule - 45 CFR Part 160 and Subparts A and E of Part 164",
+      "ISO 27001 - Information Security Management"
     ],
     "actors": [
-      "Payer",
-      "Provider",
-      "Admin",
-      "Patient",
-      "Auditor"
+      "System Administrator",
+      "Claims Processor",
+      "Compliance Officer",
+      "Auditor",
+      "Healthcare Provider",
+      "Patient/Member",
+      "Health Purchaser"
     ],
     "data_type": [
-      "PHI",
+      "PHI (Protected Health Information)",
       "Claims Data",
-      "Policy Information",
-      "Reimbursement Data",
-      "Financial Transactions"
+      "Member Eligibility and Coverage Information",
+      "Provider Information",
+      "Financial Transaction Data"
     ],
     "action": [
-      "process",
-      "analyze",
-      "store",
-      "transmit",
-      "audit",
-      "encrypt"
+      "Process",
+      "Analyze",
+      "Report",
+      "Secure",
+      "Audit",
+      "Access"
     ],
     "acceptance_criteria": [
-      "The system must process and issue decisions on 95% of standard electronic claims within 15 business days.",
-      "The system must provide analytics tools to identify and report on transaction cost metrics, demonstrating a measurable reduction over a 12-month period.",
-      "The system must include a fraud detection module that automatically flags at least 90% of known fraudulent pattern types.",
-      "The system must be capable of generating reports to audit coverage and treatment distribution across different demographic groups to ensure equity.",
-      "System uptime must be 99.9% to ensure continuous access for claims processing and reimbursement."
+      "The system must process 95% of standard electronic claims for reimbursement within 5 business days.",
+      "The system must demonstrate a measurable reduction in transaction cost per claim compared to baseline metrics.",
+      "The system must include an analytics module that generates reports identifying potential system efficiencies, such as common claim denial reasons or underutilized provider networks.",
+      "The system must implement fraud detection algorithms that flag suspicious claims based on predefined rules and patterns, generating alerts for review by a compliance officer.",
+      "The system must enforce business rules to ensure coverage and treatment options are applied consistently and equitably across all member demographics, verifiable through audit reports.",
+      "The system must be scalable to support a national-level user base and transaction volume without performance degradation below defined Service Level Agreements (SLAs)."
     ],
     "dependencies": [],
     "traceability": [],
@@ -349,65 +368,18 @@
       "validated": true,
       "raw_input": "As a result, health insurance or health purchaser1 information systems are becoming more important as schemes are implemented at national scale. Strong health insurance information systems can ensure timely reimbursements, decrease transaction costs, find system efficiencies, prevent fraud, and ensure equitable coverage and treatment."
     },
-    "created_at": "2025-08-31T19:05:19.341174"
+    "created_at": "2025-09-02T05:19:48.698491"
   },
   {
     "requirement_id": "REQ-011",
     "category": "Functional",
     "title": "Health Insurance Data Integration",
-    "statement": "The system shall be capable of ingesting and integrating health insurance data to complement other existing types of health system data (e.g., clinical, demographic).",
-    "priority": "P2",
+    "statement": "The system shall be capable of ingesting, processing, and integrating health insurance data to complement other existing health system data sources, such as clinical records or lab results.",
+    "priority": "P1",
     "severity": "Major",
     "regulation": [
       "HIPAA - 45 CFR Part 164, Subpart C (Security Rule)",
-      "HIPAA - 45 CFR Part 164, Subpart E (Privacy Rule)",
-      "GDPR - Article 9 (Processing of special categories of personal data)",
-      "ISO - 27001"
-    ],
-    "actors": [
-      "Admin",
-      "Data Analyst",
-      "Health System Planner"
-    ],
-    "data_type": [
-      "PHI",
-      "Health Insurance Data",
-      "Claims Data"
-    ],
-    "action": [
-      "access",
-      "integrate",
-      "aggregate",
-      "analyze"
-    ],
-    "acceptance_criteria": [
-      "The system must provide a secure mechanism (e.g., API, SFTP) to import health insurance data from specified sources.",
-      "Imported health insurance data must be successfully linked to corresponding patient records within the system with a verifiable accuracy rate of >= 99.5%.",
-      "Authorized users can generate reports and perform analytics that combine health insurance data with other health system data.",
-      "All access, import, and integration actions involving health insurance data must be logged in an immutable audit trail, compliant with relevant regulations."
-    ],
-    "dependencies": [],
-    "traceability": [],
-    "metadata": {
-      "source_file": "Common_InsuranceReqs_FINAL.pdf",
-      "llm_model": "gemini-2.5-pro",
-      "validated": true,
-      "raw_input": "Many countries are also finding value in health insurance data to complement other types of health system data."
-    },
-    "created_at": "2025-08-31T19:05:19.341226"
-  },
-  {
-    "requirement_id": "REQ-012",
-    "category": "Functional",
-    "title": "Health Insurance Data Integration",
-    "statement": "The system shall be capable of integrating and utilizing health insurance data to complement other types of health system data for analysis and reporting.",
-    "priority": "P2",
-    "severity": "Major",
-    "regulation": [
-      "HIPAA - Privacy Rule (45 CFR Part 164, Subpart E)",
-      "HIPAA - Security Rule (45 CFR Part 164, Subpart C)",
-      "GDPR - Article 9",
-      "ISO 27001 - None"
+      "GDPR - Article 9"
     ],
     "actors": [
       "Admin",
@@ -415,20 +387,19 @@
     ],
     "data_type": [
       "Health Insurance Data",
-      "PHI",
-      "Claims Data"
+      "PHI"
     ],
     "action": [
-      "access",
-      "integrate",
-      "analyze",
-      "encrypt"
+      "Access",
+      "Integrate",
+      "Process"
     ],
     "acceptance_criteria": [
-      "The system provides a mechanism to import or connect to health insurance data sources.",
-      "Imported health insurance data can be successfully linked to corresponding patient records within the system.",
-      "Authorized users can generate reports that combine health insurance data with other health system data.",
-      "All health insurance data is encrypted both in transit and at rest, and all access is logged in an immutable audit trail."
+      "The system provides a mechanism to connect to and ingest data from a specified health insurance data source.",
+      "Ingested health insurance data is correctly parsed and stored in a structured format.",
+      "The system can successfully link health insurance records to the corresponding patient records within the main health system.",
+      "Authorized users can query and view the combined dataset of health system data and complementary insurance data.",
+      "All actions involving access and integration of health insurance data are logged in an audit trail."
     ],
     "dependencies": [],
     "traceability": [],
@@ -438,26 +409,76 @@
       "validated": true,
       "raw_input": "Many countries are also finding value in health insurance data to complement other types of health system data."
     },
-    "created_at": "2025-08-31T19:05:19.341281"
+    "created_at": "2025-09-02T05:19:48.698577"
+  },
+  {
+    "requirement_id": "REQ-012",
+    "category": "Functional",
+    "title": "Health Insurance Data Integration",
+    "statement": "The system shall be capable of ingesting and integrating health insurance data to complement other types of health system data, such as clinical or demographic data.",
+    "priority": "P2",
+    "severity": "Major",
+    "regulation": [
+      "HIPAA (Privacy Rule, 45 CFR Part 164 Subpart E)",
+      "HIPAA (Security Rule, 45 CFR Part 164 Subpart C)",
+      "GDPR (Article 9)",
+      "ISO 27001",
+      "ISO 27799"
+    ],
+    "actors": [
+      "Admin",
+      "Data Analyst",
+      "Clinician"
+    ],
+    "data_type": [
+      "Health Insurance Data",
+      "PHI",
+      "Claims Data"
+    ],
+    "action": [
+      "access",
+      "integrate",
+      "store",
+      "encrypt"
+    ],
+    "acceptance_criteria": [
+      "The system provides a secure mechanism (e.g., API, SFTP) to import health insurance data.",
+      "Imported health insurance data can be successfully parsed and stored in a secure, encrypted manner.",
+      "The system can link imported insurance data to the correct patient records within the existing health system.",
+      "Authorized users can view a consolidated record that displays both clinical data and complementary insurance data for a patient.",
+      "All access to and import of health insurance data is logged in an immutable audit trail."
+    ],
+    "dependencies": [
+      "REQ-001",
+      "REQ-005"
+    ],
+    "traceability": [],
+    "metadata": {
+      "source_file": "Common_InsuranceReqs_FINAL.pdf",
+      "llm_model": "gemini-2.5-pro",
+      "validated": true,
+      "raw_input": "Many countries are also finding value in health insurance data to complement other types of health system data."
+    },
+    "created_at": "2025-09-02T05:19:48.698641"
   },
   {
     "requirement_id": "REQ-013",
     "category": "Compliance",
-    "title": "Purpose and Use of Functional Requirements",
+    "title": "Value and Use of Functional Requirements",
     "statement": "Functional requirements are an invaluable tool for policymakers and systems engineering, and technical experts alike.",
     "priority": "P3",
-    "severity": "Minor",
+    "severity": "Major",
     "regulation": [],
     "actors": [
       "policymakers",
       "systems engineering",
       "technical experts"
     ],
-    "data_type": null,
-    "action": null,
+    "data_type": [],
+    "action": [],
     "acceptance_criteria": [
-      "The project team acknowledges the role of functional requirements as a key tool for development and policy alignment.",
-      "Functional requirements are utilized in the system engineering process."
+      "A formal process for defining, reviewing, and approving functional requirements is established and followed.",
+      "Stakeholders from policymaking, systems engineering, and technical domains are engaged in the requirements lifecycle."
     ],
     "dependencies": [],
     "traceability": [],
@@ -467,36 +488,34 @@
       "validated": true,
       "raw_input": "Functional requirements are an invaluable tool for policymakers and systems engineering, and technical experts alike."
     },
-    "created_at": "2025-08-31T19:05:19.341331"
+    "created_at": "2025-09-02T05:19:48.698692"
   },
   {
     "requirement_id": "REQ-015",
     "category": "Functional",
-    "title": "System Definition of National Priorities",
-    "statement": "The system shall provide a technical function that allows system experts to gain clarity on national priorities in a format that is directly transferable for software design and implementation.",
-    "priority": "P1",
+    "title": "Provide National Healthcare Priorities in a Transferable Format",
+    "statement": "The system shall provide authorized system experts with access to national healthcare priorities. This information must be presented in a structured, machine-readable format (e.g., JSON, XML) that is transferable to other software components.",
+    "priority": "P2",
     "severity": "Major",
     "regulation": [
       "HIPAA",
       "FDA 21 CFR Part 11"
     ],
     "actors": [
-      "System Architect",
-      "Developer",
+      "System Expert",
+      "Administrator",
       "Compliance Officer"
     ],
-    "data_type": [
-      "Policy Data",
-      "Configuration Data"
-    ],
+    "data_type": "National Healthcare Priorities Data",
     "action": [
-      "Access",
-      "Export"
+      "access",
+      "export"
     ],
     "acceptance_criteria": [
-      "A system expert can access a dedicated interface presenting the national priorities.",
-      "The priorities are displayed in a structured, machine-readable format (e.g., JSON, XML).",
-      "The system provides a feature to export the priorities data for use in design and implementation tools."
+      "Given an authenticated system expert, when they navigate to the priorities section, then the system must display the current national healthcare priorities.",
+      "Given the national priorities are displayed, when the expert selects the export option, then the system must generate a file in a valid, machine-readable format (e.g., JSON).",
+      "Verify that the exported data structure conforms to the defined schema for national priorities.",
+      "Verify that unauthorized users cannot access or export the national priorities data."
     ],
     "dependencies": [],
     "traceability": [],
@@ -506,31 +525,37 @@
       "validated": true,
       "raw_input": "Technical defines a function of a system experts gain clarity on the national priorities in a format that is transferable to software or its component, where a design and implementation."
     },
-    "created_at": "2025-08-31T19:05:19.341433"
+    "created_at": "2025-09-02T05:19:48.699019"
   },
   {
     "requirement_id": "REQ-016",
-    "category": "Compliance",
-    "title": "Cross-Functional Requirement Clarity",
-    "statement": "All requirements must be documented in a format that is clear and understandable to both business stakeholders (e.g., health insurance experts) and technical implementers (e.g., software engineers), providing a common platform for specification, prioritization, and system design.",
+    "category": "Usability",
+    "title": "Understandable Requirement Format",
+    "statement": "The requirement specification format must be clear and understandable to both non-technical stakeholders (e.g., health insurance experts) and technical teams (e.g., software engineers). This format shall serve as a common platform for defining system behavior, prioritizing features, negotiating compromises, and guiding system design.",
     "priority": "P1",
-    "severity": "Critical",
+    "severity": "Major",
     "regulation": [
-      "FDA 21 CFR 820.30 (Design Controls)",
-      "ISO 13485:2016 (Section 7.3, Design and Development)"
+      "ISO 13485: Section 7.3 (Design and Development)",
+      "FDA 21 CFR Part 820: Subpart C (Design Controls)"
     ],
     "actors": [
       "Health Insurance Expert",
       "Software Engineer",
       "Product Manager",
-      "QA Engineer"
+      "QA Analyst",
+      "System Architect"
     ],
-    "data_type": [],
-    "action": [],
+    "data_type": "Requirement Specifications",
+    "action": [
+      "create",
+      "review",
+      "understand",
+      "prioritize"
+    ],
     "acceptance_criteria": [
-      "A standardized requirements template is created and used for all project requirements.",
-      "A formal review process is in place for all requirements, requiring sign-off from at least one technical representative and one business representative.",
-      "During sprint planning, developers can articulate the business intent of a requirement, and business stakeholders can confirm the technical scope aligns with their understanding."
+      "A sample requirement can be reviewed by a designated health insurance expert and a software engineer, and both can articulate the same understanding of the expected behavior.",
+      "The requirement specification format is formally documented and adopted by the project team.",
+      "Stakeholders from both business and engineering teams confirm the format provides sufficient clarity for their respective roles during a review session."
     ],
     "dependencies": [],
     "traceability": [],
@@ -540,38 +565,31 @@
       "validated": true,
       "raw_input": "These requirements provide a format that is understandable function is described as a to both health insurance experts and software engineers, providing a platform for specification of behavior prioritization, compromise, and system design."
     },
-    "created_at": "2025-08-31T19:05:19.341492"
+    "created_at": "2025-09-02T05:19:48.699101"
   },
   {
     "requirement_id": "REQ-017",
     "category": "Functional",
     "title": "Standardized Requirement Specification Format",
-    "statement": "The system for managing requirements shall provide a specification format that is understandable to both domain experts (e.g., health insurance experts) and technical experts (e.g., software engineers). This format must be transferable to software design and implementation, and serve as a platform for prioritization, compromise, and system design, ensuring clarity on national priorities.",
+    "statement": "The system shall provide a standardized, transferable format for defining system functions and specifications. This format must be understandable to both non-technical stakeholders (e.g., health insurance experts) and technical teams (e.g., software engineers) to provide a common platform for clarifying priorities, facilitating compromise, and guiding system design and implementation.",
     "priority": "P1",
-    "severity": "Critical",
+    "severity": "Major",
     "regulation": [
-      "HIPAA",
-      "ISO 13485"
+      "HIPAA"
     ],
     "actors": [
       "Health Insurance Expert",
       "Software Engineer",
-      "System Designer",
-      "Product Manager",
+      "System Architect",
       "Compliance Officer"
     ],
-    "data_type": [
-      "Requirement Specifications"
-    ],
-    "action": [
-      "Define",
-      "Review",
-      "Prioritize"
-    ],
+    "data_type": "Requirement Specifications",
+    "action": "access",
     "acceptance_criteria": [
-      "A formal template for requirements is defined and approved by both domain and technical stakeholders.",
-      "The requirement format is successfully used to document a sample functional requirement, which is then deemed understandable and actionable by both health insurance experts and software engineers.",
-      "The format includes explicit fields for prioritization and traceability to business or regulatory drivers (i.e., 'national priorities')."
+      "A template for defining requirements is available within the system.",
+      "The template includes distinct fields for business-level descriptions and technical implementation details.",
+      "A sample requirement created using the format can be successfully interpreted and agreed upon by a designated health insurance expert and a software engineer.",
+      "The output format is transferable and can be exported for use in software development and design tools."
     ],
     "dependencies": [],
     "traceability": [],
@@ -581,20 +599,20 @@
       "validated": true,
       "raw_input": "Technical defines a function of a system experts gain clarity on the national priorities in a format that is transferable to software or its component, where a design and implementation. These requirements provide a format that is understandable function is described as a to both health insurance experts and software engineers, providing a platform for specification of behavior prioritization, compromise, and system design."
     },
-    "created_at": "2025-08-31T19:05:19.341599"
+    "created_at": "2025-09-02T05:19:48.699182"
   },
   {
     "requirement_id": "REQ-018",
     "category": "Compliance",
-    "title": "Configurable Regional/Organizational Requirements",
-    "statement": "The system must be configurable to accommodate specific compliance, functional, or data handling requirements defined by different countries or organizations.",
+    "title": "Jurisdictional Requirement Configuration",
+    "statement": "The system must be configurable to allow a country or organization to define and enforce specific requirements according to its local regulatory, clinical, and operational needs.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
       "HIPAA",
+      "GDPR",
       "FDA",
-      "ISO",
-      "GDPR"
+      "ISO 13485"
     ],
     "actors": [
       "admin"
@@ -602,19 +620,18 @@
     "data_type": [
       "PHI",
       "lab results",
-      "prescriptions"
+      "prescriptions",
+      "patient demographics",
+      "audit logs"
     ],
     "action": [
-      "access",
       "modify",
-      "delete",
-      "encrypt"
+      "access"
     ],
     "acceptance_criteria": [
-      "System administrators must be able to configure rules based on a specific country (e.g., Germany).",
-      "System administrators must be able to configure rules based on a specific organization's policy.",
-      "The configured rules must be enforced by the system for the specified jurisdiction or organization.",
-      "Demonstrate the ability to configure a data retention policy for a specific region."
+      "An administrator must be able to define a new set of rules for a specific country or organization.",
+      "The system must enforce the newly defined rules, such as data masking or access control, based on the active jurisdiction's configuration.",
+      "It must be possible to have different rule sets active for different organizational units or jurisdictions simultaneously within the same system instance."
     ],
     "dependencies": [],
     "traceability": [],
@@ -624,7 +641,7 @@
       "validated": true,
       "raw_input": "A country or organization will define specific requirements for its specific needs."
     },
-    "created_at": "2025-08-31T19:05:19.341688"
+    "created_at": "2025-09-02T05:19:48.699239"
   },
   {
     "requirement_id": "REQ-019",
@@ -657,7 +674,7 @@
       "validated": true,
       "raw_input": "The benefit of a set of globally defined common requirements is to provide an advanced starting point to review best practices and save time and resources in the development process."
     },
-    "created_at": "2025-08-31T19:05:19.341764"
+    "created_at": "2025-09-02T05:19:48.699276"
   },
   {
     "requirement_id": "REQ-020",
@@ -693,47 +710,13 @@
       "validated": true,
       "raw_input": "A country or organization will define specific requirements for its specific needs. The benefit of a set of globally defined common requirements is to provide an advanced starting point to review best practices and save time and resources in the development process."
     },
-    "created_at": "2025-08-31T19:05:19.341820"
-  },
-  {
-    "requirement_id": "REQ-021",
-    "category": "Compliance",
-    "title": "Standardized Process for Common Requirements",
-    "statement": "A standardized process must be established and followed for the creation and management of common requirements to ensure consistency, reusability, and clarity, addressing the inherent challenge of defining them effectively.",
-    "priority": "P1",
-    "severity": "Major",
-    "regulation": [
-      "FDA - 21 CFR 820.30",
-      "ISO - 13485:2016, Clause 7.3"
-    ],
-    "actors": [
-      "System Analyst",
-      "Product Manager",
-      "QA Engineer",
-      "Compliance Officer"
-    ],
-    "data_type": [],
-    "action": [],
-    "acceptance_criteria": [
-      "A documented procedure for creating, reviewing, and managing common requirements exists and is approved.",
-      "Evidence demonstrates that the procedure is followed for new projects, including requirement reviews and approvals.",
-      "A central repository or tool for managing common requirements is implemented and maintained."
-    ],
-    "dependencies": [],
-    "traceability": [],
-    "metadata": {
-      "source_file": "Common_InsuranceReqs_FINAL.pdf",
-      "llm_model": "gemini-2.5-pro",
-      "validated": true,
-      "raw_input": "CreAting common requirements While common requirements are a useful building block, creating them can be a challenge."
-    },
-    "created_at": "2025-08-31T19:05:19.341905"
+    "created_at": "2025-09-02T05:19:48.699319"
   },
   {
     "requirement_id": "REQ-022",
-    "category": "Functional",
+    "category": "Compliance",
     "title": "Support for Diverse Health Coverage Schemes",
-    "statement": "The system must support a variety of country-specific health coverage schemes, accommodating differences in their design, coverage levels, and maturity. This requires a flexible and configurable architecture to function appropriately.",
+    "statement": "Country health coverage schemes range in design, coverage, and maturity—all of which require different types of requirements to function appropriately.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
@@ -741,24 +724,23 @@
       "GDPR"
     ],
     "actors": [
-      "Admin",
-      "Billing Staff"
+      "admin",
+      "patient",
+      "clinician"
     ],
     "data_type": [
       "PHI",
-      "Insurance Information",
-      "Billing Information"
+      "Insurance/Coverage Details"
     ],
     "action": [
-      "configure",
       "access",
       "modify"
     ],
     "acceptance_criteria": [
-      "An administrator can configure a new health coverage scheme, defining its specific rules, coverage limits, and reimbursement models.",
-      "The system can simultaneously support multiple, distinct health coverage schemes for different regions or populations.",
-      "Patient billing and eligibility checks must correctly apply the rules of the relevant, configured health scheme.",
-      "The system's configuration for a scheme can be updated without requiring a new software deployment."
+      "The system architecture must be designed to be adaptable to different country-specific health coverage rules.",
+      "An administrative interface must exist to configure the parameters of a given health coverage scheme (e.g., co-pay rules, covered services, eligibility criteria).",
+      "The system must be able to process patient data and apply billing/coverage rules correctly for at least two distinct, pre-configured country schemes.",
+      "Documentation must be available outlining the process for configuring a new country-specific health scheme."
     ],
     "dependencies": [],
     "traceability": [],
@@ -766,42 +748,41 @@
       "source_file": "Common_InsuranceReqs_FINAL.pdf",
       "llm_model": "gemini-2.5-pro",
       "validated": true,
-      "raw_input": "Country health coverage schemes range in design, coverage, and maturity\u2014all of which require different types of requirements to function appropriately."
+      "raw_input": "Country health coverage schemes range in design, coverage, and maturity—all of which require different types of requirements to function appropriately."
     },
-    "created_at": "2025-08-31T19:05:19.341971"
+    "created_at": "2025-09-02T05:19:48.718829"
   },
   {
     "requirement_id": "REQ-023",
-    "category": "Compliance",
-    "title": "Adaptability to Country-Specific Health Schemes",
-    "statement": "The system must be designed to accommodate and adapt to the diverse designs, coverage levels, and maturity of different country-specific health coverage schemes. This includes supporting varying types of requirements needed for each scheme to function appropriately.",
+    "category": "Functional",
+    "title": "Adaptability to Diverse Health Coverage Schemes",
+    "statement": "The system must be designed to accommodate and adapt to a variety of country-specific health coverage schemes, which differ in design, coverage levels, and maturity. This includes the ability to configure different types of requirements and rules to function appropriately within each specific national or regional context.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
       "HIPAA",
       "GDPR",
-      "Country-specific health regulations"
+      "Country-specific healthcare regulations"
     ],
     "actors": [
       "Admin",
-      "Clinician",
-      "Patient"
+      "System Configurator"
     ],
     "data_type": [
       "PHI",
-      "Insurance/Coverage Information",
+      "Insurance/Coverage Plans",
       "Billing Codes"
     ],
     "action": [
       "access",
       "modify",
-      "process",
       "configure"
     ],
     "acceptance_criteria": [
-      "The system can be configured to support at least three distinct country health coverage schemes (e.g., US-based PPO, UK's NHS, German statutory health insurance) without requiring code changes.",
-      "Configuration for a new country scheme can be performed by an Admin user through a dedicated interface.",
-      "Rules for coverage, billing, and data handling specific to a configured country scheme are correctly applied and can be verified through end-to-end testing scenarios for that country."
+      "The system provides a configuration interface for an administrator to define rules for a new health coverage scheme.",
+      "It is possible to configure and enable at least two distinct country health coverage models (e.g., a US-based private insurance model and a European single-payer model) to run concurrently without conflict.",
+      "Configuration of a new scheme's rules (e.g., coverage limits, co-pays, deductibles) does not require a new software deployment or code changes.",
+      "System successfully processes a test claim according to the rules of each configured country scheme."
     ],
     "dependencies": [],
     "traceability": [],
@@ -809,9 +790,9 @@
       "source_file": "Common_InsuranceReqs_FINAL.pdf",
       "llm_model": "gemini-2.5-pro",
       "validated": true,
-      "raw_input": "CreAting common requirements While common requirements are a useful building block, creating them can be a challenge. Country health coverage schemes range in design, coverage, and maturity\u2014all of which require different types of requirements to function appropriately."
+      "raw_input": "CreAting common requirements While common requirements are a useful building block, creating them can be a challenge. Country health coverage schemes range in design, coverage, and maturity—all of which require different types of requirements to function appropriately."
     },
-    "created_at": "2025-08-31T19:05:19.342066"
+    "created_at": "2025-09-02T05:19:48.718921"
   },
   {
     "requirement_id": "REQ-024",
@@ -850,62 +831,18 @@
       "validated": true,
       "raw_input": "Since its development, CRDM has been used not only in the health insurance space but also to develop requirements for logistics management information systems, maternal health information systems, and more."
     },
-    "created_at": "2025-08-31T19:05:19.342112"
+    "created_at": "2025-09-02T05:19:48.719009"
   },
   {
     "requirement_id": "REQ-025",
     "category": "Usability",
-    "title": "Use of Non-Technical Language",
-    "statement": "A key aspect of the effectiveness of CRDM is the use of nontechnical language that is familiar to users and subject matter experts.",
-    "priority": "P2",
-    "severity": "Major",
-    "regulation": [
-      "FDA - 21 CFR Part 820.30 (Design Controls)",
-      "ISO - 62366-1 (Application of usability engineering to medical devices)"
-    ],
-    "actors": [
-      "clinician",
-      "patient",
-      "admin",
-      "subject matter expert"
-    ],
-    "data_type": [
-      "PHI",
-      "lab results",
-      "prescriptions",
-      "clinical documentation",
-      "system alerts"
-    ],
-    "action": [
-      "access",
-      "read",
-      "interpret"
-    ],
-    "acceptance_criteria": [
-      "All user-facing text, including labels, instructions, and error messages, must be reviewed and approved by a panel of representative users (e.g., clinicians, patients) for clarity and avoidance of technical jargon.",
-      "Usability testing with target users must demonstrate a task completion success rate of >= 95% for core system functions, with user errors related to language ambiguity being less than 2%.",
-      "A formal review of all UI text against a pre-defined glossary of approved, non-technical terms must be completed and passed."
-    ],
-    "dependencies": [],
-    "traceability": [],
-    "metadata": {
-      "source_file": "Common_InsuranceReqs_FINAL.pdf",
-      "llm_model": "gemini-2.5-pro",
-      "validated": true,
-      "raw_input": "A key aspect of the effectiveness of CRDM is the use of nontechnical language that is familiar to users and subject matter experts."
-    },
-    "created_at": "2025-08-31T19:05:19.342151"
-  },
-  {
-    "requirement_id": "REQ-026",
-    "category": "Usability",
-    "title": "Use of Non-Technical Language",
-    "statement": "The system must use non-technical language that is familiar to users and subject matter experts to ensure effectiveness and ease of use across all interfaces and documentation.",
+    "title": "User-Friendly Terminology",
+    "statement": "The system shall use non-technical language that is familiar to its intended users and subject matter experts to ensure effectiveness and clarity in all user-facing interfaces, reports, and documentation.",
     "priority": "P1",
     "severity": "Major",
     "regulation": [
-      "HIPAA",
-      "ISO 9241-11"
+      "FDA - 21 CFR 820.30 (Design Controls)",
+      "ISO - ISO 9241"
     ],
     "actors": [
       "Clinician",
@@ -915,19 +852,65 @@
     ],
     "data_type": [
       "PHI",
-      "Patient Demographics",
+      "Lab Results",
+      "Prescriptions",
       "Clinical Notes",
-      "Insurance Claims"
+      "Diagnoses"
     ],
     "action": [
+      "view",
       "access",
-      "view"
+      "interpret"
     ],
     "acceptance_criteria": [
-      "Usability testing with representative users demonstrates a task completion success rate of 95% or higher for key workflows.",
-      "A panel of subject matter experts must review and approve all user-facing terminology and labels for clarity and familiarity.",
-      "All user-facing text must achieve a Flesch-Kincaid grade level score of 8 or lower.",
-      "No technical jargon or system-specific acronyms are present in the user interface without a clear, accessible definition or tooltip."
+      "All user-facing text (labels, error messages, help text) is written in plain language, avoiding technical jargon.",
+      "Usability testing with representative users confirms that terminology is understood with a comprehension rate of 95% or higher.",
+      "A glossary of terms used within the system is available to all users and is approved by a panel of subject matter experts."
+    ],
+    "dependencies": [],
+    "traceability": [],
+    "metadata": {
+      "source_file": "Common_InsuranceReqs_FINAL.pdf",
+      "llm_model": "gemini-2.5-pro",
+      "validated": true,
+      "raw_input": "A key aspect of the effectiveness of CRDM is the use of nontechnical language that is familiar to users and subject matter experts."
+    },
+    "created_at": "2025-09-02T05:19:48.719081"
+  },
+  {
+    "requirement_id": "REQ-026",
+    "category": "Usability",
+    "title": "Use of Non-Technical Language",
+    "statement": "The system shall use nontechnical language, terminology, and phrasing that is familiar to its intended users and subject matter experts to ensure clarity, reduce errors, and improve effectiveness.",
+    "priority": "P1",
+    "severity": "Major",
+    "regulation": [
+      "HIPAA",
+      "FDA 21 CFR 820.30",
+      "ISO 9241"
+    ],
+    "actors": [
+      "Clinician",
+      "Patient",
+      "Administrator",
+      "Subject Matter Expert",
+      "System User"
+    ],
+    "data_type": [
+      "PHI",
+      "Clinical Data",
+      "Insurance Claims",
+      "Logistics Data"
+    ],
+    "action": [
+      "View",
+      "Interpret",
+      "Interact"
+    ],
+    "acceptance_criteria": [
+      "A glossary of all user-facing terms is created and approved by a panel of representative subject matter experts and end-users.",
+      "Usability testing with a representative group of end-users demonstrates that 95% of users can understand and correctly interpret system labels, instructions, and messages without external help.",
+      "During user acceptance testing, no critical or major issues related to confusing or technical language are identified."
     ],
     "dependencies": [],
     "traceability": [],
@@ -937,81 +920,40 @@
       "validated": true,
       "raw_input": "Since its development, CRDM has been used not only in the health insurance space but also to develop requirements for logistics management information systems, maternal health information systems, and more. A key aspect of the effectiveness of CRDM is the use of nontechnical language that is familiar to users and subject matter experts."
     },
-    "created_at": "2025-08-31T19:05:19.342185"
+    "created_at": "2025-09-02T05:19:48.719175"
   },
   {
     "requirement_id": "REQ-027",
     "category": "Functional",
     "title": "Beneficiary Management Capability",
-    "statement": "The system must provide core beneficiary management capabilities, applicable to all healthcare schemes, regardless of whether a specific scheme requires formal beneficiary enrollment.",
-    "priority": "P1",
-    "severity": "Critical",
-    "regulation": [
-      "HIPAA - 45 CFR Part 164, Subpart C (Security Rule)",
-      "HIPAA - 45 CFR Part 164, Subpart E (Privacy Rule)"
-    ],
-    "actors": [
-      "admin",
-      "clinician",
-      "enrollment_specialist"
-    ],
-    "data_type": [
-      "PHI",
-      "Demographic Data",
-      "Insurance Information"
-    ],
-    "action": [
-      "create",
-      "access",
-      "modify",
-      "archive"
-    ],
-    "acceptance_criteria": [
-      "Given an authorized user, when they access the beneficiary management module, they can create a new beneficiary record.",
-      "Given an authorized user, when they search for a beneficiary by a unique identifier (e.g., name, ID), the system returns the correct beneficiary record.",
-      "Given an authorized user, when they select a beneficiary record, they can view and update the beneficiary's information.",
-      "The system provides a mechanism to manage beneficiaries for schemes that do not have a formal enrollment process.",
-      "The system provides a mechanism to manage beneficiaries for schemes that do have a formal enrollment process."
-    ],
-    "dependencies": [],
-    "traceability": [],
-    "metadata": {
-      "source_file": "Common_InsuranceReqs_FINAL.pdf",
-      "llm_model": "gemini-2.5-pro",
-      "validated": true,
-      "raw_input": "While some schemes may not require beneficiary enrollment and another may require it, both systems will require some level of beneficiary management."
-    },
-    "created_at": "2025-08-31T19:05:19.342229"
-  },
-  {
-    "requirement_id": "REQ-028",
-    "category": "Functional",
-    "title": "Universal Beneficiary Management",
     "statement": "While some schemes may not require beneficiary enrollment and another may require it, both systems will require some level of beneficiary management.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "HIPAA - Privacy Rule (45 CFR Part 164, Subpart E)",
-      "HIPAA - Security Rule (45 CFR Part 164, Subpart C)"
+      "HIPAA (Privacy Rule: 45 CFR Part 164, Subpart E)",
+      "HIPAA (Security Rule: 45 CFR Part 164, Subpart C)"
     ],
     "actors": [
       "Admin",
-      "Clinician"
+      "Case Manager"
     ],
     "data_type": [
       "PHI",
-      "Demographics"
+      "Demographics",
+      "Enrollment Status"
     ],
     "action": [
       "access",
-      "modify",
       "create",
-      "deactivate"
+      "modify",
+      "archive"
     ],
     "acceptance_criteria": [
-      "An authorized user (e.g., Admin) can create, view, update, and deactivate a beneficiary record.",
-      "Beneficiary management functions are available and operational for schemes that require formal enrollment.",
-      "Beneficiary management functions are available and operational for schemes that do not require formal enrollment."
+      "An authorized user can create a beneficiary record in the system.",
+      "An authorized user can search for and view the details of an existing beneficiary.",
+      "An authorized user can update the information of an existing beneficiary.",
+      "An authorized user can change the status of a beneficiary (e.g., active, inactive, archived).",
+      "All actions related to beneficiary management are logged in an audit trail."
     ],
     "dependencies": [],
     "traceability": [],
@@ -1021,7 +963,7 @@
       "validated": true,
       "raw_input": "While some schemes may not require beneficiary enrollment and another may require it, both systems will require some level of beneficiary management."
     },
-    "created_at": "2025-08-31T19:05:19.342287"
+    "created_at": "2025-09-02T05:19:48.719248"
   },
   {
     "requirement_id": "REQ-029",
@@ -1068,7 +1010,7 @@
       "validated": true,
       "raw_input": "HL7 FHIR HL7 FHIR, and other global standards for data exchange, are helpful frameworks for aligning business processes across digital health systems."
     },
-    "created_at": "2025-08-31T19:05:19.342326"
+    "created_at": "2025-09-02T05:19:48.719542"
   },
   {
     "requirement_id": "REQ-030",
@@ -1112,25 +1054,26 @@
       "validated": true,
       "raw_input": "HL7 FHIR HL7 FHIR, and other global standards for data exchange, are helpful frameworks for aligning business processes across digital health systems."
     },
-    "created_at": "2025-08-31T19:05:19.342363"
+    "created_at": "2025-09-02T05:19:48.719622"
   },
   {
     "requirement_id": "REQ-031",
     "category": "Functional",
-    "title": "Business Process Task Set Definition",
-    "statement": "The system shall support the definition and management of task sets. A task set is defined as a collection of required activities or steps that are carried out as part of a business process.",
+    "title": "Task Set Definition",
+    "statement": "The system shall allow for the creation, viewing, and management of task sets, defined as a collection of required activities or steps that constitute a business process.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "HIPAA 45 CFR \u00a7 164.308(a)(1) - Security Management Process",
-      "FDA 21 CFR Part 820 - Quality System Regulation",
-      "ISO 13485:2016 - Section 4.1.5"
+      "HIPAA Security Rule - §164.308(a)(1) Security Management Process",
+      "ISO 13485 - 4.1.6 Documented procedures and records",
+      "FDA 21 CFR Part 11"
     ],
     "actors": [
       "Admin",
-      "Process Owner"
+      "Process Manager"
     ],
     "data_type": [
+      "Business Process Definitions",
       "Workflow Configuration"
     ],
     "action": [
@@ -1140,11 +1083,11 @@
       "delete"
     ],
     "acceptance_criteria": [
-      "An authorized user can create a new task set with a name and description.",
-      "The user can add an ordered list of steps or activities to the task set.",
-      "The user can save the defined task set to the system.",
-      "The user can view and edit an existing task set.",
-      "The system prevents the deletion of a task set that is currently associated with an active business process."
+      "An authorized user (e.g., Admin) can create a new task set with a unique name and description.",
+      "The user can add, remove, and reorder individual steps or activities within a task set.",
+      "The system displays a list of all defined task sets.",
+      "The user can select a task set to view its detailed configuration and associated steps.",
+      "The user can modify or delete an existing task set, with appropriate confirmations to prevent accidental deletion."
     ],
     "dependencies": [],
     "traceability": [],
@@ -1152,41 +1095,42 @@
       "source_file": "Common_InsuranceReqs_FINAL.pdf",
       "llm_model": "gemini-2.5-pro",
       "validated": true,
-      "raw_input": "\u2022 Task set(s): The set of required activities or steps that are carried out in a business process."
+      "raw_input": "• Task set(s): The set of required activities or steps that are carried out in a business process."
     },
-    "created_at": "2025-08-31T19:05:19.342403"
+    "created_at": "2025-09-02T05:19:48.719702"
   },
   {
     "requirement_id": "REQ-032",
     "category": "Functional",
     "title": "Task Set Definition",
-    "statement": "The system shall support the creation and management of Task Sets, which are defined as the set of required activities or steps that are carried out in a business process.",
+    "statement": "The system shall support the concept of a Task Set, defined as the set of required activities or steps that are carried out in a business process.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "HIPAA 164.308(a)(1)(ii)(A) - Implementation of policies and procedures",
-      "ISO 13485:2016 - 7.5 Production and service provision"
+      "HIPAA 45 CFR § 164.308",
+      "FDA 21 CFR Part 820",
+      "ISO 13485"
     ],
     "actors": [
-      "Admin",
-      "Clinician",
-      "System User"
+      "admin",
+      "clinician"
     ],
     "data_type": [
-      "Business Process Definitions"
+      "Business Process Configuration",
+      "PHI"
     ],
     "action": [
       "create",
       "read",
       "update",
       "delete",
-      "assign"
+      "execute"
     ],
     "acceptance_criteria": [
-      "An administrator can define a new Task Set.",
-      "A Task Set must contain one or more ordered steps or activities.",
-      "The system allows for a Task Set to be associated with a business process.",
-      "Users can view the steps of a Task Set relevant to their role and assigned work."
+      "1. An administrator can create a new Task Set within the system.",
+      "2. A Task Set can be configured to include a sequence of one or more steps or activities.",
+      "3. The system can associate a Task Set with a specific business process.",
+      "4. A user can view the activities and steps defined within a Task Set they are assigned to execute."
     ],
     "dependencies": [],
     "traceability": [],
@@ -1194,61 +1138,20 @@
       "source_file": "Common_InsuranceReqs_FINAL.pdf",
       "llm_model": "gemini-2.5-pro",
       "validated": true,
-      "raw_input": "\u2022 Task set(s): The set of required activities or steps that are carried out in a business process."
+      "raw_input": "• Task set(s): The set of required activities or steps that are carried out in a business process."
     },
-    "created_at": "2025-08-31T19:05:19.342440"
+    "created_at": "2025-09-02T05:19:48.719778"
   },
   {
     "requirement_id": "REQ-033",
     "category": "Usability",
-    "title": "Scheme Process Configuration Options",
+    "title": "Scheme Process Customization",
     "statement": "By outlining these differences, countries will understand the breadth of options available and choose those processes that are most relevant to their scheme.",
     "priority": "P1",
     "severity": "Major",
     "regulation": [
-      "GDPR"
-    ],
-    "actors": [
-      "Administrator",
-      "Scheme Manager"
-    ],
-    "data_type": [
-      "System Configuration"
-    ],
-    "action": [
-      "access",
-      "modify"
-    ],
-    "acceptance_criteria": [
-      "Given an administrator is on the scheme configuration page,",
-      "When the administrator views the process options,",
-      "Then the system must display a clear, comparative outline of all available processes.",
-      "And the administrator must be able to select a process for the scheme.",
-      "And the system must allow the administrator to save the selected process configuration.",
-      "And upon saving, the system must confirm the update and apply the chosen process to the scheme's workflow."
-    ],
-    "dependencies": [
-      "REQ-032"
-    ],
-    "traceability": [],
-    "metadata": {
-      "source_file": "Common_InsuranceReqs_FINAL.pdf",
-      "llm_model": "gemini-2.5-pro",
-      "validated": true,
-      "raw_input": "By outlining these differences, countries will understand the breadth of options available and choose those processes that are most relevant to their scheme."
-    },
-    "created_at": "2025-08-31T19:05:19.342474"
-  },
-  {
-    "requirement_id": "REQ-034",
-    "category": "Usability",
-    "title": "Scheme Process Options Clarity",
-    "statement": "The system shall outline the differences between available scheme processes, enabling users to understand the breadth of options and choose the processes most relevant to their scheme.",
-    "priority": "P1",
-    "severity": "Major",
-    "regulation": [
-      "HIPAA",
-      "GDPR"
+      "GDPR",
+      "HIPAA"
     ],
     "actors": [
       "Admin",
@@ -1259,14 +1162,15 @@
     ],
     "action": [
       "access",
-      "modify"
+      "configure",
+      "display"
     ],
     "acceptance_criteria": [
-      "Given an administrator is on the scheme configuration page,",
-      "When the administrator views the process selection options,",
-      "Then the system must display a clear, comparative summary of each available process.",
-      "And the administrator must be able to select and save a process for their scheme.",
-      "And the interface for comparing and selecting processes is intuitive and self-explanatory."
+      "Given an administrator is configuring a country's scheme,",
+      "When the administrator navigates to the process selection section,",
+      "Then the system must display a list of all available processes.",
+      "And for each process, the system must provide a clear description outlining its function and how it differs from other options.",
+      "And the administrator must be able to select one or more processes and save the configuration for their scheme."
     ],
     "dependencies": [],
     "traceability": [],
@@ -1276,7 +1180,7 @@
       "validated": true,
       "raw_input": "By outlining these differences, countries will understand the breadth of options available and choose those processes that are most relevant to their scheme."
     },
-    "created_at": "2025-08-31T19:05:19.342505"
+    "created_at": "2025-09-02T05:19:48.719835"
   },
   {
     "requirement_id": "REQ-035",
@@ -1286,9 +1190,8 @@
     "priority": "P2",
     "severity": "Major",
     "regulation": [
-      "HIPAA - 45 CFR \u00a7 164.308(a)(1)(ii)(A) - Risk Analysis",
-      "FDA - 21 CFR Part 820 - Quality System Regulation",
-      "ISO - 13485"
+      "HIPAA - 45 CFR § 164.308(a)(1)(i) - Security Management Process",
+      "ISO - 9001:2015, Clause 4.4 - Quality management system and its processes"
     ],
     "actors": [
       "Admin",
@@ -1296,20 +1199,20 @@
       "System Analyst"
     ],
     "data_type": [
-      "Business Process Data",
       "PHI",
-      "User Roles"
+      "Process Metadata",
+      "Audit Trails"
     ],
     "action": [
-      "access",
-      "view"
+      "view",
+      "access"
     ],
     "acceptance_criteria": [
-      "Given a defined business process, the system must render a graphical representation of it.",
-      "The graphical representation must visually distinguish and label all actors/roles involved in the process.",
-      "The graphical representation must use directional indicators (e.g., arrows) to show the flow of information between actors.",
-      "The sequence of tasks or steps in the process must be clearly depicted in the graphical representation.",
-      "The user must be able to zoom in/out and pan across the graphical representation for readability."
+      "The system shall provide a graphical interface to model and view business processes.",
+      "The graphical representation must clearly distinguish and label all actors/roles involved in the process.",
+      "The flow of information between actors must be visually represented with clear directionality.",
+      "The sequence of steps and decision points within the process must be clearly depicted.",
+      "The user must be able to export the graphical representation to a standard document format (e.g., PDF, PNG) for auditing and documentation."
     ],
     "dependencies": [],
     "traceability": [],
@@ -1319,36 +1222,38 @@
       "validated": true,
       "raw_input": "A graphical representation of a business process helps tell a story of who participates in a process, what types of information are exchanged between the participants, and how the work is accomplished."
     },
-    "created_at": "2025-08-31T19:05:19.342548"
+    "created_at": "2025-09-02T05:19:48.720049"
   },
   {
     "requirement_id": "REQ-037",
     "category": "Compliance",
-    "title": "Beneficiary Insurer Identification Verification",
-    "statement": "The system must support a process for a beneficiary to present proof of accurate insurer identification, and ensure that the information is validated as required.",
+    "title": "Beneficiary Identity and Insurer Verification",
+    "statement": "The system must support a process where the beneficiary presents proof of identity and accurate insurer identification. The process must conclude with verification of the beneficiary's information to ensure its accuracy.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "HIPAA (45 CFR Part 162 - Administrative Requirements)"
+      "HIPAA 45 CFR § 164.308(a)(1)(i) - Security Management Process"
     ],
     "actors": [
-      "Beneficiary",
-      "Administrative Staff"
+      "Admin",
+      "Beneficiary"
     ],
     "data_type": [
       "PHI",
+      "Patient Demographics",
       "Insurance Information"
     ],
     "action": [
-      "Capture",
-      "Verify",
-      "Access"
+      "Access",
+      "Create",
+      "Verify"
     ],
     "acceptance_criteria": [
-      "The system must provide an interface for an administrative user to input or scan the beneficiary's insurer identification card.",
-      "The system must validate the format of the entered insurance information (e.g., member ID, group number).",
-      "The system must confirm that the beneficiary's name on the identification matches the name in the patient's record.",
-      "The verification process must be logged with the user, date, and time of the action."
+      "Given an admin is logged into the system, when they access the patient intake module, they must be presented with fields to capture beneficiary identification and insurance information.",
+      "The system must allow the admin to input or scan information from a beneficiary's identification document (e.g., driver's license).",
+      "The system must allow the admin to input or scan information from a beneficiary's insurance card.",
+      "The system must include a final confirmation step for the admin to verify that the captured information is accurate and matches the documents presented by the beneficiary.",
+      "A record of the verification, including the timestamp and the admin's user ID, must be logged in the system's audit trail."
     ],
     "dependencies": [],
     "traceability": [],
@@ -1358,7 +1263,7 @@
       "validated": true,
       "raw_input": "Present identification process and/or process will end with beneficiary to ensure it is information as required by the Beneficiary presents proof of accurate insurer identification 5."
     },
-    "created_at": "2025-08-31T19:05:19.342654"
+    "created_at": "2025-09-02T05:19:48.720337"
   },
   {
     "requirement_id": "REQ-038",
@@ -1368,7 +1273,7 @@
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "HIPAA (45 CFR \u00a7 164.514)"
+      "HIPAA (45 CFR § 164.514)"
     ],
     "actors": [
       "Admin",
@@ -1396,65 +1301,26 @@
       "validated": true,
       "raw_input": "Present identification process and/or process will end with beneficiary to ensure it is information as required by the Beneficiary presents proof of accurate insurer identification 5."
     },
-    "created_at": "2025-08-31T19:05:19.342700"
+    "created_at": "2025-09-02T05:19:48.720430"
   },
   {
     "requirement_id": "REQ-039",
-    "category": "Functional",
-    "title": "Beneficiary Credential and Plan Qualification Review",
-    "statement": "The system must allow an Insurer to review a beneficiary's identification information (e.g., name, address, biometrics) and supporting documents for validity. The Insurer must verify that all required data fields are complete. The system must also provide a mechanism to handle cases where a beneficiary qualifies for multiple benefit plans.",
+    "category": "Compliance",
+    "title": "Beneficiary Identification and Eligibility Verification",
+    "statement": "The system must allow an Insurer to review a beneficiary's identification information (e.g., name, address, biometrics) and supporting documents to verify their validity and completeness. This review is to ensure the beneficiary qualifies for one or more available benefits plans.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "HIPAA (45 CFR Part 164)"
+      "HIPAA (45 CFR Part 164)",
+      "GDPR"
     ],
     "actors": [
-      "Insurer"
+      "Insurer",
+      "Compliance Officer"
     ],
     "data_type": [
       "PHI",
-      "PII"
-    ],
-    "action": [
-      "access",
-      "validate"
-    ],
-    "acceptance_criteria": [
-      "An authorized Insurer user can access the beneficiary's submitted identification information and documents.",
-      "The system must display all required fields for beneficiary identification, including name, address, and biometrics.",
-      "The system must provide a mechanism for the Insurer to mark the data and documents as 'valid' or 'invalid'.",
-      "The system must prevent the enrollment process from proceeding if required fields are incomplete or not validated.",
-      "In cases where a beneficiary qualifies for multiple benefit plans, the system must present these plans to the Insurer for selection or further processing."
-    ],
-    "dependencies": [],
-    "traceability": [],
-    "metadata": {
-      "source_file": "Common_InsuranceReqs_FINAL.pdf",
-      "llm_model": "gemini-2.5-pro",
-      "validated": true,
-      "raw_input": "beneficiary credentials Insurer reviews identification information (i.e., name, address, Insurer reviews the captured In the even that there are several and other appropriate qualifying biometrics\u2026) data to ensure that all of the benefits plans for which the documents for validity appropriate fields are complete beneficiary qualifies, then the 6."
-    },
-    "created_at": "2025-08-31T19:05:19.342767"
-  },
-  {
-    "requirement_id": "REQ-040",
-    "category": [
-      "Functional",
-      "Compliance"
-    ],
-    "title": "Beneficiary Credential and Eligibility Verification",
-    "statement": "The system must allow an Insurer to review a beneficiary's identification information (e.g., name, address, qualifying biometrics) and supporting documents to verify their validity and ensure all required data fields are complete. The system must also correctly handle cases where a beneficiary qualifies for multiple benefit plans.",
-    "priority": "P1",
-    "severity": "Critical",
-    "regulation": [
-      "HIPAA (45 CFR Part 164)"
-    ],
-    "actors": [
-      "Insurer"
-    ],
-    "data_type": [
-      "PHI",
-      "Beneficiary Demographics",
+      "PII",
       "Biometric Data"
     ],
     "action": [
@@ -1464,10 +1330,48 @@
     ],
     "acceptance_criteria": [
       "An authorized Insurer user can access the beneficiary's submitted identification information and documents.",
-      "The system must display all required fields for beneficiary identification, including name, address, and biometrics.",
-      "The system must provide a mechanism for the Insurer to mark the data and documents as 'valid' or 'invalid'.",
-      "The system must automatically check for and flag incomplete data submissions to the Insurer.",
-      "When a beneficiary's data indicates qualification for multiple benefit plans, the system must correctly identify and present all applicable plans to the Insurer."
+      "The system must display all required fields (e.g., name, address, date of birth) for the Insurer to review.",
+      "The system must provide a mechanism for the Insurer to mark the information and documents as 'valid' or 'invalid'.",
+      "The system must provide a mechanism for the Insurer to confirm that all required fields are complete.",
+      "Upon successful validation, the system correctly identifies and displays the benefits plans for which the beneficiary is eligible."
+    ],
+    "dependencies": [
+      "REQ-038"
+    ],
+    "traceability": [],
+    "metadata": {
+      "source_file": "Common_InsuranceReqs_FINAL.pdf",
+      "llm_model": "gemini-2.5-pro",
+      "validated": true,
+      "raw_input": "beneficiary credentials Insurer reviews identification information (i.e., name, address, Insurer reviews the captured In the even that there are several and other appropriate qualifying biometrics…) data to ensure that all of the benefits plans for which the documents for validity appropriate fields are complete beneficiary qualifies, then the 6."
+    },
+    "created_at": "2025-09-02T05:19:48.720509"
+  },
+  {
+    "requirement_id": "REQ-040",
+    "category": "Functional",
+    "title": "Beneficiary Credential and Plan Qualification Review",
+    "statement": "The system shall allow an Insurer to review a beneficiary's identification information (e.g., name, address, biometrics) and supporting documents to verify validity and ensure all required data fields are complete. The system must provide a mechanism to manage scenarios where a beneficiary qualifies for multiple benefit plans.",
+    "priority": "P1",
+    "severity": "Critical",
+    "regulation": [
+      "HIPAA - 45 CFR § 164.308 - Administrative Safeguards"
+    ],
+    "actors": [
+      "Insurer"
+    ],
+    "data_type": [
+      "PHI"
+    ],
+    "action": [
+      "access",
+      "validate"
+    ],
+    "acceptance_criteria": [
+      "Given an Insurer is logged into the system, when they access a beneficiary's profile, they can view all submitted identification information (name, address, biometrics).",
+      "Given an Insurer is reviewing a beneficiary's profile, they can view all submitted supporting documents for validity.",
+      "The system shall prevent the completion of the review process if any mandatory fields or documents are missing.",
+      "In the event a beneficiary qualifies for multiple benefit plans, the system must display all qualifying plans to the Insurer for selection or further action."
     ],
     "dependencies": [],
     "traceability": [],
@@ -1475,9 +1379,9 @@
       "source_file": "Common_InsuranceReqs_FINAL.pdf",
       "llm_model": "gemini-2.5-pro",
       "validated": true,
-      "raw_input": "beneficiary credentials Insurer reviews identification information (i.e., name, address, Insurer reviews the captured In the even that there are several and other appropriate qualifying biometrics\u2026) data to ensure that all of the benefits plans for which the documents for validity appropriate fields are complete beneficiary qualifies, then the 6."
+      "raw_input": "beneficiary credentials Insurer reviews identification information (i.e., name, address, Insurer reviews the captured In the even that there are several and other appropriate qualifying biometrics…) data to ensure that all of the benefits plans for which the documents for validity appropriate fields are complete beneficiary qualifies, then the 6."
     },
-    "created_at": "2025-08-31T19:05:19.342861"
+    "created_at": "2025-09-02T05:19:48.720587"
   },
   {
     "requirement_id": "REQ-041",
@@ -1509,66 +1413,33 @@
       "source_file": "Common_InsuranceReqs_FINAL.pdf",
       "llm_model": "gemini-2.5-pro",
       "validated": true,
-      "raw_input": "statements usually begin with \u201cThe system must ."
+      "raw_input": "statements usually begin with “The system must ."
     },
-    "created_at": "2025-08-31T19:05:19.342921"
+    "created_at": "2025-09-02T05:19:48.720640"
   },
   {
     "requirement_id": "REQ-042",
     "category": "Compliance",
-    "title": "Technology-Agnostic Requirement Formulation",
-    "statement": "All system requirements must be phrased to describe what the system shall accomplish, without making specific references to the underlying technology or implementation details. Requirements should typically begin with 'The system shall...'.",
-    "priority": "P1",
-    "severity": "Major",
-    "regulation": [
-      "FDA 21 CFR Part 820.30 (Design Controls)",
-      "ISO 13485:2016 Section 7.3 (Design and Development)",
-      "ISO/IEC/IEEE 29148 (Requirements Engineering)"
-    ],
-    "actors": [
-      "Business Analyst",
-      "Product Manager",
-      "System Engineer",
-      "QA and Compliance Expert"
-    ],
-    "data_type": "Requirements Documentation",
-    "action": "formulate",
-    "acceptance_criteria": [
-      "A review of the requirements specification document demonstrates that requirements describe functional outcomes, not implementation methods.",
-      "A search of the requirements specification for technology-specific keywords (e.g., 'Oracle', 'React', 'AWS S3', 'REST API') within requirement statements yields no results.",
-      "Each functional requirement statement begins with an approved, standardized phrase such as 'The system shall'."
-    ],
-    "dependencies": [],
-    "traceability": [],
-    "metadata": {
-      "source_file": "Common_InsuranceReqs_FINAL.pdf",
-      "llm_model": "gemini-2.5-pro",
-      "validated": true,
-      "raw_input": ".\u201dor \u201cThe system shall \u201d and describe what must be accomplished without specific reference to technology."
-    },
-    "created_at": "2025-08-31T19:05:19.342960"
-  },
-  {
-    "requirement_id": "REQ-043",
-    "category": "Compliance",
     "title": "Requirement Statement Formatting Standard",
-    "statement": "Statements usually begin with \u201cThe system must . .\u201dor \u201cThe system shall \u201d and describe what must be accomplished without specific reference to technology.",
+    "statement": "All requirement statements must begin with the phrase 'The system must...' to ensure clarity, consistency, and testability across all project documentation.",
     "priority": "P1",
     "severity": "Major",
     "regulation": [
-      "FDA 21 CFR 820.30(c)",
-      "IEC 62304, Sec 5.2"
+      "FDA 21 CFR 820.30 (Design Controls)",
+      "ISO 13485"
     ],
     "actors": [
       "System Analyst",
       "Product Manager",
-      "QA Engineer"
+      "QA Engineer",
+      "Compliance Officer"
     ],
-    "data_type": [],
-    "action": [],
+    "data_type": "Requirement Documentation",
+    "action": "Standardize",
     "acceptance_criteria": [
-      "All documented system requirements must begin with the phrase 'The system must' or 'The system shall'.",
-      "A review of requirement specifications shows that they describe functional or non-functional capabilities without mandating specific implementation technologies (e.g., programming languages, database vendors, or specific hardware)."
+      "A manual or automated review of the Requirements Specification Document (RSD) confirms that all requirement statements begin with the phrase 'The system must...'.",
+      "Requirement authoring tools or templates enforce this formatting standard.",
+      "All team members involved in writing requirements have been trained on this standard."
     ],
     "dependencies": [],
     "traceability": [],
@@ -1576,40 +1447,77 @@
       "source_file": "Common_InsuranceReqs_FINAL.pdf",
       "llm_model": "gemini-2.5-pro",
       "validated": true,
-      "raw_input": "statements usually begin with \u201cThe system must . .\u201dor \u201cThe system shall \u201d and describe what must be accomplished without specific reference to technology."
+      "raw_input": "statements usually begin with “The system must ."
     },
-    "created_at": "2025-08-31T19:05:19.343003"
+    "created_at": "2025-09-02T05:19:48.720685"
+  },
+  {
+    "requirement_id": "REQ-043",
+    "category": "Compliance",
+    "title": "Technology-Agnostic Requirement Formulation",
+    "statement": "All system requirements must be written to describe what must be accomplished without making specific references to the technology, platform, or implementation details used to achieve it. Requirements should clearly state the necessary outcome or capability.",
+    "priority": "P1",
+    "severity": "Major",
+    "regulation": [
+      "FDA 21 CFR Part 820.30 (Design Controls)",
+      "ISO 13485:2016 (Section 7.3, Design and Development)"
+    ],
+    "actors": [
+      "Business Analyst",
+      "Product Manager",
+      "Systems Engineer",
+      "QA Analyst"
+    ],
+    "data_type": [
+      "System Requirements Documentation"
+    ],
+    "action": [
+      "formulate",
+      "author",
+      "review"
+    ],
+    "acceptance_criteria": [
+      "A review of the requirements specification document confirms that requirements describe functional or non-functional outcomes, not implementation methods.",
+      "The requirements specification document does not contain references to specific programming languages, databases, hardware models, or commercial software products unless they are an explicit, pre-approved system constraint.",
+      "Each requirement statement is verifiable and testable on its own merit, independent of the technology chosen for implementation."
+    ],
+    "dependencies": [],
+    "traceability": [],
+    "metadata": {
+      "source_file": "Common_InsuranceReqs_FINAL.pdf",
+      "llm_model": "gemini-2.5-pro",
+      "validated": true,
+      "raw_input": ".”or “The system shall ” and describe what must be accomplished without specific reference to technology."
+    },
+    "created_at": "2025-09-02T05:19:48.720745"
   },
   {
     "requirement_id": "REQ-044",
     "category": "Compliance",
-    "title": "System Process Activity Auditing",
-    "statement": "The system must automatically record and maintain a secure audit log of all process activities involving access to, creation of, or modification of electronic protected health information (ePHI).",
+    "title": "Technology-Agnostic Requirement Formulation",
+    "statement": "All system requirements must be phrased using the 'The system shall...' format and must describe the necessary functionality or capability without referencing specific technologies, platforms, or implementation details.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "HIPAA \u00a7 164.312(b)"
+      "ISO 13485: 7.3",
+      "FDA 21 CFR 820.30"
     ],
     "actors": [
-      "clinician",
-      "patient",
-      "admin",
-      "biller"
+      "Business Analyst",
+      "Product Manager",
+      "System Architect",
+      "QA Engineer"
     ],
-    "data_type": [
-      "PHI",
-      "Audit Log"
-    ],
+    "data_type": "System Requirements Documentation",
     "action": [
-      "log",
-      "record",
-      "access"
+      "Define",
+      "Document",
+      "Review"
     ],
     "acceptance_criteria": [
-      "When any actor accesses, creates, or modifies PHI, a corresponding entry is created in the audit log.",
-      "Each audit log entry must contain, at a minimum: user identification, date and time of the action, type of action (e.g., view, modify, delete), and the specific data object accessed (e.g., patient ID).",
-      "The audit logs must be immutable and protected against unauthorized access, modification, or deletion.",
-      "An authorized admin must be able to review and export the audit logs for a specified date range or user."
+      "All requirements in the specification document start with the phrase 'The system shall'.",
+      "A review of the requirements specification confirms the absence of specific technology mentions (e.g., Oracle, AWS, Java, iPhone).",
+      "Each requirement is verifiable based on its functional description alone, independent of the implementation."
     ],
     "dependencies": [],
     "traceability": [],
@@ -1617,46 +1525,25 @@
       "source_file": "Common_InsuranceReqs_FINAL.pdf",
       "llm_model": "gemini-2.5-pro",
       "validated": true,
-      "raw_input": "Figure 7 Common system requirements example Requirement Req # Process Activity (the system must or should ."
+      "raw_input": ".”or “The system shall ” and describe what must be accomplished without specific reference to technology."
     },
-    "created_at": "2025-08-31T19:05:19.343041"
+    "created_at": "2025-09-02T05:19:48.720801"
   },
   {
     "requirement_id": "REQ-045",
     "category": "Functional",
-    "title": "Common System Requirement Placeholder",
-    "statement": "This is a placeholder requirement derived from a document template header: 'Figure 7 Common system requirements example Requirement Req # Process Activity (the system must or should ...)'. A specific system behavior needs to be defined here.",
-    "priority": "P3",
-    "severity": "Minor",
-    "regulation": [
-      "HIPAA",
-      "FDA 21 CFR Part 11",
-      "GDPR",
-      "ISO 13485"
-    ],
-    "actors": [
-      "clinician",
-      "patient",
-      "admin",
-      "system_auditor"
-    ],
-    "data_type": [
-      "PHI",
-      "PII",
-      "clinical_notes",
-      "lab_results"
-    ],
-    "action": [
-      "create",
-      "read",
-      "update",
-      "delete",
-      "log"
-    ],
+    "title": "Process Activity Execution",
+    "statement": "The system must support the execution of the defined process activity.",
+    "priority": "P1",
+    "severity": "Major",
+    "regulation": [],
+    "actors": [],
+    "data_type": [],
+    "action": [],
     "acceptance_criteria": [
-      "1. The placeholder statement is replaced with a specific, measurable, and testable requirement.",
-      "2. The finalized requirement is reviewed and approved by the project stakeholders.",
-      "3. The requirement is assigned a definitive priority and severity."
+      "The system allows an authorized user to initiate the process activity.",
+      "The system successfully executes the process activity from start to finish as per the defined workflow.",
+      "The system provides a confirmation of success or an error message upon completion of the activity."
     ],
     "dependencies": [],
     "traceability": [],
@@ -1666,15 +1553,15 @@
       "validated": true,
       "raw_input": "Figure 7 Common system requirements example Requirement Req # Process Activity (the system must or should ."
     },
-    "created_at": "2025-08-31T19:05:19.343070"
+    "created_at": "2025-09-02T05:19:48.720837"
   },
   {
     "requirement_id": "REQ-046",
-    "category": "Compliance",
-    "title": "Update Global Requirements with Country-Specifics",
-    "statement": "In turn, country-specific requirements are used to update and expand the global set of requirements.",
-    "priority": "P1",
-    "severity": "Major",
+    "category": "Functional",
+    "title": "System Requirement Template Example",
+    "statement": "This requirement is a placeholder example derived from a document figure (Figure 7), illustrating the format for a system process or activity. The statement template begins with 'the system must or should...'.",
+    "priority": "P3",
+    "severity": "Minor",
     "regulation": [
       "HIPAA",
       "FDA",
@@ -1682,24 +1569,67 @@
       "GDPR"
     ],
     "actors": [
-      "Admin",
-      "Compliance Officer"
+      "clinician",
+      "patient",
+      "admin"
     ],
     "data_type": [
-      "Compliance Requirements"
+      "PHI",
+      "lab results",
+      "prescriptions"
     ],
     "action": [
+      "access",
       "modify",
-      "create"
+      "delete",
+      "encrypt"
     ],
     "acceptance_criteria": [
-      "The system must provide a mechanism to map a new or updated country-specific requirement to the global requirements set.",
-      "An authorized user must be able to modify or expand an existing global requirement based on a linked country-specific requirement.",
-      "An audit trail must be created that links any changes in the global requirements set to the originating country-specific requirement."
+      "Not applicable as this is a placeholder/template requirement. A concrete requirement derived from this template would have specific, measurable criteria."
     ],
-    "dependencies": [
-      "REQ-045"
+    "dependencies": [],
+    "traceability": [],
+    "metadata": {
+      "source_file": "Common_InsuranceReqs_FINAL.pdf",
+      "llm_model": "gemini-2.5-pro",
+      "validated": true,
+      "raw_input": "Figure 7 Common system requirements example Requirement Req # Process Activity (the system must or should ."
+    },
+    "created_at": "2025-09-02T05:19:48.720866"
+  },
+  {
+    "requirement_id": "REQ-047",
+    "category": "Compliance",
+    "title": "Incorporate Country-Specific Requirements",
+    "statement": "In turn, country-specific requirements are used to update and expand the global set of requirements.",
+    "priority": "P1",
+    "severity": "Critical",
+    "regulation": [
+      "HIPAA",
+      "GDPR",
+      "FDA 21 CFR Part 820",
+      "ISO 13485"
     ],
+    "actors": [
+      "Compliance Officer",
+      "Product Manager",
+      "Regulatory Affairs Specialist"
+    ],
+    "data_type": [
+      "Requirements Data"
+    ],
+    "action": [
+      "update",
+      "create",
+      "modify"
+    ],
+    "acceptance_criteria": [
+      "A documented process exists for identifying and reviewing country-specific requirements.",
+      "When a new or updated country-specific requirement is approved, the global requirements set is reviewed for necessary updates or expansions.",
+      "Changes to the global requirements set are traceable to the source country-specific requirement.",
+      "An audit log captures all modifications to the global requirements set, including the change, the author, and the timestamp."
+    ],
+    "dependencies": [],
     "traceability": [],
     "metadata": {
       "source_file": "Common_InsuranceReqs_FINAL.pdf",
@@ -1707,36 +1637,40 @@
       "validated": true,
       "raw_input": "In turn, country-specific requirements are used to update and expand the global set of requirements."
     },
-    "created_at": "2025-08-31T19:05:19.343103"
+    "created_at": "2025-09-02T05:19:48.720903"
   },
   {
-    "requirement_id": "REQ-048",
+    "requirement_id": "REQ-049",
     "category": "Compliance",
-    "title": "Contextual Requirement Analysis",
+    "title": "Requirement Contextualization Review",
     "statement": "A review of common requirements can help address the question of what requirements are relevant for the context, given national policies and scheme design.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
       "HIPAA",
-      "GDPR"
+      "GDPR",
+      "FDA",
+      "ISO"
     ],
     "actors": [
+      "Admin",
       "Compliance Officer",
-      "Business Analyst",
-      "Admin"
+      "System Analyst"
     ],
     "data_type": [
-      "Policy Documents",
-      "Regulatory Standards"
+      "National Policies",
+      "Scheme Design Documents",
+      "Requirement Specifications"
     ],
     "action": [
       "review",
-      "analyze"
+      "analyze",
+      "document"
     ],
     "acceptance_criteria": [
-      "A document is produced that identifies all relevant national policies and scheme designs for the project context.",
-      "A set of specific requirements derived from the policy review is created and documented.",
-      "The list of derived requirements is approved by the compliance and legal stakeholders."
+      "A documented analysis of applicable national policies and scheme design constraints is completed.",
+      "A finalized list of relevant system requirements derived from the analysis is created and approved.",
+      "Each derived requirement is traced back to a specific policy, scheme design element, or common requirement source."
     ],
     "dependencies": [],
     "traceability": [],
@@ -1746,81 +1680,36 @@
       "validated": true,
       "raw_input": "A review of common requirements can help address the question of what requirements are relevant for the context, given national policies and scheme design."
     },
-    "created_at": "2025-08-31T19:05:19.343170"
+    "created_at": "2025-09-02T05:19:48.721087"
   },
   {
-    "requirement_id": "REQ-049",
-    "category": "Compliance",
-    "title": "Review of National Policies and Scheme Design",
-    "statement": "A review of common requirements must be conducted to identify and incorporate all relevant requirements based on the specific context, including national policies and the healthcare scheme's design.",
+    "requirement_id": "REQ-051",
+    "category": "Functional",
+    "title": "Define Functional Scope",
+    "statement": "The system shall provide a mechanism for the team to define and document the functional scope of the application.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "HIPAA",
-      "GDPR",
-      "FDA 21 CFR Part 11",
-      "National Healthcare Policies"
+      "FDA 21 CFR 820.30",
+      "ISO 13485"
     ],
     "actors": [
-      "Compliance Officer",
-      "System Architect",
+      "Admin",
       "Product Manager"
     ],
     "data_type": [
-      "Policy Documents",
-      "Regulatory Guidelines",
-      "Scheme Design Specifications"
+      "Requirement Specifications",
+      "System Configuration"
     ],
     "action": [
-      "Review",
-      "Analyze",
-      "Document"
-    ],
-    "acceptance_criteria": [
-      "A documented analysis of applicable national policies and scheme design constraints is produced.",
-      "A comprehensive list of derived requirements is created and formally approved by the Compliance Officer.",
-      "Traceability is established from the identified policies and design constraints to the derived system requirements."
-    ],
-    "dependencies": [],
-    "traceability": [],
-    "metadata": {
-      "source_file": "Common_InsuranceReqs_FINAL.pdf",
-      "llm_model": "gemini-2.5-pro",
-      "validated": true,
-      "raw_input": "A review of common requirements can help address the question of what requirements are relevant for the context, given national policies and scheme design."
-    },
-    "created_at": "2025-08-31T19:05:19.343200"
-  },
-  {
-    "requirement_id": "REQ-050",
-    "category": "Functional",
-    "title": "Define Functional Scope",
-    "statement": "The system shall allow an authorized team to define the functional scope of the application.",
-    "priority": "P1",
-    "severity": "Critical",
-    "regulation": [
-      "HIPAA - 45 CFR 164.308(a)(1) - Security Management Process",
-      "FDA - 21 CFR 820.30 - Design Controls",
-      "GDPR - Article 25 - Data protection by design and by default"
-    ],
-    "actors": [
-      "admin",
-      "system_administrator"
-    ],
-    "data_type": [
-      "system_configuration"
-    ],
-    "action": [
-      "define",
       "create",
-      "modify"
+      "modify",
+      "view"
     ],
     "acceptance_criteria": [
-      "Given an authenticated user with 'admin' privileges,",
-      "When the user navigates to the system configuration area,",
-      "Then they can access an interface to define the application's functional scope.",
-      "The user can enable or disable specific features or modules.",
-      "Upon saving the configuration, the application's behavior and available functionality must reflect the defined scope for all users."
+      "A user with appropriate permissions can access an interface to define the functional scope.",
+      "The user can create, edit, and save functional scope definitions.",
+      "The defined scope is stored persistently and can be retrieved for review and reporting."
     ],
     "dependencies": [],
     "traceability": [],
@@ -1830,43 +1719,46 @@
       "validated": true,
       "raw_input": "First, it will allow the team to define what they want to do (i.e., the functional scope)."
     },
-    "created_at": "2025-08-31T19:05:19.343257"
+    "created_at": "2025-09-02T05:20:11.034079"
   },
   {
-    "requirement_id": "REQ-051",
+    "requirement_id": "REQ-052",
     "category": "Functional",
-    "title": "Team Q&A Communication",
-    "statement": "The system shall provide a secure feature that allows authorized team members to ask essential questions related to patient care and receive answers from other team members.",
-    "priority": "P2",
-    "severity": "Major",
+    "title": "Clinical Inquiry Feature",
+    "statement": "The system shall provide a secure mechanism for authorized clinical team members to ask essential questions related to a specific patient's care, data, or treatment plan.",
+    "priority": "P1",
+    "severity": "Critical",
     "regulation": [
-      "HIPAA (Security Rule - 45 CFR \u00a7 164.312 - Technical Safeguards)",
-      "HIPAA (Privacy Rule - 45 CFR \u00a7 164.502 - Uses and disclosures of protected health information)"
+      "HIPAA Security Rule - 45 CFR § 164.312(e)(1) Transmission Security",
+      "HIPAA Privacy Rule - 45 CFR § 164.502 Uses and disclosures of protected health information",
+      "FDA 21 CFR Part 11"
     ],
     "actors": [
       "clinician",
-      "nurse",
       "care coordinator",
       "specialist"
     ],
     "data_type": [
       "PHI",
       "clinical notes",
-      "patient context"
+      "patient identifiers"
     ],
     "action": [
-      "access",
       "create",
-      "view"
+      "view",
+      "transmit",
+      "log"
     ],
     "acceptance_criteria": [
-      "An authenticated user with an authorized role (e.g., 'clinician') can access a communication interface.",
-      "The user can create and submit a text-based question, optionally linking it to a specific patient record.",
-      "The submitted question is visible only to other authorized members of the patient's care team.",
-      "All communications (questions and answers) must be logged for audit purposes, capturing the user, timestamp, and patient ID if applicable.",
-      "All communication data must be encrypted in transit and at rest."
+      "A logged-in clinician can initiate a new question and associate it with a specific patient record.",
+      "The question content and its association with the patient are transmitted securely over the network using end-to-end encryption.",
+      "The question is visible only to other authorized members of the patient's designated care team.",
+      "An immutable audit log is created for each question asked, recording the author, recipient(s), patient ID, and timestamp."
     ],
-    "dependencies": [],
+    "dependencies": [
+      "REQ-001",
+      "REQ-015"
+    ],
     "traceability": [],
     "metadata": {
       "source_file": "Common_InsuranceReqs_FINAL.pdf",
@@ -1874,13 +1766,13 @@
       "validated": true,
       "raw_input": "It will also allow the team to ask essential questions."
     },
-    "created_at": "2025-08-31T19:05:19.343310"
+    "created_at": "2025-09-02T05:20:11.034149"
   },
   {
-    "requirement_id": "REQ-052",
+    "requirement_id": "REQ-053",
     "category": "Functional",
-    "title": "Functional Scope Definition Capability",
-    "statement": "The system or process shall provide a mechanism for the development team to define the functional scope of the project. This includes the ability to document features and to ask clarifying questions to stakeholders for requirement validation.",
+    "title": "Functional Scope Definition",
+    "statement": "The system or process shall provide the capability for the team to define the functional scope and to ask, document, and track essential questions related to that scope.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
@@ -1888,23 +1780,26 @@
       "ISO - 13485:2016, 7.3.3 Design and development inputs"
     ],
     "actors": [
-      "Development Team",
       "Product Manager",
-      "Business Analyst"
+      "Development Team",
+      "QA Team",
+      "Compliance Officer"
     ],
     "data_type": [
-      "Functional Specifications",
-      "System Requirements"
+      "Functional Requirements",
+      "Scope Documents"
     ],
     "action": [
       "create",
+      "review",
       "document",
-      "review"
+      "approve"
     ],
     "acceptance_criteria": [
-      "A process or tool exists where the functional scope can be formally documented.",
-      "The documented scope is version-controlled and accessible to all designated team members.",
-      "A mechanism exists to ask questions related to the scope, and for those questions and their answers to be logged and tracked."
+      "A formal process for defining and documenting functional scope is established and approved.",
+      "A tool or template is available to capture the functional scope (e.g., a requirements management system, a standardized document).",
+      "A mechanism for submitting, tracking, and resolving questions related to the scope is implemented and auditable.",
+      "The defined functional scope is version-controlled and requires formal sign-off from designated stakeholders before development begins."
     ],
     "dependencies": [],
     "traceability": [],
@@ -1914,41 +1809,40 @@
       "validated": true,
       "raw_input": "First, it will allow the team to define what they want to do (i.e., the functional scope). It will also allow the team to ask essential questions."
     },
-    "created_at": "2025-08-31T19:05:19.343361"
+    "created_at": "2025-09-02T05:20:11.034199"
   },
   {
-    "requirement_id": "REQ-053",
+    "requirement_id": "REQ-054",
     "category": "Compliance",
-    "title": "Country-Specific Regulatory Analysis",
-    "statement": "The system must be analyzed to identify and document all relevant national and scheme-specific rules and regulations for the target country of deployment to ensure full compliance.",
+    "title": "Country-Specific Compliance Analysis",
+    "statement": "The system must be analyzed to identify and incorporate all relevant compliance requirements based on the specific national and local scheme rules of the target country.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "HIPAA",
+      "National Health Laws",
+      "Local Scheme Rules",
       "GDPR",
-      "Country-Specific National Healthcare Act",
-      "Local Scheme Rules"
+      "HIPAA"
     ],
     "actors": [
       "Compliance Officer",
-      "Business Analyst",
-      "Legal Team"
+      "Legal Team",
+      "Product Manager"
     ],
     "data_type": [
       "PHI",
-      "Patient Demographics",
-      "Billing Information",
-      "Clinical Data"
+      "PII",
+      "Clinical Data",
+      "Billing Information"
     ],
     "action": [
       "analyze",
-      "document",
-      "audit"
+      "document"
     ],
     "acceptance_criteria": [
-      "A comprehensive list of all applicable national and scheme-specific rules for the target country is documented.",
-      "A compliance matrix is created, mapping each identified rule to system features, policies, or controls.",
-      "A gap analysis report is produced, detailing any areas where the system does not meet the required regulations and outlining a remediation plan."
+      "A comprehensive list of all applicable national and scheme rules for the target country is documented.",
+      "A gap analysis report is produced, comparing system capabilities against the identified rules.",
+      "A set of actionable compliance requirements derived from the analysis is created and added to the project backlog."
     ],
     "dependencies": [],
     "traceability": [],
@@ -1956,39 +1850,44 @@
       "source_file": "Common_InsuranceReqs_FINAL.pdf",
       "llm_model": "gemini-2.5-pro",
       "validated": true,
-      "raw_input": "For example: \u2022 What are the requirements that will be relevant for our country context given our national and scheme rules?"
+      "raw_input": "For example: • What are the requirements that will be relevant for our country context given our national and scheme rules?"
     },
-    "created_at": "2025-08-31T19:05:19.343405"
+    "created_at": "2025-09-02T05:20:11.034247"
   },
   {
-    "requirement_id": "REQ-054",
+    "requirement_id": "REQ-055",
     "category": "Functional",
-    "title": "Provider and Payer Side Requirements Definition",
-    "statement": "The system development process must include the definition, documentation, and approval of all functional, non-functional, and compliance requirements for both provider-facing and payer-facing features and workflows.",
+    "title": "Provider and Payer System Requirements Definition",
+    "statement": "The system must support the distinct functional and data exchange requirements for both healthcare provider and payer user groups. This includes defining and developing functionalities for claims processing, eligibility verification, prior authorization, and clinical data exchange between the two parties.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "HIPAA",
-      "GDPR"
+      "HIPAA - Administrative Simplification (45 CFR Part 162)"
     ],
     "actors": [
-      "Product Manager",
-      "Business Analyst",
-      "Compliance Officer",
-      "System Architect"
+      "Provider",
+      "Payer",
+      "Admin",
+      "System Analyst"
     ],
     "data_type": [
       "PHI",
       "Claims Data",
-      "Clinical Notes",
-      "Eligibility Data"
+      "Eligibility Data",
+      "Prior Authorization Requests",
+      "Remittance Advice"
     ],
-    "action": [],
+    "action": [
+      "access",
+      "submit",
+      "process",
+      "exchange"
+    ],
     "acceptance_criteria": [
-      "A finalized and approved Provider Requirements Document (PRD) is produced.",
-      "A finalized and approved Payer Requirements Document (PRD) is produced.",
-      "Both documents explicitly address relevant regulatory controls (e.g., HIPAA Security and Privacy Rules).",
-      "Requirements are traceable to business objectives and stakeholder needs."
+      "A comprehensive requirements document for the provider-facing module is created, reviewed, and approved by stakeholders.",
+      "A comprehensive requirements document for the payer-facing module is created, reviewed, and approved by stakeholders.",
+      "The defined requirements cover key workflows such as eligibility checks (270/271), claims submission (837), and remittance advice (835).",
+      "All defined requirements are traceable to specific HIPAA Administrative Simplification standards."
     ],
     "dependencies": [],
     "traceability": [],
@@ -1996,45 +1895,47 @@
       "source_file": "Common_InsuranceReqs_FINAL.pdf",
       "llm_model": "gemini-2.5-pro",
       "validated": true,
-      "raw_input": "\u2022 What requirements must be developed on the provider and payer sides?"
+      "raw_input": "• What requirements must be developed on the provider and payer sides?"
     },
-    "created_at": "2025-08-31T19:05:19.343432"
+    "created_at": "2025-09-02T05:20:11.034290"
   },
   {
-    "requirement_id": "REQ-055",
+    "requirement_id": "REQ-056",
     "category": "Compliance",
-    "title": "Country-Specific Regulatory and Role-Based Requirement Analysis",
-    "statement": "An analysis must be conducted to identify and document all healthcare requirements relevant to the specific country context, including national laws and local scheme rules. This analysis must also define and differentiate the specific requirements that need to be developed for both provider and payer systems/roles.",
+    "title": "Country-Specific and Role-Based Requirement Analysis",
+    "statement": "A process must be established to identify and document all relevant healthcare requirements based on the specific country's national laws and local scheme rules. This analysis must differentiate and specify the requirements applicable to the provider and payer sides respectively.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "National Healthcare Laws",
-      "Local Scheme Rules",
+      "Country-specific National Health Acts",
+      "Payer-specific Scheme Rules",
       "HIPAA",
       "GDPR"
     ],
     "actors": [
       "Compliance Officer",
       "Business Analyst",
+      "System Architect",
       "Provider",
       "Payer"
     ],
     "data_type": [
       "PHI",
       "Claims Data",
-      "Billing Information",
-      "National Health Identifiers"
+      "Regulatory Texts",
+      "Scheme Rules"
     ],
     "action": [
-      "Analyze",
-      "Document",
-      "Define"
+      "access",
+      "store",
+      "process",
+      "transmit"
     ],
     "acceptance_criteria": [
-      "A comprehensive document is created that lists all identified national and scheme-specific rules applicable to the project.",
-      "A distinct set of functional and non-functional requirements for the provider side is documented and approved.",
-      "A distinct set of functional and non-functional requirements for the payer side is documented and approved.",
-      "The analysis and resulting requirements are formally reviewed and signed off by the legal and compliance teams."
+      "A documented repository of all applicable national and scheme-specific rules for the target country is created.",
+      "A final list of system requirements derived from the rules is produced.",
+      "Each requirement in the final list is explicitly mapped to the provider system, the payer system, or both.",
+      "Traceability is established between each system requirement and its source rule(s)."
     ],
     "dependencies": [],
     "traceability": [],
@@ -2042,25 +1943,24 @@
       "source_file": "Common_InsuranceReqs_FINAL.pdf",
       "llm_model": "gemini-2.5-pro",
       "validated": true,
-      "raw_input": "For example: \u2022 What are the requirements that will be relevant for our country context given our national and scheme rules? \u2022 What requirements must be developed on the provider and payer sides?"
+      "raw_input": "For example: • What are the requirements that will be relevant for our country context given our national and scheme rules? • What requirements must be developed on the provider and payer sides?"
     },
-    "created_at": "2025-08-31T19:05:19.343466"
+    "created_at": "2025-09-02T05:20:11.034341"
   },
   {
-    "requirement_id": "REQ-056",
+    "requirement_id": "REQ-057",
     "category": "Functional",
     "title": "Hospital Information System (HIS) Integration",
-    "statement": "The solution must be capable of integrating with existing hospital information systems (HIS) to facilitate seamless data exchange. If direct integration is not supported, a dedicated interface must be designed and built.",
+    "statement": "The solution shall provide a defined interface to integrate with existing hospital information systems (HIS) for bidirectional data exchange.",
     "priority": "P1",
-    "severity": "Critical",
+    "severity": "Major",
     "regulation": [
-      "HIPAA \u00a7164.312(e)(1) - Transmission Security",
-      "HIPAA \u00a7164.308(a)(1) - Security Management Process"
+      "HIPAA - 45 CFR § 164.312(e)(1) - Transmission Security",
+      "HIPAA - 45 CFR § 164.312(a)(1) - Access Control"
     ],
     "actors": [
-      "Admin",
-      "Clinician",
-      "IT Staff"
+      "admin",
+      "clinician"
     ],
     "data_type": [
       "PHI",
@@ -2072,14 +1972,13 @@
     "action": [
       "access",
       "transmit",
-      "receive"
+      "encrypt"
     ],
     "acceptance_criteria": [
-      "The solution can successfully establish a connection with a target HIS using standard interoperability protocols (e.g., HL7, FHIR).",
-      "Patient data can be successfully queried and retrieved from the HIS and displayed accurately within the solution.",
-      "Data created or modified in the solution can be successfully transmitted back to the HIS, if applicable.",
-      "All data transmitted between the solution and the HIS must be encrypted in transit.",
-      "The integration must include robust error handling for connection failures and data synchronization issues to prevent data loss or corruption."
+      "The system successfully establishes a connection with a target HIS using a standard protocol (e.g., HL7, FHIR API).",
+      "The system can successfully query and retrieve patient data from the connected HIS.",
+      "The system can successfully transmit new data to be stored in the connected HIS.",
+      "All data transmitted between the solution and the HIS is encrypted in transit using TLS 1.2 or higher."
     ],
     "dependencies": [],
     "traceability": [],
@@ -2087,85 +1986,77 @@
       "source_file": "Common_InsuranceReqs_FINAL.pdf",
       "llm_model": "gemini-2.5-pro",
       "validated": true,
-      "raw_input": "\u2022 Will the solution integrate with existing hospital information systems, or will it need to have interface design built into it?"
+      "raw_input": "• Will the solution integrate with existing hospital information systems, or will it need to have interface design built into it?"
     },
-    "created_at": "2025-08-31T19:05:19.343504"
-  },
-  {
-    "requirement_id": "REQ-057",
-    "category": "Functional",
-    "title": "Requirement Prioritization",
-    "statement": "A mechanism must be established to classify requirements as either essential (must-have) or non-essential (nice-to-have) to guide development, validation, and release planning.",
-    "priority": "P1",
-    "severity": "Critical",
-    "regulation": [
-      "FDA 21 CFR 820.30",
-      "ISO 13485",
-      "HIPAA 45 CFR \u00a7 164.308(a)(1)(ii)(A)"
-    ],
-    "actors": [
-      "Product Manager",
-      "Project Manager",
-      "Compliance Officer"
-    ],
-    "data_type": [
-      "Requirement metadata"
-    ],
-    "action": [
-      "access",
-      "modify",
-      "classify"
-    ],
-    "acceptance_criteria": [
-      "A field or tag is available for each requirement to mark its essentiality (e.g., 'Essential', 'Nice-to-have').",
-      "The project's requirements documentation or backlog can be filtered and sorted based on this classification.",
-      "The criteria for what constitutes an 'Essential' requirement are clearly defined and documented, referencing factors like patient safety, regulatory compliance, and core clinical workflow."
-    ],
-    "dependencies": [],
-    "traceability": [],
-    "metadata": {
-      "source_file": "Common_InsuranceReqs_FINAL.pdf",
-      "llm_model": "gemini-2.5-pro",
-      "validated": true,
-      "raw_input": "\u2022 Are there any requirements that are essential to address while others would be nice to have but not essential?"
-    },
-    "created_at": "2025-08-31T19:05:19.343535"
+    "created_at": "2025-09-02T05:20:11.034394"
   },
   {
     "requirement_id": "REQ-058",
     "category": "Functional",
-    "title": "Integration with Hospital Information Systems (HIS)",
-    "statement": "The solution must be capable of integrating with existing hospital information systems (e.g., EHR, LIS, RIS). The requirement analysis must determine if standard interfaces (e.g., HL7, FHIR) can be used or if custom interface design is required. The priority of specific integrations (essential vs. nice-to-have) must be defined.",
+    "title": "Requirement Prioritization",
+    "statement": "The system and development process must support the classification of requirements as 'essential' (must-have) versus 'non-essential' (nice-to-have) to guide prioritization and development efforts.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "HIPAA - 45 CFR \u00a7 164.312 - Technical Safeguards",
-      "FDA - 21 CFR Part 11"
+      "HIPAA",
+      "FDA",
+      "ISO",
+      "GDPR"
+    ],
+    "actors": [
+      "admin"
+    ],
+    "data_type": [],
+    "action": [
+      "access",
+      "modify"
+    ],
+    "acceptance_criteria": [
+      "A mechanism (e.g., a tag, field, or status) is in place to label each requirement as 'essential' or 'nice-to-have'.",
+      "The project's requirement backlog can be filtered or sorted based on this classification.",
+      "A formal review process is established to determine and approve the classification for each requirement."
+    ],
+    "dependencies": [],
+    "traceability": [],
+    "metadata": {
+      "source_file": "Common_InsuranceReqs_FINAL.pdf",
+      "llm_model": "gemini-2.5-pro",
+      "validated": true,
+      "raw_input": "• Are there any requirements that are essential to address while others would be nice to have but not essential?"
+    },
+    "created_at": "2025-09-02T05:20:11.034506"
+  },
+  {
+    "requirement_id": "REQ-059",
+    "category": "Functional",
+    "title": "HIS Integration and Interoperability",
+    "statement": "The solution must be capable of integrating with existing hospital information systems (HIS), such as EMRs/EHRs. The integration method, whether using existing standard interfaces (e.g., HL7, FHIR) or requiring custom development, must be defined and implemented.",
+    "priority": "P1",
+    "severity": "Critical",
+    "regulation": [
+      "HIPAA 45 CFR 164.312(e)(1) Transmission Security"
     ],
     "actors": [
       "Admin",
-      "Clinician",
-      "System Integrator"
+      "Clinician"
     ],
     "data_type": [
       "PHI",
       "Patient Demographics",
       "Lab Results",
-      "Prescriptions",
       "Clinical Notes"
     ],
     "action": [
       "access",
-      "modify",
-      "encrypt",
-      "transmit"
+      "transmit",
+      "encrypt"
     ],
     "acceptance_criteria": [
-      "The system can establish a secure, bi-directional connection with a specified target HIS (e.g., an EHR via a FHIR API).",
-      "The system can successfully query and retrieve patient data from the connected HIS in real-time.",
-      "The system can successfully write or update patient data in the connected HIS without data corruption.",
-      "All data transmitted between the solution and the HIS is encrypted in transit using TLS 1.2 or higher.",
-      "The integration includes robust error handling for connection failures, data mismatches, and timeouts, with events logged for administrative review."
+      "The system can successfully establish a bi-directional connection with a target HIS in a test environment.",
+      "Patient data can be successfully queried and retrieved from the HIS into the solution in a structured format (e.g., FHIR resource, HL7 message).",
+      "Data generated by the solution can be successfully transmitted to the HIS, if required by the workflow.",
+      "All data transmitted between the solution and the HIS is encrypted in transit using strong, industry-standard protocols (e.g., TLS 1.2+).",
+      "The integration handles connection errors and data synchronization issues gracefully without data loss or corruption."
     ],
     "dependencies": [],
     "traceability": [],
@@ -2173,44 +2064,44 @@
       "source_file": "Common_InsuranceReqs_FINAL.pdf",
       "llm_model": "gemini-2.5-pro",
       "validated": true,
-      "raw_input": "\u2022 Will the solution integrate with existing hospital information systems, or will it need to have interface design built into it? \u2022 Are there any requirements that are essential to address while others would be nice to have but not essential?"
+      "raw_input": "• Will the solution integrate with existing hospital information systems, or will it need to have interface design built into it? • Are there any requirements that are essential to address while others would be nice to have but not essential?"
     },
-    "created_at": "2025-08-31T19:05:19.343570"
+    "created_at": "2025-09-02T05:20:11.034549"
   },
   {
-    "requirement_id": "REQ-059",
+    "requirement_id": "REQ-060",
     "category": "Functional",
-    "title": "Solution Evaluation and Selection",
-    "statement": "The system shall provide a mechanism for managers to evaluate multiple solution alternatives and select the system that best matches the complex and diverse organizational needs.",
-    "priority": "P2",
-    "severity": "Major",
+    "title": "Evaluate Solution Alternatives",
+    "statement": "The system must provide a mechanism for managers to evaluate multiple solution alternatives and choose a system that best matches the complex and diverse organizational needs.",
+    "priority": "P1",
+    "severity": "Critical",
     "regulation": [
-      "HIPAA",
-      "GDPR",
-      "FDA 21 CFR Part 11",
-      "ISO 27001"
+      "HIPAA - Security Rule - 45 CFR 164.308(a)(1)(ii)(A) Risk Analysis",
+      "FDA - 21 CFR Part 820.50 Purchasing Controls",
+      "ISO - 13485:2016 Clause 7.4 Purchasing",
+      "GDPR - Article 25 Data protection by design and by default"
     ],
     "actors": [
-      "Admin",
-      "Manager"
+      "Manager",
+      "Administrator",
+      "Compliance Officer"
     ],
     "data_type": [
-      "System specifications",
-      "Vendor data",
-      "Compliance documentation",
-      "Cost analysis"
+      "PHI",
+      "Operational Data",
+      "Financial Data",
+      "Compliance Documentation"
     ],
     "action": [
-      "access",
+      "evaluate",
       "compare",
-      "evaluate"
+      "select"
     ],
     "acceptance_criteria": [
-      "A user with an 'Admin' or 'Manager' role can access a 'Solution Evaluation' module.",
-      "The system allows the user to input and manage multiple solution alternatives for comparison.",
-      "The user can define, customize, and weight evaluation criteria (e.g., cost, feature set, compliance, usability).",
-      "The system must generate a comparative view (e.g., a scorecard or side-by-side table) of the alternatives against the defined criteria.",
-      "The user can select a preferred solution and generate a summary report of the evaluation."
+      "The system shall provide a feature to define and weight evaluation criteria across multiple domains (e.g., functionality, security, cost, compliance).",
+      "Managers must be able to input details for at least two solution alternatives for side-by-side comparison.",
+      "The system must generate a summary report or dashboard that scores each alternative against the defined criteria.",
+      "The evaluation module must allow for attaching vendor documentation and compliance certificates for each alternative."
     ],
     "dependencies": [],
     "traceability": [],
@@ -2220,25 +2111,25 @@
       "validated": true,
       "raw_input": "EvAluAte solutions Sometimes managers will be in a position where they have multiple solution alternatives and need to choose a system that best matches the complex and diverse organizational needs."
     },
-    "created_at": "2025-08-31T19:05:19.343606"
+    "created_at": "2025-09-02T05:20:11.034597"
   },
   {
-    "requirement_id": "REQ-060",
+    "requirement_id": "REQ-061",
     "category": "Functional",
     "title": "Evaluate Solution Alternatives",
     "statement": "Managers will be in a position where they have multiple solution alternatives and need to choose a system that best matches the complex and diverse organizational needs.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "HIPAA - Security Rule - 45 CFR \u00a7 164.308(a)(1)(ii)(A) Risk Analysis",
-      "FDA - 21 CFR Part 820.50 Purchasing Controls",
-      "GDPR - Article 25: Data protection by design and by default",
-      "ISO - ISO 13485:2016, 7.4 Purchasing"
+      "HIPAA",
+      "FDA 21 CFR Part 11",
+      "GDPR",
+      "ISO 27001"
     ],
     "actors": [
       "Manager",
-      "Admin",
-      "Compliance Officer"
+      "Compliance Officer",
+      "System Administrator"
     ],
     "data_type": [
       "PHI",
@@ -2247,14 +2138,14 @@
       "Financial Data"
     ],
     "action": [
-      "evaluate",
-      "select"
+      "Evaluate",
+      "Select"
     ],
     "acceptance_criteria": [
-      "A documented process for evaluating and selecting systems is established and followed.",
-      "A comparison matrix is used to evaluate solution alternatives against predefined organizational, technical, and compliance requirements.",
-      "The final selection is justified and documented, demonstrating how the chosen system best meets the organization's needs.",
-      "Due diligence on vendor compliance and security posture is performed and documented."
+      "A documented process for evaluating and comparing solution alternatives is established and approved.",
+      "A scoring matrix is used to evaluate potential solutions against key organizational requirements, including functional, security, compliance, and financial criteria.",
+      "The final selection decision is documented, including a justification for why the chosen system best meets the organizational needs.",
+      "Evidence of stakeholder (e.g., managers, clinical leads, IT) involvement and sign-off on the final selection is available."
     ],
     "dependencies": [],
     "traceability": [],
@@ -2264,71 +2155,37 @@
       "validated": true,
       "raw_input": "EvAluAte solutions Sometimes managers will be in a position where they have multiple solution alternatives and need to choose a system that best matches the complex and diverse organizational needs."
     },
-    "created_at": "2025-08-31T19:05:19.343638"
-  },
-  {
-    "requirement_id": "REQ-061",
-    "category": "Compliance",
-    "title": "Software Evaluation Trade-offs",
-    "statement": "The evaluation and selection process must acknowledge that different software packages will exhibit varying levels of strength across the full set of requirements. A weighted scoring mechanism must be used to objectively assess and compare solutions based on the defined priority of each requirement.",
-    "priority": "P1",
-    "severity": "Major",
-    "regulation": [
-      "FDA",
-      "ISO"
-    ],
-    "actors": [
-      "admin"
-    ],
-    "data_type": [],
-    "action": [],
-    "acceptance_criteria": [
-      "A documented evaluation plan is established, which includes a weighted scoring model for requirements.",
-      "The final software selection report explicitly shows the application of the weighted scoring model to compare candidate solutions.",
-      "The weighting in the scoring model is directly informed by the priority assigned to each requirement."
-    ],
-    "dependencies": [],
-    "traceability": [],
-    "metadata": {
-      "source_file": "Common_InsuranceReqs_FINAL.pdf",
-      "llm_model": "gemini-2.5-pro",
-      "validated": true,
-      "raw_input": "Not every software package will be equally strong across all requirements."
-    },
-    "created_at": "2025-08-31T19:05:19.343667"
+    "created_at": "2025-09-02T05:20:11.034639"
   },
   {
     "requirement_id": "REQ-062",
     "category": "Compliance",
     "title": "Software Evaluation Trade-offs",
-    "statement": "Acknowledge that different software solutions will exhibit varying levels of strength and compliance across the full spectrum of requirements. A risk-based approach and a weighted scoring matrix must be used during software selection and procurement to evaluate these trade-offs.",
+    "statement": "The software selection process must acknowledge that different software packages will have varying levels of strength across different requirement categories (e.g., security, usability, performance). A weighted scoring or trade-off analysis methodology must be used to evaluate and select the most suitable package based on prioritized business and clinical needs.",
     "priority": "P1",
-    "severity": "Critical",
+    "severity": "Major",
     "regulation": [
-      "HIPAA Security Rule - \u00a7164.308(a)(1)(ii)(A) Risk Analysis",
-      "FDA 21 CFR Part 820.50 - Purchasing Controls",
-      "ISO 13485 - 7.4 Purchasing",
-      "GDPR - Art. 25 Data protection by design and by default"
+      "HIPAA",
+      "FDA 21 CFR Part 820",
+      "ISO 13485",
+      "GDPR"
     ],
     "actors": [
       "Admin",
       "Compliance Officer",
-      "Procurement Manager"
+      "Procurement Team"
     ],
     "data_type": [
       "PHI",
-      "PII",
-      "Clinical Data"
+      "lab results",
+      "prescriptions",
+      "clinical notes"
     ],
-    "action": [
-      "Evaluate",
-      "Select",
-      "Procure"
-    ],
+    "action": [],
     "acceptance_criteria": [
-      "A documented software evaluation process exists that includes a weighted scoring mechanism.",
-      "For any software procurement, a completed evaluation matrix is produced, showing the comparison of potential solutions against key requirements.",
-      "The final selection decision is documented, including a justification for any accepted trade-offs and associated risk mitigation plans."
+      "A documented software evaluation plan exists that includes a weighted scoring matrix for requirement categories.",
+      "The evaluation process utilizes the scoring matrix to compare potential software packages.",
+      "The final selection report provides a clear justification for the chosen software, referencing the trade-off analysis and weighted scores."
     ],
     "dependencies": [],
     "traceability": [],
@@ -2338,35 +2195,89 @@
       "validated": true,
       "raw_input": "Not every software package will be equally strong across all requirements."
     },
-    "created_at": "2025-08-31T19:05:19.343700"
+    "created_at": "2025-09-02T05:20:11.034683"
   },
   {
     "requirement_id": "REQ-063",
     "category": "Compliance",
-    "title": "Requirements-Driven Development",
-    "statement": "Software developers must be able to define and implement the functionality of the software using the detailed and approved business development processes and requirements documentation.",
+    "title": "Balanced Requirements Assessment",
+    "statement": "The software evaluation and selection process must acknowledge that different software packages will exhibit varying levels of strength across the full spectrum of requirements. A formal trade-off analysis is required to select the solution that best aligns with overall clinical and business needs, prioritizing critical requirements over less essential ones.",
+    "priority": "P1",
+    "severity": "Major",
+    "regulation": [
+      "HIPAA - 164.308(a)(1)(ii)(A) - Risk Analysis",
+      "FDA - 21 CFR 820.50 - Purchasing controls",
+      "ISO - 13485:2016, Clause 7.4 - Purchasing"
+    ],
+    "actors": [
+      "Admin",
+      "Compliance Officer",
+      "Procurement Manager",
+      "IT Staff"
+    ],
+    "data_type": [
+      "PHI",
+      "lab results",
+      "prescriptions",
+      "billing information",
+      "audit logs"
+    ],
+    "action": [
+      "evaluate",
+      "select",
+      "procure"
+    ],
+    "acceptance_criteria": [
+      "A weighted scoring matrix or equivalent evaluation tool is developed and used to compare software candidates against defined requirements.",
+      "The final selection report explicitly documents the trade-off analysis, justifying the choice of software, including its strengths and acknowledged weaknesses.",
+      "Evidence exists that requirement prioritization (e.g., P1, P2, P3) was used to guide the evaluation and selection decision."
+    ],
+    "dependencies": [],
+    "traceability": [],
+    "metadata": {
+      "source_file": "Common_InsuranceReqs_FINAL.pdf",
+      "llm_model": "gemini-2.5-pro",
+      "validated": true,
+      "raw_input": "Not every software package will be equally strong across all requirements."
+    },
+    "created_at": "2025-09-02T05:20:11.034736"
+  },
+  {
+    "requirement_id": "REQ-064",
+    "category": "Compliance",
+    "title": "Requirements-Driven Development Process",
+    "statement": "Software functionality must be defined and implemented strictly based on approved, detailed business processes and software requirements specifications.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "FDA - 21 CFR 820.30",
-      "ISO - 13485:2016, Section 7.3"
+      "FDA 21 CFR 820.30 (Design Controls)",
+      "ISO 13485:2016 (Section 7.3, Design and development)",
+      "IEC 62304 (Medical device software — Software life cycle processes)",
+      "HIPAA Security Rule - 45 CFR § 164.308 (Administrative Safeguards)",
+      "GDPR (Article 25, Data protection by design and by default)"
     ],
     "actors": [
-      "Software Developer"
+      "Software Developer",
+      "Product Manager",
+      "Business Analyst",
+      "QA Engineer"
     ],
     "data_type": [
-      "Business Requirements",
-      "Design Specifications",
-      "Process Documentation"
+      "Software Requirements Specification",
+      "Business Process Documents",
+      "Design Documents"
     ],
     "action": [
-      "Access",
-      "Implement"
+      "define",
+      "implement",
+      "document",
+      "trace"
     ],
     "acceptance_criteria": [
-      "All software features developed must be traceable to a corresponding documented business requirement.",
-      "Evidence of developers referencing the business process and requirements documents is present in task tracking systems or code commit messages.",
-      "A formal design and development plan, as required by quality system regulations, is established and followed."
+      "All implemented software features are traceable to a corresponding approved requirement in the requirements specification document.",
+      "A traceability matrix exists and is maintained, linking business requirements to software requirements, design specifications, and test cases.",
+      "Code reviews and design reviews explicitly verify that the implementation aligns with the documented requirements.",
+      "No code is developed or committed without an associated, approved requirement or task."
     ],
     "dependencies": [],
     "traceability": [],
@@ -2376,32 +2287,28 @@
       "validated": true,
       "raw_input": "Guide softwAre Software developers are able to define the functionality of a software using the detailed business develoPment processes and requirements."
     },
-    "created_at": "2025-08-31T19:05:19.343733"
+    "created_at": "2025-09-02T05:20:11.034807"
   },
   {
-    "requirement_id": "REQ-064",
+    "requirement_id": "REQ-065",
     "category": "Compliance",
-    "title": "Implementation Flexibility",
+    "title": "Implementation Flexibility for Solutions",
     "statement": "Because requirements do not specifically address how a process should be carried out, software developers are able to apply different software solutions to ensure the inputs, outputs, and outcomes match the intended objectives and goals.",
-    "priority": "P1",
-    "severity": "Major",
+    "priority": "P3",
+    "severity": "Minor",
     "regulation": [
-      "FDA 21 CFR Part 820",
       "ISO 13485"
     ],
     "actors": [
       "Software Developer",
       "System Architect"
     ],
-    "data_type": [],
-    "action": [
-      "design",
-      "implement"
-    ],
+    "data_type": "N/A",
+    "action": "Implement",
     "acceptance_criteria": [
-      "Requirements are verified to specify intended use, inputs, and outputs without dictating specific implementation details.",
-      "Design reviews demonstrate that the chosen technical solution effectively meets the objectives of the requirement.",
-      "Validation testing confirms that the final output and outcome match the requirement's goals, irrespective of the implementation method."
+      "Requirement specifications focus on the 'what' (inputs, outputs, outcomes) rather than the 'how' (specific implementation details).",
+      "Design documentation demonstrates that the chosen software solution effectively meets the objectives of the requirement.",
+      "Verification and validation tests confirm that the implemented solution produces the correct outputs and outcomes as defined by the requirement, irrespective of the method used."
     ],
     "dependencies": [],
     "traceability": [],
@@ -2411,37 +2318,28 @@
       "validated": true,
       "raw_input": "Because requirements do not specifically address how a process should be carried out, software developers are able to apply different software solutions to ensure the inputs, outputs, and outcomes match the intended objectives and goals."
     },
-    "created_at": "2025-08-31T19:05:19.343759"
+    "created_at": "2025-09-02T05:20:11.034843"
   },
   {
-    "requirement_id": "REQ-065",
-    "category": "Functional",
-    "title": "Functional Definition from Business Requirements",
+    "requirement_id": "REQ-066",
+    "category": "Compliance",
+    "title": "Development Aligned with Business Processes and Requirements",
     "statement": "Software developers are able to define the functionality of a software using the detailed business development processes and requirements. Because requirements do not specifically address how a process should be carried out, software developers are able to apply different software solutions to ensure the inputs, outputs, and outcomes match the intended objectives and goals.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "FDA 21 CFR Part 820.30 (Design Controls)",
-      "ISO 13485:2016, Section 7.3 (Design and development)"
+      "FDA 21 CFR 820.30",
+      "ISO 13485:2016 (Section 7.3)"
     ],
     "actors": [
-      "Software Developer",
-      "Business Analyst",
-      "Product Manager"
+      "Software Developer"
     ],
-    "data_type": [
-      "Business Requirements",
-      "Design Specifications"
-    ],
-    "action": [
-      "Define",
-      "Implement",
-      "Verify"
-    ],
+    "data_type": [],
+    "action": [],
     "acceptance_criteria": [
-      "The software development lifecycle (SDLC) process documentation must show how business requirements are translated into software design inputs.",
-      "Design outputs (e.g., code, architecture) must be traceable back to the originating business requirements.",
-      "Verification and validation test cases must confirm that the final software's inputs, outputs, and outcomes meet the objectives defined in the business requirements, regardless of the specific implementation method used."
+      "Traceability is established and maintained between business requirements, design specifications, and software implementation.",
+      "Design documentation clearly articulates the chosen software solution and maps its inputs, outputs, and outcomes to the objectives of the source business requirement.",
+      "Verification activities (e.g., code reviews, testing) confirm that the final software implementation meets the intended goals defined in the business requirements."
     ],
     "dependencies": [],
     "traceability": [],
@@ -2451,32 +2349,38 @@
       "validated": true,
       "raw_input": "Guide softwAre Software developers are able to define the functionality of a software using the detailed business develoPment processes and requirements. Because requirements do not specifically address how a process should be carried out, software developers are able to apply different software solutions to ensure the inputs, outputs, and outcomes match the intended objectives and goals."
     },
-    "created_at": "2025-08-31T19:05:19.343788"
+    "created_at": "2025-09-02T05:20:11.034883"
   },
   {
-    "requirement_id": "REQ-066",
+    "requirement_id": "REQ-067",
     "category": "Compliance",
-    "title": "Common Requirements Baseline for Customization",
-    "statement": "While software may have to be further customized to meet the specific needs of a country or system, a common requirements document provides a starting point for software design and can help software developers create a product that fulfills needs across scheme designs and structures.",
+    "title": "Common Requirements Document Baseline",
+    "statement": "A common requirements document shall be established and maintained to provide a standardized starting point for software design. This document must be adaptable to allow for customization to meet specific country or system needs, while ensuring the core product fulfills needs across various scheme designs and structures.",
     "priority": "P1",
     "severity": "Major",
     "regulation": [
-      "ISO 13485",
-      "FDA 21 CFR Part 820",
-      "GDPR",
-      "HIPAA"
+      "ISO 13485: 7.3 Design and Development",
+      "FDA 21 CFR 820.30 Design Controls"
     ],
     "actors": [
-      "System Architect",
+      "Product Manager",
       "Software Developer",
-      "Product Manager"
+      "System Architect",
+      "QA Engineer"
     ],
-    "data_type": [],
-    "action": [],
+    "data_type": [
+      "Requirements Documentation"
+    ],
+    "action": [
+      "create",
+      "maintain",
+      "use",
+      "customize"
+    ],
     "acceptance_criteria": [
-      "A version-controlled common requirements document (CRD) is established and maintained as the baseline for software design.",
-      "The software architecture documentation explicitly demonstrates how the design supports customization for different regions or systems.",
-      "A defined process exists for proposing, approving, and implementing country-specific or system-specific requirements that deviate from or extend the CRD."
+      "A version-controlled common requirements document is created and approved.",
+      "The document is used as the foundational input for software design and development activities.",
+      "A documented process exists for extending or customizing the common requirements for specific implementations (e.g., country-specific regulations)."
     ],
     "dependencies": [],
     "traceability": [],
@@ -2486,40 +2390,79 @@
       "validated": true,
       "raw_input": "While software may have to be further customized to meet the specific needs of a country or system, a common requirements document provides a starting point for software design and can help software developers create a product that fulfills needs across scheme designs and structures."
     },
-    "created_at": "2025-08-31T19:05:19.343831"
+    "created_at": "2025-09-02T05:20:11.034931"
   },
   {
     "requirement_id": "REQ-068",
     "category": "Compliance",
-    "title": "CRDM Process for Requirement and Process Documentation",
-    "statement": "The CRDM (Collaborative Requirements Development Methodology) process shall be used to systematically identify, discuss, reach agreement on, and document all project-specific business processes and their related requirements.",
+    "title": "Common Requirements Baseline for Customization",
+    "statement": "While software may have to be further customized to meet the specific needs of a country or system, a common requirements document provides a starting point for software design and can help software developers create a product that fulfills needs across scheme designs and structures.",
     "priority": "P1",
     "severity": "Major",
     "regulation": [
-      "ISO 13485: 7.3 Design and Development",
-      "FDA 21 CFR 820.30: Design Controls"
+      "ISO 13485",
+      "FDA 21 CFR Part 820",
+      "HIPAA",
+      "GDPR"
+    ],
+    "actors": [
+      "System Architect",
+      "Software Developer",
+      "Product Manager",
+      "Compliance Officer"
+    ],
+    "data_type": [],
+    "action": [
+      "Design",
+      "Develop",
+      "Customize"
+    ],
+    "acceptance_criteria": [
+      "A version-controlled common requirements document exists and is used as the baseline for all software design.",
+      "Traceability is established from the common requirements document to software design specifications.",
+      "Country-specific or system-specific customizations are documented as explicit extensions or modifications of the common requirements document."
+    ],
+    "dependencies": [],
+    "traceability": [],
+    "metadata": {
+      "source_file": "Common_InsuranceReqs_FINAL.pdf",
+      "llm_model": "gemini-2.5-pro",
+      "validated": true,
+      "raw_input": "While software may have to be further customized to meet the specific needs of a country or system, a common requirements document provides a starting point for software design and can help software developers create a product that fulfills needs across scheme designs and structures."
+    },
+    "created_at": "2025-09-02T05:20:11.034974"
+  },
+  {
+    "requirement_id": "REQ-069",
+    "category": "Compliance",
+    "title": "CRDM Process for Requirement Management",
+    "statement": "The CRDM (Clinical Requirements Definition and Management) process shall be used to systematically identify, discuss, reach agreement on, and document any project-specific business process and its related requirements.",
+    "priority": "P1",
+    "severity": "Major",
+    "regulation": [
+      "FDA 21 CFR Part 820.30 (Design Controls)",
+      "ISO 13485:2016 (Section 7.3, Design and development)"
     ],
     "actors": [
       "Project Manager",
       "Business Analyst",
       "System Architect",
-      "Subject Matter Expert"
+      "Clinical Subject Matter Expert"
     ],
     "data_type": [
-      "Requirement Specifications",
-      "Business Process Documentation"
+      "Business Process Definitions",
+      "System Requirements"
     ],
     "action": [
-      "create",
-      "review",
-      "approve",
-      "manage"
+      "identify",
+      "discuss",
+      "document",
+      "agree"
     ],
     "acceptance_criteria": [
-      "All project requirements must be documented in a standardized format traceable to CRDM process outputs (e.g., workshop minutes, decision logs).",
-      "Evidence must be provided that relevant stakeholders (actors) participated in the identification, discussion, and agreement stages of the CRDM process.",
-      "A formal sign-off record must exist for all documented business processes and requirements.",
-      "The project's Quality Plan must reference the use of the CRDM process for requirements engineering."
+      "A documented CRDM process is defined and available to the project team.",
+      "Evidence exists (e.g., meeting minutes, signed documents) that the CRDM process was followed for defining project requirements.",
+      "All project-specific business processes and their requirements are documented in a designated requirements management tool or document."
     ],
     "dependencies": [],
     "traceability": [],
@@ -2529,13 +2472,13 @@
       "validated": true,
       "raw_input": "Use DescriPtion Use the CRDM Process to CRDM is a generic process and can be used to identify, discuss, reach agreement on, and develoP Project-sPecific document any business process and its related requirements systematically."
     },
-    "created_at": "2025-08-31T19:05:19.343911"
+    "created_at": "2025-09-02T05:20:11.035033"
   },
   {
-    "requirement_id": "REQ-069",
+    "requirement_id": "REQ-070",
     "category": "Compliance",
-    "title": "Local Requirement Analysis and Consensus",
-    "statement": "An analysis and consensus-building exercise must be conducted at the country or project level to validate and adapt generic requirements, even when pre-mapped generic processes and requirements are available in a master document.",
+    "title": "Country/Project Level Requirement Analysis",
+    "statement": "Some key processes requirements and requirements were already mapped in this document in a way that should be as generic as possible; but even then, value may be found in the analysis and consensus-building aspect of the exercise itself at a country or project level.",
     "priority": "P2",
     "severity": "Major",
     "regulation": [
@@ -2547,22 +2490,18 @@
     "actors": [
       "Project Manager",
       "Compliance Officer",
-      "Clinician",
-      "Admin"
+      "Business Analyst",
+      "Country Lead"
     ],
-    "data_type": [
-      "Clinical Workflows",
-      "System Configuration"
-    ],
+    "data_type": [],
     "action": [
       "Analyze",
-      "Validate",
-      "Adapt"
+      "Review"
     ],
     "acceptance_criteria": [
-      "Evidence of a review and consensus-building meeting (e.g., meeting minutes) is available for each country or project implementation.",
-      "A document is produced detailing the localized analysis, including any adaptations or justifications for using the generic requirements as-is.",
-      "Sign-off on the localized requirements is obtained from relevant country or project-level stakeholders."
+      "Evidence of a formal analysis and consensus-building exercise at the country or project level.",
+      "A documented addendum of localized requirements or deviations is produced.",
+      "Sign-off on the localized requirements is obtained from relevant country/project stakeholders."
     ],
     "dependencies": [],
     "traceability": [],
@@ -2572,32 +2511,40 @@
       "validated": true,
       "raw_input": "Some key processes requirements and requirements were already mapped in this document in a way that should be as generic as possible; but even then, value may be found in the analysis and consensus-building aspect of the exercise itself at a country or project level."
     },
-    "created_at": "2025-08-31T19:05:19.343951"
+    "created_at": "2025-09-02T05:20:11.035069"
   },
   {
-    "requirement_id": "REQ-070",
+    "requirement_id": "REQ-071",
     "category": "Compliance",
-    "title": "Use of CRDM Process for Requirement Definition",
-    "statement": "The CRDM (Consensus-based Requirements Definition Methodology) process must be used to systematically identify, discuss, reach agreement on, and document all business processes and their related project-specific requirements. This process shall be applied at the country and/or project level to facilitate analysis and consensus-building.",
+    "title": "CRDM Process for Business and Project Requirements",
+    "statement": "The CRDM (Collaborative Requirements Development Methodology) process shall be used to systematically identify, discuss, agree upon, and document project-specific business processes and their related requirements. The analysis and consensus-building aspects of the CRDM process must be applied at the country or project level to ensure specificity and agreement, even where generic requirements have been pre-mapped.",
     "priority": "P1",
     "severity": "Major",
     "regulation": [
       "ISO 13485: 7.3 Design and Development",
-      "FDA 21 CFR 820.30: Design Controls"
+      "FDA 21 CFR Part 820.30 Design Controls"
     ],
     "actors": [
       "Project Manager",
       "Business Analyst",
-      "Product Owner",
-      "Subject Matter Expert"
+      "Clinical Subject Matter Expert",
+      "Technical Lead",
+      "QA Manager"
     ],
-    "data_type": [],
-    "action": [],
+    "data_type": [
+      "Business Requirements Documents",
+      "System Requirements Specifications"
+    ],
+    "action": [
+      "identify",
+      "discuss",
+      "document",
+      "develop"
+    ],
     "acceptance_criteria": [
-      "A formal CRDM process is documented and available.",
-      "Project plans include scheduled CRDM activities for requirement gathering and consensus-building.",
-      "Outputs from the CRDM process (e.g., meeting minutes, signed-off requirement specifications) are produced and stored for each project.",
-      "There is auditable evidence of stakeholder agreement on the requirements documented via the CRDM process."
+      "Evidence of CRDM process workshops being conducted for project-specific requirements is available.",
+      "Project requirements documentation is created and maintained following the CRDM process structure.",
+      "Sign-offs from key stakeholders are present on the requirements documents, indicating consensus was reached through the CRDM process."
     ],
     "dependencies": [],
     "traceability": [],
@@ -2607,17 +2554,17 @@
       "validated": true,
       "raw_input": "Use DescriPtion Use the CRDM Process to CRDM is a generic process and can be used to identify, discuss, reach agreement on, and develoP Project-sPecific document any business process and its related requirements systematically. Some key processes requirements and requirements were already mapped in this document in a way that should be as generic as possible; but even then, value may be found in the analysis and consensus-building aspect of the exercise itself at a country or project level."
     },
-    "created_at": "2025-08-31T19:05:19.344000"
+    "created_at": "2025-09-02T05:20:11.035113"
   },
   {
-    "requirement_id": "REQ-071",
+    "requirement_id": "REQ-072",
     "category": "Compliance",
-    "title": "Cross-Check Materials and Requirements",
+    "title": "Material and Requirement Alignment Verification",
     "statement": "Materials can be cross-checked against requirements to ensure they align with one another and that all processes are covered by both.",
-    "priority": "P2",
+    "priority": "P1",
     "severity": "Major",
     "regulation": [
-      "FDA 21 CFR Part 820",
+      "FDA 21 CFR Part 820.30",
       "ISO 13485"
     ],
     "actors": [
@@ -2626,21 +2573,21 @@
       "System Analyst"
     ],
     "data_type": [
+      "Requirement Specifications",
       "Design Documents",
       "Test Cases",
-      "User Manuals",
-      "System Requirements"
+      "User Manuals"
     ],
     "action": [
-      "review",
+      "access",
       "verify",
-      "cross-check"
+      "report"
     ],
     "acceptance_criteria": [
-      "A traceability matrix exists that maps requirements to design documents, test cases, and other materials.",
-      "A documented review process is in place for cross-checking materials against requirements.",
-      "Evidence of completed reviews (e.g., sign-offs, review reports) is available for audit.",
-      "All defined processes are demonstrably covered by both requirements and corresponding materials."
+      "A traceability matrix exists that maps requirements to corresponding materials (e.g., design documents, test cases, user guides).",
+      "A verification process confirms that 100% of requirements are covered by one or more materials.",
+      "A verification process confirms that all materials trace back to an approved requirement, ensuring no undocumented features or processes exist.",
+      "A report can be generated to show the alignment status and highlight any gaps or inconsistencies between requirements and materials."
     ],
     "dependencies": [],
     "traceability": [],
@@ -2650,43 +2597,44 @@
       "validated": true,
       "raw_input": "Materials can be cross-checked against requirements to ensure they align with one another and that all processes are covered by both."
     },
-    "created_at": "2025-08-31T19:05:19.344072"
+    "created_at": "2025-09-02T05:20:11.035162"
   },
   {
-    "requirement_id": "REQ-073",
-    "category": "Functional",
+    "requirement_id": "REQ-074",
+    "category": "Reliability",
     "title": "Improve Data Quality",
-    "statement": "The system must implement mechanisms to improve and maintain a high level of data quality, addressing common issues such as inaccuracies, incompleteness, and inconsistencies in patient and clinical data.",
+    "statement": "The system must implement mechanisms to ensure and improve the quality, accuracy, completeness, and consistency of all stored data. This includes implementing input validation, data cleansing processes, and monitoring for common data quality issues such as duplicates, inconsistencies, and missing information.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "HIPAA - Security Rule - 45 CFR \u00a7 164.308(a)(1)(ii)(B) - Integrity Controls",
-      "FDA - 21 CFR Part 11 - Electronic Records",
-      "GDPR - Article 5(1)(d) - Accuracy",
-      "ISO - 13485:2016 - 4.2.5 Control of records"
+      "HIPAA - 45 CFR § 164.312(c)(1) - Integrity",
+      "FDA - 21 CFR Part 11",
+      "GDPR - Article 5(1)(d)"
     ],
     "actors": [
-      "Clinician",
       "Admin",
-      "Patient"
+      "Clinician",
+      "Data Steward"
     ],
     "data_type": [
       "PHI",
-      "Lab results",
+      "Demographics",
+      "Lab Results",
       "Prescriptions",
-      "Patient Demographics"
+      "Clinical Notes"
     ],
     "action": [
       "Validate",
-      "Modify",
-      "Audit",
-      "Report"
+      "Cleanse",
+      "Monitor",
+      "Report",
+      "Correct"
     ],
     "acceptance_criteria": [
-      "Data entry fields for critical data (e.g., date of birth, medication dosage) must have built-in validation rules to prevent common errors.",
-      "The system must provide a feature to identify and flag potential duplicate patient records for administrative review and merging.",
-      "An audit trail must be automatically generated for any modification to PHI, capturing the user, timestamp, and the change made.",
-      "The system must provide a dashboard for administrators to view data quality metrics, such as percentage of incomplete records or data entry error rates."
+      "Input fields for critical data (e.g., date of birth, patient ID) must have format and range validation to prevent incorrect entries.",
+      "The system must include a mechanism to detect and flag potential duplicate patient records with an accuracy of at least 95%.",
+      "A data quality dashboard must be available to 'Admin' and 'Data Steward' roles, reporting on key metrics like data completeness, consistency, and error rates.",
+      "Automated data cleansing routines must run on a scheduled basis to correct common formatting issues and standardize data (e.g., phone numbers, addresses)."
     ],
     "dependencies": [],
     "traceability": [],
@@ -2696,46 +2644,44 @@
       "validated": true,
       "raw_input": "ImProve dAtA quAlity Issues with data quality are common."
     },
-    "created_at": "2025-08-31T19:05:19.344228"
+    "created_at": "2025-09-02T05:20:11.035492"
   },
   {
-    "requirement_id": "REQ-074",
+    "requirement_id": "REQ-075",
     "category": "Compliance",
-    "title": "Data Flow and Lifecycle Analysis",
-    "statement": "A comprehensive analysis of business processes must be conducted and documented to determine all points where data enters the system (both directly collected and from integrated systems), all methods by which data are processed and analyzed, and all mechanisms by which data are shared with internal users and external systems.",
+    "title": "Data Flow and Process Analysis",
+    "statement": "An analysis of business processes can help determine where data are entering the system (either directly collected or coming from another system), how data are processed and analyzed, and how data are shared with users and other systems.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "HIPAA Security Rule - 45 CFR \u00a7 164.308(a)(1)(ii)(A) Risk Analysis",
-      "HIPAA Privacy Rule - 45 CFR \u00a7 164.502 Uses and disclosures of protected health information",
-      "GDPR - Article 30, Records of processing activities",
-      "ISO 27001 - A.8 Asset management"
+      "HIPAA § 164.308(a)(1)(ii)(A) - Risk Analysis",
+      "GDPR Art. 30 - Records of processing activities",
+      "FDA 21 CFR Part 820 - Quality System Regulation",
+      "ISO 27001 - Information Security Management"
     ],
     "actors": [
-      "System Analyst",
+      "Business Analyst",
+      "System Architect",
       "Compliance Officer",
-      "Security Officer",
-      "Admin"
+      "Security Officer"
     ],
     "data_type": [
       "PHI",
       "PII",
       "Clinical Data",
-      "Billing Information"
+      "Operational Data"
     ],
     "action": [
-      "collect",
-      "process",
       "analyze",
-      "share",
-      "store",
-      "transmit"
+      "document",
+      "map",
+      "trace"
     ],
     "acceptance_criteria": [
-      "A complete data flow diagram (DFD) exists, mapping all data ingress, processing, storage, and egress points.",
-      "Documentation is available that identifies every system component, user role, and external entity that interacts with the data.",
-      "The analysis report details the types of data (e.g., PHI, PII) involved in each step of the data flow.",
-      "The data flow analysis and associated documentation have been reviewed and approved by the designated Security and Compliance Officers."
+      "Data flow diagrams (DFDs) are created and maintained for all system components handling sensitive data.",
+      "A data inventory document is produced, identifying all data ingress, processing, storage, and egress points.",
+      "The analysis explicitly identifies where and how PHI/PII is collected, used, stored, and transmitted.",
+      "The documentation is reviewed and approved by the designated Security and Compliance officers."
     ],
     "dependencies": [],
     "traceability": [],
@@ -2745,44 +2691,45 @@
       "validated": true,
       "raw_input": "An analysis of business processes can help determine where data are entering the system (either directly collected or coming from another system), how data are processed and analyzed, and how data are shared with users and other systems."
     },
-    "created_at": "2025-08-31T19:05:19.344305"
+    "created_at": "2025-09-02T05:20:11.035579"
   },
   {
-    "requirement_id": "REQ-075",
-    "category": "Reliability",
-    "title": "Data Quality and Integrity Analysis",
-    "statement": "The system must support the analysis of business processes to ensure data quality throughout its lifecycle. This includes identifying data entry points (direct collection and system-to-system), and tracking how data is processed, analyzed, and shared with users and other systems to mitigate data quality issues.",
+    "requirement_id": "REQ-076",
+    "category": "Functional",
+    "title": "Data Quality and Lineage Analysis",
+    "statement": "The system must facilitate the analysis of business processes to identify and address data quality issues. This includes capabilities to determine data entry points (direct collection or integration), how data is processed and analyzed, and how it is shared with users and other systems.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "HIPAA - Security Rule \u00a7 164.312(c)(1) - Integrity",
-      "FDA - 21 CFR Part 11 - Electronic Records; Electronic Signatures",
+      "HIPAA - 45 CFR § 164.308(a)(1)(ii)(B) - Integrity Controls",
+      "FDA - 21 CFR Part 11 - Electronic Records",
       "GDPR - Article 5(1)(d) - Accuracy",
-      "ISO - 13485:2016 - Medical devices"
+      "ISO - ISO 13485:2016, 7.6 - Control of monitoring and measuring equipment"
     ],
     "actors": [
-      "System Administrator",
+      "Admin",
       "Data Analyst",
       "Compliance Officer"
     ],
     "data_type": [
       "PHI",
-      "Clinical Data",
+      "Demographics",
+      "Clinical Notes",
       "Lab Results",
       "Prescriptions",
-      "Patient Demographics"
+      "Billing Information"
     ],
     "action": [
       "analyze",
       "audit",
-      "trace",
-      "validate"
+      "track",
+      "report"
     ],
     "acceptance_criteria": [
-      "A data lineage capability must exist to trace data from its source to its points of use and sharing.",
-      "The system must be able to generate reports on data validation success and failure rates at all data entry points.",
-      "An audit trail must be available to track all processing and transformation steps applied to data.",
-      "System documentation must map data flows for all key business processes, including ingestion, processing, and sharing."
+      "The system must provide a data lineage tool to trace data elements from their point of entry to all points of use and sharing.",
+      "The system must be able to generate reports on data quality metrics, including completeness, consistency, and accuracy.",
+      "An audit trail must be available to identify the source system or user for every data element.",
+      "The system must allow administrators to define and run analyses on data processing workflows to identify potential quality gaps."
     ],
     "dependencies": [],
     "traceability": [],
@@ -2792,89 +2739,46 @@
       "validated": true,
       "raw_input": "ImProve dAtA quAlity Issues with data quality are common. An analysis of business processes can help determine where data are entering the system (either directly collected or coming from another system), how data are processed and analyzed, and how data are shared with users and other systems."
     },
-    "created_at": "2025-08-31T19:05:19.344405"
-  },
-  {
-    "requirement_id": "REQ-076",
-    "category": "Functional",
-    "title": "Stakeholder Data Access for Business Process Management",
-    "statement": "The system shall provide authorized stakeholders with the necessary reporting and data analysis tools to effectively identify, monitor, and resolve issues within specific business processes by providing access to relevant data.",
-    "priority": "P2",
-    "severity": "Major",
-    "regulation": [
-      "HIPAA (45 CFR Part 164, Subpart C - Security Rule)",
-      "HIPAA (45 CFR Part 164, Subpart E - Privacy Rule)"
-    ],
-    "actors": [
-      "Admin",
-      "Business Analyst",
-      "Compliance Officer",
-      "Department Manager"
-    ],
-    "data_type": [
-      "PHI",
-      "Operational Metrics",
-      "Audit Logs",
-      "Billing Information"
-    ],
-    "action": [
-      "access",
-      "query",
-      "generate_report",
-      "view"
-    ],
-    "acceptance_criteria": [
-      "Given an authorized stakeholder (e.g., Business Analyst), when they navigate to the reporting module, they can select a specific business process (e.g., Patient Intake).",
-      "The system must display a dashboard with relevant KPIs and metrics for the selected business process.",
-      "The user must be able to filter the data by date range and other relevant parameters (e.g., location, department) to investigate specific issues.",
-      "The system must provide a feature to export the filtered data or report in a standard format (e.g., CSV, PDF).",
-      "All access to data containing PHI for reporting purposes must be recorded in the system's audit log, detailing the user, timestamp, and data accessed."
-    ],
-    "dependencies": [],
-    "traceability": [],
-    "metadata": {
-      "source_file": "Common_InsuranceReqs_FINAL.pdf",
-      "llm_model": "gemini-2.5-pro",
-      "validated": true,
-      "raw_input": "Stakeholders are better able to address these specific issues and address data needs of each business process."
-    },
-    "created_at": "2025-08-31T19:05:19.344471"
+    "created_at": "2025-09-02T05:20:11.035660"
   },
   {
     "requirement_id": "REQ-077",
     "category": "Functional",
     "title": "Stakeholder Data Access for Business Processes",
     "statement": "Stakeholders are better able to address these specific issues and address data needs of each business process.",
-    "priority": "P2",
+    "priority": "P1",
     "severity": "Major",
     "regulation": [
-      "HIPAA - 45 CFR 164.308 (Administrative Safeguards)",
-      "HIPAA - 45 CFR 164.502 (Uses and disclosures of protected health information)"
+      "HIPAA - 45 CFR 164.502(b) - Minimum Necessary",
+      "HIPAA - 45 CFR 164.308(a)(1)(ii)(A) - Risk Analysis"
     ],
     "actors": [
-      "Administrator",
+      "Admin",
       "Compliance Officer",
-      "Business Analyst"
+      "Business Analyst",
+      "Practice Manager"
     ],
     "data_type": [
       "PHI",
-      "Audit Logs",
+      "Operational Metrics",
       "Billing Information",
-      "Operational Metrics"
+      "Audit Logs"
     ],
     "action": [
       "access",
       "view",
-      "query",
-      "export"
+      "generate_report"
     ],
     "acceptance_criteria": [
-      "Given a user with a 'Business Analyst' role, when they access the reporting module, they can generate reports tailored to specific business processes (e.g., patient intake, claims submission).",
-      "The generated reports must contain the necessary data fields to allow for the identification and analysis of process-specific issues.",
-      "Users must be able to filter and query data within the reports to investigate specific cases or trends.",
-      "All access to data through this functionality must be logged in an immutable audit trail, accessible by an 'Administrator' or 'Compliance Officer'."
+      "Verify that an authorized stakeholder can access a dashboard or reporting interface tailored to their business process needs.",
+      "Verify that the interface allows the stakeholder to view and analyze data relevant to pre-defined business issues.",
+      "Verify that role-based access control is implemented, ensuring stakeholders can only access the minimum necessary data required for their role.",
+      "Verify that a stakeholder can generate or export a report containing the data needed for their specific business process."
     ],
-    "dependencies": [],
+    "dependencies": [
+      "REQ-050",
+      "REQ-051"
+    ],
     "traceability": [],
     "metadata": {
       "source_file": "Common_InsuranceReqs_FINAL.pdf",
@@ -2882,42 +2786,40 @@
       "validated": true,
       "raw_input": "Stakeholders are better able to address these specific issues and address data needs of each business process."
     },
-    "created_at": "2025-08-31T19:05:19.344512"
+    "created_at": "2025-09-02T05:20:11.035747"
   },
   {
-    "requirement_id": "REQ-078",
+    "requirement_id": "REQ-079",
     "category": "Usability",
-    "title": "Resource Usability and Maintainability",
+    "title": "Resource Usability and Maintenance",
     "statement": "The resource should be sustainably maintained, and all documentation/resources must be easily usable (e.g., downloadable, referenceable, and adaptable).",
     "priority": "P2",
     "severity": "Major",
     "regulation": [
-      "FDA 21 CFR Part 820",
-      "ISO 13485"
+      "ISO 13485",
+      "IEC 62366",
+      "FDA 21 CFR Part 820"
     ],
     "actors": [
       "Clinician",
-      "Patient",
       "Admin",
-      "Developer",
-      "QA Tester"
+      "Patient"
     ],
     "data_type": [
-      "Documentation",
-      "Training Materials"
+      "System Documentation",
+      "Training Materials",
+      "User Guides"
     ],
     "action": [
       "Access",
       "Download",
-      "Reference",
-      "Adapt"
+      "Reference"
     ],
     "acceptance_criteria": [
-      "All user documentation and resources are available in a common, downloadable format (e.g., PDF).",
-      "Documentation sections must be individually referenceable via unique URLs or anchors.",
-      "Where applicable, resources are provided in an adaptable format (e.g., templates in DOCX) to allow for local customization.",
-      "A version history for all documentation is maintained and accessible.",
-      "The process for updating and maintaining documentation is defined and auditable."
+      "A documented process exists for the periodic review and update of all resources, including version control.",
+      "All documentation and resources are available for download in standard, accessible formats (e.g., PDF, DOCX).",
+      "Documentation is searchable and includes a table of contents or index to facilitate easy referencing.",
+      "Where applicable, resources are provided in a format that allows for adaptation by the user's institution (e.g., templates in DOCX format)."
     ],
     "dependencies": [],
     "traceability": [],
@@ -2927,45 +2829,39 @@
       "validated": true,
       "raw_input": "The resource should be sustainably maintained, and all documentation/resources must be easily usable (e.g., downloadable, referenceable, and adaptable)."
     },
-    "created_at": "2025-08-31T19:05:19.344545"
+    "created_at": "2025-09-02T05:20:11.036055"
   },
   {
-    "requirement_id": "REQ-080",
+    "requirement_id": "REQ-081",
     "category": "Performance",
-    "title": "Scalable System for National Health Insurance",
-    "statement": "The information system must be effective and scalable to support the expansion of access to health services through national health insurance schemes.",
+    "title": "System Scalability for National Health Schemes",
+    "statement": "Globally, countries are expanding access to health services to more of their citizens through the development of national health insurance schemes; the success of these efforts is highly dependent upon effective and scalable information systems.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
-      "HIPAA",
-      "GDPR",
       "ISO 27001",
-      "ISO 27701"
+      "GDPR"
     ],
     "actors": [
-      "admin",
-      "clinician",
       "patient",
-      "insurance_provider",
-      "government_auditor"
+      "clinician",
+      "admin",
+      "payer"
     ],
     "data_type": [
       "PHI",
       "Insurance Claims",
-      "Patient Demographics",
-      "Clinical Records"
+      "Patient Demographics"
     ],
     "action": [
       "access",
-      "create",
-      "update",
-      "process"
+      "process",
+      "store"
     ],
     "acceptance_criteria": [
-      "The system must support a load of 1 million concurrent users with an average API response time of less than 500ms.",
-      "The system must demonstrate the capacity to process 10 million insurance claims per 24-hour period.",
-      "The system architecture must support horizontal scaling to accommodate a 10x growth in user base over 5 years without major re-architecture.",
-      "System uptime must be maintained at 99.95% or higher under peak load conditions."
+      "The system must support a number of concurrent users equivalent to a significant percentage of the target citizen population without performance degradation.",
+      "The system must demonstrate horizontal scalability, allowing for the addition of resources to handle projected growth in users and data volume over a 5-10 year period.",
+      "Load testing must prove the system can handle peak transaction volumes (e.g., claims processing, eligibility checks) with response times under a predefined threshold (e.g., 3 seconds)."
     ],
     "dependencies": [],
     "traceability": [],
@@ -2975,39 +2871,39 @@
       "validated": true,
       "raw_input": "Conclusion Globally, countries are expanding access to health services to more of their citizens through the development of national health insurance schemes; the success of these efforts is highly dependent upon effective and scalable information systems."
     },
-    "created_at": "2025-08-31T19:05:19.344629"
+    "created_at": "2025-09-02T05:20:11.036343"
   },
   {
-    "requirement_id": "REQ-081",
+    "requirement_id": "REQ-082",
     "category": "Functional",
-    "title": "Feasibility of Common Functional Requirements for National Health Insurance Systems",
-    "statement": "An analysis must be conducted to determine the feasibility and definition of a set of common functional requirements for national health insurance systems, addressing the historical challenge of limited system reuse from country to country.",
+    "title": "Feasibility Analysis of Common Functional Requirements",
+    "statement": "An analysis must be conducted to determine the feasibility of establishing common functional requirements for a national health insurance system, considering the historical lack of reuse and standardization of such systems across different countries.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
       "HIPAA",
-      "GDPR"
+      "GDPR",
+      "ISO"
     ],
     "actors": [
       "System Architect",
       "Business Analyst",
-      "Subject Matter Expert"
+      "Compliance Expert"
     ],
     "data_type": [
       "PHI",
       "Insurance Claims",
-      "Patient Demographics",
-      "Policy Information"
+      "Patient Demographics"
     ],
     "action": [
       "Analyze",
       "Define"
     ],
     "acceptance_criteria": [
-      "A feasibility study report is produced that analyzes the functional requirements of at least three different national health insurance systems.",
-      "The report identifies a core set of common functional requirements that are viable for a reusable system.",
-      "The report documents reasons for historical lack of reuse and proposes mitigation strategies.",
-      "The defined set of common requirements is reviewed and approved by key project stakeholders."
+      "A formal feasibility study report is produced.",
+      "The report identifies a core set of potentially common functional requirements.",
+      "The report details country-specific variations and challenges to standardization.",
+      "The report provides a recommendation on the viability of a common functional requirements approach."
     ],
     "dependencies": [],
     "traceability": [],
@@ -3017,43 +2913,43 @@
       "validated": true,
       "raw_input": "At the outset, experts questioned if common functional requirements were possible since to date there has been little reuse of national health insurance systems from country to country."
     },
-    "created_at": "2025-08-31T19:05:19.344664"
+    "created_at": "2025-09-02T05:20:11.036461"
   },
   {
-    "requirement_id": "REQ-082",
-    "category": "Functional",
-    "title": "Common Functional Requirements for National Health Insurance Systems",
-    "statement": "The national health insurance information system must be built upon a set of common, reusable functional requirements to ensure it is effective and scalable, facilitating the expansion of health services to citizens globally. The design should address the historical challenge of limited reuse of such systems from country to country.",
+    "requirement_id": "REQ-083",
+    "category": "Performance",
+    "title": "Scalable Information System for National Health Insurance",
+    "statement": "The information system must be effective and scalable to support the expansion of access to health services for citizens under a national health insurance scheme. The system architecture must be designed to handle significant growth in user numbers, data volume, and transaction loads without degradation in performance, addressing the challenge of creating a reusable and scalable national-level platform.",
     "priority": "P1",
     "severity": "Critical",
     "regulation": [
       "HIPAA",
-      "GDPR"
+      "GDPR",
+      "ISO 27001"
     ],
     "actors": [
       "Patient",
       "Clinician",
       "Admin",
-      "Government/Policy Maker"
+      "Insurer",
+      "Government Administrator"
     ],
     "data_type": [
       "PHI",
       "Insurance Claims",
       "Patient Demographics",
-      "Enrollment Data"
+      "Billing Information"
     ],
     "action": [
       "access",
-      "process",
-      "store",
-      "encrypt",
-      "audit"
+      "modify",
+      "process"
     ],
     "acceptance_criteria": [
-      "A core set of common functional requirements is defined, documented, and approved.",
-      "The system architecture supports modularity and reuse of functional components across different regions or deployments.",
-      "Performance and load testing validates the system's ability to scale to a national level, meeting defined transaction and user volume targets.",
-      "A successful pilot deployment validates the effectiveness and reusability of the core functional components."
+      "The system must support a target number of concurrent users (e.g., 1 million) with an average response time of less than 2 seconds for key transactions (e.g., eligibility check, claim submission).",
+      "The system must demonstrate horizontal scalability, allowing for the addition of compute and storage resources to increase capacity by at least 50% without service interruption.",
+      "The system must be able to process a peak load of transactions (e.g., 10,000 claims per minute) while maintaining defined performance baselines.",
+      "The data storage solution must scale to accommodate projected data growth (e.g., 20% year-over-year) for at least 10 years without requiring major architectural changes."
     ],
     "dependencies": [],
     "traceability": [],
@@ -3063,46 +2959,7 @@
       "validated": true,
       "raw_input": "Conclusion Globally, countries are expanding access to health services to more of their citizens through the development of national health insurance schemes; the success of these efforts is highly dependent upon effective and scalable information systems. At the outset, experts questioned if common functional requirements were possible since to date there has been little reuse of national health insurance systems from country to country."
     },
-    "created_at": "2025-08-31T19:05:19.344715"
-  },
-  {
-    "requirement_id": "REQ-083",
-    "category": "Functional",
-    "title": "Shared Functional Requirements Across Geographies",
-    "statement": "The system shall support a common set of functional requirements that are shared across different countries, as identified through the application of the Clinical Research Data Model (CRDM).",
-    "priority": "P1",
-    "severity": "Major",
-    "regulation": [
-      "HIPAA",
-      "GDPR",
-      "FDA 21 CFR Part 11"
-    ],
-    "actors": [
-      "Clinician",
-      "Patient",
-      "Admin",
-      "Researcher"
-    ],
-    "data_type": [
-      "PHI",
-      "Clinical Trial Data",
-      "Patient Demographics"
-    ],
-    "action": [],
-    "acceptance_criteria": [
-      "A document defining the common functional requirements derived from the CRDM for all targeted countries is approved.",
-      "System design documents demonstrate how these common functional requirements are implemented in a harmonized way.",
-      "Test cases exist and pass, verifying the core functionality works as expected in simulated environments for at least two different countries."
-    ],
-    "dependencies": [],
-    "traceability": [],
-    "metadata": {
-      "source_file": "Common_InsuranceReqs_FINAL.pdf",
-      "llm_model": "gemini-2.5-pro",
-      "validated": true,
-      "raw_input": "Through the application of the CRDM, it is clear that countries do share many of the same functional requirements."
-    },
-    "created_at": "2025-08-31T19:05:19.344776"
+    "created_at": "2025-09-02T05:20:11.036544"
   },
   {
     "requirement_id": "REQ-084",
@@ -3147,6 +3004,6 @@
       "validated": true,
       "raw_input": "Through the application of the CRDM, it is clear that countries do share many of the same functional requirements."
     },
-    "created_at": "2025-08-31T19:05:19.344818"
+    "created_at": "2025-09-02T05:20:11.036640"
   }
 ]

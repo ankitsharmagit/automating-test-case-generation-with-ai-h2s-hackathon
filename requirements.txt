@@ -11,3 +11,4 @@ lxml
 beautifulsoup4
 nltk
 pandas
+faker

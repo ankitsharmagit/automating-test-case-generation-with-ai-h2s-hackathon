@@ -1,28 +1,46 @@
 regulations:
-  - HIPAA
-  - HIPAA §164.502
-  - GDPR
-  - GDPR Article 25
-  - FDA 21 CFR Part 11
-  - FDA 21 CFR Part 820
-  - ISO 9001
-  - ISO 13485
-  - ISO 27001
-  - ISO 27017
-  - ISO 27018
-  - IEC 62304
-  - ISO 14971
-  - HL7
-  - FHIR
-  - DICOM
-  - LOINC
-  - SNOMED CT
-  - OpenHIE
-  - openIMIS
-  - MDR (EU 2017/745)
-  - IVDR (EU 2017/746)
-  - CMS Interoperability Rules
-  - HITECH Act
-  - India DISHA Bill
-  - Singapore PDPA
-  - Australia My Health Records Act
+  - name: HIPAA
+    aliases: ["HIPAA", "Health Insurance Portability and Accountability Act"]
+    obligations:
+      - "Encrypt PHI at rest"
+      - "Encrypt PHI in transit"
+      - "Restrict access based on roles"
+      - "Maintain audit logs"
+      - "Authentication and authorization"
+      - "Patient rights (view, update, delete data)"
+
+  - name: FDA 21 CFR Part 11
+    aliases: ["FDA Part 11", "21 CFR 11"]
+    obligations:
+      - "Secure user authentication"
+      - "Audit trails for record changes"
+      - "Electronic signatures with verification"
+      - "System validation"
+      - "Access control"
+
+  - name: ISO 13485
+    aliases: ["ISO 13485:2016"]
+    obligations:
+      - "Design and development controls"
+      - "Risk management in product lifecycle"
+      - "Traceability of design inputs/outputs"
+      - "Document control and record retention"
+      - "Verification of production processes"
+
+  - name: IEC 62304
+    aliases: ["IEC 62304", "ISO/IEC 62304"]
+    obligations:
+      - "Software risk management"
+      - "Traceability requirements to tests"
+      - "Verification and validation of changes"
+      - "Classification of software safety"
+      - "Maintenance process"
+
+  - name: ISO 27001
+    aliases: ["ISO/IEC 27001", "ISO 27001"]
+    obligations:
+      - "Encryption of sensitive data"
+      - "Access restrictions"
+      - "Logging and monitoring"
+      - "Incident response process"
+      - "Risk assessment and mitigation"
