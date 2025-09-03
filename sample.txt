@@ -76,6 +76,7 @@ def llm_calling_method(model,prompt,transcript):
     
     return llm_result
 
+sample_df=pd.DataFrame([[f"id_{i}",f"trans_{i}"] for i in range(100)],columns=["transcript_id","transcript"])
 
 import async_tasks
 summaries_per_min=500
