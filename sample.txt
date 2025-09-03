@@ -1,0 +1,74 @@
+import google.oauth2.id_token
+import google.auth.transport.requests
+import vertexai
+from langchain_google_vertexai import VertexAI
+import requests
+from langchain_google_vertexai import VertexAI
+import pandas as pd
+
+
+import google.oauth2.id_token
+import google.auth.transport.requests
+import vertexai
+from langchain_google_vertexai import VertexAI
+class GeminiModel:
+    def __init__(self,model_name:str,model_parameters:dict=None):
+        """
+        model_name: VertexAi model name that must be in your proxy config before using it
+        model_parameters : model parameters like temp , top_k ..
+        """
+        llm_proxy_url = "https://proxy-service-955199487260.europe-west2.run.app"
+        llm_project = "vf-uk-aib-prd-jup-cx-lab"
+        location="europe-west2"
+        id_creds = google.oauth2.id_token.fetch_id_token_credentials(audience=llm_proxy_url)
+        
+        self.model_parameters={
+            "api_endpoint":f"{llm_proxy_url}/google-llm",
+            "api_transport":"rest",
+            "credentials":id_creds,
+            "location":location,
+            "model_name":model_name,
+            "max_retries":1,
+            "top_k":24,
+            "temperature":0.1
+        }
+        if model_parameters:
+            for k,v in model_parameters.items():
+                model_parameters[k]=v
+
+        self.model = VertexAI(**self.model_parameters)
+    def __call__(self,prompt:str)->str:
+        return self.model.invoke(prompt)
+
+        
+model_name ="gemini-2.0-flash"
+# initialize the model with the set parameters
+model=GeminiModel(model_name)
+
+# model usage
+response=model("Hi")
+print(response)
+# Hi there! How can I help you today?
+
+
+
+
+
+
+model_name ="gemini-2.0-flash"
+model=GeminiModel(model_name)
+
+
+
+
+import async_tasks
+summaries_per_min=500
+max_concurrent_tasks=100
+task_executor=async_tasks.AsyncTasksExecutor(summaries_per_min,max_concurrent_tasks,1)
+sample_df_list=sample_df.to_dict(orient="records")
+
+tasks=[async_tasks.AsyncTask(llm_calling_method,prompt=prompt,model=model,transcript=record['transcript']) for record in sample_df_list]
+
+%%time
+asnyc_results=task_executor.batch_processing(tasks)
+
