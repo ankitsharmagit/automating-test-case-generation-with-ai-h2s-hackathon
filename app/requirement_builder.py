@@ -6,19 +6,21 @@ import json5
 from langchain_google_vertexai import VertexAI
 from tqdm import tqdm
 
-from app.llm_utils import safe_llm_batch_async
-from app.utils import get_logger, save_json   # ✅ centralized logging + JSON save utility
+from app.utils import Utils, get_logger
 
 # Initialize logger
-logger = get_logger("RequirementBuilder", log_file="logs/requirement_builder.log")
+logger = get_logger("RequirementBuilder")
 
 
 class RequirementBuilder:
     """Requirement Builder: Converts raw requirement candidates into structured, traceable requirements."""
 
-    def __init__(self, model="gemini-2.5-pro", project_id=None, location="us-central1"):
-        self.llm = VertexAI(model_name=model, temperature=0, project=project_id, location=location)
+    def __init__(self, model=None, project_id=None, location="us-central1"):
+        self.llm = VertexAI(
+            model_name=model, temperature=0, project=project_id, location=location
+        )
         self.project_id = project_id
+        self.utils = Utils()
         logger.info(
             f"Initialized RequirementBuilder with project_id={project_id}, model={model}, location={location}"
         )
@@ -49,6 +51,7 @@ class RequirementBuilder:
         """
 
     def _clean_json(self, text: str) -> str:
+        """Remove markdown fences from JSON output."""
         text = text.strip()
         if text.startswith("```"):
             text = re.sub(r"```(json)?", "", text)
@@ -84,6 +87,7 @@ class RequirementBuilder:
         return req
 
     def _validate_requirement(self, req, req_id, source_file=None, raw_text=None):
+        """Validate requirement structure and apply defaults."""
         logger.debug(f"Validating requirement {req_id} from {source_file}")
         return {
             "requirement_id": req.get("requirement_id", req_id),
@@ -136,9 +140,12 @@ class RequirementBuilder:
             raw_texts = [r[2] for r in batch]
             source_files = [r[3] for r in batch]
 
-            logger.info(f"Processing batch {i//batch_size+1} ({len(batch)} requirements)")
+            logger.info(f"Processing batch {i // batch_size + 1} ({len(batch)} requirements)")
 
-            responses = await safe_llm_batch_async(self.llm, req_prompts)
+            # Use Utils.safe_llm_batch instead of old helper
+            responses = await self.utils.safe_llm_batch(
+                self.llm, req_prompts, batch_size=batch_size
+            )
 
             for req_id, resp, raw_inp, source_file in zip(
                 req_ids, responses, raw_texts, source_files

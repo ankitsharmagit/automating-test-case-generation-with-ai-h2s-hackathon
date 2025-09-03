@@ -6,7 +6,7 @@ from app.utils import get_logger   # ✅ centralized logging utility
 
 
 # Initialize logger
-logger = get_logger("MetadataEnricher", log_file="logs/metadata_enricher.log")
+logger = get_logger("MetadataEnricher")
 
 
 class MetadataEnricher:

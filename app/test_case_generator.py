@@ -7,15 +7,25 @@ import logging
 from tqdm import tqdm
 from google.cloud import bigquery
 from langchain_google_vertexai import VertexAI
-from app.llm_utils import safe_llm_batch_async
 from faker import Faker
 import random
 from app.utils import get_logger
 
-logger = get_logger("TestCaseGenerator", log_file="logs/test_case_generator.log")
+logger = get_logger("TestCaseGenerator")
 
 
 fake = Faker()
+async def safe_llm_batch_async(llm, prompts, timeout=60):
+    """Run multiple LLM calls concurrently with timeout handling."""
+    tasks = [llm.ainvoke(prompt) for prompt in prompts]
+    try:
+        return await asyncio.wait_for(
+            asyncio.gather(*tasks, return_exceptions=True),
+            timeout=timeout
+        )
+    except asyncio.TimeoutError:
+        print("Timeout reached, skipping batch.")
+        return ["Uncategorized" for _ in prompts]
 
 
 def generate_synthetic_healthcare_data():
@@ -46,17 +56,14 @@ def generate_synthetic_healthcare_data():
 
 
 class TestCaseGenerator:
-    def __init__(self, project_id, location="us-central1"):
-        self.project_id = project_id
-        self.location = location
-        self.llm = VertexAI(
-            model_name="gemini-2.5-pro",
+    def __init__(self, model=None, project_id=None, location="us-central1"):
+         self.llm = VertexAI(
+            model_name=model,
             temperature=0,
             project=project_id,
             location=location
         )
-        logger.info(f"Initialized TestCaseGenerator with project={project_id}, location={location}")
-
+       
     def _make_prompt(self, requirement):
         return f"""
         You are a healthcare QA test designer.
@@ -143,60 +150,60 @@ class TestCaseGenerator:
         logger.info(f"Generated total {len(all_cases)} test cases")
         return all_cases
 
-    def export_to_bq(self, test_cases, dataset_id="requirements_dataset", table_id="test_cases", batch_size=100):
-        """Export test cases into BigQuery in safe batches."""
-        if not test_cases:
-            logger.warning("No test cases to export")
-            return
+#     def export_to_bq(self, test_cases, dataset_id="requirements_dataset", table_id="test_cases", batch_size=100):
+#         """Export test cases into BigQuery in safe batches."""
+#         if not test_cases:
+#             logger.warning("No test cases to export")
+#             return
 
-        client = bigquery.Client(project=self.project_id)
-        table_ref = f"{self.project_id}.{dataset_id}.{table_id}"
+#         client = bigquery.Client(project=self.project_id)
+#         table_ref = f"{self.project_id}.{dataset_id}.{table_id}"
 
-        schema = [
-            bigquery.SchemaField("test_id", "STRING", mode="REQUIRED"),
-            bigquery.SchemaField("requirement_id", "STRING"),
-            bigquery.SchemaField("title", "STRING"),
-            bigquery.SchemaField("description", "STRING"),
-            bigquery.SchemaField("preconditions", "STRING", mode="REPEATED"),
-            bigquery.SchemaField("steps", "STRING", mode="REPEATED"),
-            bigquery.SchemaField("test_data", "STRING"),   # store JSON as string
-            bigquery.SchemaField("expected_result", "STRING", mode="REPEATED"),
-            bigquery.SchemaField("postconditions", "STRING", mode="REPEATED"),
-            bigquery.SchemaField("priority", "STRING"),
-            bigquery.SchemaField("severity", "STRING"),
-            bigquery.SchemaField("type", "STRING"),
-            bigquery.SchemaField("execution_status", "STRING"),
-            bigquery.SchemaField("owner", "STRING"),
-            bigquery.SchemaField("created_at", "TIMESTAMP"),
-        ]
+#         schema = [
+#             bigquery.SchemaField("test_id", "STRING", mode="REQUIRED"),
+#             bigquery.SchemaField("requirement_id", "STRING"),
+#             bigquery.SchemaField("title", "STRING"),
+#             bigquery.SchemaField("description", "STRING"),
+#             bigquery.SchemaField("preconditions", "STRING", mode="REPEATED"),
+#             bigquery.SchemaField("steps", "STRING", mode="REPEATED"),
+#             bigquery.SchemaField("test_data", "STRING"),   # store JSON as string
+#             bigquery.SchemaField("expected_result", "STRING", mode="REPEATED"),
+#             bigquery.SchemaField("postconditions", "STRING", mode="REPEATED"),
+#             bigquery.SchemaField("priority", "STRING"),
+#             bigquery.SchemaField("severity", "STRING"),
+#             bigquery.SchemaField("type", "STRING"),
+#             bigquery.SchemaField("execution_status", "STRING"),
+#             bigquery.SchemaField("owner", "STRING"),
+#             bigquery.SchemaField("created_at", "TIMESTAMP"),
+#         ]
 
-        # Ensure table exists
-        try:
-            client.get_table(table_ref)
-            logger.info(f"Table {table_ref} exists.")
-        except Exception:
-            logger.info(f"Table {table_ref} not found. Creating...")
-            table = bigquery.Table(table_ref, schema=schema)
-            client.create_table(table)
-            logger.info(f"Created table {table_ref}")
+#         # Ensure table exists
+#         try:
+#             client.get_table(table_ref)
+#             logger.info(f"Table {table_ref} exists.")
+#         except Exception:
+#             logger.info(f"Table {table_ref} not found. Creating...")
+#             table = bigquery.Table(table_ref, schema=schema)
+#             client.create_table(table)
+#             logger.info(f"Created table {table_ref}")
 
-        # Prepare rows
-        all_rows = []
-        for tc in test_cases:
-            row = tc.copy()
-            if isinstance(row.get("test_data"), dict):
-                row["test_data"] = json.dumps(row["test_data"], ensure_ascii=False)
-            all_rows.append(row)
+#         # Prepare rows
+#         all_rows = []
+#         for tc in test_cases:
+#             row = tc.copy()
+#             if isinstance(row.get("test_data"), dict):
+#                 row["test_data"] = json.dumps(row["test_data"], ensure_ascii=False)
+#             all_rows.append(row)
 
-        # Insert in batches
-        total_inserted = 0
-        for i in range(0, len(all_rows), batch_size):
-            batch = all_rows[i:i+batch_size]
-            errors = client.insert_rows_json(table_ref, batch)
-            if errors:
-                logger.error(f"Errors inserting batch {i//batch_size + 1}: {errors}")
-            else:
-                total_inserted += len(batch)
-                logger.info(f"Inserted batch {i//batch_size + 1} ({len(batch)} rows).")
+#         # Insert in batches
+#         total_inserted = 0
+#         for i in range(0, len(all_rows), batch_size):
+#             batch = all_rows[i:i+batch_size]
+#             errors = client.insert_rows_json(table_ref, batch)
+#             if errors:
+#                 logger.error(f"Errors inserting batch {i//batch_size + 1}: {errors}")
+#             else:
+#                 total_inserted += len(batch)
+#                 logger.info(f"Inserted batch {i//batch_size + 1} ({len(batch)} rows).")
 
-        logger.info(f"Finished inserting {total_inserted} test cases into {table_ref}")
+#         logger.info(f"Finished inserting {total_inserted} test cases into {table_ref}")

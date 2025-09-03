@@ -1,14 +1,12 @@
+# app.py
 import os
 import json
 import asyncio
 import pandas as pd
-import matplotlib.pyplot as plt
 from google.cloud import bigquery
-from langchain_google_vertexai import VertexAI
-from collections import Counter
-from app.utils import save_json,read_json
-from collections import Counter
+from langchain_google_vertexai import VertexAI, VertexAIEmbeddings
 
+from app.utils import Utils, get_logger
 from app import (
     BatchParser,
     RequirementBuilder,
@@ -17,101 +15,70 @@ from app import (
     TestCaseGenerator,
     CoverageValidator,
     SemanticValidator,
-    RegulationMapper
+    RegulationMapper,
 )
 
-
-# -------------------------------
-# Global Config
-# -------------------------------
-client = bigquery.Client()
-PROJECT_ID = client.project
-LOCATION = "us-central1"
-
-os.environ["GOOGLE_CLOUD_PROJECT"] = PROJECT_ID
-os.environ["GOOGLE_CLOUD_LOCATION"] = LOCATION
-LLM_MODEL = "gemini-2.5-pro"
+# -------------------------
+# Initialize Utils + Logger
+# -------------------------
+utils = Utils()
+logger = get_logger("Pipeline", log_file="logs/pipeline.log")
 
 
 # -------------------------------
 # Layer 1 – Requirement Ingestion
 # -------------------------------
-from app.batch_parser import BatchParser
-
 def parse_all_requirements(data_folder="data"):
-    """
-    Reads all supported files from the given folder,
-    parses them, and returns a single combined list of requirements.
-    """
     parser = BatchParser(data_folder=data_folder)
     results = parser.parse_batch()
-
-    # Flatten results into one list
-    all_reqs = []
-    for _, reqs in results.items():
-        all_reqs.extend(reqs)
-
-    print(f"✅ Parsed {len(all_reqs)} total requirements from {len(results)} files.")
+    all_reqs = [req for _, reqs in results.items() for req in reqs]
+    logger.info(f"Parsed {len(all_reqs)} total requirements from {len(results)} files.")
     return all_reqs
 
-def run_requirement_builder(project_id, model="gemini-2.5-pro", batch_size=30, save_file="structured_requirements.json"):
-    """
-    Full pipeline to parse raw requirements and build structured requirements.
-    
-    Steps:
-    1. Parse all raw requirements from 'data/' folder
-    2. Use LLM to build structured requirements
-    3. Save structured requirements locally as JSON
-    """
-    print("📂 Step 0: Parsing raw requirements...")
+
+def run_requirement_builder(
+    project_id,
+    llm_name,
+    output_file,
+    batch_size=30,
+):
+    logger.info("Step 0: Parsing raw requirements...")
     all_req = parse_all_requirements()
-    print(f"   → Parsed {len(all_req)} raw requirements")
 
     if not all_req:
-        print("⚠️ No requirements found. Exiting pipeline.")
+        logger.warning("No requirements found. Exiting pipeline.")
         return []
 
-    print("🚀 Step 1: Building structured requirements...")
-    builder = RequirementBuilder(model=model, project_id=project_id)
-
+    logger.info("Step 1: Building structured requirements...")
+    builder = RequirementBuilder(model=llm_name, project_id=project_id)
     structured_reqs = asyncio.run(builder.build_registry(all_req, batch_size=batch_size))
-    print(f"   → Built {len(structured_reqs)} structured requirements")
+    logger.info(f"Built {len(structured_reqs)} structured requirements")
 
-    # Save locally
     if structured_reqs:
-        save_json(structured_reqs, save_file)
-        print(f"💾 Saved structured requirements → {save_file}")
-
+        utils.save_json(structured_reqs, output_file)
     return structured_reqs
+
+
 # -------------------------------
 # Layer 3 – Metadata Enrichment
 # -------------------------------
-def load_requirements_from_bigquery(project_id, dataset_id="requirements_dataset", table_id="requirements"):
-    client = bigquery.Client(project=project_id)
-    table_ref = f"{project_id}.{dataset_id}.{table_id}"
-    query = f"SELECT * FROM `{table_ref}`"
-    rows = client.query(query).result()
-    structured_reqs = [dict(row) for row in rows]
-
-    for req in structured_reqs:
-        if isinstance(req.get("metadata"), str):
-            try:
-                req["metadata"] = json.loads(req["metadata"])
-            except Exception:
-                req["metadata"] = {}
-
-    print(f"Loaded {len(structured_reqs)} requirements from BigQuery.")
-    return structured_reqs
+# def load_requirements_from_bigquery(project_id, dataset_id, table_id):
+#     structured_reqs = utils.read_from_bigquery(project_id, dataset_id, table_id)
+#     for req in structured_reqs:
+#         if isinstance(req.get("metadata"), str):
+#             try:
+#                 req["metadata"] = json.loads(req["metadata"])
+#             except Exception:
+#                 req["metadata"] = {}
+#     logger.info(f"Loaded {len(structured_reqs)} requirements from BigQuery.")
+#     return structured_reqs
 
 
-def enrich_requirements(requirements, output_file="enriched_requirements.json"):
+def enrich_requirements(requirements, output_file):
     enricher = MetadataEnricher()
     enriched_reqs = enricher.enrich(requirements)
-
-    with open(output_file, "w", encoding="utf-8") as f:
-        json.dump(enriched_reqs, f, indent=2,default=str)
-
-    print(f"Enriched {len(enriched_reqs)} requirements → {output_file}")
+    if enriched_reqs:
+        utils.save_json(enriched_reqs, output_file)
     return enriched_reqs
 
 
@@ -121,25 +88,22 @@ def enrich_requirements(requirements, output_file="enriched_requirements.json"):
 async def categorize_and_store_requirements(
     project_id,
     llm_model,
-    enriched_file="enriched_requirements.json",
-    embedding_model="text-embedding-005",
-    dataset_id="requirements_dataset",
-    table_id="requirements_categorized",
+    enriched_file,
+    embedding_model,
+    dataset_id,
+    table_id,
     batch_size=10,
 ):
-    with open(enriched_file, "r", encoding="utf-8") as f:
-        enriched_reqs = json.load(f)
+    enriched_reqs = utils.read_json(enriched_file)
 
     cr = CategorizerRetriever(
         project_id=project_id,
         embedding_model=embedding_model,
-        classifier_model=llm_model
+        classifier_model=llm_model,
     )
 
     categorized_reqs = await cr.process_async(enriched_reqs, batch_size)
     cr.export_to_bq(categorized_reqs, dataset_id=dataset_id, table_id=table_id)
-
-    print(f"Processed {len(categorized_reqs)} requirements → exported to {dataset_id}.{table_id}")
     return categorized_reqs
 
 
@@ -147,248 +111,172 @@ async def categorize_and_store_requirements(
 # Layer 5 – Test Case Generation
 # -------------------------------
 async def generate_and_store_test_cases(
-    project_id,
-    dataset_id="requirements_dataset",
-    requirements_table="requirements_categorized",
-    testcases_table="test_cases",
-    save_local=True,
-    local_file="test_cases.json",
-    limit=None,
+    requirements,
+    model,
+    output_file,
     batch_size=100,
-    export_batch_size=200,
 ):
-    client = bigquery.Client(project=project_id)
-    query = f"""
-        SELECT requirement_id, category, title, statement, priority, severity
-        FROM `{project_id}.{dataset_id}.{requirements_table}`
-    """
-    rows = client.query(query).result()
-    requirements = [dict(row) for row in rows]
+    # # client = bigquery.Client(project=project_id)
+    # query = f"""
+    #     SELECT requirement_id, category, title, statement, priority, severity
+    #     FROM `{project_id}.{dataset_id}.{requirements_table}`
+    # """
+    # rows = client.query(query).result()
+    # requirements = [dict(row) for row in rows]
 
-    if limit:
-        requirements = requirements[:limit]
-
-    tcg = TestCaseGenerator(project_id)
+    tcg = TestCaseGenerator(model=model)
     test_cases = await tcg.batch_generate_async(requirements, batch_size=batch_size)
-    tcg.export_to_bq(test_cases, dataset_id=dataset_id, table_id=testcases_table, batch_size=export_batch_size)
+    
+    # tcg.export_to_bq(
+    #     test_cases,
+    #     dataset_id=dataset_id,
+    #     table_id=testcases_table,
+    #     batch_size=export_batch_size,
+    # )
 
-    if save_local:
-        with open(local_file, "w", encoding="utf-8") as f:
-            json.dump(test_cases, f, indent=2)
-
-    print(f"Exported {len(test_cases)} test cases to BigQuery → {dataset_id}.{testcases_table}")
+    if test_cases:
+        utils.save_json(test_cases, output_file)
     return test_cases
 
 
 # -------------------------------
-# Layer 6 – Coverage Validation
+# Regulation Mapping
 # -------------------------------
-def build_traceability_matrix(project_id, dataset_id="requirements_dataset", table_name="traceability_matrix"):
-    client = bigquery.Client(project=project_id)
-    table_ref = f"{project_id}.{dataset_id}.{table_name}"
-    client.delete_table(table_ref, not_found_ok=True)
-    print(f"Dropped old table {table_ref}")
-
-    cv = CoverageValidator(project_id=project_id, dataset_id=dataset_id)
-    trace_matrix = cv.build_traceability_matrix()
-    df = pd.DataFrame(trace_matrix)
-    return df
-
-
-# -------------------------------
-# Layer 6.5 – Semantic Validation
-# -------------------------------
-async def run_semantic_validation(
-    project_id,
-    dataset_id="requirements_dataset",
-    requirements_table="requirements",
-    testcases_table="test_cases",
-    output_table="semantic_validation",
-    limit=None,
-    batch_size=10,
-):
-    client = bigquery.Client(project=project_id)
-
-    req_query = f"SELECT DISTINCT requirement_id, statement FROM `{project_id}.{dataset_id}.{requirements_table}`"
-    requirements = [dict(row) for row in client.query(req_query).result()]
-
-    tc_query = f"SELECT DISTINCT test_id, requirement_id, title, description, steps, expected_result FROM `{project_id}.{dataset_id}.{testcases_table}`"
-    test_cases = [dict(row) for row in client.query(tc_query).result()]
-
-    if limit:
-        requirements = requirements[:limit]
-        test_cases = test_cases[:limit]
-
-    sv = SemanticValidator(project_id=project_id)
-    validated = await sv.validate_async(requirements, test_cases, batch_size=batch_size)
-    sv.export_to_bq(validated, table_id=output_table)
-    df = pd.DataFrame(validated)
-
-    print(f"Exported {len(df)} validation results to {dataset_id}.{output_table}")
-    return df
-
-
-def show_regulation_coverage(enriched_reqs, total_reqs=None, logger=None):
-    """
-    Show compliance coverage stats.
-    Calculates percentage of requirements mapped to each regulation.
-    
-    Args:
-        enriched_reqs (list[dict]): List of enriched requirement dicts.
-        total_reqs (int, optional): Total number of requirements in the project.
-                                    If None, uses len(enriched_reqs).
-        logger (Logger, optional): Logger instance. If None, prints to stdout.
-    """
-    all_regs = [reg for r in enriched_reqs for reg in r.get("regulation", [])]
-
-    if all_regs:
-        counts = Counter(all_regs)
-        base_total = total_reqs if total_reqs is not None else len(enriched_reqs)
-
-        msg_header = "\n📊 Regulation Coverage (relative to total requirements):"
-        if logger:
-            logger.info(msg_header)
-        else:
-            print(msg_header)
-
-        for reg, count in counts.items():
-            pct = (count / base_total) * 100 if base_total > 0 else 0
-            msg = f"   - {reg}: {count}/{base_total} ({pct:.1f}%)"
-            if logger:
-                logger.info(msg)
-            else:
-                print(msg)
-    else:
-        msg = "\n⚠️ No regulations found in enriched requirements."
-        if logger:
-            logger.warning(msg)
-        else:
-            print(msg)
-
-
-async def run_regulation_mapping(requirements, llm, batch_size=10):
-    """
-    Map regulations & obligations for given requirements.
-    Updates each requirement with `regulation` and `obligations`.
-    """
-    # Initialize RegulationMapper with provided LLM
-    mapper = RegulationMapper(regulation_file="regulations.yaml", llm=llm)
-
+async def run_regulation_mapping(requirements, model, output_file, batch_size=10,):
+    mapper = RegulationMapper(regulation_file="regulations.yaml", model=model)
     texts = [req.get("statement", "") for req in requirements]
     mapped = await mapper.map_batch(texts, batch_size=batch_size)
 
     for req, m in zip(requirements, mapped):
-        req["regulation"] = m["regulation"]      # column 1
-        req["obligations"] = m["obligations"]    # column 2
-
+        req["regulation"] = m.get("regulation", [])
+        req["obligations"] = m.get("obligations", [])
+    if requirements :
+        utils.save_json(requirements, output_file)
+        
     return requirements
 
 
 def count_requirements_by_regulation(mapped_reqs):
-    """
-    Count how many requirements are mapped to each regulation.
-    """
-    all_regs = []
+    counts = {}
     for req in mapped_reqs:
         regs = req.get("regulation", [])
         if isinstance(regs, str):
             regs = [regs]
-        all_regs.extend(regs)
-
-    counts = Counter(all_regs)
-    total_reqs = len(mapped_reqs)
-
-    print("\n📊 Regulation Coverage (count of requirements mapped):")
-    for reg, count in counts.most_common():
-        pct = (count / total_reqs) * 100
-        print(f" - {reg}: {count}/{total_reqs} ({pct:.1f}%)")
-
+        for reg in regs:
+            counts[reg] = counts.get(reg, 0) + 1
     return counts
+
+
+def show_regulation_coverage(mapped_reqs, logger=None):
+    counts = count_requirements_by_regulation(mapped_reqs)
+    total = len(mapped_reqs)
+    if logger:
+        logger.info("Regulation Coverage Summary:")
+        for reg, count in sorted(counts.items(), key=lambda x: -x[1]):
+            pct = (count / total) * 100 if total else 0
+            logger.info(f" - {reg}: {count}/{total} ({pct:.1f}%)")
+    return counts
+
+
 # -------------------------------
 # Main Entrypoint
 # -------------------------------
 if __name__ == "__main__":
-      # ---------------- Run Pipeline ----------------
-    print("🚀 Step 1: Building structured requirements...")
-#     file_name="structured_requirements.json"
-#     structured_reqs = run_requirement_builder(
-#                 project_id=PROJECT_ID,
-#                 model=LLM_MODEL,
-#                 batch_size=50,
-#                 save_file=file_name
-#             )
+    
+    # -------------------------
+    # Global Config & Constants
+    # -------------------------
+    client = bigquery.Client()
+    PROJECT_ID = client.project
+    LOCATION = "us-central1"
+    DATASET_ID = "requirements_dataset"
 
-#     structured_reqs=read_json(file_name)
+    # -------------------------
+    # Model Configs
+    # -------------------------
+    LLM_MODEL = "gemini-2.5-pro"
+    EMBEDDING_MODEL = "text-embedding-005"
+
+    # -------------------------
+    # Paths
+    # -------------------------
+    RAW_REQ_FILE = "requirements.json"
+    STRUCTURED_REQ_FILE = "structured_requirements.json"
+    ENRICHED_REQ_FILE = "enriched_requirements.json"
+    MAPPED_REQ_FILE = "regulation_mapped_requirements.json"
+    TEST_CASES_FILE = "test_cases.json"
+
+    # -------------------------
+    # BQ Table Names
+    # -------------------------
+    REQ_TABLE = "requirements"
+    TC_TABLE = "test_cases"
+    TRACE_TABLE = "traceability_matrix"
+    SEMANTIC_TABLE = "semantic_validation"
+
+    # -------------------------
+    # Environment Vars
+    # -------------------------
+    os.environ["GOOGLE_CLOUD_PROJECT"] = PROJECT_ID
+    os.environ["GOOGLE_CLOUD_LOCATION"] = LOCATION
+
+    # LLM + embeddings
+    # llm = VertexAI(model_name=LLM_MODEL, temperature=0, project=PROJECT_ID, location=LOCATION)
+    # embedding_model = VertexAIEmbeddings(model=EMBEDDING_MODEL, project=PROJECT_ID, location=LOCATION)
+
+    # Step 1: Build structured requirements
+    structured_reqs = run_requirement_builder(PROJECT_ID,
+                                              LLM_MODEL, 
+                                              output_file=STRUCTURED_REQ_FILE,
+                                              batch_size=100, )
+
+    # Step 2: Regulation Mapping
+    structured_reqs=utils.read_json(STRUCTURED_REQ_FILE)
+    regulation_mapped_reqs = asyncio.run(run_regulation_mapping(structured_reqs,                             
+                                                                model=LLM_MODEL,
+                                                                output_file=MAPPED_REQ_FILE,
+                                                                batch_size=100,))
+    show_regulation_coverage(regulation_mapped_reqs, logger)
+
+    # Step 3: Metadata Enrichment
+    enriched_reqs = enrich_requirements(regulation_mapped_reqs, output_file=ENRICHED_REQ_FILE)
     
 
-    # Load structured requirements (already built & saved earlier)
-    structured_reqs = read_json("structured_requirements.json")
+    # Step 4: Test Case Generation
+    enriched_reqs=utils.read_json(ENRICHED_REQ_FILE)
+    limit=5
+    if limit:
+        enriched_reqs = enriched_reqs[:limit]
+        
+        
+    logger.info(f"{len(enriched_reqs)} requirements loaded for test case generation")
+    test_cases = asyncio.run(generate_and_store_test_cases(enriched_reqs, 
+                                                            model=LLM_MODEL,
+                                                            output_file=TEST_CASES_FILE,
+                                                            batch_size=100))
 
-    from langchain_google_vertexai import VertexAI
+    # Step 5: Load Requirements and Testcases to BigQuery
+    utils.load_requirements_to_bq(RAW_REQ_FILE, REQ_TABLE, project_id=PROJECT_ID, dataset_id=DATASET_ID)
+    utils.load_testcases_to_bq(TEST_CASES_FILE, TC_TABLE, project_id=PROJECT_ID, dataset_id=DATASET_ID)
 
-    llm = VertexAI(
-        model_name="gemini-2.5-pro",
-        temperature=0,
-        project=PROJECT_ID,
-        location=LOCATION,
+
+    # Step 6: Traceability Matrix
+    cv = CoverageValidator(project_id=PROJECT_ID, dataset_id=DATASET_ID)
+    trace_matrix = cv.build_traceability_matrix(
+        requirements_table=REQ_TABLE,
+        testcases_table=TC_TABLE,
+        output_table=TRACE_TABLE,
     )
-    regulation_mapped_reqs = asyncio.run(run_regulation_mapping(structured_reqs, llm=llm, batch_size=50))
-    # Save enriched mapped_regs
-    save_json(regulation_mapped_reqs, "regulation_mapped_reuirements.json")
+    df_trace = pd.DataFrame(trace_matrix)
+    print(df_trace.head())
 
-    counts = count_requirements_by_regulation(regulation_mapped_reqs)
-    print(counts)
-    
-    
-#     print("🔍 Step 2: Enriching requirements with metadata...")
-#     enriched_reqs = enrich_requirements(structured_reqs)
-#     from app.compliance_validator import ComplianceValidator
-#     from app.utils import save_json
-
-#     # Load requirements (after enrichment step)
-#     requirements = read_json("enriched_requirements.json")
-#     # print(requirements[0])
-
-#     validator = ComplianceValidator("regulations.yaml")
-#     enriched_reqs, compliance_summary = validator.validate(requirements)
-
-#     # Save enriched requirements
-#     save_json(enriched_reqs, "compliance_enriched_requirements.json")
-
-    
-    # show_regulation_coverage(mapped_regs)
-
-
-#     print("📊 Step 4: Categorizing requirements...")
-#     categorized_reqs = asyncio.run(
-#         categorize_and_store_requirements(
-#             PROJECT_ID,
-#             LLM_MODEL,
-#             enriched_file="enriched_requirements.json",
-#             batch_size=batch_size,
-#         )
-#     )
-
-#     print("🧪 Step 5: Generating test cases...")
-#     test_cases = asyncio.run(
-#         generate_and_store_test_cases(
-#             PROJECT_ID,
-#             limit=top_limit,
-#             batch_size=batch_size
-#         )
-#     )
-
-#     print("🔗 Step 6: Building traceability matrix...")
-#     df_trace = build_traceability_matrix(PROJECT_ID)
-#     print(df_trace.head())
-
-#     print("✅ Step 7: Running semantic validation...")
-#     df_validated = asyncio.run(
-#         run_semantic_validation(
-#             PROJECT_ID,
-#             limit=top_limit,
-#             batch_size=batch_size
-#         )
-#     )
-#     print(df_validated.head())
-
+    # Step 7: Semantic Validation
+    enriched_reqs = utils.read_json(ENRICHED_REQ_FILE)
+    test_cases = utils.read_json(TEST_CASES_FILE)
+    sv = SemanticValidator(project_id=PROJECT_ID)
+    validated = asyncio.run(
+        sv.validate_async(enriched_reqs, test_cases, batch_size=20)
+    )
+    sv.export_to_bq(validated, table_id=SEMANTIC_TABLE)
+    df_validated = pd.DataFrame(validated)
+    print(df_validated.head())

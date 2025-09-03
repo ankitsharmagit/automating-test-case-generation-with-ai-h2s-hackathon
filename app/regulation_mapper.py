@@ -3,28 +3,36 @@ import re
 import json
 import yaml
 from tqdm import tqdm
-from app.utils import get_logger
-from app.llm_utils import safe_llm_batch_async
+from app.utils import get_logger, Utils
 
-logger = get_logger("RegulationMapper", log_file="logs/regulation_mapper.log")
+logger = get_logger("RegulationMapper")
 
 
 class RegulationMapper:
     """
     Maps requirements to regulations & obligations.
-    - Regulations are grounded in YAML to avoid hallucinations
-    - Obligations are extracted by LLM as actions/duties
+    - Strictly grounded in YAML regulation list
+    - LLM primary engine, regex/keyword fallback
     """
 
-    def __init__(self, regulation_file="regulations.yaml", llm=None):
-        self.llm = llm
+    def __init__(self, regulation_file="regulations.yaml", model=None, project_id=None, location="us-central1"):
+        from langchain_google_vertexai import VertexAI
+
+        self.llm = VertexAI(
+            model_name=model,
+            temperature=0,
+            project=project_id,
+            location=location
+        )
+        self.utils = Utils()
+
         try:
             with open(regulation_file, "r", encoding="utf-8") as f:
                 cfg = yaml.safe_load(f)
             self.known_regulations = cfg.get("regulations", [])
-            logger.info(f"✅ Loaded {len(self.known_regulations)} regulations from {regulation_file}")
+            logger.info(f"Loaded {len(self.known_regulations)} regulations from {regulation_file}")
         except Exception as e:
-            logger.error(f"❌ Failed to load regulations file {regulation_file}: {e}")
+            logger.error(f"Failed to load regulations file {regulation_file}: {e}")
             self.known_regulations = []
 
         # Canonical list of regulation names
@@ -32,6 +40,7 @@ class RegulationMapper:
 
         # Build alias → canonical name mapping
         self.alias_map = {}
+        self.regex_map = {}
         for reg in self.known_regulations:
             canonical = reg.get("name", "").strip()
             if not canonical:
@@ -40,7 +49,12 @@ class RegulationMapper:
             for alias in reg.get("aliases", []):
                 self.alias_map[alias.lower()] = canonical
 
-        logger.info(f"✅ Built alias map with {len(self.alias_map)} entries")
+            # Add regex/keywords from YAML if present
+            if "keywords" in reg:
+                self.regex_map[canonical] = [re.compile(k, re.IGNORECASE) for k in reg["keywords"]]
+
+        logger.info(f"Built alias map with {len(self.alias_map)} entries")
+        logger.info(f"Loaded regex keyword map for {len(self.regex_map)} regulations")
 
     # ------------------ Helpers ------------------
 
@@ -68,17 +82,31 @@ class RegulationMapper:
         return {}
 
     def normalize_regulations(self, regs):
-        """Normalize list of regulation strings to canonical names (based on alias map)."""
+        """Normalize regulation strings to canonical YAML names."""
         normalized = []
         for r in regs:
             if not r:
                 continue
-            canonical = self.alias_map.get(str(r).lower(), None)
+            r_clean = str(r).lower().strip()
+            # Exact or alias match
+            canonical = self.alias_map.get(r_clean)
             if canonical:
                 normalized.append(canonical)
-            elif r in self.reg_names:
-                normalized.append(r)
+                continue
+            # Partial/fuzzy match
+            for key, canonical_name in self.alias_map.items():
+                if key in r_clean:
+                    normalized.append(canonical_name)
+                    break
         return list(set(normalized)) if normalized else ["NA"]
+
+    def regex_fallback(self, text: str):
+        """Deterministic regex-based mapping from YAML keywords."""
+        matches = []
+        for reg, patterns in self.regex_map.items():
+            if any(p.search(text) for p in patterns):
+                matches.append(reg)
+        return matches if matches else ["NA"]
 
     # ------------------ Main Mapper ------------------
 
@@ -88,27 +116,31 @@ class RegulationMapper:
         Returns list of dicts: {"regulation": [...], "obligations": [...]}
         """
         if not self.llm:
-            logger.warning("⚠️ No LLM provided. Falling back to NA.")
-            return [{"regulation": ["NA"], "obligations": []} for _ in texts]
+            logger.warning("No LLM provided. Falling back to NA.")
+            return [{"regulation": self.regex_fallback(t), "obligations": []} for t in texts]
 
         prompts = []
+        reg_list_str = "\n".join([f"- {r}" for r in self.reg_names])
         for text in texts:
             prompt = f"""
             You are a compliance classification engine.
-            Given this requirement:
 
+            Requirement:
             "{text}"
 
-            Tasks:
-            1. Map to ONLY these regulations: {self.reg_names}
-            2. Extract obligations (the specific duties/actions implied, e.g., encrypt, log, restrict access).
+            Task:
+            1. Choose ONLY from this regulation list:
+            {reg_list_str}
+
+            2. Extract obligations (specific duties/actions implied, e.g., encrypt, log, restrict access).
 
             Rules:
-            - "regulation" must be one or more from the list, or ["NA"]
-            - "obligations" is a list of short action phrases
-            - Return ONLY valid JSON in this format:
+            - "regulation" must be selected strictly from the above list.
+            - If no regulation clearly applies, return ["NA"].
+            - "obligations" is a list of short action phrases.
+            - Output ONLY valid JSON in this format:
               {{
-                "regulation": ["HIPAA","ISO 27001"],
+                "regulation": ["HIPAA"],
                 "obligations": ["Encrypt PHI", "Maintain audit logs"]
               }}
             """
@@ -116,18 +148,27 @@ class RegulationMapper:
 
         all_results = []
 
-        for i in tqdm(range(0, len(prompts), batch_size), desc="🔍 Mapping regulations & obligations"):
-            batch_prompts = prompts[i:i+batch_size]
-            logger.info(f"📦 Processing batch {i//batch_size+1} ({len(batch_prompts)} requirements)")
+        for i in tqdm(range(0, len(prompts), batch_size), desc="Mapping regulations & obligations"):
+            batch_prompts = prompts[i:i + batch_size]
+            logger.info(f"Processing batch {i // batch_size + 1} ({len(batch_prompts)} requirements)")
 
             try:
-                responses = await safe_llm_batch_async(self.llm, batch_prompts)
+                responses = await self.utils.safe_llm_batch(
+                    self.llm,
+                    batch_prompts,
+                    batch_size=len(batch_prompts)
+                )
             except Exception as e:
-                logger.error(f"❌ LLM batch failed: {e}")
-                all_results.extend([{"regulation": ["NA"], "obligations": []}] * len(batch_prompts))
+                logger.error(f"LLM batch failed: {e}")
+                # fallback all with regex
+                for t in batch_prompts:
+                    all_results.append({
+                        "regulation": self.regex_fallback(t),
+                        "obligations": []
+                    })
                 continue
 
-            for raw_text in responses:
+            for raw_text, original_text in zip(responses, batch_prompts):
                 raw_text = str(raw_text).strip()
                 parsed = self._parse_llm_json(raw_text)
 
@@ -136,10 +177,16 @@ class RegulationMapper:
                 if not isinstance(obligations, list):
                     obligations = [str(obligations)]
 
+                # Hybrid fallback: if NA → regex mapping
+                if regs == ["NA"]:
+                    regs = self.regex_fallback(original_text)
+
+                logger.debug(f"Mapped regulation={regs}, obligations={obligations}")
+
                 all_results.append({
                     "regulation": regs,
                     "obligations": obligations
                 })
 
-        logger.info(f"✅ Completed mapping → {len(all_results)} requirements processed")
+        logger.info(f"Completed mapping → {len(all_results)} requirements processed")
         return all_results

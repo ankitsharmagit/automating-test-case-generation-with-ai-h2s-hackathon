@@ -3,7 +3,7 @@ import yaml
 from collections import defaultdict
 from app.utils import get_logger
 
-logger = get_logger("ComplianceValidator", log_file="logs/compliance_validator.log")
+logger = get_logger("ComplianceValidator")
 
 
 class ComplianceValidator:

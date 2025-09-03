@@ -11,7 +11,7 @@ import string
 from app.utils import get_logger   # ✅ centralized logging utility
 
 # Initialize logger
-logger = get_logger("BatchParser", log_file="logs/batch_parser.log")
+logger = get_logger("BatchParser")
 
 SUPPORTED_EXT = [".pdf", ".docx", ".xml", ".html", ".htm", ".json"]
 
