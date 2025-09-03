@@ -58,7 +58,23 @@ print(response)
 model_name ="gemini-2.0-flash"
 model=GeminiModel(model_name)
 
+import time
+prompt="""
+just repeate what i say
+input:
+{user_input}
+"""
 
+def llm_calling_method(model,prompt,transcript):
+    # model_input=prompt.format(user_input=transcript)
+    # llm_result=model(model_input)
+    
+    llm_result=transcript
+    time.sleep(3)
+
+    #post processing
+    
+    return llm_result
 
 
 import async_tasks
